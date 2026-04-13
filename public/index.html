@@ -3,13 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ClubPetro — Oferta Revelada | Evento Secreto</title>
+<title>Marketing para Postos — Curso ClubPetro | Evento Secreto</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-<link rel="dns-prefetch" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1545459720-aac8509eb02c?w=900&q=70&auto=format&fit=crop" fetchpriority="high">
 
 <!-- ========== TRACKING PIXELS ========== -->
 <!-- Substitua os IDs abaixo pelos seus reais antes de subir pro ar -->
@@ -49,31 +46,32 @@ window.cpTrack=function(event,data){
 <style>
 :root {
   --bg:#0A0A0A;--bg-card:#161616;--bg-card-light:#1f1f1f;--text:#F5F5F5;--text-mid:#A8A8A8;--text-dim:#666;
-  --accent:#FF5722;--accent-2:#FFB627;--accent-hover:#E84A1A;--accent-soft:rgba(255,87,34,.12);
+  --accent:#E8593C;--accent-2:#FFB627;--accent-hover:#D04A30;--accent-soft:rgba(232,89,60,.12);
   --green:#25D366;--green-soft:rgba(37,211,102,.12);--green-check:#0B845A;
-  --border:rgba(255,255,255,.08);--border-accent:rgba(255,87,34,.35);
+  --border:rgba(255,255,255,.08);--border-accent:rgba(232,89,60,.35);
+  --brand-dark:#1D1D1F;
   --font-display:'Bebas Neue',Impact,sans-serif;--font-body:'DM Sans',sans-serif;
   --r:22px;--r-sm:14px;
-  --shadow-soft:0 25px 80px -20px rgba(0,0,0,.5),0 8px 30px -10px rgba(255,87,34,.15);
-  --shadow-glow:0 20px 60px -20px rgba(255,87,34,.35);
+  --shadow-soft:0 25px 80px -20px rgba(0,0,0,.5),0 8px 30px -10px rgba(232,89,60,.15);
+  --shadow-glow:0 20px 60px -20px rgba(232,89,60,.35);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:#08070C;color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+body{font-family:var(--font-body);background:var(--brand-dark);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
 body::before{content:'';position:fixed;inset:0;background:
-  radial-gradient(ellipse 90% 60% at 50% -10%,rgba(255,87,34,.22),transparent 60%),
-  radial-gradient(ellipse 70% 50% at 85% 30%,rgba(255,182,39,.10),transparent 60%),
-  radial-gradient(ellipse 60% 50% at 15% 70%,rgba(232,74,26,.08),transparent 60%),
-  radial-gradient(circle at 50% 100%,rgba(255,87,34,.12),transparent 50%);
+  radial-gradient(ellipse 90% 60% at 50% -10%,rgba(232,89,60,.18),transparent 60%),
+  radial-gradient(ellipse 70% 50% at 85% 30%,rgba(255,182,39,.08),transparent 60%),
+  radial-gradient(ellipse 60% 50% at 15% 70%,rgba(232,89,60,.06),transparent 60%),
+  radial-gradient(circle at 50% 100%,rgba(232,89,60,.10),transparent 50%);
   pointer-events:none;z-index:0}
 
-/* === NEON BLOB LIGHTS (inspiração Lucas Felix) === */
+/* === NEON BLOB LIGHTS === */
 .blob{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);opacity:.55;will-change:transform}
-.blob-1{width:520px;height:520px;background:radial-gradient(circle,rgba(255,87,34,.5) 0%,rgba(255,87,34,0) 70%);top:-120px;left:-180px;animation:blobFloat 14s ease-in-out infinite}
+.blob-1{width:520px;height:520px;background:radial-gradient(circle,rgba(232,89,60,.5) 0%,rgba(232,89,60,0) 70%);top:-120px;left:-180px;animation:blobFloat 14s ease-in-out infinite}
 .blob-2{width:460px;height:460px;background:radial-gradient(circle,rgba(255,182,39,.4) 0%,rgba(255,182,39,0) 70%);top:18%;right:-160px;animation:blobFloat 18s ease-in-out infinite -5s reverse}
-.blob-3{width:600px;height:600px;background:radial-gradient(circle,rgba(232,74,26,.35) 0%,rgba(232,74,26,0) 70%);top:55%;left:-220px;animation:blobFloat 22s ease-in-out infinite -8s}
-.blob-4{width:480px;height:480px;background:radial-gradient(circle,rgba(255,87,34,.4) 0%,rgba(255,87,34,0) 70%);top:78%;right:-140px;animation:blobFloat 16s ease-in-out infinite -3s reverse}
-.blob-5{width:380px;height:380px;background:radial-gradient(circle,rgba(255,182,39,.35) 0%,rgba(255,182,39,0) 70%);bottom:8%;left:30%;animation:blobFloat 20s ease-in-out infinite -11s}
+.blob-3{width:600px;height:600px;background:radial-gradient(circle,rgba(232,89,60,.3) 0%,rgba(232,89,60,0) 70%);top:55%;left:-220px;animation:blobFloat 22s ease-in-out infinite -8s}
+.blob-4{width:480px;height:480px;background:radial-gradient(circle,rgba(232,89,60,.35) 0%,rgba(232,89,60,0) 70%);top:78%;right:-140px;animation:blobFloat 16s ease-in-out infinite -3s reverse}
+.blob-5{width:380px;height:380px;background:radial-gradient(circle,rgba(255,182,39,.3) 0%,rgba(255,182,39,0) 70%);bottom:8%;left:30%;animation:blobFloat 20s ease-in-out infinite -11s}
 @keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-30px,20px) scale(.96)}}
 @media(max-width:760px){.blob{filter:blur(60px);opacity:.35}.blob-1,.blob-3,.blob-5{display:none}}
 @media(prefers-reduced-motion:reduce){.blob{animation:none!important}}
@@ -92,9 +90,9 @@ body::before{content:'';position:fixed;inset:0;background:
 @media(max-width:640px){.bg-lines{display:none}}
 @media(prefers-reduced-motion:reduce){.bg-line{animation:none!important}}
 
-/* Highlight marker — efeito caneta marca-texto */
+/* Highlight marker */
 .mark{position:relative;display:inline-block;color:#fff;padding:0 10px;z-index:1;white-space:nowrap}
-.mark::before{content:'';position:absolute;inset:6% -2% 8% -2%;background:linear-gradient(105deg,var(--accent) 0%,var(--accent-hover) 50%,#c93812 100%);transform:skew(-6deg);z-index:-1;border-radius:3px;box-shadow:0 8px 24px -4px rgba(255,87,34,.55),inset 0 1px 0 rgba(255,255,255,.15)}
+.mark::before{content:'';position:absolute;inset:6% -2% 8% -2%;background:linear-gradient(105deg,var(--accent) 0%,var(--accent-hover) 50%,#b83420 100%);transform:skew(-6deg);z-index:-1;border-radius:3px;box-shadow:0 8px 24px -4px rgba(232,89,60,.55),inset 0 1px 0 rgba(255,255,255,.15)}
 .mark-amber::before{background:linear-gradient(105deg,var(--accent-2) 0%,#f59f0b 50%,#d97706 100%);box-shadow:0 8px 24px -4px rgba(255,182,39,.55),inset 0 1px 0 rgba(255,255,255,.2)}
 
 /* Reveal on scroll */
@@ -106,35 +104,34 @@ img{display:block;max-width:100%}
 .w{max-width:1100px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
 
 /* === NAV === */
-.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
-.nav-logo{display:flex;align-items:center}
-.nav-logo img{height:38px;width:auto;display:block}
-.nav-live{display:flex;align-items:center;gap:6px;padding:6px 14px;border:1px solid var(--green);border-radius:100px;font-size:11px;font-weight:600;color:var(--green);letter-spacing:1px;text-transform:uppercase;background:var(--green-soft)}
-.nav-live::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;box-shadow:0 0 8px var(--green)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(29,29,31,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;font-family:var(--font-display);font-size:22px;letter-spacing:1.5px;color:#fff}
+.nav-logo span{color:var(--accent)}
+.nav-live{display:flex;align-items:center;gap:6px;padding:6px 14px;border:1px solid var(--accent);border-radius:100px;font-size:11px;font-weight:600;color:var(--accent);letter-spacing:1px;text-transform:uppercase;background:var(--accent-soft)}
+.nav-live::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 1.5s infinite;box-shadow:0 0 8px var(--accent)}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
 
 /* === HERO === */
 .hero{padding:72px 0 24px;text-align:center;position:relative;min-height:auto}
-.hero-dots{position:absolute;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(rgba(255,87,34,.18) 1px,transparent 1.5px);background-size:22px 22px;mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);opacity:.7}
+.hero-dots{position:absolute;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(rgba(232,89,60,.18) 1px,transparent 1.5px);background-size:22px 22px;mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);opacity:.7}
 .hero>*{position:relative;z-index:1}
-
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(18,2,29,.4);border:1px solid rgba(255,255,255,.19);border-radius:300px;font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--text-mid);margin-bottom:14px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(29,29,31,.6);border:1px solid rgba(255,255,255,.19);border-radius:300px;font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--text-mid);margin-bottom:14px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .hero-eyebrow span{color:var(--accent-2)}
 .hero-title{font-family:var(--font-display);font-size:clamp(40px,6.4vw,68px);letter-spacing:1.5px;line-height:.95;margin-bottom:8px}
 .hero-title em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero-title .mark{font-size:.92em;margin-left:6px;padding:0 14px}
-.hero-subtitle{font-size:13px;color:var(--text-mid);letter-spacing:.2px;margin-bottom:26px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.55;font-weight:400}
+.hero-subtitle{font-size:13px;color:var(--text-mid);letter-spacing:.2px;margin-bottom:26px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.55;font-weight:400}
 
-.hero-card{position:relative;border-radius:28px;overflow:hidden;max-width:780px;margin:0 auto 20px;background:linear-gradient(135deg,#161616,#1f1f1f);border:1px solid var(--border);box-shadow:var(--shadow-soft)}
+.hero-card{position:relative;border-radius:28px;overflow:hidden;max-width:780px;margin:0 auto 20px;background:linear-gradient(135deg,var(--bg-card),var(--bg-card-light));border:1px solid var(--border);box-shadow:var(--shadow-soft)}
 .hero-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
-.hero-card-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,7,12,.92) 0%,rgba(8,7,12,.78) 50%,rgba(80,30,10,.6) 100%)}
+.hero-card-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(29,29,31,.92) 0%,rgba(29,29,31,.78) 50%,rgba(80,30,10,.6) 100%)}
 .hero-card-grad::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at left center,rgba(0,0,0,.6),transparent 70%)}
 .hero-card-inner{position:relative;padding:22px 24px 20px;z-index:2;display:grid;grid-template-columns:1.4fr 1fr;gap:20px;align-items:center}
 @media(max-width:760px){.hero-card-inner{grid-template-columns:1fr;gap:16px;padding:22px 20px 18px}}
 .hero-card-left{text-align:left;min-width:0}
-.hero-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(255,87,34,.18);border:1px solid var(--accent);border-radius:100px;font-size:9px;font-weight:700;color:var(--accent-2);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.hero-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(232,89,60,.18);border:1px solid var(--accent);border-radius:100px;font-size:9px;font-weight:700;color:var(--accent-2);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
 .hero-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent-2);animation:blink 1.5s infinite;box-shadow:0 0 6px var(--accent-2)}
 .hero-h{font-family:var(--font-body);font-size:clamp(24px,3vw,38px);line-height:1.1;letter-spacing:-.4px;margin-bottom:12px;text-align:left;text-shadow:0 2px 14px rgba(0,0,0,.6);font-weight:700;color:#fff}
 .hero-h em{font-style:italic;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
@@ -146,7 +143,7 @@ img{display:block;max-width:100%}
 .hero-metric-label{font-size:9px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
 
 /* === CTA === */
-.cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;width:auto;max-width:none;margin:0 auto;padding:16px 30px;background:linear-gradient(180deg,#FF6A35 0%,#E84A1A 100%);color:#fff;border:1px solid rgba(255,182,39,.35);border-radius:14px;font-family:var(--font-body);font-size:15px;font-weight:600;letter-spacing:.2px;cursor:pointer;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,background .3s;text-align:center;text-decoration:none;box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 12px 30px -10px rgba(255,87,34,.45),0 4px 12px -4px rgba(0,0,0,.4);position:relative;overflow:hidden;line-height:1}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;width:auto;max-width:none;margin:0 auto;padding:16px 30px;background:linear-gradient(180deg,#E8593C 0%,#D04A30 100%);color:#fff;border:1px solid rgba(255,182,39,.35);border-radius:14px;font-family:var(--font-body);font-size:15px;font-weight:600;letter-spacing:.2px;cursor:pointer;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,background .3s;text-align:center;text-decoration:none;box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 12px 30px -10px rgba(232,89,60,.45),0 4px 12px -4px rgba(0,0,0,.4);position:relative;overflow:hidden;line-height:1}
 .cta-arrow{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.18);transition:transform .35s cubic-bezier(.2,.8,.2,1),background .25s;flex-shrink:0}
 .cta-arrow svg{width:11px;height:11px;display:block}
 .cta:hover .cta-arrow{transform:translateX(4px);background:rgba(255,255,255,.28)}
@@ -155,7 +152,7 @@ img{display:block;max-width:100%}
 @keyframes ripple{to{transform:scale(4);opacity:0}}
 .cta-strip,.hero,.final-cta,.price-section{text-align:center}
 .cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transition:left .6s}
-.cta:hover{transform:translateY(-2px);background:linear-gradient(180deg,#FF7A45 0%,#F25522 100%);box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 18px 40px -12px rgba(255,87,34,.6),0 6px 16px -6px rgba(0,0,0,.5)}
+.cta:hover{transform:translateY(-2px);background:linear-gradient(180deg,#F06A4A 0%,#E8593C 100%);box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 18px 40px -12px rgba(232,89,60,.6),0 6px 16px -6px rgba(0,0,0,.5)}
 .cta-wpp .cta-arrow{background:rgba(255,255,255,.2)}
 .price-cta,.sticky-cta .cta{display:block;width:100%}
 .cta:hover::before{left:100%}
@@ -163,13 +160,12 @@ img{display:block;max-width:100%}
 .cta-note::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
 .cta-wpp{background:linear-gradient(180deg,#2EE070 0%,#1EA952 100%);border:1px solid rgba(255,255,255,.18);font-size:14px;padding:14px 26px;box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 12px 30px -10px rgba(37,211,102,.45),0 4px 12px -4px rgba(0,0,0,.4)}
 .cta-wpp:hover{background:linear-gradient(180deg,#34F277 0%,#22BA5A 100%);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 18px 40px -12px rgba(37,211,102,.6),0 6px 16px -6px rgba(0,0,0,.5)}
-
 .cta-strip{padding:18px 0 20px;text-align:center}
 
 /* === COUNTDOWN === */
 .countdown{text-align:center;margin:22px 0 0}
 .cd-label{font-size:11px;color:var(--text-dim);letter-spacing:1.8px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:6px}
-.cd-label::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
+.cd-label::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 6px var(--accent)}
 .cd-row{display:flex;justify-content:center;gap:8px}
 .cd-block{padding:10px 18px;border:1px solid var(--border);border-radius:var(--r-sm);min-width:72px;background:linear-gradient(180deg,var(--bg-card),#0e0e0e);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 4px 12px rgba(0,0,0,.35)}
 .cd-num{font-family:var(--font-display);font-size:32px;background:linear-gradient(180deg,#fff 0%,#bbb 100%);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
@@ -181,13 +177,15 @@ img{display:block;max-width:100%}
 .sec-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0;max-width:880px;margin:0 auto}
 .sec>*{margin-left:auto;margin-right:auto}
 .sec-head{max-width:760px;margin:0 auto 24px;text-align:center;display:flex;flex-direction:column;align-items:center}
-.sec-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;color:var(--accent-2);letter-spacing:2.5px;text-transform:uppercase;margin:0 auto 16px;padding:7px 16px 7px 12px;background:rgba(18,2,29,.4);border:1px solid rgba(255,255,255,.12);border-radius:300px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);width:fit-content}
+.sec-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;color:var(--accent-2);letter-spacing:2.5px;text-transform:uppercase;margin:0 auto 16px;padding:7px 16px 7px 12px;background:rgba(29,29,31,.6);border:1px solid rgba(255,255,255,.12);border-radius:300px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);width:fit-content}
 .sec-tag::before{content:'';width:24px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px}
 .sec-h{font-family:var(--font-body);font-size:clamp(28px,4.2vw,42px);line-height:1.1;letter-spacing:-.4px;margin:0 auto 14px;text-align:center;max-width:780px;font-weight:700;text-transform:none;color:#fff}
 .sec-h em{font-style:italic;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
 .sec-p{font-size:15px;color:var(--text-mid);margin:0 auto;max-width:660px;line-height:1.75;text-align:center}
-.sec-lead{display:block;text-align:center;margin:0 auto 14px}
+.sec-lead{display:block;text-align:center;margin:0 auto 14px;font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--accent-2);text-transform:uppercase;letter-spacing:1.8px}
 .sec-content{max-width:1000px;margin:24px auto 0}
+.pull-line{display:block;max-width:620px;margin:18px auto 0;font-size:16px;font-weight:500;font-style:italic;color:#f0f0f0;line-height:1.55;padding:0 24px;border-left:0;position:relative}
+.pull-line::before{content:'';display:block;width:36px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px;margin:0 auto 12px}
 
 /* === PROBLEM === */
 .problem-wrap{display:grid;grid-template-columns:1fr;gap:32px;align-items:start;max-width:1000px;margin:24px auto 0}
@@ -202,58 +200,63 @@ img{display:block;max-width:100%}
 .problem-item strong{color:var(--text)}
 .problem-img{position:sticky;top:90px;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 50px -20px rgba(0,0,0,.6);aspect-ratio:4/5}
 .problem-img img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1) contrast(1.05)}
+/* Solution callout after problem */
+.solution-callout{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(37,211,102,.02));border-left:3px solid var(--green);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:24px;margin-top:24px}
+.solution-callout p{font-size:15px;color:var(--text-mid);line-height:1.7}
+.solution-callout strong{color:var(--green);font-weight:700}
 
-/* === CASES === */
-.cases-wrap{position:relative;max-width:1000px;margin:24px auto 0}
-.cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+/* === COURSE MODULES === */
+.modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;max-width:1000px;margin:24px auto 0}
+.module-card{padding:28px 24px;background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r);transition:all .4s cubic-bezier(.2,.8,.2,1);position:relative;overflow:hidden}
+.module-card:hover{border-color:var(--border-accent);transform:translateY(-6px);box-shadow:var(--shadow-soft)}
+.module-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.module-card:hover::before{transform:scaleX(1)}
+.module-num{font-family:var(--font-display);font-size:36px;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:1px;line-height:1;margin-bottom:8px;opacity:.6}
+.module-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3}
+.module-desc{font-size:13px;color:var(--text-mid);line-height:1.6}
+.module-bonus{border-color:transparent;background:linear-gradient(var(--bg-card),#0e0e0e) padding-box,linear-gradient(135deg,var(--accent),var(--accent-2)) border-box;border:1px solid transparent;box-shadow:0 10px 40px -10px rgba(232,89,60,.4)}
+.module-bonus::before{transform:scaleX(1)}
+.module-bonus .module-num{opacity:1}
+.bonus-tag{display:inline-block;padding:3px 8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;border-radius:4px;margin-bottom:8px}
+
+/* === REELS / SOCIAL PROOF === */
+.reels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:1000px;margin:24px auto 0}
 @media(max-width:760px){
-  .cases-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:4px 16px 18px;margin:0 -16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  .cases-grid::-webkit-scrollbar{display:none}
-  .cases-grid .case-card{flex:0 0 84%;scroll-snap-align:center;min-width:0}
-  .cases-dots{display:flex;justify-content:center;gap:7px;margin-top:8px}
-  .cases-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18);transition:all .3s;cursor:pointer;border:none;padding:0}
-  .cases-dot.active{background:var(--accent);width:22px;border-radius:4px}
+  .reels-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:4px 16px 18px;margin:24px -16px 0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .reels-grid::-webkit-scrollbar{display:none}
+  .reels-grid .reel-card{flex:0 0 75%;scroll-snap-align:center;min-width:0}
 }
-.cases-dots{display:none}
-.case-card{background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s,border-color .3s;box-shadow:0 8px 30px -12px rgba(0,0,0,.4)}
-.case-card:hover{border-color:var(--border-accent);transform:translateY(-10px);box-shadow:var(--shadow-soft)}
-.case-img{height:200px;position:relative;overflow:hidden}
-.case-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1);filter:saturate(1.15) contrast(1.05)}
-.case-card:hover .case-img img{transform:scale(1.1)}
-.case-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(8,7,12,.95))}
-.case-img::before{content:'';position:absolute;inset:0;mix-blend-mode:color;opacity:.55;z-index:1;pointer-events:none}
-.case-card:nth-child(1) .case-img::before{background:linear-gradient(135deg,#FF5722 0%,#FFB627 100%)}
-.case-card:nth-child(2) .case-img::before{background:linear-gradient(135deg,#FF1744 0%,#FF5722 100%)}
-.case-card:nth-child(3) .case-img::before{background:linear-gradient(135deg,#FFB627 0%,#FF8A00 100%)}
-.case-card:nth-child(4) .case-img::before{background:linear-gradient(135deg,#E84A1A 0%,#FF8A00 100%)}
-.case-card:nth-child(5) .case-img::before{background:linear-gradient(135deg,#FF8A00 0%,#FF5722 100%)}
-.case-card:nth-child(6) .case-img::before{background:linear-gradient(135deg,#FF1744 0%,#FFB627 100%)}
-.case-card:nth-child(4) .case-avatar{background:linear-gradient(135deg,#E84A1A,#c93812)}
-.case-card:nth-child(5) .case-avatar{background:linear-gradient(135deg,#FF8A00,#cc6e00)}
-.case-card:nth-child(6) .case-avatar{background:linear-gradient(135deg,#FF1744,#c4001a)}
-.case-card:nth-child(4):hover::before{background:linear-gradient(135deg,rgba(232,74,26,.4),transparent);opacity:1}
-.case-card:nth-child(5):hover::before{background:linear-gradient(135deg,rgba(255,138,0,.4),transparent);opacity:1}
-.case-card:nth-child(6):hover::before{background:linear-gradient(135deg,rgba(255,23,68,.4),transparent);opacity:1}
-.case-card{position:relative}
-.case-card::before{content:'';position:absolute;inset:-1px;border-radius:var(--r);background:linear-gradient(135deg,transparent,transparent);opacity:0;transition:opacity .4s;pointer-events:none;z-index:0}
-.case-card:nth-child(1):hover::before{background:linear-gradient(135deg,rgba(255,87,34,.4),transparent);opacity:1}
-.case-card:nth-child(2):hover::before{background:linear-gradient(135deg,rgba(255,23,68,.4),transparent);opacity:1}
-.case-card:nth-child(3):hover::before{background:linear-gradient(135deg,rgba(255,182,39,.4),transparent);opacity:1}
-.case-real-tag{padding:6px 14px;background:var(--accent);color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;border-radius:3px;display:inline-flex;align-items:center;gap:5px;position:absolute;bottom:14px;left:14px;z-index:3;box-shadow:0 6px 20px rgba(255,87,34,.5);transform:skew(-4deg)}
-.case-real-tag>*{transform:skew(4deg)}
-.case-real-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:#fff;animation:blink 2s infinite}
-.case-body{padding:22px}
-.case-author{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.case-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;border:2px solid rgba(255,255,255,.1)}
-.case-card:nth-child(1) .case-avatar{background:linear-gradient(135deg,var(--accent),var(--accent-hover))}
-.case-card:nth-child(2) .case-avatar{background:linear-gradient(135deg,var(--green-check),#0a6d4a)}
-.case-card:nth-child(3) .case-avatar{background:linear-gradient(135deg,#D4A017,#9c7510)}
-.case-name{font-weight:700;font-size:14px}
-.case-info{font-size:11px;color:var(--text-dim)}
-.case-text{font-size:13px;color:var(--text-mid);line-height:1.7;font-style:italic;margin-bottom:14px}
-.case-band{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px}
-.case-result{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:100px;font-size:12px;font-weight:700;border:1px solid}
-.case-result{background:linear-gradient(135deg,rgba(255,87,34,.14),rgba(255,182,39,.08))!important;color:var(--accent-2)!important;border-color:rgba(255,87,34,.4)!important}
+.reel-card{background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s,border-color .3s}
+.reel-card:hover{border-color:var(--border-accent);transform:translateY(-8px);box-shadow:var(--shadow-soft)}
+.reel-thumb{position:relative;aspect-ratio:9/16;max-height:340px;overflow:hidden;background:#111}
+.reel-thumb img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
+.reel-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3)}
+.reel-play-icon{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.3)}
+.reel-play-icon svg{width:24px;height:24px;color:#fff;margin-left:3px}
+.reel-views{position:absolute;bottom:12px;left:12px;display:flex;align-items:center;gap:6px;padding:6px 12px;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);border-radius:100px;font-size:12px;font-weight:700;color:#fff}
+.reel-views svg{width:14px;height:14px}
+.reel-body{padding:16px 18px}
+.reel-handle{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px}
+.reel-location{font-size:11px;color:var(--text-dim)}
+.reel-caption{font-size:12px;color:var(--text-mid);margin-top:8px;line-height:1.5;font-style:italic}
+.reels-cta-note{text-align:center;font-size:13px;color:var(--text-mid);margin-top:20px;font-style:italic}
+.reels-cta-note strong{color:var(--accent-2)}
+
+/* === AUTHORITY (SPEAKER) === */
+.speaker-wrap{max-width:880px;margin:24px auto 0;display:grid;grid-template-columns:280px 1fr;gap:32px;align-items:start}
+@media(max-width:760px){.speaker-wrap{grid-template-columns:1fr;gap:20px}}
+.speaker-photo{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 50px -20px rgba(0,0,0,.6);aspect-ratio:3/4;position:sticky;top:90px}
+.speaker-photo img{width:100%;height:100%;object-fit:cover}
+.speaker-info{display:flex;flex-direction:column;gap:20px}
+.speaker-name{font-family:var(--font-display);font-size:36px;letter-spacing:1px;color:#fff;line-height:1}
+.speaker-role{font-size:14px;color:var(--accent-2);font-weight:600;margin-top:4px}
+.speaker-bio{font-size:15px;color:var(--text-mid);line-height:1.75}
+.speaker-bio strong{color:#fff}
+.speaker-creds{display:flex;flex-direction:column;gap:10px}
+.speaker-cred{display:flex;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;color:var(--text-mid);transition:border-color .3s}
+.speaker-cred:hover{border-color:var(--border-accent)}
+.speaker-cred-icon{width:36px;height:36px;border-radius:10px;background:var(--accent-soft);border:1px solid rgba(232,89,60,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-2);font-size:16px}
+.speaker-cred strong{color:#fff}
 
 /* === OFFER === */
 .offer-wrap{display:grid;grid-template-columns:1fr;gap:28px;align-items:start;max-width:1000px;margin:24px auto 0}
@@ -262,78 +265,21 @@ img{display:block;max-width:100%}
 .offer-img img{width:100%;height:100%;object-fit:cover}
 .offer-list{display:flex;flex-direction:column;gap:14px}
 .offer-item{display:flex;align-items:flex-start;gap:16px;padding:24px 22px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);transition:all .3s;position:relative}
-.offer-item:not(:last-child)::after{content:'';position:absolute;left:24px;right:24px;bottom:-7px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);pointer-events:none}
 .offer-item:hover{border-color:var(--border-accent)}
 .offer-check{width:28px;height:28px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;margin-top:2px;border:1px solid rgba(37,211,102,.3)}
 .offer-item strong{color:var(--text);font-size:15px}
 .offer-item span{font-size:13px;color:var(--text-mid);display:block;margin-top:4px;line-height:1.6}
-.offer-highlight{border-color:transparent;background:linear-gradient(#161616,#0e0e0e) padding-box,linear-gradient(135deg,var(--accent),var(--accent-2)) border-box;border:1px solid transparent;position:relative;box-shadow:0 10px 40px -10px rgba(255,87,34,.4)}
-.offer-highlight::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,87,34,.10),rgba(255,182,39,.05));border-radius:inherit;pointer-events:none}
+.offer-highlight{border-color:transparent;background:linear-gradient(var(--bg-card),#0e0e0e) padding-box,linear-gradient(135deg,var(--accent),var(--accent-2)) border-box;border:1px solid transparent;position:relative;box-shadow:0 10px 40px -10px rgba(232,89,60,.4)}
 .offer-highlight .offer-check{background:var(--accent-soft);color:var(--accent-2);border-color:var(--accent)}
 .offer-tag{display:inline-block;padding:4px 9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-size:9px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:4px;margin-left:8px;vertical-align:middle}
 
-/* === AUTHORITY === */
-.auth-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:880px;margin:24px auto 0}
-@media(min-width:640px){.auth-grid{grid-template-columns:repeat(4,1fr)}}
-.auth-card{padding:28px 16px;border:1px solid var(--border);border-radius:var(--r);text-align:center;background:linear-gradient(180deg,var(--bg-card),#0e0e0e);transition:all .3s;position:relative;overflow:hidden}
-.auth-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform:scaleX(0);transform-origin:left;transition:transform .5s}
-.auth-card:hover{border-color:var(--border-accent);transform:translateY(-4px)}
-.auth-card:hover::before{transform:scaleX(1)}
-.auth-num{font-family:var(--font-display);font-size:40px;background:linear-gradient(135deg,#fff,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:1px}
-.auth-label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
-
-.auth-banner{max-width:1000px;margin:32px auto 0;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);position:relative;height:220px}
-.auth-banner img{width:100%;height:100%;object-fit:cover}
-.auth-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.9) 0%,rgba(10,10,10,.4) 60%,transparent)}
-.auth-banner-text{position:absolute;left:32px;top:50%;transform:translateY(-50%);z-index:2;max-width:60%}
-.auth-banner-text h3{font-family:var(--font-display);font-size:28px;letter-spacing:1px;line-height:1.05;margin-bottom:6px}
-.auth-banner-text h3 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.auth-banner-text p{font-size:13px;color:var(--text-mid)}
-
-/* === EXIT INTENT MODAL === */
-.exit-modal{position:fixed;inset:0;background:rgba(8,7,12,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .35s}
-.exit-modal.show{opacity:1;pointer-events:auto}
-.exit-card{max-width:480px;width:100%;background:linear-gradient(180deg,#161616,#0e0e0e);border:1px solid rgba(255,87,34,.35);border-radius:22px;padding:36px 32px;text-align:center;position:relative;box-shadow:0 40px 100px -20px rgba(0,0,0,.7),0 0 80px -20px rgba(255,87,34,.3);transform:translateY(20px) scale(.96);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
-.exit-modal.show .exit-card{transform:translateY(0) scale(1)}
-.exit-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s}
-.exit-close:hover{background:rgba(255,87,34,.2)}
-.exit-eyebrow{display:inline-block;font-size:11px;font-weight:700;color:var(--accent-2);letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px;padding:5px 14px;background:rgba(255,87,34,.12);border:1px solid rgba(255,87,34,.3);border-radius:100px}
-.exit-title{font-family:var(--font-display);font-size:30px;letter-spacing:.6px;line-height:1.05;color:#fff;margin-bottom:10px}
-.exit-title em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.exit-text{font-size:14px;color:var(--text-mid);line-height:1.65;margin-bottom:20px}
-.exit-text strong{color:#fff}
-.exit-actions{display:flex;flex-direction:column;gap:10px}
-.exit-actions .cta{width:100%}
-.exit-skip{margin-top:14px;font-size:12px;color:var(--text-dim);background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.exit-skip:hover{color:#fff}
-@media(max-width:760px){.exit-card{padding:28px 22px;border-radius:18px}.exit-title{font-size:24px}.exit-text{font-size:13px}}
-
-/* === SOCIAL PROOF TICKER === */
-.social-proof{display:flex;align-items:center;justify-content:center;gap:14px;max-width:520px;margin:18px auto 0;padding:12px 18px;background:linear-gradient(135deg,rgba(37,211,102,.10),rgba(37,211,102,.04));border:1px solid rgba(37,211,102,.3);border-radius:100px;font-size:13px;color:#d8d8d8;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.social-proof-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(37,211,102,.5);animation:proofPulse 2s ease-out infinite;flex-shrink:0}
-@keyframes proofPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 12px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
-.social-proof strong{color:#fff;font-weight:700}
-.social-proof em{font-style:normal;color:#5BE894;font-weight:600}
-@media(max-width:760px){.social-proof{font-size:11px;padding:10px 14px;gap:10px;margin-top:14px}}
-
-/* === ROI ANCHOR === */
-.roi-anchor{display:flex;align-items:center;gap:14px;max-width:560px;margin:0 auto 22px;padding:16px 20px;background:linear-gradient(135deg,rgba(37,211,102,.10),rgba(37,211,102,.04));border:1px solid rgba(37,211,102,.35);border-radius:14px;text-align:left}
-.roi-icon{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.4);display:flex;align-items:center;justify-content:center;color:var(--green)}
-.roi-icon svg{width:22px;height:22px}
-.roi-text{font-size:13px;color:#d8d8d8;line-height:1.55}
-.roi-text strong{color:#fff;font-weight:600}
-.roi-text em{font-style:normal;color:#5BE894;font-weight:600}
-@media(max-width:760px){.roi-anchor{padding:14px 16px;gap:12px}.roi-icon{width:36px;height:36px}.roi-text{font-size:12px}}
-
 /* === PRICE === */
 .price-section{text-align:center}
-.price-card{background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid var(--border-accent);border-radius:28px;overflow:hidden;max-width:760px;margin:0 auto;box-shadow:0 40px 120px -30px rgba(255,87,34,.4),0 20px 60px -20px rgba(0,0,0,.6);position:relative}
-.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:140px;background:linear-gradient(180deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,0) 100%);pointer-events:none;z-index:1;border-radius:28px 28px 0 0}
+.price-card{background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid var(--border-accent);border-radius:28px;overflow:hidden;max-width:760px;margin:0 auto;box-shadow:0 40px 120px -30px rgba(232,89,60,.4),0 20px 60px -20px rgba(0,0,0,.6);position:relative}
 .price-banner{padding:14px;background:linear-gradient(90deg,var(--accent),var(--accent-2));text-align:center;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.2)}
 .price-body{display:flex;gap:0}
 .price-left{flex:1;padding:36px 32px;text-align:left}
 .price-right{width:240px;background-size:cover;background-position:center;display:none;position:relative}
-.price-right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.5),transparent)}
 @media(min-width:680px){.price-right{display:block}}
 .price-from{font-size:18px;color:#888;text-decoration:line-through;text-decoration-color:rgba(238,130,130,.7);text-decoration-thickness:2px;font-weight:500}
 .price-main{font-family:var(--font-display);font-size:64px;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:2px;line-height:1;margin:6px 0}
@@ -355,30 +301,21 @@ img{display:block;max-width:100%}
 .trust-item svg{width:16px;height:16px;color:#5BE894;flex-shrink:0}
 @media(max-width:760px){.trust-row{gap:14px;padding:16px 14px}.trust-item{font-size:11px;gap:6px}.trust-item svg{width:14px;height:14px}}
 
+/* === ROI ANCHOR === */
+.roi-anchor{display:flex;align-items:center;gap:14px;max-width:560px;margin:0 auto 22px;padding:16px 20px;background:linear-gradient(135deg,rgba(37,211,102,.10),rgba(37,211,102,.04));border:1px solid rgba(37,211,102,.35);border-radius:14px;text-align:left}
+.roi-icon{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.4);display:flex;align-items:center;justify-content:center;color:var(--green)}
+.roi-icon svg{width:22px;height:22px}
+.roi-text{font-size:13px;color:#d8d8d8;line-height:1.55}
+.roi-text strong{color:#fff;font-weight:600}
+.roi-text em{font-style:normal;color:#5BE894;font-weight:600}
+@media(max-width:760px){.roi-anchor{padding:14px 16px;gap:12px}.roi-icon{width:36px;height:36px}.roi-text{font-size:12px}}
+
 /* === FAQ === */
-.faq-layout{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start;max-width:1000px;margin:24px auto 0}
-@media(max-width:880px){.faq-layout{grid-template-columns:1fr;gap:28px}}
-
-/* Camila card — refinado */
-.faq-person{position:sticky;top:96px;background:linear-gradient(180deg,rgba(22,22,22,.85),rgba(14,14,14,.85));border:1px solid var(--border);border-radius:20px;padding:22px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 20px 60px -20px rgba(0,0,0,.5)}
-.faq-photo{width:100%;aspect-ratio:1/1;border-radius:14px;overflow:hidden;border:1px solid var(--border);position:relative;margin-bottom:18px}
-.faq-photo img{width:100%;height:100%;object-fit:cover}
-.faq-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(10,10,10,.7));pointer-events:none}
-.faq-name{font-family:var(--font-body);font-weight:700;font-size:18px;color:#fff;letter-spacing:-.2px;margin-bottom:2px}
-.faq-role{font-size:12px;color:var(--text-mid);margin-bottom:14px;line-height:1.4}
-.faq-meta{display:flex;flex-direction:column;gap:8px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:16px}
-.faq-meta-row{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--text-dim)}
-.faq-meta-row svg{width:13px;height:13px;flex-shrink:0;color:var(--accent-2)}
-.faq-meta-row strong{color:#fff;font-weight:600}
-.faq-wpp{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font-size:13px;color:#fff;font-weight:600;padding:12px 16px;background:linear-gradient(180deg,#2EE070 0%,#1EA952 100%);border:1px solid rgba(255,255,255,.18);border-radius:12px;text-decoration:none;transition:transform .25s,box-shadow .25s;box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 8px 22px -8px rgba(37,211,102,.5)}
-.faq-wpp:hover{transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 12px 30px -8px rgba(37,211,102,.6)}
-.faq-wpp svg{width:15px;height:15px}
-
-/* FAQ list */
+.faq-layout{display:grid;grid-template-columns:1fr;gap:12px;max-width:760px;margin:24px auto 0}
 .faq-list{display:flex;flex-direction:column;gap:8px}
-.faq-item{background:rgba(22,11,30,.45);background:linear-gradient(180deg,rgba(28,22,32,.7),rgba(14,11,18,.7));border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .3s,background .3s;backdrop-filter:blur(8px)}
-.faq-item:hover{border-color:rgba(255,87,34,.3)}
-.faq-item.open{border-color:rgba(255,87,34,.55);background:linear-gradient(180deg,rgba(38,22,18,.7),rgba(20,12,15,.7))}
+.faq-item{background:linear-gradient(180deg,rgba(28,22,32,.7),rgba(14,11,18,.7));border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .3s,background .3s;backdrop-filter:blur(8px)}
+.faq-item:hover{border-color:rgba(232,89,60,.3)}
+.faq-item.open{border-color:rgba(232,89,60,.55);background:linear-gradient(180deg,rgba(38,22,18,.7),rgba(20,12,15,.7))}
 .faq-q{display:flex;align-items:center;padding:20px 22px;font-size:15px;font-weight:600;gap:18px;color:#f0f0f0;line-height:1.4}
 .faq-num{font-family:var(--font-body);font-weight:700;font-size:13px;color:var(--accent-2);letter-spacing:.5px;flex-shrink:0;font-variant-numeric:tabular-nums;opacity:.7;transition:opacity .3s}
 .faq-item.open .faq-num{opacity:1}
@@ -391,20 +328,11 @@ img{display:block;max-width:100%}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.2,.8,.2,1)}
 .faq-a-in{padding:0 22px 22px 56px;font-size:14px;color:#b8b8b8;line-height:1.75}
 @media(max-width:760px){
-  .faq-person{position:static;padding:18px;border-radius:16px}
-  .faq-photo{aspect-ratio:16/10;max-height:200px}
   .faq-q{padding:16px 18px;font-size:13px;gap:14px}
-  .faq-num{font-size:11px}
-  .faq-plus{width:24px;height:24px}
-  .faq-plus::before{width:10px}
-  .faq-plus::after{height:10px}
   .faq-a-in{padding:0 18px 18px 47px;font-size:12px}
-  .faq-name{font-size:16px}
-  .faq-role{font-size:11px}
-  .faq-meta-row{font-size:10px}
 }
 
-/* === NARRATIVE / TRANSITION BLOCKS === */
+/* === TRANSITION === */
 .transition{max-width:680px;margin:0 auto;padding:18px 24px 16px;text-align:center;position:relative}
 .transition::before,.transition::after{content:'';position:absolute;left:50%;width:1px;background:linear-gradient(180deg,transparent,var(--accent),transparent);transform:translateX(-50%)}
 .transition::before{top:0;height:14px}
@@ -412,42 +340,6 @@ img{display:block;max-width:100%}
 .transition p{font-family:var(--font-body);font-size:19px;line-height:1.65;color:#d8d8d8;font-weight:400;letter-spacing:.1px}
 .transition p em{font-style:italic;color:var(--accent-2);font-weight:500}
 .transition p strong{color:#fff;font-weight:600}
-.transition-quote{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:24px;line-height:1.5;color:#fff;max-width:620px;margin:0 auto;position:relative;padding:0 20px}
-.transition-quote::before{content:'"';position:absolute;left:-12px;top:-30px;font-size:80px;color:var(--accent);font-family:Georgia,serif;line-height:1;opacity:.6}
-.transition-quote::after{content:'"';position:absolute;right:-12px;bottom:-60px;font-size:80px;color:var(--accent);font-family:Georgia,serif;line-height:1;opacity:.6}
-.transition-attr{display:block;margin-top:18px;font-family:var(--font-body);font-size:13px;color:var(--text-dim);font-style:normal;letter-spacing:1.5px;text-transform:uppercase}
-
-/* Lead paragraph (intro before sec-h) */
-.sec-lead{font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--accent-2);text-transform:uppercase;letter-spacing:1.8px;margin-bottom:18px;display:block}
-
-/* Inline em-callout (frase em destaque dentro de parágrafos) */
-.sec-p .em-line{display:block;margin-top:14px;font-size:17px;color:#fff;font-weight:500;font-style:italic;border-left:2px solid var(--accent);padding-left:14px;text-align:left}
-.pull-line{display:block;max-width:620px;margin:18px auto 0;font-size:16px;font-weight:500;font-style:italic;color:#f0f0f0;line-height:1.55;padding:0 24px;border-left:0;position:relative}
-.pull-line::before{content:'';display:block;width:36px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px;margin:0 auto 12px}
-
-/* Signed letter section */
-.letter{max-width:720px;margin:36px auto;padding:36px 44px;background:linear-gradient(180deg,rgba(22,22,22,.6),rgba(14,14,14,.6));border:1px solid var(--border);border-radius:22px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);position:relative;box-shadow:0 30px 80px -30px rgba(0,0,0,.5)}
-.letter-greeting{font-size:14px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1.8px;margin-bottom:18px;font-weight:600}
-.letter-body{font-size:16px;line-height:1.8;color:#d0d0d0;font-weight:400}
-.letter-body p{margin-bottom:16px}
-.letter-body p:last-of-type{margin-bottom:24px}
-.letter-body strong{color:#fff;font-weight:600}
-.letter-body em{color:var(--accent-2);font-style:italic;font-weight:500}
-.letter-sign{display:flex;align-items:center;gap:14px;padding-top:24px;border-top:1px solid var(--border);margin-top:8px}
-.letter-sign-name{font-family:'Bradley Hand',cursive;font-size:28px;color:var(--accent-2);letter-spacing:.5px;line-height:1}
-.letter-sign-meta{font-size:12px;color:var(--text-dim);line-height:1.5}
-.letter-sign-meta strong{color:#fff;display:block;font-size:13px;margin-bottom:2px}
-@media(max-width:760px){
-  .letter{padding:32px 22px;margin:40px 16px;border-radius:16px}
-  .letter-body{font-size:14px;line-height:1.75}
-  .transition{padding:36px 18px}
-  .transition p{font-size:16px}
-  .transition-quote{font-size:19px;padding:0 16px}
-  .transition-quote::before{font-size:60px;left:-6px;top:-22px}
-  .transition-quote::after{font-size:60px;right:-6px;bottom:-44px}
-  .sec-lead{font-size:11px;letter-spacing:1.4px;margin-bottom:12px}
-  .sec-p .em-line{font-size:14px}
-}
 
 /* === ALERT BOX === */
 .alert-box{max-width:760px;margin:40px auto;background:rgba(174,44,44,.10);border:1px solid #AE2C2C;border-radius:18px;padding:28px 32px;display:flex;align-items:flex-start;gap:18px;box-shadow:0 0 60px -20px rgba(174,44,44,.35)}
@@ -457,78 +349,66 @@ img{display:block;max-width:100%}
 .alert-title{font-family:var(--font-display);font-size:22px;color:#FF8B8B;letter-spacing:.8px;margin-bottom:6px;line-height:1.1}
 .alert-text{font-size:14px;color:#E8C5C5;line-height:1.6}
 .alert-text strong{color:#FFB8B8}
-@media(max-width:760px){
-  .alert-box{padding:20px 18px;gap:12px;margin:30px auto;border-radius:14px}
-  .alert-icon{font-size:24px}
-  .alert-title{font-size:17px}
-  .alert-text{font-size:12px}
-}
+@media(max-width:760px){.alert-box{padding:20px 18px;gap:12px;margin:30px auto;border-radius:14px}.alert-icon{font-size:24px}.alert-title{font-size:17px}.alert-text{font-size:12px}}
 
 /* === FINAL CTA === */
 .final-cta{text-align:center;padding:56px 32px;position:relative;border-radius:var(--r);overflow:hidden;margin:24px auto;max-width:1100px}
-.final-cta-bg{position:absolute;inset:0;z-index:0}
-.final-cta-bg img{width:100%;height:100%;object-fit:cover;opacity:.18}
-.final-cta-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent,rgba(10,10,10,.8))}
-.final-cta>*:not(.final-cta-bg){position:relative;z-index:1}
+.final-cta>*{position:relative;z-index:1}
 .final-cta .sec-h{margin-bottom:18px}
 .final-sub{font-size:14px;color:var(--text-mid);margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto}
 .final-cta .cta{margin-bottom:14px}
 
-/* === FOOTER === */
-.footer{text-align:center;padding:36px 0;border-top:1px solid var(--border);background:rgba(0,0,0,.3)}
-.footer p{font-size:11px;color:var(--text-dim)}
+/* === EXIT INTENT MODAL === */
+.exit-modal{position:fixed;inset:0;background:rgba(29,29,31,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .35s}
+.exit-modal.show{opacity:1;pointer-events:auto}
+.exit-card{max-width:480px;width:100%;background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid rgba(232,89,60,.35);border-radius:22px;padding:36px 32px;text-align:center;position:relative;box-shadow:0 40px 100px -20px rgba(0,0,0,.7),0 0 80px -20px rgba(232,89,60,.3);transform:translateY(20px) scale(.96);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.exit-modal.show .exit-card{transform:translateY(0) scale(1)}
+.exit-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s}
+.exit-close:hover{background:rgba(232,89,60,.2)}
+.exit-eyebrow{display:inline-block;font-size:11px;font-weight:700;color:var(--accent-2);letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px;padding:5px 14px;background:rgba(232,89,60,.12);border:1px solid rgba(232,89,60,.3);border-radius:100px}
+.exit-title{font-family:var(--font-display);font-size:30px;letter-spacing:.6px;line-height:1.05;color:#fff;margin-bottom:10px}
+.exit-title em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.exit-text{font-size:14px;color:var(--text-mid);line-height:1.65;margin-bottom:20px}
+.exit-text strong{color:#fff}
+.exit-actions{display:flex;flex-direction:column;gap:10px}
+.exit-actions .cta{width:100%}
+.exit-skip{margin-top:14px;font-size:12px;color:var(--text-dim);background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.exit-skip:hover{color:#fff}
+@media(max-width:760px){.exit-card{padding:28px 22px;border-radius:18px}.exit-title{font-size:24px}.exit-text{font-size:13px}}
 
-/* === PROMO BAR === */
-.promo-bar{position:fixed;top:-100px;left:0;right:0;z-index:200;background:linear-gradient(90deg,var(--accent),var(--accent-2),var(--accent));background-size:200% 100%;color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;box-shadow:0 8px 32px rgba(255,87,34,.4);transition:top .7s cubic-bezier(.2,.9,.3,1.2);animation:shimmerBg 6s linear infinite}
-.promo-bar.show{top:0}
-@keyframes shimmerBg{0%{background-position:0% 0}100%{background-position:200% 0}}
-.promo-bar-icon{font-size:22px;animation:wiggle 1.6s ease-in-out infinite}
-@keyframes wiggle{0%,100%{transform:rotate(0) scale(1)}25%{transform:rotate(-8deg) scale(1.1)}75%{transform:rotate(8deg) scale(1.1)}}
-.promo-bar-text{font-size:14px;font-weight:700;letter-spacing:.3px;text-shadow:0 1px 2px rgba(0,0,0,.2)}
-.promo-bar-text strong{font-family:var(--font-display);font-size:18px;letter-spacing:1px;margin:0 4px}
-.promo-bar-cta{padding:9px 22px;background:#fff;color:var(--accent);font-weight:800;font-size:13px;letter-spacing:.5px;border-radius:100px;text-decoration:none;text-transform:uppercase;transition:transform .25s,box-shadow .25s;white-space:nowrap}
-.promo-bar-cta:hover{transform:scale(1.06);box-shadow:0 6px 20px rgba(0,0,0,.25)}
-.promo-bar-close{background:rgba(0,0,0,.15);border:none;color:#fff;width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s}
-.promo-bar-close:hover{background:rgba(0,0,0,.3)}
-.promo-bar.show ~ .nav{top:54px}
-@media(max-width:640px){
-  .promo-bar{padding:10px 14px;gap:10px}
-  .promo-bar-text{font-size:12px;flex:1;min-width:0}
-  .promo-bar-text strong{font-size:14px}
-  .promo-bar-cta{padding:8px 14px;font-size:11px}
-}
+/* === SOCIAL PROOF TICKER === */
+.social-proof{display:flex;align-items:center;justify-content:center;gap:14px;max-width:520px;margin:18px auto 0;padding:12px 18px;background:linear-gradient(135deg,rgba(37,211,102,.10),rgba(37,211,102,.04));border:1px solid rgba(37,211,102,.3);border-radius:100px;font-size:13px;color:#d8d8d8;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.social-proof-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(37,211,102,.5);animation:proofPulse 2s ease-out infinite;flex-shrink:0}
+@keyframes proofPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 12px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.social-proof strong{color:#fff;font-weight:700}
+.social-proof em{font-style:normal;color:#5BE894;font-weight:600}
+@media(max-width:760px){.social-proof{font-size:11px;padding:10px 14px;gap:10px;margin-top:14px}}
 
 /* === CHECKOUT MODAL === */
-.modal-backdrop{position:fixed;inset:0;background:rgba(8,7,12,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:1000;opacity:0;pointer-events:none;transition:opacity .35s cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+.modal-backdrop{position:fixed;inset:0;background:rgba(29,29,31,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:1000;opacity:0;pointer-events:none;transition:opacity .35s cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
 .modal-backdrop.show{opacity:1;pointer-events:auto}
-.modal{width:100%;max-width:880px;background:linear-gradient(180deg,#161616,#0e0e0e);border:1px solid rgba(255,87,34,.25);border-radius:24px;box-shadow:0 50px 120px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.04);transform:translateY(20px) scale(.98);opacity:0;transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .35s;position:relative;overflow:hidden;max-height:calc(100vh - 40px);display:flex;flex-direction:column}
+.modal{width:100%;max-width:880px;background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid rgba(232,89,60,.25);border-radius:24px;box-shadow:0 50px 120px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.04);transform:translateY(20px) scale(.98);opacity:0;transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .35s;position:relative;overflow:hidden;max-height:calc(100vh - 40px);display:flex;flex-direction:column}
 .modal-backdrop.show .modal{transform:translateY(0) scale(1);opacity:1}
-.modal::before{content:'';position:absolute;top:0;left:0;right:0;height:140px;background:linear-gradient(180deg,rgba(255,87,34,.08),transparent);pointer-events:none;border-radius:24px 24px 0 0}
-
+.modal::before{content:'';position:absolute;top:0;left:0;right:0;height:140px;background:linear-gradient(180deg,rgba(232,89,60,.08),transparent);pointer-events:none;border-radius:24px 24px 0 0}
 .modal-close{position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .25s,transform .25s}
-.modal-close:hover{background:rgba(255,87,34,.2);border-color:var(--accent);transform:rotate(90deg)}
-
+.modal-close:hover{background:rgba(232,89,60,.2);border-color:var(--accent);transform:rotate(90deg)}
 .modal-header{padding:32px 36px 0;text-align:center;position:relative;z-index:2}
 .modal-eyebrow{display:inline-block;font-size:11px;font-weight:700;color:var(--accent-2);letter-spacing:1.8px;text-transform:uppercase;margin-bottom:8px}
 .modal-title{font-family:var(--font-display);font-size:28px;letter-spacing:.8px;line-height:1.05;color:#fff;margin-bottom:6px}
 .modal-subtitle{font-size:13px;color:var(--text-mid);max-width:420px;margin:0 auto}
-
-/* Stepper */
 .stepper{display:flex;align-items:center;justify-content:center;gap:14px;padding:24px 36px 8px;position:relative;z-index:2}
 .step{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:var(--text-dim);letter-spacing:.5px;text-transform:uppercase;transition:color .35s}
 .step-num{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;transition:all .35s}
 .step.active{color:#fff}
-.step.active .step-num{background:linear-gradient(180deg,var(--accent),var(--accent-hover));border-color:var(--accent-2);color:#fff;box-shadow:0 6px 16px -4px rgba(255,87,34,.5)}
+.step.active .step-num{background:linear-gradient(180deg,var(--accent),var(--accent-hover));border-color:var(--accent-2);color:#fff;box-shadow:0 6px 16px -4px rgba(232,89,60,.5)}
 .step.done .step-num{background:rgba(37,211,102,.15);border-color:var(--green);color:var(--green)}
 .step.done{color:var(--green)}
 .step-line{width:36px;height:1px;background:rgba(255,255,255,.1);transition:background .35s}
 .step.done+.step-line{background:rgba(37,211,102,.4)}
-
 .modal-body{padding:24px 36px 32px;overflow-y:auto;flex:1;position:relative;z-index:2}
 .modal-body::-webkit-scrollbar{width:6px}
 .modal-body::-webkit-scrollbar-track{background:transparent}
-.modal-body::-webkit-scrollbar-thumb{background:rgba(255,87,34,.2);border-radius:3px}
-
+.modal-body::-webkit-scrollbar-thumb{background:rgba(232,89,60,.2);border-radius:3px}
 .modal-step{display:none;animation:fadeIn .35s cubic-bezier(.2,.8,.2,1)}
 .modal-step.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -536,12 +416,11 @@ img{display:block;max-width:100%}
 /* Form fields */
 .field{margin-bottom:14px}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.field-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
 .field label{display:block;font-size:11px;font-weight:600;color:var(--text-mid);letter-spacing:.4px;text-transform:uppercase;margin-bottom:6px}
 .field label .req{color:var(--accent)}
-.field input,.field select,.field textarea{width:100%;padding:14px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#fff;font-family:var(--font-body);font-size:14px;font-weight:500;transition:border-color .25s,background .25s,box-shadow .25s;outline:none}
-.field input::placeholder,.field textarea::placeholder{color:#666}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);background:rgba(255,87,34,.04);box-shadow:0 0 0 3px rgba(255,87,34,.12)}
+.field input,.field select{width:100%;padding:14px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#fff;font-family:var(--font-body);font-size:14px;font-weight:500;transition:border-color .25s,background .25s,box-shadow .25s;outline:none}
+.field input::placeholder{color:#666}
+.field input:focus,.field select:focus{border-color:var(--accent);background:rgba(232,89,60,.04);box-shadow:0 0 0 3px rgba(232,89,60,.12)}
 .field input.invalid{border-color:#EE8282;background:rgba(238,130,130,.06)}
 .field-error{font-size:11px;color:#EE8282;margin-top:5px;display:none}
 .field input.invalid+.field-error,.field input.invalid~.field-error{display:block}
@@ -553,23 +432,16 @@ img{display:block;max-width:100%}
 .pay-tab{padding:14px 8px;background:transparent;border:1px solid transparent;border-radius:10px;color:var(--text-mid);font-size:12px;font-weight:600;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;transition:all .25s}
 .pay-tab svg{width:22px;height:22px}
 .pay-tab:hover{color:#fff}
-.pay-tab.active{background:linear-gradient(180deg,rgba(255,87,34,.18),rgba(255,87,34,.08));border-color:rgba(255,87,34,.4);color:#fff;box-shadow:0 4px 14px -4px rgba(255,87,34,.3)}
-
+.pay-tab.active{background:linear-gradient(180deg,rgba(232,89,60,.18),rgba(232,89,60,.08));border-color:rgba(232,89,60,.4);color:#fff;box-shadow:0 4px 14px -4px rgba(232,89,60,.3)}
 .pay-content{display:none}
 .pay-content.active{display:block;animation:fadeIn .3s cubic-bezier(.2,.8,.2,1)}
-
-/* Card brand icon */
 .card-input-wrap{position:relative}
 .card-brand{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:32px;height:20px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#999;letter-spacing:.5px}
-
-/* Installments */
 .installments{display:grid;grid-template-columns:1fr;gap:6px;max-height:160px;overflow-y:auto;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:6px}
 .installment{padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid transparent;border-radius:8px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--text-mid);transition:all .2s}
-.installment:hover{background:rgba(255,87,34,.08);color:#fff}
-.installment.selected{background:rgba(255,87,34,.12);border-color:var(--accent);color:#fff}
+.installment:hover{background:rgba(232,89,60,.08);color:#fff}
+.installment.selected{background:rgba(232,89,60,.12);border-color:var(--accent);color:#fff}
 .installment strong{color:#fff;font-weight:600}
-
-/* PIX content */
 .pix-box{text-align:center;padding:24px;background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.12);border-radius:14px}
 .pix-qr{width:160px;height:160px;background:#fff;border-radius:12px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;padding:12px;position:relative}
 .pix-qr svg{width:100%;height:100%}
@@ -577,34 +449,25 @@ img{display:block;max-width:100%}
 .pix-info strong{color:#fff;font-size:15px;display:block;margin-bottom:4px}
 .pix-code{display:flex;gap:8px;align-items:center;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:10px 14px;font-family:'Courier New',monospace;font-size:11px;color:#bbb;word-break:break-all}
 .pix-copy{flex-shrink:0;padding:6px 12px;background:var(--accent);color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:.5px}
-
-/* Boleto content */
 .boleto-box{padding:24px;background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.12);border-radius:14px;text-align:center}
 .boleto-box svg{width:48px;height:48px;color:var(--accent-2);margin-bottom:14px}
 .boleto-box h4{font-family:var(--font-body);font-size:16px;color:#fff;font-weight:700;margin-bottom:6px}
 .boleto-box p{font-size:13px;color:var(--text-mid);line-height:1.6;max-width:380px;margin:0 auto 12px}
 .boleto-info{display:flex;justify-content:center;gap:24px;font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px}
-
-/* Order summary */
 .summary{background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:18px;margin-bottom:18px}
 .summary-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--text-mid);padding:6px 0}
 .summary-row strong{color:#fff;font-weight:600}
 .summary-divider{height:1px;background:rgba(255,255,255,.08);margin:8px 0}
 .summary-total{font-size:15px;color:#fff;font-weight:700;padding-top:6px}
 .summary-total .summary-price{font-family:var(--font-display);font-size:26px;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.5px}
-
-/* Modal footer */
 .modal-footer{padding:20px 36px 28px;background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:12px;position:relative;z-index:2}
 .modal-footer .cta{flex:1;display:flex}
 .btn-back{padding:14px 22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;color:var(--text-mid);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer;transition:all .25s;display:flex;align-items:center;gap:6px}
 .btn-back:hover{background:rgba(255,255,255,.08);color:#fff}
-
 .modal-trust{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:14px 36px 0;font-size:11px;color:var(--text-dim)}
 .modal-trust div{display:flex;align-items:center;gap:5px}
 .modal-trust svg{width:13px;height:13px;color:var(--green)}
-
-/* Share box */
-.share-box{margin-top:18px;padding:20px;background:linear-gradient(135deg,rgba(255,87,34,.08),rgba(255,182,39,.04));border:1px solid rgba(255,87,34,.25);border-radius:14px;text-align:center}
+.share-box{margin-top:18px;padding:20px;background:linear-gradient(135deg,rgba(232,89,60,.08),rgba(255,182,39,.04));border:1px solid rgba(232,89,60,.25);border-radius:14px;text-align:center}
 .share-title{font-family:var(--font-body);font-weight:700;font-size:14px;color:#fff;margin-bottom:4px}
 .share-text{font-size:12px;color:var(--text-mid);line-height:1.55;margin-bottom:14px}
 .share-text strong{color:var(--accent-2)}
@@ -615,9 +478,7 @@ img{display:block;max-width:100%}
 .share-wpp{background:linear-gradient(180deg,#2EE070 0%,#1EA952 100%);color:#fff;border-color:rgba(255,255,255,.18)}
 .share-wpp:hover{transform:translateY(-1px);box-shadow:0 8px 22px -8px rgba(37,211,102,.5)}
 .share-copy{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#fff}
-.share-copy:hover{background:rgba(255,87,34,.15);border-color:var(--accent)}
-
-/* Success step */
+.share-copy:hover{background:rgba(232,89,60,.15);border-color:var(--accent)}
 .success{text-align:center;padding:24px 0}
 .success-icon{width:84px;height:84px;border-radius:50%;background:linear-gradient(180deg,rgba(37,211,102,.2),rgba(37,211,102,.05));border:2px solid var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;animation:successPop .5s cubic-bezier(.34,1.56,.64,1)}
 .success-icon svg{width:40px;height:40px;color:var(--green)}
@@ -627,35 +488,30 @@ img{display:block;max-width:100%}
 
 @media(max-width:760px){
   .modal-backdrop{padding:0;align-items:flex-end}
-  .modal{max-width:100%;max-height:96vh;border-radius:20px 20px 0 0;border:none;border-top:1px solid rgba(255,87,34,.3)}
+  .modal{max-width:100%;max-height:96vh;border-radius:20px 20px 0 0;border:none;border-top:1px solid rgba(232,89,60,.3)}
   .modal::before{border-radius:20px 20px 0 0}
   .modal-header{padding:26px 22px 0}
   .modal-title{font-size:22px}
-  .modal-subtitle{font-size:12px}
   .stepper{padding:18px 22px 4px;gap:8px}
   .step{font-size:0;gap:0}
   .step-line{width:24px}
   .modal-body{padding:18px 22px 24px}
-  .field-row,.field-row-3{grid-template-columns:1fr;gap:0}
+  .field-row{grid-template-columns:1fr;gap:0}
   .modal-footer{padding:16px 22px 22px;flex-direction:column-reverse}
   .modal-footer .cta,.modal-footer .btn-back{width:100%;justify-content:center}
   .pay-tab{font-size:11px;padding:12px 4px}
-  .pay-tab svg{width:20px;height:20px}
   .modal-trust{padding:12px 22px 0;gap:12px;font-size:10px}
-  .summary{padding:14px}
 }
 
-/* === MINI STICKY PRICE BANNER === */
-.mini-price{position:fixed;left:50%;bottom:-100px;transform:translateX(-50%);z-index:97;display:flex;align-items:center;gap:14px;padding:10px 12px 10px 18px;background:linear-gradient(180deg,rgba(22,22,22,.97),rgba(14,14,14,.97));border:1px solid rgba(255,87,34,.4);border-radius:100px;box-shadow:0 20px 60px -20px rgba(0,0,0,.8),0 0 40px -10px rgba(255,87,34,.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:bottom .5s cubic-bezier(.2,.8,.2,1);max-width:calc(100% - 32px)}
+/* === MINI STICKY PRICE BANNER (desktop) === */
+.mini-price{position:fixed;left:50%;bottom:-100px;transform:translateX(-50%);z-index:97;display:flex;align-items:center;gap:14px;padding:10px 12px 10px 18px;background:linear-gradient(180deg,rgba(29,29,31,.97),rgba(14,14,14,.97));border:1px solid rgba(232,89,60,.4);border-radius:100px;box-shadow:0 20px 60px -20px rgba(0,0,0,.8),0 0 40px -10px rgba(232,89,60,.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:bottom .5s cubic-bezier(.2,.8,.2,1);max-width:calc(100% - 32px)}
 .mini-price.show{bottom:24px}
 .mini-price-text{font-size:13px;color:#fff;line-height:1.2;white-space:nowrap}
 .mini-price-text strong{font-weight:700;color:var(--accent-2);margin-right:4px}
 .mini-price-text span{color:var(--text-dim);font-size:11px}
-.mini-price-cta{padding:11px 20px;background:linear-gradient(180deg,#FF6A35 0%,#E84A1A 100%);color:#fff;border-radius:100px;font-size:12px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:6px;border:1px solid rgba(255,182,39,.4);box-shadow:0 6px 16px -6px rgba(255,87,34,.6);white-space:nowrap;transition:transform .25s}
+.mini-price-cta{padding:11px 20px;background:linear-gradient(180deg,#E8593C 0%,#D04A30 100%);color:#fff;border-radius:100px;font-size:12px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:6px;border:1px solid rgba(255,182,39,.4);box-shadow:0 6px 16px -6px rgba(232,89,60,.6);white-space:nowrap;transition:transform .25s}
 .mini-price-cta:hover{transform:translateY(-1px)}
-@media(max-width:760px){
-  .mini-price{display:none}
-}
+@media(max-width:760px){.mini-price{display:none}}
 
 /* === FAB WHATSAPP === */
 .fab-wpp{position:fixed;bottom:84px;right:18px;width:54px;height:54px;border-radius:50%;background:linear-gradient(180deg,#2EE070 0%,#1EA952 100%);border:1px solid rgba(255,255,255,.18);display:none;align-items:center;justify-content:center;color:#fff;text-decoration:none;box-shadow:0 14px 36px -8px rgba(37,211,102,.6),0 4px 14px -4px rgba(0,0,0,.5);z-index:98;animation:fabPulse 2.4s ease-in-out infinite}
@@ -664,20 +520,20 @@ img{display:block;max-width:100%}
 @media(max-width:760px){.fab-wpp{display:flex}}
 
 /* === STICKY CTA (mobile) === */
-.sticky-cta{position:fixed;bottom:0;left:0;right:0;padding:12px 16px;background:rgba(10,10,10,.95);backdrop-filter:blur(16px);border-top:1px solid var(--border);z-index:99;display:none}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;padding:12px 16px;background:rgba(29,29,31,.95);backdrop-filter:blur(16px);border-top:1px solid var(--border);z-index:99;display:none}
 .sticky-cta .cta{padding:14px;font-size:15px;max-width:100%}
-/* ============================================
-   MOBILE — tudo centralizado, compacto, alinhado
-   ============================================ */
+
+/* === FOOTER === */
+.footer{text-align:center;padding:36px 0;border-top:1px solid var(--border);background:rgba(0,0,0,.3)}
+.footer p{font-size:11px;color:var(--text-dim)}
+
+/* === MOBILE OVERRIDES === */
 @media(max-width:760px){
   html,body{overflow-x:hidden;max-width:100vw}
   .w{padding:0 16px;max-width:100%}
   .nav{padding:10px 14px}
-  .nav-logo img{height:30px}
+  .nav-logo{font-size:18px}
   .nav-live{padding:4px 10px;font-size:9px;letter-spacing:.6px}
-  .nav-live::before{width:5px;height:5px}
-
-  /* Hero */
   .hero{padding:70px 0 28px}
   .hero-eyebrow{font-size:9px;padding:5px 12px;margin-bottom:10px;letter-spacing:1px}
   .hero-title{font-size:38px;letter-spacing:.5px;margin-bottom:4px;line-height:.98}
@@ -688,186 +544,54 @@ img{display:block;max-width:100%}
   .hero-card-left{text-align:center}
   .hero-badge{font-size:9px;padding:4px 10px;margin-bottom:8px}
   .hero-h{font-size:17px;line-height:1.15;margin-bottom:8px;text-align:center}
-  .hero-h .mark{padding:0 8px;font-size:.95em}
   .hero-p{font-size:12px;line-height:1.55;text-align:center;margin:0 auto}
   .hero-metrics{gap:6px}
   .hero-metric{padding:10px 4px;border-radius:8px}
-  .hero-metric-num{font-size:16px;letter-spacing:.4px}
-  .hero-metric-label{font-size:8px;letter-spacing:.5px;margin-top:2px;line-height:1.2}
-
-  /* CTA */
-  .cta{padding:18px 22px;font-size:14px;letter-spacing:.1px;display:flex;width:100%;max-width:100%;border-radius:14px;gap:10px;min-height:56px}
-  .cta-arrow{width:22px;height:22px}
-  .cta-arrow svg{width:11px;height:11px}
-  .cta-wpp{font-size:13px;padding:17px 20px;min-height:56px}
-  .cta-strip{padding:28px 0}
-  .cta-note{font-size:11px;margin-top:10px;padding:0 12px;line-height:1.5}
-
-  /* Countdown */
-  .countdown{margin:20px 0 0}
-  .cd-label{font-size:10px;letter-spacing:1.2px;margin-bottom:8px}
-  .cd-row{gap:6px}
-  .cd-block{padding:9px 14px;min-width:62px;border-radius:8px}
-  .cd-num{font-size:26px}
-  .cd-lbl{font-size:7px;letter-spacing:.8px}
-  .cd-note{font-size:10px;margin-top:8px;padding:0 8px;line-height:1.5}
-
-  /* Sections */
+  .hero-metric-num{font-size:16px}
+  .hero-metric-label{font-size:8px}
+  .cta{padding:18px 22px;font-size:14px;display:flex;width:100%;max-width:100%;border-radius:14px;gap:10px;min-height:56px}
+  .cta-note{font-size:10px;gap:5px}
   .sec{padding:36px 0}
-  .sec-tag{font-size:9px;letter-spacing:1.6px;margin-bottom:10px}
-  .sec-tag::before{width:16px}
-  .sec-h{font-size:24px;line-height:1.08;margin-bottom:10px;letter-spacing:.4px}
-  .sec-h br{display:none}
-  .sec-h .mark{padding:0 10px;font-size:.95em}
-  .sec-p{font-size:13px;line-height:1.65;margin-bottom:22px}
-
-  /* Problem */
-  .problem-wrap{gap:20px}
-  .problem-callout{padding:18px 16px;margin-bottom:16px}
-  .problem-callout p{font-size:13px;line-height:1.6}
-  .problem-item{padding:13px 14px;font-size:12px;gap:10px;line-height:1.55}
-  .problem-item strong{font-size:13px}
-  .problem-x{width:20px;height:20px;font-size:13px}
-  .problem-img{position:static;aspect-ratio:16/9;max-height:200px}
-
-  /* Cases */
-  .cases-grid{grid-template-columns:1fr;gap:14px}
-  .case-card{border-radius:12px}
-  .case-img{height:180px}
-  .case-body{padding:18px 16px}
-  .case-author{gap:10px;margin-bottom:12px}
-  .case-avatar{width:38px;height:38px;font-size:12px}
-  .case-name{font-size:13px}
-  .case-info{font-size:10px}
-  .case-text{font-size:12px;line-height:1.6;margin-bottom:12px}
-  .case-band{font-size:10px;margin-bottom:10px}
-  .case-result{font-size:11px;padding:6px 12px}
-
-  /* Offer */
-  .offer-wrap{gap:18px}
-  .offer-img{position:static;aspect-ratio:16/10;max-height:220px}
-  .offer-item{padding:14px;gap:12px;border-radius:10px}
-  .offer-item strong{font-size:13px;line-height:1.35}
-  .offer-item span{font-size:11px;line-height:1.55;margin-top:3px}
-  .offer-check{width:22px;height:22px;font-size:11px}
-  .offer-tag{font-size:8px;padding:3px 6px;margin-left:6px}
-
-  /* Authority */
-  .auth-grid{gap:10px}
-  .auth-card{padding:20px 10px;border-radius:10px}
-  .auth-num{font-size:26px}
-  .auth-label{font-size:9px;letter-spacing:.6px}
-  .auth-banner{height:140px;margin-top:22px;border-radius:12px}
-  .auth-banner-text{left:16px;max-width:90%}
-  .auth-banner-text h3{font-size:17px;line-height:1.05}
-  .auth-banner-text p{font-size:10px;line-height:1.4}
-
-  /* Price */
-  .price-section .sec-h{font-size:22px;padding:0 10px}
-  .price-card{margin:0;border-radius:12px}
-  .price-banner{padding:11px 12px;font-size:10px;letter-spacing:.8px;line-height:1.4}
-  .price-body{flex-direction:column}
-  .price-right{display:none}
-  .price-left{flex:1;width:100%;padding:24px 20px;text-align:center}
-  .price-from{font-size:12px}
-  .price-main{font-size:42px;letter-spacing:1px;margin:4px 0}
-  .price-inst{font-size:12px;margin-bottom:16px}
-  .price-checks{margin-bottom:18px;text-align:left;max-width:280px;margin-left:auto;margin-right:auto}
-  .price-check{font-size:12px;margin-bottom:8px}
-  .price-check::before{width:16px;height:16px;font-size:10px}
-  .price-cta{font-size:13px;padding:14px 20px}
-  .price-guarantee{padding:14px 20px;font-size:11px;line-height:1.5;gap:8px}
-  .price-or{padding:8px;font-size:10px}
-  .price-or::before,.price-or::after{width:22%}
-  .price-wpp{padding:0 20px 20px}
-  .price-wpp .cta-wpp{padding:13px 18px;font-size:12px}
-  .trust-row{gap:12px;padding:14px 12px}
-  .trust-item{font-size:10px}
-
-  /* FAQ */
-  .faq-layout{flex-direction:column;gap:20px;align-items:center}
-  .faq-person{width:100%;display:flex;align-items:center;gap:14px;text-align:left;justify-content:flex-start}
-  .faq-photo{width:80px;height:96px;flex-shrink:0;margin:0;border-radius:10px}
-  .faq-name{font-size:20px;line-height:1}
-  .faq-role{font-size:9px;margin-bottom:8px;letter-spacing:.6px}
-  .faq-wpp{font-size:11px;padding:7px 12px}
-  .faq-list{width:100%}
-  .faq-item{border-radius:10px}
-  .faq-q{padding:13px 14px;font-size:12px;gap:10px;line-height:1.4}
-  .faq-plus{width:22px;height:22px;font-size:16px}
-  .faq-a-in{padding:0 14px 13px;font-size:11px;line-height:1.65}
-
-  /* Final CTA */
-  .final-cta{padding:48px 14px;margin:24px 0}
-  .final-cta .sec-h{font-size:22px}
-  .final-sub{font-size:12px;line-height:1.6;margin-bottom:22px;padding:0 4px}
-  .final-sub strong{display:inline}
-
-  /* Footer */
-  .footer{padding:22px 0 92px}
-  .footer p{font-size:10px}
-
-  /* Sticky CTA */
-  .sticky-cta{display:block;padding:10px 14px}
-  .sticky-cta .cta{width:100%;font-size:12px;padding:13px 16px;letter-spacing:.8px}
-
-  /* Promo bar */
-  .promo-bar{padding:9px 10px;gap:6px}
-  .promo-bar-icon{font-size:16px}
-  .promo-bar-text{font-size:10px;line-height:1.35;flex:1;min-width:0;text-align:left}
-  .promo-bar-text strong{font-size:12px;margin:0 2px}
-  .promo-bar-cta{padding:6px 10px;font-size:9px;letter-spacing:.3px}
-  .promo-bar-close{width:24px;height:24px;font-size:12px}
-}
-
-/* Tablets/phones pequenos */
-@media(max-width:380px){
-  .hero-title{font-size:32px}
-  .hero-h{font-size:15px}
-  .sec-h{font-size:21px}
-  .price-main{font-size:36px}
-  .cd-block{padding:8px 11px;min-width:56px}
-  .cd-num{font-size:22px}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-  .reveal{opacity:1!important;transform:none!important}
+  .sec-tag{font-size:10px;letter-spacing:1.6px;padding:5px 12px 5px 10px}
+  .sec-h{font-size:clamp(22px,5.5vw,32px);margin-bottom:10px}
+  .sec-p{font-size:13px;line-height:1.65;padding:0 4px}
+  .sec-lead{font-size:11px;letter-spacing:1.4px;margin-bottom:12px}
+  .pull-line{font-size:14px;margin-top:12px;padding:0 12px}
+  .problem-img{position:static;aspect-ratio:16/10;max-height:240px}
+  .transition{padding:28px 16px}
+  .transition p{font-size:16px}
+  .modules-grid{grid-template-columns:1fr;gap:12px;margin-top:16px}
+  .module-card{padding:22px 18px}
+  .module-num{font-size:28px}
+  .module-title{font-size:15px}
+  .speaker-wrap{gap:16px}
+  .speaker-photo{position:static;aspect-ratio:16/10;max-height:260px}
+  .speaker-name{font-size:28px}
+  .sticky-cta{display:block}
+  .alert-box{margin:24px 16px}
 }
 </style>
 </head>
 <body>
 
-<!-- BG NEON LINES -->
+<!-- BG layers -->
+<div class="blob blob-1" aria-hidden="true"></div>
+<div class="blob blob-2" aria-hidden="true"></div>
+<div class="blob blob-3" aria-hidden="true"></div>
+<div class="blob blob-4" aria-hidden="true"></div>
+<div class="blob blob-5" aria-hidden="true"></div>
 <div class="bg-lines" aria-hidden="true">
-  <span class="bg-line bg-line-1"></span>
-  <span class="bg-line amber bg-line-2 thin"></span>
-  <span class="bg-line bg-line-3"></span>
-  <span class="bg-line amber bg-line-4 thin"></span>
-  <span class="bg-line bg-line-5"></span>
-</div>
-
-<!-- NEON BLOB LIGHTS -->
-<div class="bg-lines" aria-hidden="true" style="z-index:0">
-  <span class="blob blob-1"></span>
-  <span class="blob blob-2"></span>
-  <span class="blob blob-3"></span>
-  <span class="blob blob-4"></span>
-  <span class="blob blob-5"></span>
-</div>
-
-<!-- PROMO BAR -->
-<div class="promo-bar" id="promoBar" role="alert">
-  <span class="promo-bar-icon">⛽</span>
-  <span class="promo-bar-text">Você ainda pode garantir sua vaga por <strong>R$ 497</strong> — economia de <strong>R$ 1.000</strong> só hoje</span>
-  <a href="#comprar" class="promo-bar-cta">QUERO AGORA →</a>
+  <div class="bg-line bg-line-1"></div>
+  <div class="bg-line bg-line-2 amber"></div>
+  <div class="bg-line bg-line-3 thin"></div>
+  <div class="bg-line bg-line-4"></div>
+  <div class="bg-line bg-line-5 amber thin"></div>
 </div>
 
 <!-- NAV -->
 <nav class="nav">
-  <a class="nav-logo" href="#" aria-label="ClubPetro">
-    <img src="https://i.imgur.com/WkKfAI4.jpeg" alt="ClubPetro" decoding="async">
-  </a>
-  <div class="nav-live">Ao vivo</div>
+  <div class="nav-logo">CLUB<span>PETRO</span></div>
+  <div class="nav-live">Vagas limitadas</div>
 </nav>
 
 <div class="w">
@@ -875,37 +599,37 @@ img{display:block;max-width:100%}
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-dots" aria-hidden="true"></div>
-  <div class="hero-eyebrow">EVENTO SECRETO · <span>SESSÃO 03 · AO VIVO</span></div>
-  <h1 class="hero-title reveal">A OFERTA <span class="mark">REVELADA</span></h1>
-  <p class="hero-subtitle reveal reveal-d1">A condição que reservamos apenas para quem assistiu a live do Evento Secreto</p>
+  <div class="hero-eyebrow">CURSO ONLINE · <span>MARKETING PARA POSTOS</span></div>
+  <h1 class="hero-title reveal">SEU POSTO ESTÁ <span class="mark">INVISÍVEL</span></h1>
+  <p class="hero-subtitle reveal reveal-d1">Aprenda o passo a passo para transformar seu posto em uma referência na sua cidade usando marketing digital — mesmo sem nunca ter postado um Reels na vida</p>
 
   <div class="hero-card reveal reveal-d2">
     <img class="hero-card-img" src="https://images.unsplash.com/photo-1545459720-aac8509eb02c?w=900&q=70&auto=format&fit=crop" alt="Posto de combustível à noite" fetchpriority="high" decoding="async" width="900" height="600">
     <div class="hero-card-grad"></div>
     <div class="hero-card-inner">
       <div class="hero-card-left">
-        <div class="hero-badge">Ativo agora</div>
-        <h2 class="hero-h">Seu posto pode estar perdendo <em>até R$ 8.000/mês</em> — e você nem sabe</h2>
-        <p class="hero-p">Existe dinheiro escapando no seu caixa todos os dias. Agora é a hora de virar o jogo — com especialista, ferramentas prontas e um diagnóstico sob medida.</p>
+        <div class="hero-badge">Evento Secreto</div>
+        <h2 class="hero-h">Postos que fazem marketing digital faturam <em>até 40% mais</em> — e seus clientes voltam</h2>
+        <p class="hero-p">Enquanto seu concorrente viraliza no Instagram e lota a pista, você fica esperando o cliente passar na porta. Esse curso muda isso.</p>
       </div>
       <div class="hero-metrics">
         <div class="hero-metric"><div class="hero-metric-num">+380</div><div class="hero-metric-label">Postos atendidos</div></div>
         <div class="hero-metric"><div class="hero-metric-num">97%</div><div class="hero-metric-label">Satisfação</div></div>
-        <div class="hero-metric"><div class="hero-metric-num">R$ 4,2k</div><div class="hero-metric-label">Economia média</div></div>
+        <div class="hero-metric"><div class="hero-metric-num">+2M</div><div class="hero-metric-label">Views gerados</div></div>
       </div>
     </div>
   </div>
 
-  <a href="#comprar" class="cta">Quero garantir minha vaga<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="#comprar" class="cta">Quero aprender marketing pro meu posto<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
 
   <div class="countdown">
-    <div class="cd-label">Condição exclusiva expira em</div>
+    <div class="cd-label">Valor promocional expira em</div>
     <div class="cd-row">
       <div class="cd-block"><div class="cd-num" id="h">23</div><div class="cd-lbl">Horas</div></div>
       <div class="cd-block"><div class="cd-num" id="m">40</div><div class="cd-lbl">Min</div></div>
       <div class="cd-block"><div class="cd-num" id="s">14</div><div class="cd-lbl">Seg</div></div>
     </div>
-    <p class="cd-note">Oferta exclusiva para quem participou da live. Expira quando o timer zerar.</p>
+    <p class="cd-note">Condição especial para quem participou do Evento Secreto.</p>
   </div>
 
   <div class="social-proof reveal">
@@ -916,31 +640,34 @@ img{display:block;max-width:100%}
 
 <!-- TRANSIÇÃO 1 -->
 <div class="transition reveal">
-  <p>Você acabou de assistir uma live de quase duas horas. E mesmo depois de tudo que ouviu, ainda existe aquela voz na sua cabeça dizendo <em>"é, mas será que isso funciona pro meu posto?"</em>. Eu entendo. Antes de te mostrar a oferta, deixa eu te explicar exatamente <strong>por que ela existe</strong> — e por que ela é diferente de qualquer outra coisa que você já viu.</p>
+  <p>Seu posto pode ter o melhor combustível, o melhor preço, os melhores frentistas — mas se <em>ninguém sabe que você existe</em>, nada disso importa. O marketing digital é o que separa postos que crescem de postos que sobrevivem. E <strong>você não precisa ser especialista em redes sociais</strong> pra fazer isso funcionar.</p>
 </div>
 
 <div class="sec-divider"></div>
 
-<!-- ===== DOR ===== -->
+<!-- ===== BLOCO 1 — DOR + COMO O CURSO RESOLVE ===== -->
 <section class="sec">
   <div class="sec-head">
     <span class="sec-lead">Capítulo 01 · O diagnóstico</span>
     <div class="sec-tag">O problema que você não vê</div>
-    <h2 class="sec-h reveal">A maioria dos postos perde dinheiro todo mês — e o dono <em>acha que está tudo bem</em></h2>
-    <p class="sec-p">Nos últimos 8 anos, atendemos mais de 380 postos em todos os estados do Brasil. E uma coisa começou a se repetir tanto que virou padrão: a maior parte dos donos com quem a gente conversa pela primeira vez está convencida de que sua operação está "funcionando bem". Aí a gente entra com o diagnóstico e encontra coisas que ninguém estava enxergando.</p>
-    <span class="pull-line">Não é que o dono seja desatento — é que existem ângulos da operação que só quem olha de fora consegue ver.</span>
+    <h2 class="sec-h reveal">Seu concorrente viraliza. Você fica <em>esperando o cliente aparecer</em></h2>
+    <p class="sec-p">A maioria dos donos de posto acha que marketing é coisa de empresa grande. Enquanto isso, postos do mesmo tamanho estão lotando a pista com Reels simples, stories com promoção e conteúdo que o próprio frentista grava no celular. A diferença? Eles aprenderam o método certo.</p>
+    <span class="pull-line">Não é sobre virar influencer. É sobre deixar de ser invisível na sua própria cidade.</span>
   </div>
 
   <div class="problem-wrap">
     <div>
       <div class="problem-callout">
-        <p>Nosso diagnóstico mostra que postos perdem em média <strong>R$ 3.000 a R$ 8.000 por mês</strong> em falhas operacionais que passam despercebidas. Nos horários de pico, na fidelização, na gestão de pista. Todo mês, sem sentir.</p>
+        <p>Postos que não fazem marketing digital perdem em média <strong>30-40% de clientes potenciais</strong> para concorrentes que aparecem no feed do Instagram. O cliente decide onde abastecer pelo celular — e se ele não te encontra, vai no vizinho.</p>
       </div>
       <div class="problem-list">
-        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Frentistas sem meta de abastecimento</strong> — bombas paradas nos horários de pico enquanto o concorrente enche. Você paga salário fixo e perde receita variável.</div></div>
-        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Gestão no feeling, sem indicadores</strong> — sem saber o ticket médio por bomba, por turno ou por frentista, você toma decisões no escuro. Isso custa milhares por mês.</div></div>
-        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Cliente abastece uma vez e não volta</strong> — sem programa de fidelidade ativo, você perde o cliente logo depois da primeira visita. A concorrência fideliza e você fica na guerra de preço.</div></div>
-        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Margem derretendo com app de desconto</strong> — você cede centavos no litro pra não perder o cliente, mas nunca sabe se esse desconto está pagando ou custando dinheiro real.</div></div>
+        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Nenhuma presença digital</strong> — seu posto não tem Instagram ativo, não aparece no Google Maps com avaliações, e o cliente não te encontra quando pesquisa "posto perto de mim".</div></div>
+        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Não sabe o que postar</strong> — você até criou uma conta, mas parou no terceiro post porque não tinha ideia do que publicar. Resultado: perfil abandonado com 47 seguidores.</div></div>
+        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Equipe não grava conteúdo</strong> — seus frentistas poderiam ser os protagonistas do marketing do posto, mas ninguém sabe como preparar, gravar ou editar um vídeo que funcione.</div></div>
+        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Concorrente aparece, você não</strong> — o posto da esquina posta Reels toda semana, tem promoção no stories e o cliente comenta "vi no Instagram". Você perde cliente sem nem saber por quê.</div></div>
+      </div>
+      <div class="solution-callout">
+        <p><strong>Este curso resolve exatamente isso.</strong> Você vai aprender a criar conteúdo que viraliza, preparar sua equipe para gravar, identificar tendências do setor e automatizar sua presença digital — tudo com exemplos reais de postos que já fizeram.</p>
       </div>
     </div>
     <div class="problem-img">
@@ -950,246 +677,196 @@ img{display:block;max-width:100%}
 </section>
 
 <div class="cta-strip">
-  <a href="#comprar" class="cta">Resolver isso no meu posto<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-  <p class="cta-note">Sem compromisso de longo prazo · Garantia incondicional de 7 dias</p>
-</div>
-
-<!-- TRANSIÇÃO 2 — pulled quote -->
-<div class="transition reveal">
-  <div class="transition-quote">
-    Quando a gente mostrou pro Carlos onde estavam os R$ 4.800 escapando todo mês, ele ficou mudo por uns 30 segundos. Aí olhou pra mim e falou: <em>"cara, eu vendi combustível a vida inteira e nunca vi isso desse jeito".</em>
-    <span class="transition-attr">— Diário de campo · Uberlândia, agosto/2024</span>
-  </div>
+  <a href="#comprar" class="cta">Quero parar de ser invisível<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <p class="cta-note">Método testado em +380 postos · Garantia de 7 dias</p>
 </div>
 
 <div class="sec-divider"></div>
 
-<!-- ===== CASES ===== -->
+<!-- ===== BLOCO 2 — CONTEÚDO DO CURSO (6 temas) ===== -->
 <section class="sec">
   <div class="sec-head">
-    <span class="sec-lead">Capítulo 02 · A prova</span>
-    <div class="sec-tag">Resultados reais</div>
-    <h2 class="sec-h reveal">Seis histórias que começaram <em>exatamente como a sua</em></h2>
-    <p class="sec-p">Não vou te pedir pra confiar em mim só porque eu falei. Vou te mostrar seis donos de posto — bandeira branca, Shell, Petrobras, Ipiranga, Ale — que enfrentaram o mesmo dilema que você está enfrentando agora. Os nomes são reais. As cidades são reais. Os números você confere com eles se quiser.</p>
-    <span class="pull-line">A diferença entre eles e você não é talento. É só que eles agiram primeiro.</span>
+    <span class="sec-lead">Capítulo 02 · O que você vai aprender</span>
+    <div class="sec-tag">Conteúdo do curso</div>
+    <h2 class="sec-h reveal">6 módulos que transformam seu posto em <em>referência digital</em></h2>
+    <p class="sec-p">Cada módulo foi desenhado pra você aplicar no dia seguinte. Sem teoria vazia — tudo baseado em postos reais que saíram do zero e hoje viralizam toda semana.</p>
   </div>
 
-  <div class="cases-wrap">
-  <div class="cases-grid" id="casesGrid">
-    <div class="case-card reveal">
-      <div class="case-img">
-        <img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=500&q=70&auto=format&fit=crop" alt="Posto Carlos" loading="lazy" decoding="async" width="500" height="280">
-        <span class="case-real-tag"><span>● Caso real</span></span>
-      </div>
-      <div class="case-body">
-        <div class="case-author">
-          <div class="case-avatar">CR</div>
-          <div><div class="case-name">Carlos Ribeiro</div><div class="case-info">Uberlândia-MG · 2 postos</div></div>
-        </div>
-        <p class="case-text">"Achei que minha operação estava redonda. O consultor ClubPetro fez o diagnóstico e achou R$ 4.800 saindo todo mês só em falhas de pista e falta de meta por frentistas. Em duas semanas já ajustei e senti no caixa."</p>
-        <div class="case-band">Bandeira branca · 2 turnos</div>
-        <div class="case-result">↑ +R$ 4.800/mês</div>
-      </div>
+  <div class="modules-grid">
+    <div class="module-card reveal">
+      <div class="module-num">01</div>
+      <div class="module-title">Como preparar sua equipe para gravar conteúdo</div>
+      <div class="module-desc">Seu frentista é o melhor ator do seu marketing. Aprenda a treinar a equipe, criar roteiros simples e gravar vídeos de impacto usando só o celular — sem equipamento caro.</div>
     </div>
-
-    <div class="case-card reveal reveal-d1">
-      <div class="case-img">
-        <img src="https://images.unsplash.com/photo-1607893407985-5b262debe667?w=500&q=70&auto=format&fit=crop" alt="Bomba de combustível" loading="lazy" decoding="async" width="500" height="280">
-        <span class="case-real-tag"><span>● Caso real</span></span>
-      </div>
-      <div class="case-body">
-        <div class="case-author">
-          <div class="case-avatar">RM</div>
-          <div><div class="case-name">Rodrigo Mendes</div><div class="case-info">Goiânia-GO · 1 posto Shell</div></div>
-        </div>
-        <p class="case-text">"Implantamos o programa de fidelidade e calibramos as metas por bomba. Em 30 dias o ticket médio subiu 22% — os frentistas passaram a oferecer troca de óleo e aditivo de forma sistemática. Simples assim."</p>
-        <div class="case-band">Shell · 1 posto · Bota de caminhão</div>
-        <div class="case-result">↑ +22% ticket médio</div>
-      </div>
+    <div class="module-card reveal reveal-d1">
+      <div class="module-num">02</div>
+      <div class="module-title">Como identificar conteúdos tendência no setor</div>
+      <div class="module-desc">Descubra o que está viralizando no nicho de postos, como adaptar trends do TikTok/Reels pro seu contexto e criar um calendário de postagens que funciona.</div>
     </div>
-
-    <div class="case-card reveal reveal-d2">
-      <div class="case-img">
-        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=500&q=70&auto=format&fit=crop" alt="Abastecimento posto" loading="lazy" decoding="async" width="500" height="280">
-        <span class="case-real-tag"><span>● Caso real</span></span>
-      </div>
-      <div class="case-body">
-        <div class="case-author">
-          <div class="case-avatar">FS</div>
-          <div><div class="case-name">Fernanda Santos</div><div class="case-info">Ribeirão Preto-SP · 3 postos</div></div>
-        </div>
-        <p class="case-text">"Comecei com um posto piloto. Os números apareceram rápido — +18% no faturamento trimestral. Repliquei nos outros dois. Hoje uso o painel do ClubPetro pra acompanhar os três de um lugar só."</p>
-        <div class="case-band">Ipiranga · Rede de 3 unidades</div>
-        <div class="case-result">↑ +18% faturamento</div>
-      </div>
+    <div class="module-card reveal reveal-d2">
+      <div class="module-num">03</div>
+      <div class="module-title">Como automatizar sua geração de conteúdo</div>
+      <div class="module-desc">Ferramentas gratuitas e fluxos para criar, editar e agendar conteúdo em lote. Produza 1 mês de posts em uma tarde — e nunca mais fique sem o que postar.</div>
     </div>
-
-    <div class="case-card reveal">
-      <div class="case-img">
-        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=500&q=70&auto=format&fit=crop" alt="Posto Marcos" loading="lazy" decoding="async" width="500" height="280">
-        <span class="case-real-tag"><span>● Caso real</span></span>
-      </div>
-      <div class="case-body">
-        <div class="case-author">
-          <div class="case-avatar">MA</div>
-          <div><div class="case-name">Marcos Almeida</div><div class="case-info">Curitiba-PR · 1 posto BR</div></div>
-        </div>
-        <p class="case-text">"Em 45 dias depois de aplicar, dobrei o número de clientes recorrentes. O programa de fidelidade fez o cliente voltar — antes ele abastecia comigo uma vez e sumia. Hoje conheço o nome de quase todo cliente novo."</p>
-        <div class="case-band">Petrobras · 1 posto · Centro</div>
-        <div class="case-result">↑ 2x clientes recorrentes</div>
-      </div>
+    <div class="module-card reveal">
+      <div class="module-num">04</div>
+      <div class="module-title">Como transformar seguidores em clientes na pista</div>
+      <div class="module-desc">Não adianta viralizar se o cliente não aparece no posto. Aprenda promoções que funcionam, CTAs que convertem e como medir o retorno real do seu conteúdo.</div>
     </div>
-
-    <div class="case-card reveal reveal-d1">
-      <div class="case-img">
-        <img src="https://images.unsplash.com/photo-1597007030739-6d2e7172ee6f?w=500&q=70&auto=format&fit=crop" alt="Posto Patricia" loading="lazy" decoding="async" width="500" height="280">
-        <span class="case-real-tag"><span>● Caso real</span></span>
-      </div>
-      <div class="case-body">
-        <div class="case-author">
-          <div class="case-avatar">PV</div>
-          <div><div class="case-name">Patrícia Vieira</div><div class="case-info">Salvador-BA · 1 posto</div></div>
-        </div>
-        <p class="case-text">"Eu já tinha desistido. Falei pro meu marido: 'esse posto não dá mais'. O ClubPetro entrou, me mostrou onde estava o dinheiro, e em 60 dias eu já tinha recuperado o investimento e mais R$ 6.200. Salvou meu negócio, simples assim."</p>
-        <div class="case-band">Bandeira branca · Família</div>
-        <div class="case-result">↑ +R$ 6.200/mês</div>
-      </div>
+    <div class="module-card reveal reveal-d1">
+      <div class="module-num">05</div>
+      <div class="module-title">Como dominar o Google Maps e busca local</div>
+      <div class="module-desc">Seu posto precisa aparecer quando o cliente pesquisa "posto perto de mim". Otimize seu perfil no Google, consiga avaliações positivas e seja encontrado antes do concorrente.</div>
     </div>
-
-    <div class="case-card reveal reveal-d2">
-      <div class="case-img">
-        <img src="https://images.unsplash.com/photo-1601046668428-94ea13437736?w=500&q=70&auto=format&fit=crop" alt="Posto Eduardo" loading="lazy" decoding="async" width="500" height="280">
-        <span class="case-real-tag"><span>● Caso real</span></span>
-      </div>
-      <div class="case-body">
-        <div class="case-author">
-          <div class="case-avatar">ES</div>
-          <div><div class="case-name">Eduardo Silva</div><div class="case-info">Belo Horizonte-MG · 4 postos</div></div>
-        </div>
-        <p class="case-text">"Tenho 4 unidades e vivia apagando incêndio. Depois do ClubPetro, eu consigo enxergar tudo num painel só, comparar performance entre os postos e cobrar meta dos gerentes com número na mão. Mudou meu papel de bombeiro pra dono de fato."</p>
-        <div class="case-band">Ale · Rede de 4 unidades</div>
-        <div class="case-result">↑ +31% margem líquida</div>
-      </div>
+    <div class="module-card reveal reveal-d2">
+      <div class="module-num">06</div>
+      <div class="module-title">Como criar campanhas de tráfego pago que funcionam</div>
+      <div class="module-desc">Invista R$ 10/dia e alcance milhares de motoristas na sua região. Passo a passo de Meta Ads e Google Ads específico para postos — do zero ao primeiro resultado.</div>
     </div>
-  </div>
-  <div class="cases-dots" id="casesDots"></div>
+    <div class="module-card module-bonus reveal">
+      <div class="bonus-tag">Bônus exclusivo</div>
+      <div class="module-num">+1</div>
+      <div class="module-title">Copa do Mundo 2026 — O plano de marketing do seu posto</div>
+      <div class="module-desc">A maior oportunidade de marketing dos próximos anos. Receba um plano completo de ações, promoções e conteúdos para transformar a Copa em fila na bomba.</div>
+    </div>
   </div>
 </section>
 
 <div class="cta-strip">
-  <a href="#comprar" class="cta">Quero estar nessa lista<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-  <p class="cta-note">+380 postos já viraram o jogo · A vaga é sua se você agir agora</p>
+  <a href="#comprar" class="cta">Quero acesso ao curso completo<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <p class="cta-note">6 módulos + bônus Copa 2026 · Acesso imediato</p>
 </div>
 
-<!-- TRANSIÇÃO 3 -->
+<!-- TRANSIÇÃO 2 -->
 <div class="transition reveal">
-  <p>Talvez você esteja pensando: <em>"ok, mas o que exatamente eu vou receber por isso?"</em>. Justo. Vou te mostrar item por item — sem rodeio, sem letra miúda. E é importante que você entenda uma coisa antes: <strong>isso não é um curso.</strong> Curso eu já vendi muito na vida e parei de vender porque cansei de ver gente comprando, assistindo e nunca aplicando. O que você vai receber agora é exatamente o que faltava pra fechar essa lacuna.</p>
+  <p>Talvez você esteja pensando: <em>"tá, mas isso funciona de verdade pra posto de combustível?"</em>. Justo. Não vou te pedir pra confiar em mim — vou te mostrar. Procura <strong>#postcombustivel</strong> no Instagram e vê com seus próprios olhos.</p>
 </div>
 
 <div class="sec-divider"></div>
 
-<!-- ===== OFERTA ===== -->
+<!-- ===== BLOCO 3 — PROVA SOCIAL (Reels viralizados) ===== -->
 <section class="sec">
   <div class="sec-head">
-    <span class="sec-lead">Capítulo 03 · O que você leva</span>
-    <div class="sec-tag">O que está incluso</div>
-    <h2 class="sec-h reveal">Seis entregas que trabalham <em>por você</em></h2>
-    <p class="sec-p">Cada item dessa lista existe por um motivo específico — porque, ao longo dos últimos 8 anos, a gente identificou exatamente onde os donos travam. Diagnóstico resolve o "não sei onde está o problema". Sessões com o consultor resolvem o "não sei por onde começar". Planilhas resolvem o "não tenho ferramenta". É um sistema completo, não uma coleção de coisas.</p>
+    <span class="sec-lead">Capítulo 03 · A prova</span>
+    <div class="sec-tag">Postos que já viralizam</div>
+    <h2 class="sec-h reveal">Esses postos saíram do zero e hoje <em>viralizam toda semana</em></h2>
+    <p class="sec-p">Não são influencers. São donos e frentistas de postos comuns que aprenderam o método e aplicaram. Os números são reais — confere no Instagram se quiser.</p>
+    <span class="pull-line">O passo a passo para viralizar como esses postos viralizaram é exatamente o que você vai aprender no curso.</span>
   </div>
 
-  <div class="offer-wrap">
-    <div class="offer-img">
-      <img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=600&q=70&auto=format&fit=crop" alt="Posto de combustível em operação" loading="lazy" decoding="async" width="600" height="750">
+  <div class="reels-grid" id="casesGrid">
+    <!-- Reel 1 -->
+    <div class="reel-card reveal">
+      <div class="reel-thumb">
+        <img src="https://images.unsplash.com/photo-1545459720-aac8509eb02c?w=400&q=70&auto=format&fit=crop" alt="Reels de posto viralizado" loading="lazy" decoding="async" width="400" height="710">
+        <div class="reel-play"><div class="reel-play-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="reel-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> 847K views</div>
+      </div>
+      <div class="reel-body">
+        <div class="reel-handle">@postoexemplo1</div>
+        <div class="reel-location">Uberlândia, MG</div>
+        <div class="reel-caption">"Frentista mostrando o dia a dia no posto com humor — viralizou em 24h"</div>
+      </div>
     </div>
-    <div class="offer-list">
-      <div class="offer-item offer-highlight">
-        <div class="offer-check">✓</div>
-        <div><strong>Diagnóstico completo da sua operação <span class="offer-tag">Principal</span></strong><span>Nosso especialista analisa pista, gestão de frentistas, fidelização e margens. Entrega um mapa de onde está o dinheiro escondido no seu posto — específico pra você.</span></div>
+    <!-- Reel 2 -->
+    <div class="reel-card reveal reveal-d1">
+      <div class="reel-thumb">
+        <img src="https://images.unsplash.com/photo-1607893407985-5b262debe667?w=400&q=70&auto=format&fit=crop" alt="Reels de posto viralizado" loading="lazy" decoding="async" width="400" height="710">
+        <div class="reel-play"><div class="reel-play-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="reel-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> 1.2M views</div>
       </div>
-      <div class="offer-item">
-        <div class="offer-check">✓</div>
-        <div><strong>2 sessões individuais com consultor ClubPetro</strong><span>30 minutos cada. Você apresenta sua operação, o consultor aponta os ajustes prioritários. Sem slides genéricos — tudo baseado no seu diagnóstico.</span></div>
+      <div class="reel-body">
+        <div class="reel-handle">@postoexemplo2</div>
+        <div class="reel-location">Goiânia, GO</div>
+        <div class="reel-caption">"Promoção relâmpago no stories + Reels — lotou a pista em 2 horas"</div>
       </div>
-      <div class="offer-item">
-        <div class="offer-check">✓</div>
-        <div><strong>Planilha de gestão de pista pronta pra usar</strong><span>Controle de abastecimento por bomba, metas de frentista por turno e indicadores de pico. Abre no celular. Você começa a usar no dia seguinte.</span></div>
+    </div>
+    <!-- Reel 3 -->
+    <div class="reel-card reveal reveal-d2">
+      <div class="reel-thumb">
+        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&q=70&auto=format&fit=crop" alt="Reels de posto viralizado" loading="lazy" decoding="async" width="400" height="710">
+        <div class="reel-play"><div class="reel-play-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="reel-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> 523K views</div>
       </div>
-      <div class="offer-item">
-        <div class="offer-check">✓</div>
-        <div><strong>Acesso ao grupo exclusivo por 30 dias</strong><span>Troca direta com donos e gerentes de posto de todo Brasil. Suporte da equipe ClubPetro para dúvidas de operação e gestão.</span></div>
+      <div class="reel-body">
+        <div class="reel-handle">@postoexemplo3</div>
+        <div class="reel-location">Ribeirão Preto, SP</div>
+        <div class="reel-caption">"Conteúdo educativo sobre combustível que engajou e trouxe clientes novos"</div>
       </div>
-      <div class="offer-item">
-        <div class="offer-check">✓</div>
-        <div><strong>Gravação completa da live</strong><span>Assista quando quiser, quantas vezes quiser. Compartilhe com seu gerente ou sócio.</span></div>
+    </div>
+    <!-- Reel 4 -->
+    <div class="reel-card reveal">
+      <div class="reel-thumb">
+        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400&q=70&auto=format&fit=crop" alt="Reels de posto viralizado" loading="lazy" decoding="async" width="400" height="710">
+        <div class="reel-play"><div class="reel-play-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="reel-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> 310K views</div>
       </div>
-      <div class="offer-item">
-        <div class="offer-check">✓</div>
-        <div><strong>Bônus: checklist de operação diária</strong><span>O que conferir toda manhã antes de abrir o posto. Usado por redes com +50 unidades. Formato prático, imprime ou usa no celular.</span></div>
+      <div class="reel-body">
+        <div class="reel-handle">@postoexemplo4</div>
+        <div class="reel-location">Curitiba, PR</div>
+        <div class="reel-caption">"Bastidores do posto com música trend — engajamento explodiu"</div>
+      </div>
+    </div>
+  </div>
+  <div class="reels-cta-note">Busque <strong>#postcombustivel</strong> no Instagram e veja você mesmo. O método que ensina a fazer isso é o que está neste curso.</div>
+</section>
+
+<div class="cta-strip">
+  <a href="#comprar" class="cta">Quero aprender a viralizar meu posto<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <p class="cta-note">Aprenda o passo a passo que esses postos usaram</p>
+</div>
+
+<div class="sec-divider"></div>
+
+<!-- ===== BLOCO 4 — COM QUEM VOCÊ VAI APRENDER ===== -->
+<section class="sec">
+  <div class="sec-head">
+    <span class="sec-lead">Capítulo 04 · Com quem você vai aprender</span>
+    <div class="sec-tag">Seu instrutor</div>
+    <h2 class="sec-h reveal">Não é um guru de internet. É quem <em>vive marketing digital</em> na prática</h2>
+  </div>
+
+  <div class="speaker-wrap">
+    <div class="speaker-photo">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=70&auto=format&fit=crop" alt="André Carvalhaes" loading="lazy" decoding="async" width="500" height="667">
+    </div>
+    <div class="speaker-info">
+      <div>
+        <div class="speaker-name">ANDRÉ CARVALHAES</div>
+        <div class="speaker-role">Especialista em Marketing Digital · Ex-V4 Company</div>
+      </div>
+      <p class="speaker-bio">André passou <strong>3 anos na V4 Company</strong> — a maior assessoria de tráfego pago do Brasil — onde liderou estratégias digitais para dezenas de empresas. Hoje, aplica todo esse conhecimento no setor de postos de combustível, ajudando donos a transformarem seus postos em marcas locais reconhecidas através do marketing digital.</p>
+      <div class="speaker-creds">
+        <div class="speaker-cred">
+          <div class="speaker-cred-icon">V4</div>
+          <div><strong>3 anos na V4 Company</strong> — a maior assessoria de tráfego pago do Brasil</div>
+        </div>
+        <div class="speaker-cred">
+          <div class="speaker-cred-icon">📱</div>
+          <div><strong>+2M de views gerados</strong> em conteúdos para empresas do setor</div>
+        </div>
+        <div class="speaker-cred">
+          <div class="speaker-cred-icon">🎯</div>
+          <div><strong>Especialista em Meta Ads e Google Ads</strong> para negócios locais e franquias</div>
+        </div>
+        <div class="speaker-cred">
+          <div class="speaker-cred-icon">⛽</div>
+          <div><strong>Conhece o setor de postos por dentro</strong> — não é teoria, é prática aplicada</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRANSIÇÃO 4 -->
-<div class="transition reveal">
-  <p>A essa altura, é normal você se perguntar: <em>"mas afinal, quem é vocês pra falar de gestão de posto?"</em>. É uma pergunta justa — e a resposta importa. Porque você não vai entregar a operação do seu negócio pra qualquer um que apareceu ontem com um curso.</p>
-</div>
-
 <div class="sec-divider"></div>
 
-<!-- ===== AUTORIDADE ===== -->
-<section class="sec">
-  <div class="sec-head">
-    <span class="sec-lead">Capítulo 04 · Quem somos</span>
-    <div class="sec-tag">Por que ClubPetro</div>
-    <h2 class="sec-h reveal">Não somos um curso de internet. Somos do <em>setor de combustível</em>.</h2>
-    <p class="sec-p">O ClubPetro nasceu em 2016 e desde o primeiro dia trabalha exclusivamente com postos de combustível. Nossa equipe é formada por gente que veio do setor — gerentes de pista, ex-donos, especialistas em fidelização. A gente não tropeçou nesse mercado por acaso. A gente escolheu esse mercado porque conhece ele de dentro.</p>
-    <span class="pull-line">Quando o cliente fala em meta de frentista ou retorno por bandeira, a gente entende — porque já viveu.</span>
-  </div>
-
-  <div class="auth-grid">
-    <div class="auth-card"><div class="auth-num">+380</div><div class="auth-label">Postos atendidos</div></div>
-    <div class="auth-card"><div class="auth-num">8 anos</div><div class="auth-label">No mercado</div></div>
-    <div class="auth-card"><div class="auth-num">+2M</div><div class="auth-label">Consumidores na base</div></div>
-    <div class="auth-card"><div class="auth-num">26</div><div class="auth-label">Estados ativos</div></div>
-  </div>
-
-  <div class="auth-banner">
-    <img src="https://images.unsplash.com/photo-1607893407985-5b262debe667?w=900&q=70&auto=format&fit=crop" alt="Bomba de combustível" loading="lazy" decoding="async" width="900" height="300">
-    <div class="auth-banner-text">
-      <h3>FEITO PARA <em>POSTO DE VERDADE</em></h3>
-      <p>Nada de teoria. É o que funciona na pista, no caixa e no caminhão-tanque.</p>
-    </div>
-  </div>
-</section>
-
-<div class="sec-divider"></div>
-
-<!-- CARTA DO CONSULTOR -->
-<div class="letter reveal">
-  <div class="letter-greeting">Uma palavra antes de você decidir</div>
-  <div class="letter-body">
-    <p>Eu sei como é. Você está aí, com várias abas abertas, pensando se isso vale ou não vale. Provavelmente já comprou algum curso ou consultoria que prometeu transformar seu negócio e ficou na gaveta. <strong>É justo desconfiar.</strong></p>
-    <p>Mas deixa eu te falar uma coisa que aprendi atendendo posto há quase uma década: <em>os donos que mais crescem não são os mais espertos, nem os que tinham mais dinheiro pra investir.</em> São os que tomaram a decisão de parar de fazer tudo sozinhos. Os que entenderam que tem hora de chamar quem já passou por isso antes.</p>
-    <p>Eu não vou prometer que isso vai resolver tudo. Vou prometer uma coisa só: se você entrar, vou pessoalmente garantir que você saia daqui sabendo exatamente onde está perdendo dinheiro no seu posto e o que fazer pra parar. <strong>E se você achar que não valeu, eu devolvo cada centavo, sem perguntar nada.</strong></p>
-  </div>
-  <div class="letter-sign">
-    <div>
-      <div class="letter-sign-name">Camila Ribeiro</div>
-      <div class="letter-sign-meta"><strong>Especialista em Operação de Pista · ClubPetro</strong>8 anos no setor · 380+ postos atendidos</div>
-    </div>
-  </div>
-</div>
-
-<div class="sec-divider"></div>
-
-<!-- ===== PREÇO ===== -->
+<!-- ===== BLOCO 5 — PREÇO ===== -->
 <section class="sec price-section" id="comprar">
   <div class="sec-head">
-    <span class="sec-lead">Capítulo 05 · A decisão</span>
-    <div class="sec-tag">Sua vaga</div>
-    <h2 class="sec-h">Acesso ao <em>programa completo</em></h2>
-    <p class="sec-p">É hora de escolher. Você pode fechar essa página e seguir do mesmo jeito que tava ontem — perdendo um pouco todo dia e nem sentindo. Ou pode dar o passo agora, com condição de live, e em 30 dias estar olhando pra trás pensando "como é que eu deixei isso passar tanto tempo?".</p>
+    <span class="sec-lead">Capítulo 05 · Sua vaga</span>
+    <div class="sec-tag">Investimento</div>
+    <h2 class="sec-h">Acesso ao <em>curso completo</em></h2>
+    <p class="sec-p">Enquanto você decide, seu concorrente já está postando o Reels de amanhã. A condição abaixo é exclusiva para quem participou do Evento Secreto — quando o timer zerar, o preço sobe.</p>
   </div>
 
   <div class="roi-anchor reveal">
@@ -1197,24 +874,24 @@ img{display:block;max-width:100%}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
     </div>
     <div class="roi-text">
-      Se o diagnóstico encontrar pelo menos <strong>R$ 500/mês</strong> de vazamento — e ele <em>sempre encontra</em> — o programa <strong>se paga no primeiro mês</strong>. A média dos clientes recupera <strong>R$ 4.200/mês</strong>.
+      Um único Reels que viraliza pode trazer <strong>centenas de clientes novos</strong> ao seu posto. O investimento no curso <em>se paga no primeiro conteúdo</em> que funciona.
     </div>
   </div>
 
   <div class="price-card">
-    <div class="price-banner">Oferta exclusiva para participantes da live — expira quando o timer zerar</div>
+    <div class="price-banner">Oferta exclusiva Evento Secreto — expira quando o timer zerar</div>
     <div class="price-body">
       <div class="price-left">
-        <div class="price-from">de R$ 1.497,00 por apenas</div>
-        <div class="price-main">R$ 497</div>
-        <div class="price-inst">ou 12x de R$ 49,70 no cartão sem juros</div>
+        <div class="price-from">de R$ 497,00 por apenas</div>
+        <div class="price-main">R$ 97</div>
+        <div class="price-inst">ou 6x de R$ 16,17 no cartão sem juros</div>
         <div class="price-checks">
-          <div class="price-check">Diagnóstico completo da sua operação</div>
-          <div class="price-check">2 sessões com consultor ClubPetro</div>
-          <div class="price-check">Planilha de gestão de pista</div>
-          <div class="price-check">Grupo exclusivo por 30 dias</div>
-          <div class="price-check">Gravação completa da live</div>
-          <div class="price-check">Bônus: checklist de operação diária</div>
+          <div class="price-check">6 módulos completos de marketing para postos</div>
+          <div class="price-check">Módulo bônus Copa do Mundo 2026</div>
+          <div class="price-check">Templates de conteúdo prontos para usar</div>
+          <div class="price-check">Calendário editorial do posto</div>
+          <div class="price-check">Acesso ao grupo exclusivo de donos</div>
+          <div class="price-check">Atualizações gratuitas por 1 ano</div>
         </div>
         <a href="#" class="cta price-cta">Garantir minha vaga agora<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
@@ -1222,11 +899,11 @@ img{display:block;max-width:100%}
     </div>
     <div class="price-guarantee">
       <span>🛡️</span>
-      <div><strong>7 dias de garantia incondicional</strong> — se não fizer sentido na prática, devolvemos 100% sem burocracia e sem perguntas.</div>
+      <div><strong>7 dias de garantia incondicional</strong> — se o conteúdo não fizer sentido pra você, devolvemos 100% sem burocracia.</div>
     </div>
     <div class="price-or">ou</div>
     <div class="price-wpp">
-      <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+LP+do+Evento+Secreto+Sess%C3%A3o+03+e+quero+saber+mais+sobre+a+oferta+de+R%24+497+%28programa+ClubPetro%29" class="cta cta-wpp" data-wa="price-card" onclick="trackWA('price-card')"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Falar com especialista no WhatsApp</a>
+      <a href="https://wa.me/5534999999999?text=Oi%21+Vim+do+Evento+Secreto+e+quero+saber+mais+sobre+o+curso+Marketing+para+Postos" class="cta cta-wpp" data-wa="price-card" onclick="trackWA('price-card')"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Tirar dúvidas no WhatsApp</a>
     </div>
     <div class="trust-row">
       <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Pagamento seguro</span>
@@ -1237,64 +914,42 @@ img{display:block;max-width:100%}
   </div>
 </section>
 
-<!-- TRANSIÇÃO 5 -->
+<!-- TRANSIÇÃO -->
 <div class="transition reveal">
-  <p>Eu sei que você ainda tem perguntas. Toda vez que apresento isso, as mesmas dúvidas aparecem — então separei as quatro mais comuns aqui embaixo, com resposta direta. Se a sua não estiver nessa lista, tem uma especialista de plantão pronta pra te atender pelo WhatsApp agora.</p>
+  <p>Sei que você ainda tem perguntas. As mesmas dúvidas aparecem toda vez — então separei as cinco mais comuns aqui embaixo, com resposta direta.</p>
 </div>
 
 <div class="sec-divider"></div>
 
-<!-- ===== FAQ ===== -->
+<!-- ===== BLOCO 6 — FAQ (5 perguntas) ===== -->
 <section class="sec">
   <div class="sec-head">
-    <span class="sec-lead">Capítulo 06 · As perguntas que você está fazendo</span>
-    <div class="sec-tag">Antes de decidir</div>
-    <h2 class="sec-h">Perguntas <em>frequentes</em></h2>
+    <span class="sec-lead">Capítulo 06 · Suas dúvidas</span>
+    <div class="sec-tag">Perguntas frequentes</div>
+    <h2 class="sec-h">Antes de <em>decidir</em></h2>
   </div>
 
   <div class="faq-layout">
-    <aside class="faq-person">
-      <div class="faq-photo">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=75&auto=format&fit=crop" alt="Camila Ribeiro - Especialista ClubPetro" loading="lazy" decoding="async" width="400" height="400">
-      </div>
-      <div class="faq-name">Camila Ribeiro</div>
-      <div class="faq-role">Especialista em operação de pista · ClubPetro</div>
-      <div class="faq-meta">
-        <div class="faq-meta-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>Resposta em até <strong>5 minutos</strong></span>
-        </div>
-        <div class="faq-meta-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          <span>Atende <strong>seg a sáb</strong>, 8h às 20h</span>
-        </div>
-        <div class="faq-meta-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <span>Já atendeu <strong>+380 donos</strong> de posto</span>
-        </div>
-      </div>
-      <a href="https://wa.me/5534999999999?text=Oi+Camila%21+Vim+da+LP+do+Evento+Secreto+Sess%C3%A3o+03+e+tenho+uma+d%C3%BAvida+sobre+o+programa+ClubPetro+%28R%24+497%29" class="faq-wpp" data-wa="faq-camila" onclick="trackWA('faq-camila')">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Chamar no WhatsApp
-      </a>
-    </aside>
-
     <div class="faq-list">
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-q"><span class="faq-num">01</span><span class="faq-q-text">Meu posto é pequeno. Funciona pra mim?</span><span class="faq-plus"></span></div>
-        <div class="faq-a"><div class="faq-a-in">Sim. O Carlos do case acima tem 2 postos de bandeira branca e recuperou R$ 4.800/mês. O método funciona independente do tamanho — o que muda é o valor que está escapando. Posto pequeno normalmente tem mais vazamento proporcional porque o dono faz tudo sozinho.</div></div>
+        <div class="faq-a"><div class="faq-a-in">Funciona ainda mais. Postos pequenos têm a vantagem de ser locais — e marketing local é exatamente o que mais funciona nas redes sociais. Um Reels do seu frentista pode alcançar toda a sua cidade. Não precisa de rede grande, precisa de método certo.</div></div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q"><span class="faq-num">02</span><span class="faq-q-text">Não tenho tempo pra mais um curso.</span><span class="faq-plus"></span></div>
-        <div class="faq-a"><div class="faq-a-in">Não é curso. São 2 sessões de 30 minutos com nosso consultor + ferramentas prontas. Você investe 1 hora total e recebe um diagnóstico que trabalha por você. A maioria dos donos aplica no dia seguinte.</div></div>
+        <div class="faq-q"><span class="faq-num">02</span><span class="faq-q-text">Não tenho tempo pra fazer marketing.</span><span class="faq-plus"></span></div>
+        <div class="faq-a"><div class="faq-a-in">Por isso o módulo 3 ensina automação. Você cria 1 mês de conteúdo em uma tarde e agenda tudo. Depois disso, são 15 minutos por semana pra manter o posto aparecendo. Menos tempo do que você gasta conferindo o caixa.</div></div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q"><span class="faq-num">03</span><span class="faq-q-text">Já tentei algo parecido e não funcionou.</span><span class="faq-plus"></span></div>
-        <div class="faq-a"><div class="faq-a-in">A diferença é que não somos generalistas. Trabalhamos exclusivamente com postos há 8 anos. O consultor que vai te atender já viu a operação de centenas de postos iguais ao seu. Se em 7 dias não fizer sentido, devolvemos 100%.</div></div>
+        <div class="faq-q"><span class="faq-num">03</span><span class="faq-q-text">Não entendo nada de redes sociais.</span><span class="faq-plus"></span></div>
+        <div class="faq-a"><div class="faq-a-in">O curso foi feito pra quem nunca postou um Reels na vida. Tudo é passo a passo: como criar a conta, o que postar, como gravar, como editar. Se você sabe usar WhatsApp, consegue fazer marketing pro seu posto.</div></div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q"><span class="faq-num">04</span><span class="faq-q-text">Posso falar com alguém antes de comprar?</span><span class="faq-plus"></span></div>
-        <div class="faq-a"><div class="faq-a-in">Claro. Clique em "Chamar no WhatsApp" ao lado. A Camila atende donos de posto todo dia e pode tirar qualquer dúvida antes de você decidir. Sem pressão.</div></div>
+        <div class="faq-q"><span class="faq-num">04</span><span class="faq-q-text">Já tentei e não deu certo.</span><span class="faq-plus"></span></div>
+        <div class="faq-a"><div class="faq-a-in">Provavelmente porque faltou método. Postar aleatoriamente não funciona — mas postar com estratégia, usando trends certas e conteúdo que o algoritmo favorece, funciona. O André ensina exatamente o que ele usou na V4 Company com dezenas de clientes. Se em 7 dias não fizer sentido, devolvemos 100%.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-num">05</span><span class="faq-q-text">Como acesso o curso depois de comprar?</span><span class="faq-plus"></span></div>
+        <div class="faq-a"><div class="faq-a-in">Acesso liberado na hora. Você recebe um email com login e senha para a plataforma. Assiste no celular, tablet ou computador, quantas vezes quiser. As aulas ficam disponíveis por 1 ano com atualizações gratuitas.</div></div>
       </div>
     </div>
   </div>
@@ -1306,27 +961,24 @@ img{display:block;max-width:100%}
 <div class="alert-box reveal">
   <div class="alert-icon">⚠️</div>
   <div class="alert-content">
-    <div class="alert-title">ATENÇÃO: ESSA OFERTA NÃO VAI VOLTAR</div>
-    <div class="alert-text">Quando o timer zerar, o preço sobe pra <strong>R$ 1.497</strong> e o bônus do diagnóstico individual sai do pacote. Quem perder essa janela vai ter que pagar 3x mais — e mesmo assim a vaga depende de disponibilidade do consultor.</div>
+    <div class="alert-title">ESSA CONDIÇÃO NÃO VAI VOLTAR</div>
+    <div class="alert-text">Quando o timer zerar, o preço sobe de R$ 97 para <strong>R$ 497</strong> e o módulo bônus Copa do Mundo 2026 sai do pacote. Quem perder essa janela vai pagar 5x mais.</div>
   </div>
 </div>
 
 <!-- ===== FINAL CTA ===== -->
 <section class="final-cta">
-  <div class="final-cta-bg">
-    <img src="https://images.unsplash.com/photo-1607893407985-5b262debe667?w=900&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async" width="900" height="500">
-  </div>
   <div class="sec-tag" style="justify-content:center">Última chamada</div>
-  <h2 class="sec-h reveal">Daqui a pouco essa oferta <em>vai embora</em>. E com ela, a sua chance.</h2>
-  <p class="final-sub">Você sabe o que vai acontecer se fechar essa página: amanhã o posto continua perdendo dinheiro do mesmo jeito. Daqui a 30 dias, mais R$ 4 mil escapam. E daqui a 1 ano? Você nem quer pensar. <strong style="color:#fff">Hoje você pode mudar isso por R$ 497.</strong></p>
-  <a href="#comprar" class="cta">Garantir minha vaga por R$ 497<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <h2 class="sec-h reveal">Daqui a pouco essa oferta <em>vai embora</em>. E com ela, sua vantagem.</h2>
+  <p class="final-sub">Amanhã seu concorrente vai postar mais um Reels. Os clientes dele vão ver, os seus não. Daqui a 30 dias, ele tem 10 mil seguidores e pista lotada. E você? <strong style="color:#fff">Hoje você muda isso por R$ 97.</strong></p>
+  <a href="#comprar" class="cta">Garantir minha vaga por R$ 97<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   <div style="height:12px"></div>
-  <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+LP+do+Evento+Secreto+Sess%C3%A3o+03+e+quero+saber+mais+sobre+a+oferta+de+R%24+497+%28programa+ClubPetro%29" class="cta cta-wpp" data-wa="final-cta" onclick="trackWA('final-cta')" style="max-width:520px;margin:0 auto"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Falar com especialista no WhatsApp</a>
+  <a href="https://wa.me/5534999999999?text=Oi%21+Vim+do+Evento+Secreto+e+quero+saber+mais+sobre+o+curso+Marketing+para+Postos" class="cta cta-wpp" data-wa="final-cta" onclick="trackWA('final-cta')" style="max-width:520px;margin:0 auto"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Tirar dúvidas no WhatsApp</a>
 </section>
 
 <!-- FOOTER -->
 <div class="footer">
-  <p>ClubPetro © 2026 · Oferta exclusiva para participantes do Evento Secreto</p>
+  <p>ClubPetro © 2026 · Curso Marketing para Postos · Evento Secreto</p>
 </div>
 
 </div>
@@ -1336,12 +988,12 @@ img{display:block;max-width:100%}
   <div class="exit-card">
     <button class="exit-close" aria-label="Fechar" onclick="closeExit()">✕</button>
     <span class="exit-eyebrow">Espera um segundo</span>
-    <h3 class="exit-title">Antes de você sair, <em>vamos conversar?</em></h3>
-    <p class="exit-text">Se ficou alguma dúvida sobre o programa, a <strong>Camila atende agora pelo WhatsApp</strong> — sem compromisso, só pra você decidir com clareza. Ela já atendeu mais de 380 donos de posto e leva 5 minutos.</p>
+    <h3 class="exit-title">Antes de sair, <em>uma coisa rápida</em></h3>
+    <p class="exit-text">Ficou alguma dúvida sobre o curso? O <strong>André responde pelo WhatsApp</strong> — sem compromisso, só pra você decidir com clareza.</p>
     <div class="exit-actions">
-      <a href="https://wa.me/5534999999999?text=Oi+Camila%21+Quase+sa%C3%AD+da+LP+do+Evento+Secreto+sem+decidir.+Pode+me+ajudar+a+entender+melhor+a+oferta+de+R%24+497%3F" class="cta cta-wpp" onclick="trackWA('exit-intent')">
+      <a href="https://wa.me/5534999999999?text=Oi%21+Quase+sa%C3%AD+da+p%C3%A1gina+do+curso+Marketing+para+Postos.+Pode+me+ajudar+a+entender+melhor%3F" class="cta cta-wpp" onclick="trackWA('exit-intent')">
         <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Falar com a Camila no WhatsApp
+        Falar com o André no WhatsApp
       </a>
       <a class="cta" onclick="closeExit();openCheckout()" style="cursor:pointer">
         Garantir minha vaga agora
@@ -1360,7 +1012,7 @@ img{display:block;max-width:100%}
     <div class="modal-header">
       <span class="modal-eyebrow">Finalizar inscrição</span>
       <h3 class="modal-title" id="modalTitle">Falta pouco pra você entrar</h3>
-      <p class="modal-subtitle">Preencha em menos de 1 minuto. Acesso liberado na hora após a confirmação.</p>
+      <p class="modal-subtitle">Preencha em menos de 1 minuto. Acesso liberado na hora.</p>
     </div>
 
     <div class="stepper">
@@ -1372,11 +1024,11 @@ img{display:block;max-width:100%}
     </div>
 
     <div class="modal-body">
-      <!-- STEP 1 -->
+      <!-- STEP 1 — Formulário simplificado (sem "relação com o posto") -->
       <div class="modal-step active" data-step="1">
         <div class="field">
           <label>Nome completo <span class="req">*</span></label>
-          <input type="text" id="f-nome" placeholder="Como quem te chama na pista">
+          <input type="text" id="f-nome" placeholder="Seu nome completo">
           <div class="field-error">Digite seu nome completo</div>
         </div>
         <div class="field-row">
@@ -1391,38 +1043,24 @@ img{display:block;max-width:100%}
             <div class="field-error">Telefone inválido</div>
           </div>
         </div>
-        <div class="field-row">
-          <div class="field">
-            <label>CPF <span class="req">*</span></label>
-            <input type="text" id="f-cpf" placeholder="000.000.000-00" maxlength="14">
-            <div class="field-error">CPF inválido</div>
-          </div>
-          <div class="field">
-            <label>Sua relação com o posto <span class="req">*</span></label>
-            <select id="f-rel">
-              <option value="">Selecione</option>
-              <option value="dono">Sou dono(a)</option>
-              <option value="socio">Sou sócio(a)</option>
-              <option value="gerente">Sou gerente</option>
-              <option value="rede">Tenho rede de postos</option>
-              <option value="outro">Outro</option>
-            </select>
-            <div class="field-error">Selecione uma opção</div>
-          </div>
+        <div class="field">
+          <label>CPF <span class="req">*</span></label>
+          <input type="text" id="f-cpf" placeholder="000.000.000-00" maxlength="14">
+          <div class="field-error">CPF inválido</div>
         </div>
         <div class="modal-trust">
           <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Dados protegidos</div>
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Não compartilhamos</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sem spam, prometido</div>
         </div>
       </div>
 
       <!-- STEP 2 -->
       <div class="modal-step" data-step="2">
         <div class="summary">
-          <div class="summary-row"><span>Programa ClubPetro · Acesso completo</span></div>
-          <div class="summary-row"><span>de R$ 1.497</span><strong style="text-decoration:line-through;color:var(--text-dim)">R$ 1.497</strong></div>
+          <div class="summary-row"><span>Curso Marketing para Postos · Acesso completo</span></div>
+          <div class="summary-row"><span>de R$ 497</span><strong style="text-decoration:line-through;color:var(--text-dim)">R$ 497</strong></div>
           <div class="summary-divider"></div>
-          <div class="summary-row summary-total"><span>Total</span><span class="summary-price">R$ 497</span></div>
+          <div class="summary-row summary-total"><span>Total</span><span class="summary-price">R$ 97</span></div>
         </div>
 
         <div class="pay-tabs">
@@ -1480,21 +1118,14 @@ img{display:block;max-width:100%}
                   <rect x="70" y="10" width="20" height="20"/><rect x="74" y="14" width="12" height="12" fill="#fff"/><rect x="78" y="18" width="4" height="4"/>
                   <rect x="10" y="70" width="20" height="20"/><rect x="14" y="74" width="12" height="12" fill="#fff"/><rect x="18" y="78" width="4" height="4"/>
                   <rect x="36" y="12" width="4" height="4"/><rect x="44" y="12" width="4" height="4"/><rect x="52" y="12" width="4" height="4"/>
-                  <rect x="36" y="20" width="4" height="4"/><rect x="60" y="20" width="4" height="4"/>
-                  <rect x="36" y="28" width="4" height="4"/><rect x="44" y="28" width="4" height="4"/><rect x="52" y="28" width="4" height="4"/>
-                  <rect x="12" y="36" width="4" height="4"/><rect x="20" y="36" width="4" height="4"/><rect x="28" y="36" width="4" height="4"/><rect x="40" y="36" width="4" height="4"/><rect x="56" y="36" width="4" height="4"/><rect x="68" y="36" width="4" height="4"/><rect x="80" y="36" width="4" height="4"/>
-                  <rect x="36" y="44" width="4" height="4"/><rect x="48" y="44" width="4" height="4"/><rect x="64" y="44" width="4" height="4"/><rect x="76" y="44" width="4" height="4"/>
-                  <rect x="12" y="52" width="4" height="4"/><rect x="24" y="52" width="4" height="4"/><rect x="36" y="52" width="4" height="4"/><rect x="44" y="52" width="4" height="4"/><rect x="60" y="52" width="4" height="4"/><rect x="72" y="52" width="4" height="4"/><rect x="84" y="52" width="4" height="4"/>
-                  <rect x="40" y="60" width="4" height="4"/><rect x="52" y="60" width="4" height="4"/><rect x="68" y="60" width="4" height="4"/><rect x="80" y="60" width="4" height="4"/>
-                  <rect x="36" y="68" width="4" height="4"/><rect x="44" y="68" width="4" height="4"/><rect x="56" y="68" width="4" height="4"/><rect x="64" y="68" width="4" height="4"/><rect x="76" y="68" width="4" height="4"/>
-                  <rect x="40" y="76" width="4" height="4"/><rect x="52" y="76" width="4" height="4"/><rect x="60" y="76" width="4" height="4"/><rect x="68" y="76" width="4" height="4"/><rect x="80" y="76" width="4" height="4"/>
-                  <rect x="36" y="84" width="4" height="4"/><rect x="48" y="84" width="4" height="4"/><rect x="56" y="84" width="4" height="4"/><rect x="72" y="84" width="4" height="4"/>
+                  <rect x="36" y="36" width="4" height="4"/><rect x="48" y="44" width="4" height="4"/>
+                  <rect x="60" y="60" width="4" height="4"/><rect x="72" y="72" width="4" height="4"/>
                 </g>
               </svg>
             </div>
             <div class="pix-info">
-              <strong>R$ 497,00 à vista</strong>
-              Aponte a câmera do app do seu banco para o QR Code, ou copie o código abaixo. Confirmação automática em segundos.
+              <strong>R$ 97,00 à vista</strong>
+              Aponte a câmera do app do seu banco para o QR Code, ou copie o código abaixo.
             </div>
             <div class="pix-code">
               <span id="pix-code-text">00020126580014BR.GOV.BCB.PIX0136a629534e-7693-4846-b028-f142082d7b075204000053039865802BR5915CLUBPETRO LTDA6009SAO PAULO62070503***6304E2A1</span>
@@ -1507,8 +1138,8 @@ img{display:block;max-width:100%}
         <div class="pay-content" data-pay="boleto">
           <div class="boleto-box">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="4" y2="18"/><line x1="7" y1="6" x2="7" y2="18"/><line x1="10" y1="6" x2="10" y2="18"/><line x1="13" y1="6" x2="13" y2="18"/><line x1="16" y1="6" x2="16" y2="18"/><line x1="19" y1="6" x2="19" y2="18"/></svg>
-            <h4>Boleto bancário · R$ 497,00</h4>
-            <p>O boleto será gerado após você clicar em "Finalizar". Compensação em até 1 dia útil. O acesso é liberado automaticamente após a confirmação.</p>
+            <h4>Boleto bancário · R$ 97,00</h4>
+            <p>O boleto será gerado após você clicar em "Finalizar". Compensação em até 1 dia útil.</p>
             <div class="boleto-info">
               <span>Vencimento · 3 dias</span>
               <span>Sem taxa</span>
@@ -1524,12 +1155,12 @@ img{display:block;max-width:100%}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <h3>VAGA GARANTIDA!</h3>
-          <p>Acabamos de enviar o acesso para o seu e-mail. Em até <strong style="color:#fff">5 minutos</strong> a Camila vai entrar em contato pelo WhatsApp para agendar seu primeiro diagnóstico.</p>
+          <p>Enviamos o acesso para seu e-mail. Em instantes você recebe o login da plataforma e pode começar a assistir.</p>
           <div class="share-box">
             <div class="share-title">Conhece outro dono de posto que precisaria disso?</div>
-            <div class="share-text">Compartilhe agora e ganhe <strong>1 sessão extra com a Camila</strong> quando ele entrar.</div>
+            <div class="share-text">Compartilhe e ajude mais postos a saírem da <strong>invisibilidade digital</strong>.</div>
             <div class="share-actions">
-              <a class="share-btn share-wpp" href="https://wa.me/?text=Cara%2C+olha+isso.+Acabei+de+entrar+num+programa+do+ClubPetro+que+achou+R%24+4.000%2Fm%C3%AAs+que+eu+t%C3%A1+perdendo+no+meu+posto.+D%C3%A1+uma+olhada%3A+https%3A%2F%2Flp-teste-1.web.app" target="_blank" rel="noopener" onclick="trackShare('whatsapp')">
+              <a class="share-btn share-wpp" href="https://wa.me/?text=Cara%2C+acabei+de+entrar+num+curso+de+marketing+digital+para+postos+da+ClubPetro.+D%C3%A1+uma+olhada%3A+https%3A%2F%2Flp-teste-1.web.app" target="_blank" rel="noopener" onclick="trackShare('whatsapp')">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                 Compartilhar no WhatsApp
               </a>
@@ -1539,7 +1170,6 @@ img{display:block;max-width:100%}
               </button>
             </div>
           </div>
-          <p style="font-size:12px;color:var(--text-dim);margin-top:18px">Não recebeu nada? Confere o spam ou chama a gente no WhatsApp.</p>
         </div>
       </div>
     </div>
@@ -1559,18 +1189,18 @@ img{display:block;max-width:100%}
 
 <!-- MINI STICKY PRICE BANNER (desktop) -->
 <div class="mini-price" id="miniPrice">
-  <div class="mini-price-text"><strong>R$ 497</strong> · 12x R$ 49,70 <span>· vagas limitadas</span></div>
+  <div class="mini-price-text"><strong>R$ 97</strong> · 6x R$ 16,17 <span>· vagas limitadas</span></div>
   <a href="#comprar" class="mini-price-cta">Garantir agora →</a>
 </div>
 
 <!-- FAB WHATSAPP MOBILE -->
-<a href="https://wa.me/5534999999999?text=Oi+Camila%21+Vim+da+LP+do+Evento+Secreto+e+quero+saber+mais" class="fab-wpp" aria-label="Falar no WhatsApp" data-wa="fab" onclick="trackWA('fab')">
+<a href="https://wa.me/5534999999999?text=Oi%21+Vim+do+Evento+Secreto+e+quero+saber+mais+sobre+o+curso+Marketing+para+Postos" class="fab-wpp" aria-label="Falar no WhatsApp" data-wa="fab" onclick="trackWA('fab')">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
 <!-- STICKY CTA MOBILE -->
 <div class="sticky-cta">
-  <a href="#comprar" class="cta" style="font-size:14px;padding:14px">Garantir vaga · R$ 497<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="#comprar" class="cta" style="font-size:14px;padding:14px">Garantir vaga · R$ 97<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
 </div>
 
 <script>
@@ -1580,8 +1210,7 @@ img{display:block;max-width:100%}
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})
   },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-  // auto-mark certain blocks as reveal
-  ['.sec-h','.sec-p','.problem-item','.case-card','.offer-item','.auth-card','.price-card','.faq-item','.hero-card','.hero-metric','.hero-title','.hero-subtitle','.problem-img','.offer-img','.auth-banner','.faq-person','.final-cta'].forEach(function(sel){
+  ['.sec-h','.sec-p','.problem-item','.reel-card','.module-card','.offer-item','.price-card','.faq-item','.hero-card','.hero-metric','.hero-title','.hero-subtitle','.problem-img','.speaker-photo','.speaker-cred','.final-cta'].forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(el,i){
       if(!el.classList.contains('reveal'))el.classList.add('reveal');
       if(i%3===1)el.classList.add('reveal-d1');else if(i%3===2)el.classList.add('reveal-d2');
@@ -1595,13 +1224,13 @@ function toggleFaq(el){
   document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0'});
   if(!o){el.classList.add('open');var a=el.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px'}
 }
-// === COUNTDOWN REAL — persistente entre sessões ===
+
+// === COUNTDOWN — persistente ===
 (function(){
-  var KEY='cp_offer_deadline_v1';
-  var WINDOW_MS=24*60*60*1000; // 24h por janela
+  var KEY='cp_course_deadline_v1';
+  var WINDOW_MS=24*60*60*1000;
   var deadline=parseInt(localStorage.getItem(KEY)||'0',10);
   var now=Date.now();
-  // Se não existe ou já expirou, cria nova janela de 24h
   if(!deadline||deadline<now){
     deadline=now+WINDOW_MS;
     try{localStorage.setItem(KEY,deadline)}catch(e){}
@@ -1617,7 +1246,6 @@ function toggleFaq(el){
     if(elM)elM.textContent=pad(m);
     if(elS)elS.textContent=pad(s);
     if(diff===0){
-      // expirou — reabre nova janela
       deadline=Date.now()+WINDOW_MS;
       try{localStorage.setItem(KEY,deadline)}catch(e){}
     }
@@ -1625,81 +1253,16 @@ function toggleFaq(el){
   tick();
   setInterval(tick,1000);
 })();
-// === CASES CAROUSEL DOTS (mobile) ===
-(function(){
-  if(!window.matchMedia('(max-width:760px)').matches)return;
-  var grid=document.getElementById('casesGrid');
-  var dotsWrap=document.getElementById('casesDots');
-  if(!grid||!dotsWrap)return;
-  var cards=grid.querySelectorAll('.case-card');
-  if(cards.length<2)return;
-  dotsWrap.style.display='flex';
-  cards.forEach(function(_,i){
-    var d=document.createElement('button');
-    d.className='cases-dot'+(i===0?' active':'');
-    d.setAttribute('aria-label','Caso '+(i+1));
-    d.onclick=function(){cards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'})};
-    dotsWrap.appendChild(d);
-  });
-  var dots=dotsWrap.querySelectorAll('.cases-dot');
-  var ticking=false;
-  grid.addEventListener('scroll',function(){
-    if(ticking)return;ticking=true;
-    requestAnimationFrame(function(){
-      var center=grid.scrollLeft+grid.clientWidth/2;
-      var closest=0,minDist=Infinity;
-      cards.forEach(function(c,i){
-        var cardCenter=c.offsetLeft+c.clientWidth/2;
-        var d=Math.abs(cardCenter-center);
-        if(d<minDist){minDist=d;closest=i}
-      });
-      dots.forEach(function(d,i){d.classList.toggle('active',i===closest)});
-      ticking=false;
-    });
-  },{passive:true});
-})();
 
-// === COPY VARIATION — para quem chegou via email/anúncio (não viu a live) ===
+// === IDLE POPUP ===
 (function(){
-  var params=new URLSearchParams(window.location.search);
-  var src=params.get('src');
-  if(src!=='email'&&src!=='ad')return;
-  // Mapeamento de substituições
-  var swaps=[
-    {sel:'.hero-subtitle',html:'A condição que reservamos para donos de posto no nosso programa premium'},
-    {sel:'.hero-eyebrow',html:'OPORTUNIDADE EXCLUSIVA · <span>VAGAS LIMITADAS</span>'}
-  ];
-  swaps.forEach(function(s){
-    var el=document.querySelector(s.sel);
-    if(el)el.innerHTML=s.html;
-  });
-  // Substituir "você acabou de assistir uma live" → versão neutra
-  document.querySelectorAll('.transition p').forEach(function(p){
-    var t=p.innerHTML;
-    t=t.replace(/Você acabou de assistir uma live de quase duas horas\./,'Você está aqui por um motivo: alguém te disse que existe dinheiro escapando do seu posto.');
-    t=t.replace(/E mesmo depois de tudo que ouviu,/,'E');
-    p.innerHTML=t;
-  });
-  // Esconder gravação da live como item da oferta
-  document.querySelectorAll('.offer-item').forEach(function(it){
-    if(it.textContent.indexOf('Gravação completa da live')>-1)it.style.display='none';
-    if(it.textContent.indexOf('Gravação')>-1)it.style.display='none';
-  });
-  document.querySelectorAll('.price-check').forEach(function(c){
-    if(c.textContent.indexOf('Gravação')>-1)c.style.display='none';
-  });
-})();
-
-// === IDLE POPUP — aparece após 40s sem qualquer interação ===
-(function(){
-  var KEY='cp_exit_shown_v1';
+  var KEY='cp_exit_shown_v2';
   if(sessionStorage.getItem(KEY))return;
   var modal=document.getElementById('exitModal');
   if(!modal)return;
   var IDLE_MS=40000;
   var triggered=false;
   var timer=null;
-
   function show(){
     if(triggered)return;
     triggered=true;
@@ -1719,10 +1282,8 @@ function toggleFaq(el){
     });
     if(timer)clearTimeout(timer);
   }
-
   window.closeExit=function(){modal.classList.remove('show')};
   modal.addEventListener('click',function(e){if(e.target===modal)closeExit()});
-
   ['mousemove','mousedown','keydown','scroll','touchstart','touchmove','wheel','click'].forEach(function(ev){
     window.addEventListener(ev,reset,{passive:true});
   });
@@ -1733,12 +1294,11 @@ function toggleFaq(el){
 (function(){
   var el=document.getElementById('proof-count');
   if(!el)return;
-  var KEY='cp_proof_v1';
+  var KEY='cp_proof_v2';
   var stored=parseInt(localStorage.getItem(KEY)||'0',10);
   var base=12;
   var n=stored>=base?stored:base;
   el.textContent=n;
-  // a cada 60-180s, incrementa 1 (com 35% de chance pra parecer natural)
   function bump(){
     if(Math.random()<.35){
       n++;
@@ -1778,8 +1338,8 @@ function openCheckout(){
   m.classList.add('show');
   document.body.style.overflow='hidden';
   goToStep(1);
-  if(window.cpTrack)cpTrack('InitiateCheckout',{value:497,currency:'BRL'});
-  if(window.fbq)fbq('track','InitiateCheckout',{value:497,currency:'BRL'});
+  if(window.cpTrack)cpTrack('InitiateCheckout',{value:97,currency:'BRL'});
+  if(window.fbq)fbq('track','InitiateCheckout',{value:97,currency:'BRL'});
 }
 function closeCheckout(){
   var m=document.getElementById('checkoutModal');
@@ -1800,7 +1360,7 @@ function goToStep(n){
   btnBack.style.display=n>1&&n<3?'flex':'none';
   if(n===1)btnText.textContent='Continuar para pagamento';
   else if(n===2)btnText.textContent='Finalizar e garantir vaga';
-  else{btnText.textContent='Acessar agora';btnNext.setAttribute('onclick','closeCheckout()')}
+  else{btnText.textContent='Acessar o curso';btnNext.setAttribute('onclick','closeCheckout()')}
   document.querySelector('.modal-body').scrollTop=0;
 }
 function prevStep(){if(currentStep>1)goToStep(currentStep-1)}
@@ -1810,25 +1370,22 @@ function nextStep(e){
   else if(currentStep===2){
     if(!validateStep2())return;
     goToStep(3);
-    if(window.cpTrack)cpTrack('Purchase',{value:497,currency:'BRL',payment_method:selectedPay});
-    if(window.fbq)fbq('track','Purchase',{value:497,currency:'BRL'});
+    if(window.cpTrack)cpTrack('Purchase',{value:97,currency:'BRL',payment_method:selectedPay});
+    if(window.fbq)fbq('track','Purchase',{value:97,currency:'BRL'});
   }
 }
 
-// Validation
 function validateStep1(){
   var ok=true;
   var nome=document.getElementById('f-nome');
   var email=document.getElementById('f-email');
   var tel=document.getElementById('f-tel');
   var cpf=document.getElementById('f-cpf');
-  var rel=document.getElementById('f-rel');
-  [nome,email,tel,cpf,rel].forEach(function(f){f.classList.remove('invalid')});
+  [nome,email,tel,cpf].forEach(function(f){f.classList.remove('invalid')});
   if(!nome.value.trim()||nome.value.trim().split(' ').length<2){nome.classList.add('invalid');ok=false}
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){email.classList.add('invalid');ok=false}
   if(tel.value.replace(/\D/g,'').length<10){tel.classList.add('invalid');ok=false}
   if(cpf.value.replace(/\D/g,'').length!==11){cpf.classList.add('invalid');ok=false}
-  if(!rel.value){rel.classList.add('invalid');ok=false}
   return ok;
 }
 function validateStep2(){
@@ -1890,9 +1447,9 @@ document.addEventListener('DOMContentLoaded',function(){
   // Installments
   var inst=document.getElementById('installments');
   if(inst){
-    var total=497;
+    var total=97;
     var html='';
-    for(var i=1;i<=12;i++){
+    for(var i=1;i<=6;i++){
       var v=(total/i).toFixed(2).replace('.',',');
       html+='<div class="installment'+(i===1?' selected':'')+'" onclick="selectInst(this)">'+
         '<span><strong>'+i+'x</strong> de R$ '+v+'</span>'+
@@ -1902,11 +1459,9 @@ document.addEventListener('DOMContentLoaded',function(){
     inst.innerHTML=html;
   }
 
-  // Close on backdrop
   document.getElementById('checkoutModal').addEventListener('click',function(e){
     if(e.target===this)closeCheckout();
   });
-  // ESC
   document.addEventListener('keydown',function(e){
     if(e.key==='Escape'&&document.getElementById('checkoutModal').classList.contains('show'))closeCheckout();
   });
@@ -1916,12 +1471,12 @@ function selectInst(el){
   el.classList.add('selected');
 }
 
-// Wire all CTAs (#comprar) to open modal
+// Wire all CTAs to open checkout
 document.querySelectorAll('a[href="#comprar"], .price-cta').forEach(function(a){
   a.addEventListener('click',function(e){e.preventDefault();openCheckout()});
 });
 
-// === MINI STICKY PRICE BANNER (desktop only, após 50% da página) ===
+// === MINI STICKY PRICE BANNER ===
 (function(){
   if(window.matchMedia('(max-width:760px)').matches)return;
   var bar=document.getElementById('miniPrice');
@@ -1944,20 +1499,17 @@ document.querySelectorAll('a[href="#comprar"], .price-cta').forEach(function(a){
   },{passive:true});
 })();
 
-// === FAQ — abre primeira por padrão ===
+// === FAQ — abre primeira ===
 document.addEventListener('DOMContentLoaded',function(){
   var first=document.querySelector('.faq-item');
   if(first){
     first.classList.add('open');
     var a=first.querySelector('.faq-a');
-    if(a){
-      // setTimeout pra garantir que estilos foram aplicados
-      setTimeout(function(){a.style.maxHeight=a.scrollHeight+'px'},50);
-    }
+    if(a)setTimeout(function(){a.style.maxHeight=a.scrollHeight+'px'},50);
   }
 });
 
-// === RIPPLE FEEDBACK nos CTAs ===
+// === RIPPLE CTAs ===
 document.addEventListener('click',function(e){
   var btn=e.target.closest('.cta');
   if(!btn)return;
@@ -1972,7 +1524,7 @@ document.addEventListener('click',function(e){
   setTimeout(function(){rip.remove()},600);
 });
 
-// === MAGNETIC CTA — botão segue cursor levemente ===
+// === MAGNETIC CTA ===
 (function(){
   if(window.matchMedia('(hover:none)').matches)return;
   document.querySelectorAll('.cta').forEach(function(btn){
@@ -1987,7 +1539,7 @@ document.addEventListener('click',function(e){
   });
 })();
 
-// === COUNT-UP nas métricas do hero ===
+// === COUNT-UP hero metrics ===
 (function(){
   var els=document.querySelectorAll('.hero-metric-num');
   if(!els.length||!('IntersectionObserver' in window))return;
@@ -2016,7 +1568,7 @@ document.addEventListener('click',function(e){
   els.forEach(function(el){io.observe(el)});
 })();
 
-// === PARALLAX SUTIL no hero card image ===
+// === PARALLAX hero image ===
 (function(){
   var img=document.querySelector('.hero-card-img');
   if(!img||window.matchMedia('(max-width:760px)').matches||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
@@ -2033,30 +1585,7 @@ document.addEventListener('click',function(e){
   },{passive:true});
 })();
 
-// === FLOATING ICONS — paralax leve no scroll ===
-(function(){
-  if(window.matchMedia('(max-width:900px)').matches||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-  var icons=document.querySelectorAll('.float-icon');
-  if(!icons.length)return;
-  var ticking=false;
-  window.addEventListener('scroll',function(){
-    if(!ticking){
-      requestAnimationFrame(function(){
-        var y=window.scrollY;
-        if(y<800){
-          icons.forEach(function(ic,i){
-            var d=(i%2===0?-1:1)*y*.25;
-            ic.style.translate='0 '+d+'px';
-          });
-        }
-        ticking=false;
-      });
-      ticking=true;
-    }
-  },{passive:true});
-})();
-
-// === STAGGER REVEAL nas grids ===
+// === STAGGER REVEAL grids ===
 (function(){
   if(!('IntersectionObserver' in window))return;
   var io=new IntersectionObserver(function(entries){
@@ -2071,7 +1600,7 @@ document.addEventListener('click',function(e){
       }
     });
   },{threshold:.15});
-  document.querySelectorAll('.cases-grid,.problem-list,.offer-list,.auth-grid').forEach(function(g){
+  document.querySelectorAll('.reels-grid,.modules-grid,.problem-list,.offer-list,.speaker-creds').forEach(function(g){
     Array.prototype.forEach.call(g.children,function(c){
       c.style.opacity='0';
       c.style.transform='translateY(24px)';
@@ -2085,27 +1614,6 @@ document.addEventListener('DOMContentLoaded',function(){
   s.textContent='.stagger-in>*{opacity:1!important;transform:none!important}';
   document.head.appendChild(s);
 });
-
-// === PROMO BAR — aparece a cada 2 minutos ===
-(function(){
-  var bar=document.getElementById('promoBar');
-  if(!bar)return;
-  var closed=false;
-  var SHOW_DURATION=10000; // visível por 10s
-  var INTERVAL=120000;      // a cada 2 minutos
-  function show(){
-    if(closed)return;
-    bar.classList.add('show');
-    setTimeout(function(){bar.classList.remove('show')},SHOW_DURATION);
-  }
-  // primeira aparição: 8s após carregar
-  setTimeout(show,8000);
-  setInterval(show,INTERVAL);
-  window.closePromo=function(){
-    closed=true;
-    bar.classList.remove('show');
-  };
-})();
 </script>
 </body>
 </html>
