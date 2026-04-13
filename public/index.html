@@ -57,7 +57,7 @@ window.cpTrack=function(event,data){
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:var(--brand-dark);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+body{font-family:var(--font-body);background:var(--brand-dark);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;zoom:0.86}
 body::before{content:'';position:fixed;inset:0;background:
   radial-gradient(ellipse 90% 60% at 50% -10%,rgba(232,89,60,.18),transparent 60%),
   radial-gradient(ellipse 70% 50% at 85% 30%,rgba(255,182,39,.08),transparent 60%),
@@ -72,7 +72,7 @@ body::before{content:'';position:fixed;inset:0;background:
 .blob-3{width:600px;height:600px;background:radial-gradient(circle,rgba(232,89,60,.3) 0%,rgba(232,89,60,0) 70%);top:55%;left:-220px;animation:blobFloat 22s ease-in-out infinite -8s}
 .blob-4{width:480px;height:480px;background:radial-gradient(circle,rgba(232,89,60,.35) 0%,rgba(232,89,60,0) 70%);top:78%;right:-140px;animation:blobFloat 16s ease-in-out infinite -3s reverse}
 .blob-5{width:380px;height:380px;background:radial-gradient(circle,rgba(255,182,39,.3) 0%,rgba(255,182,39,0) 70%);bottom:8%;left:30%;animation:blobFloat 20s ease-in-out infinite -11s}
-@keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-30px,20px) scale(.96)}}
+@keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(20px,-15px) scale(1.08)}66%{transform:translate(-15px,10px) scale(.96)}}
 @media(max-width:760px){.blob{filter:blur(60px);opacity:.35}.blob-1,.blob-3,.blob-5{display:none}}
 @media(prefers-reduced-motion:reduce){.blob{animation:none!important}}
 
@@ -91,12 +91,12 @@ body::before{content:'';position:fixed;inset:0;background:
 @media(prefers-reduced-motion:reduce){.bg-line{animation:none!important}}
 
 /* Highlight marker */
-.mark{position:relative;display:inline-block;color:#fff;padding:0 10px;z-index:1;white-space:nowrap}
+.mark{position:relative;display:inline-block;color:#fff;padding:0 10px;z-index:1}
 .mark::before{content:'';position:absolute;inset:6% -2% 8% -2%;background:linear-gradient(105deg,var(--accent) 0%,var(--accent-hover) 50%,#b83420 100%);transform:skew(-6deg);z-index:-1;border-radius:3px;box-shadow:0 8px 24px -4px rgba(232,89,60,.55),inset 0 1px 0 rgba(255,255,255,.15)}
 .mark-amber::before{background:linear-gradient(105deg,var(--accent-2) 0%,#f59f0b 50%,#d97706 100%);box-shadow:0 8px 24px -4px rgba(255,182,39,.55),inset 0 1px 0 rgba(255,255,255,.2)}
 
 /* Reveal on scroll */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
 .reveal.in{opacity:1;transform:none}
 .reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}
 a{color:inherit;text-decoration:none}
@@ -243,9 +243,9 @@ img{display:block;max-width:100%}
 .reels-cta-note strong{color:var(--accent-2)}
 
 /* === AUTHORITY (SPEAKER) === */
-.speaker-wrap{max-width:880px;margin:24px auto 0;display:grid;grid-template-columns:280px 1fr;gap:32px;align-items:start}
+.speaker-wrap{max-width:880px;margin:24px auto 0;display:grid;grid-template-columns:260px 1fr;gap:36px;align-items:center}
 @media(max-width:760px){.speaker-wrap{grid-template-columns:1fr;gap:20px}}
-.speaker-photo{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 50px -20px rgba(0,0,0,.6);aspect-ratio:3/4;position:sticky;top:90px}
+.speaker-photo{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 50px -20px rgba(0,0,0,.6);aspect-ratio:3/4}
 .speaker-photo img{width:100%;height:100%;object-fit:cover}
 .speaker-info{display:flex;flex-direction:column;gap:20px}
 .speaker-name{font-family:var(--font-display);font-size:36px;letter-spacing:1px;color:#fff;line-height:1}
@@ -529,7 +529,7 @@ img{display:block;max-width:100%}
 
 /* === MOBILE OVERRIDES === */
 @media(max-width:760px){
-  html,body{overflow-x:hidden;max-width:100vw}
+  html,body{overflow-x:hidden;max-width:100vw}body{zoom:1}
   .w{padding:0 16px;max-width:100%}
   .nav{padding:10px 14px}
   .nav-logo{font-size:18px}
@@ -661,10 +661,10 @@ img{display:block;max-width:100%}
         <p>Postos que não fazem marketing digital perdem em média <strong>30-40% de clientes potenciais</strong> para concorrentes que aparecem no feed do Instagram. O cliente decide onde abastecer pelo celular — e se ele não te encontra, vai no vizinho.</p>
       </div>
       <div class="problem-list">
-        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Nenhuma presença digital</strong> — seu posto não tem Instagram ativo, não aparece no Google Maps com avaliações, e o cliente não te encontra quando pesquisa "posto perto de mim".</div></div>
-        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Não sabe o que postar</strong> — você até criou uma conta, mas parou no terceiro post porque não tinha ideia do que publicar. Resultado: perfil abandonado com 47 seguidores.</div></div>
-        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Equipe não grava conteúdo</strong> — seus frentistas poderiam ser os protagonistas do marketing do posto, mas ninguém sabe como preparar, gravar ou editar um vídeo que funcione.</div></div>
-        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Concorrente aparece, você não</strong> — o posto da esquina posta Reels toda semana, tem promoção no stories e o cliente comenta "vi no Instagram". Você perde cliente sem nem saber por quê.</div></div>
+        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Nenhuma presença digital:</strong> seu posto não tem Instagram ativo, não aparece no Google Maps com avaliações, e o cliente não te encontra quando pesquisa "posto perto de mim".</div></div>
+        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Não sabe o que postar:</strong> você até criou uma conta, mas parou no terceiro post porque não tinha ideia do que publicar. Perfil abandonado com 47 seguidores.</div></div>
+        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Equipe não grava conteúdo:</strong> seus frentistas poderiam ser os protagonistas do marketing do posto, mas ninguém sabe como preparar, gravar ou editar um vídeo que funcione.</div></div>
+        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Concorrente aparece, você não:</strong> o posto da esquina posta Reels toda semana, tem promoção no stories e o cliente comenta "vi no Instagram". Você perde cliente sem nem saber por quê.</div></div>
       </div>
       <div class="solution-callout">
         <p><strong>Este curso resolve exatamente isso.</strong> Você vai aprender a criar conteúdo que viraliza, preparar sua equipe para gravar, identificar tendências do setor e automatizar sua presença digital — tudo com exemplos reais de postos que já fizeram.</p>
@@ -726,7 +726,7 @@ img{display:block;max-width:100%}
     <div class="module-card module-bonus reveal">
       <div class="bonus-tag">Bônus exclusivo</div>
       <div class="module-num">+1</div>
-      <div class="module-title">Copa do Mundo 2026 — O plano de marketing do seu posto</div>
+      <div class="module-title">Copa do Mundo 2026: O plano de marketing do seu posto</div>
       <div class="module-desc">A maior oportunidade de marketing dos próximos anos. Receba um plano completo de ações, promoções e conteúdos para transformar a Copa em fila na bomba.</div>
     </div>
   </div>
@@ -835,11 +835,11 @@ img{display:block;max-width:100%}
         <div class="speaker-name">ANDRÉ CARVALHAES</div>
         <div class="speaker-role">Especialista em Marketing Digital · Ex-V4 Company</div>
       </div>
-      <p class="speaker-bio">André passou <strong>3 anos na V4 Company</strong> — a maior assessoria de tráfego pago do Brasil — onde liderou estratégias digitais para dezenas de empresas. Hoje, aplica todo esse conhecimento no setor de postos de combustível, ajudando donos a transformarem seus postos em marcas locais reconhecidas através do marketing digital.</p>
+      <p class="speaker-bio">André passou <strong>3 anos na V4 Company,</strong> a maior assessoria de tráfego pago do Brasil — onde liderou estratégias digitais para dezenas de empresas. Hoje, aplica todo esse conhecimento no setor de postos de combustível, ajudando donos a transformarem seus postos em marcas locais reconhecidas através do marketing digital.</p>
       <div class="speaker-creds">
         <div class="speaker-cred">
           <div class="speaker-cred-icon">V4</div>
-          <div><strong>3 anos na V4 Company</strong> — a maior assessoria de tráfego pago do Brasil</div>
+          <div><strong>3 anos na V4 Company,</strong> a maior assessoria de tráfego pago do Brasil</div>
         </div>
         <div class="speaker-cred">
           <div class="speaker-cred-icon">📱</div>
@@ -851,7 +851,7 @@ img{display:block;max-width:100%}
         </div>
         <div class="speaker-cred">
           <div class="speaker-cred-icon">⛽</div>
-          <div><strong>Conhece o setor de postos por dentro</strong> — não é teoria, é prática aplicada</div>
+          <div><strong>Conhece o setor de postos por dentro:</strong> não é teoria, é prática aplicada</div>
         </div>
       </div>
     </div>
@@ -879,7 +879,7 @@ img{display:block;max-width:100%}
   </div>
 
   <div class="price-card">
-    <div class="price-banner">Oferta exclusiva Evento Secreto — expira quando o timer zerar</div>
+    <div class="price-banner">Oferta exclusiva Evento Secreto · expira quando o timer zerar</div>
     <div class="price-body">
       <div class="price-left">
         <div class="price-from">de R$ 497,00 por apenas</div>
@@ -899,7 +899,7 @@ img{display:block;max-width:100%}
     </div>
     <div class="price-guarantee">
       <span>🛡️</span>
-      <div><strong>7 dias de garantia incondicional</strong> — se o conteúdo não fizer sentido pra você, devolvemos 100% sem burocracia.</div>
+      <div><strong>7 dias de garantia incondicional:</strong> se o conteúdo não fizer sentido pra você, devolvemos 100% sem burocracia.</div>
     </div>
     <div class="price-or">ou</div>
     <div class="price-wpp">
@@ -1572,12 +1572,13 @@ document.addEventListener('click',function(e){
 (function(){
   var img=document.querySelector('.hero-card-img');
   if(!img||window.matchMedia('(max-width:760px)').matches||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  img.style.willChange='transform';
   var ticking=false;
   window.addEventListener('scroll',function(){
     if(!ticking){
       requestAnimationFrame(function(){
         var y=window.scrollY;
-        if(y<700)img.style.transform='translateY('+(y*.15)+'px) scale(1.05)';
+        if(y<700)img.style.transform='translateY('+(y*.06)+'px) scale(1.05)';
         ticking=false;
       });
       ticking=true;
@@ -1604,7 +1605,7 @@ document.addEventListener('click',function(e){
     Array.prototype.forEach.call(g.children,function(c){
       c.style.opacity='0';
       c.style.transform='translateY(24px)';
-      c.style.transition='opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)';
+      c.style.transition='opacity .5s cubic-bezier(.2,.8,.2,1),transform .5s cubic-bezier(.2,.8,.2,1)';
     });
     io.observe(g);
   });
