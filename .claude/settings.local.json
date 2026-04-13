@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s https://lp-teste-1.web.app/)",
+      "Bash(gh repo:*)"
+    ]
+  }
+}
