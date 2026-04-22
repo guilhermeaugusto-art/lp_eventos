@@ -264,9 +264,13 @@ img{display:block;max-width:100%}
 .speaker-name-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:4px}
 .speaker-v4-badge{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px}
 .speaker-v4-label{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-dim);font-weight:600}
-.speaker-v4-badge img{height:26px;width:auto;border-radius:4px;display:block}
 .speaker-cred-icon img{width:24px;height:24px;object-fit:contain;display:block}
 .speaker-cred-icon.is-brand{background:#fff;border-color:rgba(255,255,255,.18);padding:4px}
+.speaker-cred-icon svg{width:20px;height:20px;stroke-width:2;color:var(--accent-2)}
+.speaker-socials{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.speaker-social{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.04);border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;color:var(--text-mid);transition:all .3s cubic-bezier(.2,.8,.2,1);text-decoration:none}
+.speaker-social:hover{background:var(--accent-soft);border-color:var(--accent-2);color:var(--accent-2);transform:translateY(-2px);box-shadow:0 8px 20px -8px rgba(232,89,60,.5)}
+.speaker-social svg{width:18px;height:18px}
 .speaker-creds{display:flex;flex-direction:column;gap:10px}
 .speaker-cred{display:flex;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;color:var(--text-mid);transition:border-color .3s}
 .speaker-cred:hover{border-color:var(--border-accent)}
@@ -850,19 +854,21 @@ img{display:block;max-width:100%}
     </div>
     <div class="speaker-info">
       <div>
-        <div class="speaker-name-row">
-          <div class="speaker-name">ANDRÉ CARVALHAES</div>
-          <div class="speaker-v4-badge" title="Agência onde rodou 3 anos">
-            <span class="speaker-v4-label">Agência:</span>
-            <img alt="V4 Company" src="https://i.imgur.com/Bg3r3li.jpeg" width="26" height="26" loading="lazy" decoding="async">
-          </div>
-        </div>
+        <div class="speaker-name">ANDRÉ CARVALHAES</div>
         <div class="speaker-role">3 anos na V4 Company · hoje ensinando posto a encher pista</div>
+        <div class="speaker-socials">
+          <a class="speaker-social" href="https://www.instagram.com/af.carvalhaes/" target="_blank" rel="noopener" aria-label="Instagram do André" title="@af.carvalhaes">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a class="speaker-social" href="https://br.linkedin.com/in/andr%C3%A9-carvalhaes-31307717a" target="_blank" rel="noopener" aria-label="LinkedIn do André" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.44a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
       </div>
       <p class="speaker-bio">O André passou <strong>3 anos dentro da V4 Company,</strong> a maior agência de anúncio do Brasil, rodando campanha pra dezenas de empresa. Quando saiu, escolheu um setor só pra trabalhar: <strong>postos de combustível.</strong> Hoje, o método que ele usava pra clientes grande, ele adaptou pra caber no dia de um posto — e é esse método que vira o Posto Cheio.</p>
       <div class="speaker-creds">
         <div class="speaker-cred">
-          <div class="speaker-cred-icon">V4</div>
+          <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/Bg3r3li.jpeg" alt="V4 Company" loading="lazy" decoding="async"></div>
           <div><strong>3 anos na V4 Company</strong> — a maior agência de anúncio do Brasil</div>
         </div>
         <div class="speaker-cred">
@@ -870,7 +876,7 @@ img{display:block;max-width:100%}
           <div><strong>Roda anúncio no Meta e no Google</strong> há 4 anos pra negócio de bairro</div>
         </div>
         <div class="speaker-cred">
-          <div class="speaker-cred-icon">⛽</div>
+          <div class="speaker-cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h12"/><path d="M5 22V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v17"/><path d="M5 11h10"/><path d="M15 8h2a2 2 0 0 1 2 2v5a2 2 0 0 0 2 2v0a2 2 0 0 1-2 2h-2"/></svg></div>
           <div><strong>Conhece posto por dentro</strong> — do turno de madrugada à planilha do fechamento</div>
         </div>
       </div>
