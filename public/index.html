@@ -264,7 +264,9 @@ img{display:block;max-width:100%}
 .speaker-name-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:4px}
 .speaker-v4-badge{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px}
 .speaker-v4-label{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-dim);font-weight:600}
-.speaker-v4-badge img{height:22px;width:auto;opacity:.85;filter:grayscale(.2)}
+.speaker-v4-badge img{height:26px;width:auto;border-radius:4px;display:block}
+.speaker-cred-icon img{width:24px;height:24px;object-fit:contain;display:block}
+.speaker-cred-icon.is-brand{background:#fff;border-color:rgba(255,255,255,.18);padding:4px}
 .speaker-creds{display:flex;flex-direction:column;gap:10px}
 .speaker-cred{display:flex;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;color:var(--text-mid);transition:border-color .3s}
 .speaker-cred:hover{border-color:var(--border-accent)}
@@ -619,8 +621,7 @@ img{display:block;max-width:100%}
   <p class="hero-subtitle reveal reveal-d1">O curso que ensina dono e gerente de posto a encher a pracinha de carro usando Reels, Google e R$ 10 por dia de anúncio. Sem jargão, sem agência, sem precisar contratar ninguém.</p>
 
   <div class="hero-card reveal reveal-d2">
-    <!-- TODO (feedback Bianca): substituir por foto real de posto (Unsplash temporário) -->
-    <img class="hero-card-img" src="https://images.unsplash.com/photo-1545459720-aac8509eb02c?w=900&q=70&auto=format&fit=crop" alt="Posto de combustível à noite" fetchpriority="high" decoding="async" width="900" height="600">
+    <img class="hero-card-img" src="https://i.imgur.com/y2i8liD.jpeg" alt="Posto de combustível à noite" fetchpriority="high" decoding="async" width="720" height="480">
     <div class="hero-card-grad"></div>
     <div class="hero-card-inner">
       <div class="hero-card-left">
@@ -851,10 +852,9 @@ img{display:block;max-width:100%}
       <div>
         <div class="speaker-name-row">
           <div class="speaker-name">ANDRÉ CARVALHAES</div>
-          <!-- TODO: baixar logo V4 Company oficial (SVG/PNG transparente) de v4company.com e substituir este placeholder -->
           <div class="speaker-v4-badge" title="Agência onde rodou 3 anos">
             <span class="speaker-v4-label">Agência:</span>
-            <img alt="V4 Company" src="https://placehold.co/90x28/1D1D1F/E8593C?text=V4+Company&font=raleway" width="90" height="28" loading="lazy" decoding="async">
+            <img alt="V4 Company" src="https://i.imgur.com/Bg3r3li.jpeg" width="26" height="26" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="speaker-role">3 anos na V4 Company · hoje ensinando posto a encher pista</div>
@@ -866,7 +866,7 @@ img{display:block;max-width:100%}
           <div><strong>3 anos na V4 Company</strong> — a maior agência de anúncio do Brasil</div>
         </div>
         <div class="speaker-cred">
-          <div class="speaker-cred-icon">🎯</div>
+          <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/0gwRjTA.jpeg" alt="Meta" loading="lazy" decoding="async"></div>
           <div><strong>Roda anúncio no Meta e no Google</strong> há 4 anos pra negócio de bairro</div>
         </div>
         <div class="speaker-cred">
