@@ -233,6 +233,10 @@ img{display:block;max-width:100%}
 .reel-card:hover{border-color:var(--border-accent);transform:translateY(-8px);box-shadow:var(--shadow-soft)}
 .reel-thumb{position:relative;aspect-ratio:9/16;max-height:340px;overflow:hidden;background:#111}
 .reel-thumb img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
+.reel-thumb video{width:100%;height:100%;object-fit:cover;display:block;background:#111;transition:transform .6s ease}
+.reel-card:hover .reel-thumb video{transform:scale(1.03)}
+.reel-ig-hint{position:absolute;bottom:10px;left:10px;display:flex;align-items:center;gap:6px;padding:6px 10px;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);border-radius:100px;font-size:11.5px;font-weight:700;color:#fff;letter-spacing:.01em}
+.reel-ig-hint svg{width:13px;height:13px}
 .reel-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3)}
 .reel-play-icon{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.3)}
 .reel-play-icon svg{width:24px;height:24px;color:#fff;margin-left:3px}
@@ -248,8 +252,10 @@ img{display:block;max-width:100%}
 /* === AUTHORITY (SPEAKER) === */
 .speaker-wrap{max-width:1000px;margin:24px auto 0;display:grid;grid-template-columns:320px 1fr;gap:40px;align-items:center;justify-items:stretch}
 @media(max-width:760px){.speaker-wrap{grid-template-columns:1fr;gap:20px;max-width:100%}}
-.speaker-photo{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 50px -20px rgba(0,0,0,.6);aspect-ratio:3/4;width:100%}
-.speaker-photo img{width:100%;height:100%;object-fit:cover}
+.speaker-photo{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 50px -20px rgba(0,0,0,.6),0 0 60px -10px rgba(232,89,60,.3);aspect-ratio:1/1;width:100%;background:radial-gradient(circle at 30% 25%,rgba(232,89,60,.12),#0a0a0a 70%);position:relative}
+.speaker-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.speaker-photo:hover img{transform:scale(1.03)}
+.speaker-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,transparent 55%,rgba(232,89,60,.06));pointer-events:none}
 .speaker-info{display:flex;flex-direction:column;gap:20px}
 .speaker-name{font-family:var(--font-display);font-size:36px;letter-spacing:1px;color:#fff;line-height:1}
 .speaker-role{font-size:14px;color:var(--accent-2);font-weight:600;margin-top:4px}
@@ -572,7 +578,7 @@ img{display:block;max-width:100%}
   .module-num{font-size:28px}
   .module-title{font-size:15px}
   .speaker-wrap{gap:16px}
-  .speaker-photo{position:static;aspect-ratio:16/10;max-height:260px}
+  .speaker-photo{position:static;aspect-ratio:1/1;max-width:280px;max-height:280px;margin:0 auto}
   .speaker-name{font-size:28px}
   .sticky-cta{display:block}
   .alert-box{margin:24px 16px}
@@ -767,13 +773,16 @@ img{display:block;max-width:100%}
   </div>
 
   <div class="reels-grid" id="casesGrid">
-    <!-- Reel 1 — DCmPXEMx8gV -->
+    <!-- Reel 1 — DCmPXEMx8gV (vídeo Imgur: gff3qv1) -->
     <a class="reel-card reveal" href="https://www.instagram.com/clubpetro/reel/DCmPXEMx8gV/" target="_blank" rel="noopener" onclick="cpTrack('reel_click',{reel:'DCmPXEMx8gV'})">
       <div class="reel-thumb">
-        <!-- TODO: capturar thumbnail do Reel DCmPXEMx8gV -->
-        <img src="https://images.unsplash.com/photo-1545459720-aac8509eb02c?w=400&q=70&auto=format&fit=crop" alt="Reel @clubpetro — DCmPXEMx8gV" loading="lazy" decoding="async" width="400" height="710">
-        <div class="reel-play"><div class="reel-play-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
-        <div class="reel-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Ver views</div>
+        <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/gff3qv1.jpg" aria-label="Reel @clubpetro">
+          <source src="https://i.imgur.com/gff3qv1.mp4" type="video/mp4">
+        </video>
+        <div class="reel-ig-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Ver no Instagram
+        </div>
       </div>
       <div class="reel-body">
         <div class="reel-handle">@clubpetro</div>
@@ -781,13 +790,16 @@ img{display:block;max-width:100%}
         <div class="reel-caption">Reel publicado no @clubpetro aplicando o método</div>
       </div>
     </a>
-    <!-- Reel 2 — DA1UWaPxHPP -->
+    <!-- Reel 2 — DA1UWaPxHPP (vídeo Imgur: vd4lqzz) -->
     <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/clubpetro/reel/DA1UWaPxHPP/" target="_blank" rel="noopener" onclick="cpTrack('reel_click',{reel:'DA1UWaPxHPP'})">
       <div class="reel-thumb">
-        <!-- TODO: capturar thumbnail do Reel DA1UWaPxHPP -->
-        <img src="https://images.unsplash.com/photo-1607893407985-5b262debe667?w=400&q=70&auto=format&fit=crop" alt="Reel @clubpetro — DA1UWaPxHPP" loading="lazy" decoding="async" width="400" height="710">
-        <div class="reel-play"><div class="reel-play-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
-        <div class="reel-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Ver views</div>
+        <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/vd4lqzz.jpg" aria-label="Reel @clubpetro">
+          <source src="https://i.imgur.com/vd4lqzz.mp4" type="video/mp4">
+        </video>
+        <div class="reel-ig-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Ver no Instagram
+        </div>
       </div>
       <div class="reel-body">
         <div class="reel-handle">@clubpetro</div>
@@ -795,27 +807,16 @@ img{display:block;max-width:100%}
         <div class="reel-caption">Reel publicado no @clubpetro aplicando o método</div>
       </div>
     </a>
-    <!-- Reel 3 — DGnsqczRbwJ -->
+    <!-- Reel 3 — DGnsqczRbwJ (vídeo Imgur: LxwDapV) -->
     <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/clubpetro/reel/DGnsqczRbwJ/" target="_blank" rel="noopener" onclick="cpTrack('reel_click',{reel:'DGnsqczRbwJ'})">
       <div class="reel-thumb">
-        <!-- TODO: capturar thumbnail do Reel DGnsqczRbwJ -->
-        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&q=70&auto=format&fit=crop" alt="Reel @clubpetro — DGnsqczRbwJ" loading="lazy" decoding="async" width="400" height="710">
-        <div class="reel-play"><div class="reel-play-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
-        <div class="reel-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Ver views</div>
-      </div>
-      <div class="reel-body">
-        <div class="reel-handle">@clubpetro</div>
-        <div class="reel-location">Instagram · Reel público</div>
-        <div class="reel-caption">Reel publicado no @clubpetro aplicando o método</div>
-      </div>
-    </a>
-    <!-- Reel 4 — DAGhmUYRZR1 -->
-    <a class="reel-card reveal" href="https://www.instagram.com/clubpetro/reel/DAGhmUYRZR1/" target="_blank" rel="noopener" onclick="cpTrack('reel_click',{reel:'DAGhmUYRZR1'})">
-      <div class="reel-thumb">
-        <!-- TODO: capturar thumbnail do Reel DAGhmUYRZR1 -->
-        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=400&q=70&auto=format&fit=crop" alt="Reel @clubpetro — DAGhmUYRZR1" loading="lazy" decoding="async" width="400" height="710">
-        <div class="reel-play"><div class="reel-play-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
-        <div class="reel-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Ver views</div>
+        <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/LxwDapV.jpg" aria-label="Reel @clubpetro">
+          <source src="https://i.imgur.com/LxwDapV.mp4" type="video/mp4">
+        </video>
+        <div class="reel-ig-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Ver no Instagram
+        </div>
       </div>
       <div class="reel-body">
         <div class="reel-handle">@clubpetro</div>
@@ -844,8 +845,7 @@ img{display:block;max-width:100%}
 
   <div class="speaker-wrap">
     <div class="speaker-photo">
-      <!-- TODO (feedback Bianca): substituir por foto real do André (Unsplash temporário) -->
-      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=70&auto=format&fit=crop" alt="André Carvalhaes" loading="lazy" decoding="async" width="500" height="667">
+      <img src="https://i.imgur.com/Yepugkv.jpeg" alt="André Carvalhaes" loading="lazy" decoding="async" width="600" height="600">
     </div>
     <div class="speaker-info">
       <div>
