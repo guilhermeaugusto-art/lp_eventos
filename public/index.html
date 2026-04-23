@@ -5,8 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Posto Cheio · o curso que enche a pista do seu posto | ClubPetro</title>
 <meta name="description" content="O método que donos de posto usam pra lotar a pista com Reels, Google e R$ 10/dia de tráfego. Vaga por R$ 147 só pra quem veio do Evento Secreto.">
+
+<link rel="canonical" href="https://lp-teste-1.web.app/">
+<link rel="icon" type="image/jpeg" href="https://i.imgur.com/WkKfAI4.jpeg">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Posto Cheio — o curso que enche a pista do seu posto">
+<meta property="og:description" content="O método que donos de posto usam pra lotar a pista com Reels, Google e R$ 10/dia de tráfego. Vaga por R$ 147 só pra quem veio do Evento Secreto.">
+<meta property="og:image" content="https://i.imgur.com/y2i8liD.jpeg">
+<meta property="og:url" content="https://lp-teste-1.web.app/">
+<meta property="og:site_name" content="ClubPetro">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Posto Cheio — o curso que enche a pista do seu posto">
+<meta name="twitter:description" content="Vaga por R$ 147 só pra quem veio do Evento Secreto. Método testado em +380 postos.">
+<meta name="twitter:image" content="https://i.imgur.com/y2i8liD.jpeg">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Course",
+  "name":"Posto Cheio",
+  "description":"Curso online que ensina donos e gerentes de posto a encher a pracinha com Reels, Google e R$ 10 por dia de anúncio.",
+  "provider":{
+    "@type":"Organization",
+    "name":"ClubPetro",
+    "sameAs":"https://www.instagram.com/clubpetro/"
+  },
+  "offers":{
+    "@type":"Offer",
+    "price":"147.00",
+    "priceCurrency":"BRL",
+    "availability":"https://schema.org/InStock",
+    "url":"https://lp-teste-1.web.app/"
+  },
+  "instructor":{
+    "@type":"Person",
+    "name":"André Carvalhaes",
+    "jobTitle":"Especialista em marketing digital e tráfego pago"
+  }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- TODO (A3): adicionar <link rel=preload as=font> apontando para URLs woff2 exatas do Google Fonts quando elas forem fixadas (podem mudar a cada update do CSS2 API) -->
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 
 <!-- ========== TRACKING PIXELS (desativados ate IDs reais) ==========
@@ -52,7 +99,7 @@ window.cpTrack=function(event,data){
 </script>
 <style>
 :root {
-  --bg:#0A0A0A;--bg-card:#161616;--bg-card-light:#1f1f1f;--text:#F5F5F5;--text-mid:#A8A8A8;--text-dim:#666;
+  --bg:#0A0A0A;--bg-card:#161616;--bg-card-light:#1f1f1f;--text:#F5F5F5;--text-mid:#A8A8A8;--text-dim:#8A8A8A;
   --accent:#E8593C;--accent-2:#FFB627;--accent-hover:#D04A30;--accent-soft:rgba(232,89,60,.12);
   --green:#25D366;--green-soft:rgba(37,211,102,.12);--green-check:#0B845A;
   --border:rgba(255,255,255,.08);--border-accent:rgba(232,89,60,.35);
@@ -63,10 +110,14 @@ window.cpTrack=function(event,data){
   --shadow-glow:0 20px 60px -20px rgba(232,89,60,.35);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+/* A1: body{zoom:0.86} removido (anti-padrao, forced reflow, quebra Firefox).
+   Compensado por html{font-size:88%} no desktop — todos os rem/em escalam
+   proporcionalmente. Mobile mantem 100% via @media(max-width:760px). */
+html{scroll-behavior:smooth;font-size:88%}
+@media(max-width:760px){html{font-size:100%}}
 input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{font-family:var(--font-body);background:var(--brand-dark);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;zoom:0.86}
+body{font-family:var(--font-body);background:var(--brand-dark);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
 body::before{content:'';position:fixed;inset:0;background:
   radial-gradient(ellipse 90% 60% at 50% -10%,rgba(232,89,60,.18),transparent 60%),
   radial-gradient(ellipse 70% 50% at 85% 30%,rgba(255,182,39,.08),transparent 60%),
@@ -197,6 +248,10 @@ img{display:block;max-width:100%}
 
 /* === SECTIONS === */
 .sec{padding:48px 0}
+/* A4: content-visibility:auto nas secoes abaixo do fold. O browser pula
+   render/layout ate o conteudo entrar no viewport. Ganho de ~300-800ms
+   em TBT. Nao aplicar em .hero (fold) nem em modais. */
+.sec,.modules-grid,.reels-grid,.problem-wrap,.speaker-wrap,.faq-list,.final-cta{content-visibility:auto;contain-intrinsic-size:auto 600px}
 .sec-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0;max-width:880px;margin:0 auto}
 .sec>*{margin-left:auto;margin-right:auto}
 .sec-head{max-width:760px;margin:0 auto 24px;text-align:center;display:flex;flex-direction:column;align-items:center}
@@ -292,7 +347,7 @@ img{display:block;max-width:100%}
 .speaker-cred-icon.is-brand{background:#fff;border-color:rgba(255,255,255,.18);padding:4px}
 .speaker-socials{display:flex;gap:12px;margin-top:0;flex-wrap:wrap;justify-content:center}
 .speaker-left .speaker-socials{margin-top:4px}
-.speaker-social{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.04);border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;color:var(--text-mid);transition:all .3s cubic-bezier(.2,.8,.2,1);text-decoration:none}
+.speaker-social{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.04);border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;color:var(--text-mid);transition:all .3s cubic-bezier(.2,.8,.2,1);text-decoration:none}
 .speaker-social:hover{background:var(--accent-soft);border-color:var(--accent-2);color:var(--accent-2);transform:translateY(-2px);box-shadow:0 8px 20px -8px rgba(232,89,60,.5)}
 .speaker-social svg{width:18px;height:18px}
 .speaker-creds{display:flex;flex-direction:column;gap:10px}
@@ -394,7 +449,7 @@ img{display:block;max-width:100%}
 .exit-modal.show{opacity:1;pointer-events:auto}
 .exit-card{max-width:480px;width:100%;background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid rgba(232,89,60,.35);border-radius:22px;padding:36px 32px;text-align:center;position:relative;box-shadow:0 40px 100px -20px rgba(0,0,0,.7),0 0 80px -20px rgba(232,89,60,.3);transform:translateY(20px) scale(.96);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
 .exit-modal.show .exit-card{transform:translateY(0) scale(1)}
-.exit-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s}
+.exit-close{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s;padding:0}
 .exit-close:hover{background:rgba(232,89,60,.2)}
 .exit-eyebrow{display:inline-block;font-size:11px;font-weight:700;color:var(--accent-2);letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px;padding:5px 14px;background:rgba(232,89,60,.12);border:1px solid rgba(232,89,60,.3);border-radius:100px}
 .exit-title{font-family:var(--font-display);font-size:30px;letter-spacing:.6px;line-height:1.05;color:#fff;margin-bottom:10px}
@@ -421,7 +476,7 @@ img{display:block;max-width:100%}
 .modal{width:100%;max-width:880px;background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid rgba(232,89,60,.25);border-radius:24px;box-shadow:0 50px 120px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.04);transform:translateY(20px) scale(.98);opacity:0;transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .35s;position:relative;overflow:hidden;max-height:calc(100vh - 40px);display:flex;flex-direction:column}
 .modal-backdrop.show .modal{transform:translateY(0) scale(1);opacity:1}
 .modal::before{content:'';position:absolute;top:0;left:0;right:0;height:140px;background:linear-gradient(180deg,rgba(232,89,60,.08),transparent);pointer-events:none;border-radius:24px 24px 0 0}
-.modal-close{position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .25s,transform .25s}
+.modal-close{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .25s,transform .25s;padding:0}
 .modal-close:hover{background:rgba(232,89,60,.2);border-color:var(--accent);transform:rotate(90deg)}
 .modal-header{padding:32px 36px 0;text-align:center;position:relative;z-index:2}
 .modal-eyebrow{display:inline-block;font-size:11px;font-weight:700;color:var(--accent-2);letter-spacing:1.8px;text-transform:uppercase;margin-bottom:8px}
@@ -450,7 +505,7 @@ img{display:block;max-width:100%}
 .field label{display:block;font-size:11px;font-weight:600;color:var(--text-mid);letter-spacing:.4px;text-transform:uppercase;margin-bottom:6px}
 .field label .req{color:var(--accent)}
 .field input,.field select{width:100%;padding:14px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#fff;font-family:var(--font-body);font-size:14px;font-weight:500;transition:border-color .25s,background .25s,box-shadow .25s;outline:none}
-.field input::placeholder{color:#666}
+.field input::placeholder{color:#8A8A8A}
 .field input:focus,.field select:focus{border-color:var(--accent);background:rgba(232,89,60,.04);box-shadow:0 0 0 3px rgba(232,89,60,.12)}
 .field input.invalid{border-color:#EE8282;background:rgba(238,130,130,.06)}
 .field-error{font-size:11px;color:#EE8282;margin-top:5px;display:none}
@@ -479,7 +534,7 @@ img{display:block;max-width:100%}
 .pix-info{font-size:13px;color:var(--text-mid);line-height:1.6;margin-bottom:14px}
 .pix-info strong{color:#fff;font-size:15px;display:block;margin-bottom:4px}
 .pix-code{display:flex;gap:8px;align-items:center;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:10px 14px;font-family:'Courier New',monospace;font-size:11px;color:#bbb;word-break:break-all}
-.pix-copy{flex-shrink:0;padding:6px 12px;background:var(--accent);color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:.5px}
+.pix-copy{flex-shrink:0;padding:10px 16px;background:var(--accent);color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;min-height:44px}
 .boleto-box{padding:24px;background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.12);border-radius:14px;text-align:center}
 .boleto-box svg{width:48px;height:48px;color:var(--accent-2);margin-bottom:14px}
 .boleto-box h4{font-family:var(--font-body);font-size:16px;color:#fff;font-weight:700;margin-bottom:6px}
@@ -560,7 +615,7 @@ img{display:block;max-width:100%}
 
 /* === MOBILE OVERRIDES === */
 @media(max-width:760px){
-  html,body{overflow-x:hidden;max-width:100vw}body{zoom:1}
+  html,body{overflow-x:hidden;max-width:100vw}
   .w{padding:0 16px;max-width:100%}
   .nav{padding:10px 14px}
   .nav-logo img{height:36px}
@@ -602,9 +657,30 @@ img{display:block;max-width:100%}
   .sticky-cta{display:block}
   .alert-box{margin:24px 16px}
 }
+
+/* B5 — Honra prefers-reduced-motion em todas as animacoes principais.
+   Lista cobre blinks, pulses, ripples, parallax, count-up, float, shimmer
+   e transicoes de hover/reveal. Mantem funcionalidade, zera o movimento. */
+@media(prefers-reduced-motion:reduce){
+  .social-proof-dot,.fab-wpp,.alert-icon,.cd-label::before,.mark-amber::after,
+  .hero-card-img,.module-card,.reel-card,.cta,.cta-ripple,
+  .nav-live-main::before,.hero-badge::before,.modal-step,.pay-content.active,
+  .success-icon,.price-banner,.blob,.bg-line{
+    animation:none!important;transition:none!important
+  }
+  .hero-card-img{transform:none!important}
+}
 </style>
 </head>
 <body>
+
+<!-- A5: SVG sprite com icone do WhatsApp reutilizado via <use href="#icon-wpp"/>.
+     Antes o path completo era repetido 5x no HTML (~3KB desperdicados). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="icon-wpp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+  </defs>
+</svg>
 
 <!-- BG layers -->
 <div class="blob blob-1" aria-hidden="true"></div>
@@ -710,7 +786,7 @@ img{display:block;max-width:100%}
       </div>
     </div>
     <div class="problem-img">
-      <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/4pRp7j1.jpg" aria-label="Posto com pracinha vazia">
+      <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/4pRp7j1.jpg" aria-label="Posto com pracinha vazia">
         <source src="https://i.imgur.com/4pRp7j1.mp4" type="video/mp4">
       </video>
     </div>
@@ -797,9 +873,9 @@ img{display:block;max-width:100%}
 
   <div class="reels-grid" id="casesGrid">
     <!-- Reel 1 — DCmPXEMx8gV (vídeo Imgur: gff3qv1) -->
-    <a class="reel-card reveal" href="https://www.instagram.com/clubpetro/reel/DCmPXEMx8gV/" target="_blank" rel="noopener" onclick="cpTrack('reel_click',{reel:'DCmPXEMx8gV'})">
+    <a class="reel-card reveal" href="https://www.instagram.com/clubpetro/reel/DCmPXEMx8gV/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DCmPXEMx8gV'})">
       <div class="reel-thumb">
-        <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/gff3qv1.jpg" aria-label="Reel @clubpetro">
+        <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/gff3qv1.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/gff3qv1.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
@@ -814,9 +890,9 @@ img{display:block;max-width:100%}
       </div>
     </a>
     <!-- Reel 2 — DA1UWaPxHPP (vídeo Imgur: vd4lqzz) -->
-    <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/clubpetro/reel/DA1UWaPxHPP/" target="_blank" rel="noopener" onclick="cpTrack('reel_click',{reel:'DA1UWaPxHPP'})">
+    <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/clubpetro/reel/DA1UWaPxHPP/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DA1UWaPxHPP'})">
       <div class="reel-thumb">
-        <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/vd4lqzz.jpg" aria-label="Reel @clubpetro">
+        <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/vd4lqzz.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/vd4lqzz.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
@@ -831,9 +907,9 @@ img{display:block;max-width:100%}
       </div>
     </a>
     <!-- Reel 3 — DGnsqczRbwJ (vídeo Imgur: LxwDapV) -->
-    <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/clubpetro/reel/DGnsqczRbwJ/" target="_blank" rel="noopener" onclick="cpTrack('reel_click',{reel:'DGnsqczRbwJ'})">
+    <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/clubpetro/reel/DGnsqczRbwJ/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DGnsqczRbwJ'})">
       <div class="reel-thumb">
-        <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/LxwDapV.jpg" aria-label="Reel @clubpetro">
+        <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/LxwDapV.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/LxwDapV.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
@@ -872,10 +948,10 @@ img{display:block;max-width:100%}
         <img src="https://i.imgur.com/Yepugkv.jpeg" alt="André Carvalhaes" loading="lazy" decoding="async" width="600" height="600">
       </div>
       <div class="speaker-socials">
-        <a class="speaker-social" href="https://www.instagram.com/af.carvalhaes/" target="_blank" rel="noopener" aria-label="Instagram do André" title="@af.carvalhaes">
+        <a class="speaker-social" href="https://www.instagram.com/af.carvalhaes/" target="_blank" rel="noopener noreferrer" aria-label="Instagram do André" title="@af.carvalhaes">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </a>
-        <a class="speaker-social" href="https://br.linkedin.com/in/andr%C3%A9-carvalhaes-31307717a" target="_blank" rel="noopener" aria-label="LinkedIn do André" title="LinkedIn">
+        <a class="speaker-social" href="https://br.linkedin.com/in/andr%C3%A9-carvalhaes-31307717a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn do André" title="LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.44a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
         </a>
       </div>
@@ -952,7 +1028,7 @@ img{display:block;max-width:100%}
     </div>
     <div class="price-or">ou</div>
     <div class="price-wpp">
-      <a href="https://wa.me/5534999999999?text=Oi%21+Vim+do+Evento+Secreto+e+quero+saber+mais+sobre+o+curso+Posto+Cheio" class="cta cta-wpp" data-wa="price-card" onclick="trackWA('price-card')"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Tirar dúvidas antes de garantir minha vaga</a>
+      <a href="https://wa.me/5534999999999?text=Oi%21+Vim+do+Evento+Secreto+e+quero+saber+mais+sobre+o+curso+Posto+Cheio" class="cta cta-wpp" data-wa="price-card" onclick="trackWA('price-card')"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#icon-wpp"/></svg>Tirar dúvidas antes de garantir minha vaga</a>
     </div>
     <div class="trust-row">
       <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Pagamento seguro</span>
@@ -979,23 +1055,23 @@ img{display:block;max-width:100%}
 
   <div class="faq-layout">
     <div class="faq-list">
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
         <div class="faq-q"><span class="faq-num">01</span><span class="faq-q-text">Meu posto é pequeno, de bairro. Funciona pra mim?</span><span class="faq-plus"></span></div>
         <div class="faq-a"><div class="faq-a-in">Funciona mais ainda. Posto de bairro tem uma coisa que rede grande não tem: cara. Um Reels do seu frentista chega em cada motorista de um raio de 10 km com um clique. Rede grande não bate bairro na disputa de local. Você não precisa de tamanho. Precisa de método.</div></div>
       </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
         <div class="faq-q"><span class="faq-num">02</span><span class="faq-q-text">Não tenho tempo pra ficar postando Reels.</span><span class="faq-plus"></span></div>
         <div class="faq-a"><div class="faq-a-in">Por isso o Módulo 3 é sobre gravar 30 dias de conteúdo numa tarde só. Depois disso, são 15 minutos por semana pra manter a coisa rodando. Menos tempo do que você gasta conferindo nota do caixa no fim do turno.</div></div>
       </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
         <div class="faq-q"><span class="faq-num">03</span><span class="faq-q-text">Eu nem sei usar Instagram direito. Vou conseguir?</span><span class="faq-plus"></span></div>
         <div class="faq-a"><div class="faq-a-in">O Posto Cheio foi feito pra quem nunca postou um Reels na vida. Tudo passo a passo, do zero: como abrir conta, o que gravar, como editar no celular, como agendar. Se você sabe mandar mensagem no WhatsApp, você consegue encher a pista pelo Instagram.</div></div>
       </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
         <div class="faq-q"><span class="faq-num">04</span><span class="faq-q-text">Já tentei postar e não veio cliente.</span><span class="faq-plus"></span></div>
         <div class="faq-a"><div class="faq-a-in">Provavelmente faltou método. Postar foto do posto de vez em quando não funciona. Funciona postar com plano, trend certa, hora certa e assunto que o motorista quer ver. É o mesmo método que o André rodava na V4 pra dezena de cliente, adaptado pro seu dia. Se em 7 dias não fizer sentido, devolvemos os R$ 147 e pronto.</div></div>
       </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
         <div class="faq-q"><span class="faq-num">05</span><span class="faq-q-text">Como eu acesso o curso depois que pago?</span><span class="faq-plus"></span></div>
         <div class="faq-a"><div class="faq-a-in">Na hora. Assim que o pagamento cai, chega no seu e-mail o link e a senha. Você assiste no celular, tablet ou computador, quantas vezes quiser, no horário que der. Aula fica disponível por 1 ano, com atualização grátis todo mês.</div></div>
       </div>
@@ -1026,7 +1102,7 @@ img{display:block;max-width:100%}
   <p class="final-sub">Amanhã seu concorrente vai postar mais um Reels. O cliente dele vai ver, o seu não. Daqui a 30 dias, ele tá com 10 mil seguidor e pista cheia na hora do almoço. E você? <strong style="color:#fff">Hoje, por R$ 147, você vira esse cara.</strong></p>
   <a href="#comprar" class="cta">Quero meu posto cheio por R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   <div style="height:12px"></div>
-  <a href="https://wa.me/5534999999999?text=Oi%21+Vim+do+Evento+Secreto+e+quero+saber+mais+sobre+o+curso+Posto+Cheio" class="cta cta-wpp" data-wa="final-cta" onclick="trackWA('final-cta')" style="max-width:520px;margin:0 auto"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Tirar dúvidas antes de garantir minha vaga</a>
+  <a href="https://wa.me/5534999999999?text=Oi%21+Vim+do+Evento+Secreto+e+quero+saber+mais+sobre+o+curso+Posto+Cheio" class="cta cta-wpp" data-wa="final-cta" onclick="trackWA('final-cta')" style="max-width:520px;margin:0 auto"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#icon-wpp"/></svg>Tirar dúvidas antes de garantir minha vaga</a>
 </section>
 
 <!-- FOOTER -->
@@ -1045,7 +1121,7 @@ img{display:block;max-width:100%}
     <p class="exit-text">Ficou alguma dúvida sobre o <strong>Posto Cheio</strong>? Fala com a equipe pelo <strong>WhatsApp</strong>. Respondem na hora, sem compromisso, só pra você decidir com a cabeça clara antes do timer zerar.</p>
     <div class="exit-actions">
       <a href="https://wa.me/5534999999999?text=Oi%21+Quase+sa%C3%AD+da+p%C3%A1gina+do+Posto+Cheio.+Pode+me+ajudar+a+entender+melhor+antes+de+eu+fechar%3F" class="cta cta-wpp" onclick="trackWA('exit-intent')">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#icon-wpp"/></svg>
         Tirar dúvidas antes de garantir minha vaga
       </a>
       <a class="cta" onclick="closeExit();openCheckout()" style="cursor:pointer">
@@ -1213,8 +1289,8 @@ img{display:block;max-width:100%}
             <div class="share-title">Conhece outro dono de posto com a pracinha vazia?</div>
             <div class="share-text">Manda pra ele. Ajude mais um posto a <strong>encher a pista</strong>.</div>
             <div class="share-actions">
-              <a class="share-btn share-wpp" href="https://wa.me/?text=Cara%2C+acabei+de+entrar+no+Posto+Cheio%2C+um+curso+de+marketing+pra+posto+da+ClubPetro.+Olha+a%C3%AD%3A+https%3A%2F%2Flp-teste-1.web.app" target="_blank" rel="noopener" onclick="trackShare('whatsapp')">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              <a class="share-btn share-wpp" href="https://wa.me/?text=Cara%2C+acabei+de+entrar+no+Posto+Cheio%2C+um+curso+de+marketing+pra+posto+da+ClubPetro.+Olha+a%C3%AD%3A+https%3A%2F%2Flp-teste-1.web.app" target="_blank" rel="noopener noreferrer" onclick="trackShare('whatsapp')">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-wpp"/></svg>
                 Compartilhar no WhatsApp
               </a>
               <button class="share-btn share-copy" onclick="copyShareLink(this);trackShare('copy')">
@@ -1248,7 +1324,7 @@ img{display:block;max-width:100%}
 
 <!-- FAB WHATSAPP MOBILE -->
 <a href="https://wa.me/5534999999999?text=Oi%21+Vim+do+Evento+Secreto+e+quero+saber+mais+sobre+o+Posto+Cheio" class="fab-wpp" aria-label="Falar no WhatsApp" data-wa="fab" onclick="trackWA('fab')">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-wpp"/></svg>
 </a>
 
 <!-- STICKY CTA MOBILE -->
@@ -1290,8 +1366,18 @@ img{display:block;max-width:100%}
 
 function toggleFaq(el){
   var o=el.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0'});
-  if(!o){el.classList.add('open');var a=el.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px'}
+  document.querySelectorAll('.faq-item').forEach(function(i){
+    i.classList.remove('open');
+    var ans=i.querySelector('.faq-a');
+    if(ans)ans.style.maxHeight='0';
+    i.setAttribute('aria-expanded','false');
+  });
+  if(!o){
+    el.classList.add('open');
+    var a=el.querySelector('.faq-a');
+    if(a)a.style.maxHeight=a.scrollHeight+'px';
+    el.setAttribute('aria-expanded','true');
+  }
 }
 
 // === COUNTDOWN — persistente ===
@@ -1541,7 +1627,11 @@ document.addEventListener('DOMContentLoaded',function(){
     if(e.target===this)closeCheckout();
   });
   document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'&&document.getElementById('checkoutModal').classList.contains('show'))closeCheckout();
+    if(e.key!=='Escape')return;
+    var ck=document.getElementById('checkoutModal');
+    var ex=document.getElementById('exitModal');
+    if(ck&&ck.classList.contains('show'))closeCheckout();
+    if(ex&&ex.classList.contains('show')&&typeof closeExit==='function')closeExit();
   });
 });
 function selectInst(el){
@@ -1582,6 +1672,7 @@ document.addEventListener('DOMContentLoaded',function(){
   var first=document.querySelector('.faq-item');
   if(first){
     first.classList.add('open');
+    first.setAttribute('aria-expanded','true');
     var a=first.querySelector('.faq-a');
     if(a)setTimeout(function(){a.style.maxHeight=a.scrollHeight+'px'},50);
   }
@@ -1693,6 +1784,25 @@ document.addEventListener('DOMContentLoaded',function(){
   s.textContent='.stagger-in>*{opacity:1!important;transform:none!important}';
   document.head.appendChild(s);
 });
+
+// === A2: Videos com play-on-viewport ===
+// Sai preload=metadata, sai autoplay. Os videos so carregam e dao .play()
+// quando entram no viewport. Economiza 3-8MB em mobile e ~1-2s de LCP.
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var vids=document.querySelectorAll('video[data-lazy-play]');
+  if(!vids.length)return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        try{var p=en.target.play();if(p&&p.catch)p.catch(function(){})}catch(e){}
+      }else{
+        try{en.target.pause()}catch(e){}
+      }
+    });
+  },{threshold:0.5});
+  vids.forEach(function(v){io.observe(v)});
+})();
 </script>
 </body>
 </html>
