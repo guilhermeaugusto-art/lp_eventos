@@ -215,8 +215,8 @@ img{display:block;max-width:100%}
 .problem-item:hover{border-color:var(--border-accent);transform:translateX(4px)}
 .problem-x{color:var(--accent);font-size:16px;font-weight:700;flex-shrink:0;margin-top:2px;width:24px;height:24px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center}
 .problem-item strong{color:var(--text)}
-.problem-img{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 50px -20px rgba(0,0,0,.6);height:100%;min-height:360px;align-self:stretch}
-.problem-img img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1) contrast(1.05);display:block}
+.problem-img{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 50px -20px rgba(0,0,0,.6);height:100%;min-height:360px;align-self:stretch;background:#000}
+.problem-img img,.problem-img video{width:100%;height:100%;object-fit:cover;filter:saturate(1.08) contrast(1.05);display:block}
 @media(min-width:880px){.problem-wrap{align-items:stretch}}
 /* Solution callout after problem */
 .solution-callout{background:linear-gradient(135deg,rgba(37,211,102,.1),rgba(37,211,102,.03));border:1px solid rgba(37,211,102,.35);border-radius:20px;padding:24px 28px;margin-top:28px;box-shadow:0 14px 36px -14px rgba(37,211,102,.25),inset 0 1px 0 rgba(255,255,255,.04);opacity:0;transform:translateY(16px) scale(.98);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
@@ -724,8 +724,10 @@ img{display:block;max-width:100%}
       </div>
     </div>
     <div class="problem-img">
-      <!-- TODO (feedback Bianca): substituir por foto real de posto -->
-      <img src="https://images.unsplash.com/photo-1576782403881-2cf5538c2347?w=600&q=70&auto=format&fit=crop" alt="Frentista trabalhando no posto" loading="lazy" decoding="async" width="600" height="750">
+      <!-- TODO: substituir pelo vídeo sem watermark quando humano re-exportar -->
+      <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/xnTHMWQ.jpg" aria-label="Frentista trabalhando no posto">
+        <source src="https://i.imgur.com/xnTHMWQ.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
