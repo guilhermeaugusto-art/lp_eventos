@@ -110,11 +110,11 @@ window.cpTrack=function(event,data){
   --shadow-glow:0 20px 60px -20px rgba(232,89,60,.35);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-/* A1: body{zoom:0.86} removido (anti-padrao, forced reflow, quebra Firefox).
-   Compensado por html{font-size:88%} no desktop — todos os rem/em escalam
-   proporcionalmente. Mobile mantem 100% via @media(max-width:760px). */
-html{scroll-behavior:smooth;font-size:88%}
-@media(max-width:760px){html{font-size:100%}}
+/* Desktop escala 83% — requisito do produto: "quem olha em 100% precisa ver
+   como 83%". Mobile mantem 100%. zoom aplicado no body pra nao quebrar scroll. */
+html{scroll-behavior:smooth;font-size:100%}
+body{zoom:0.83}
+@media(max-width:760px){body{zoom:1}}
 input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{font-family:var(--font-body);background:var(--brand-dark);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
@@ -224,7 +224,7 @@ img{display:block;max-width:100%}
 .cta-note::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
 .cta-wpp{background:linear-gradient(180deg,#2EE070 0%,#1EA952 100%);border:1px solid rgba(255,255,255,.18);font-size:14px;padding:14px 26px;box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 12px 30px -10px rgba(37,211,102,.45),0 4px 12px -4px rgba(0,0,0,.4)}
 .cta-wpp:hover{background:linear-gradient(180deg,#34F277 0%,#22BA5A 100%);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 18px 40px -12px rgba(37,211,102,.6),0 6px 16px -6px rgba(0,0,0,.5)}
-.cta-strip{padding:22px 0;text-align:center}
+.cta-strip{padding:18px 0;text-align:center}
 
 /* === COUNTDOWN === */
 .countdown{text-align:center;margin:32px auto 14px;padding:24px 20px;max-width:560px;border-radius:var(--r);background:radial-gradient(circle at 50% 0%,rgba(232,89,60,.14),transparent 70%),linear-gradient(180deg,rgba(232,89,60,.04),transparent);border:1px solid rgba(232,89,60,.22);box-shadow:0 20px 50px -20px rgba(232,89,60,.35),inset 0 1px 0 rgba(255,255,255,.04)}
@@ -247,14 +247,14 @@ img{display:block;max-width:100%}
 }
 
 /* === SECTIONS === */
-.sec{padding:40px 0}
+.sec{padding:32px 0}
 /* A4: content-visibility:auto nas secoes abaixo do fold. O browser pula
    render/layout ate o conteudo entrar no viewport. Ganho de ~300-800ms
    em TBT. Nao aplicar em .hero (fold) nem em modais. */
 .sec,.modules-grid,.reels-grid,.problem-wrap,.speaker-wrap,.faq-list,.final-cta{content-visibility:auto;contain-intrinsic-size:auto 600px}
 .sec-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0;max-width:880px;margin:0 auto}
 .sec>*{margin-left:auto;margin-right:auto}
-.sec-head{max-width:760px;margin:0 auto 24px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.sec-head{max-width:760px;margin:0 auto 20px;text-align:center;display:flex;flex-direction:column;align-items:center}
 .sec-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;color:var(--accent-2);letter-spacing:2.5px;text-transform:uppercase;margin:0 auto 16px;padding:7px 16px 7px 12px;background:rgba(29,29,31,.6);border:1px solid rgba(255,255,255,.12);border-radius:300px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);width:fit-content}
 .sec-tag::before{content:'';width:24px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px}
 .sec-h{font-family:var(--font-body);font-size:clamp(28px,4.2vw,42px);line-height:1.1;letter-spacing:-.4px;margin:0 auto 14px;text-align:center;max-width:780px;font-weight:700;text-transform:none;color:#fff}
@@ -422,7 +422,7 @@ img{display:block;max-width:100%}
 }
 
 /* === TRANSITION === */
-.transition{max-width:680px;margin:0 auto;padding:24px 24px;text-align:center;position:relative}
+.transition{max-width:680px;margin:0 auto;padding:20px 24px;text-align:center;position:relative}
 .transition::before,.transition::after{content:'';position:absolute;left:50%;width:1px;background:linear-gradient(180deg,transparent,var(--accent),transparent);transform:translateX(-50%)}
 .transition::before{top:0;height:14px}
 .transition::after{bottom:0;height:14px}
@@ -438,7 +438,7 @@ img{display:block;max-width:100%}
 .alert-title{font-family:var(--font-display);font-size:22px;color:#FF8B8B;letter-spacing:.8px;margin-bottom:6px;line-height:1.1}
 .alert-text{font-size:14px;color:#E8C5C5;line-height:1.6}
 .alert-text strong{color:#FFB8B8}
-@media(max-width:760px){.alert-box{padding:20px 18px;gap:12px;margin:20px auto;border-radius:14px;max-width:calc(100% - 32px)}.alert-icon{font-size:24px}.alert-title{font-size:17px}.alert-text{font-size:12px}}
+@media(max-width:760px){.alert-box{padding:18px 16px;gap:12px;margin:16px auto;border-radius:14px;max-width:calc(100% - 32px)}.alert-icon{font-size:24px}.alert-title{font-size:17px}.alert-text{font-size:12px}}
 
 /* === FINAL CTA === */
 .final-cta{text-align:center;padding:40px 32px 48px;position:relative;border-radius:var(--r);overflow:hidden;margin:24px auto 0;max-width:1100px}
@@ -641,7 +641,8 @@ img{display:block;max-width:100%}
   .hero-metric-label{font-size:8px}
   .cta{padding:18px 22px;font-size:14px;display:flex;width:100%;max-width:100%;border-radius:14px;gap:10px;min-height:56px}
   .cta-note{font-size:10px;gap:5px}
-  .sec{padding:28px 0}
+  .sec{padding:22px 0}
+  .sec-head{margin:0 auto 14px}
   .sec-tag{font-size:10px;letter-spacing:1.6px;padding:5px 12px 5px 10px}
   .sec-h{font-size:clamp(22px,5.5vw,32px);margin-bottom:10px}
   .sec-p{font-size:13px;line-height:1.65;padding:0 4px}
@@ -650,10 +651,10 @@ img{display:block;max-width:100%}
   .problem-wrap{grid-template-columns:1fr;display:grid}
   .problem-wrap > :first-child{order:2}
   .problem-img{position:static;aspect-ratio:9/16;max-height:520px;min-height:380px;max-width:320px;width:100%;height:auto;order:1;margin:0 auto 20px;justify-self:center}
-  /* Espacamento padronizado: 20px vertical em transition/cta-strip mobile pra gap uniforme */
-  .transition{padding:20px 16px;margin:0}
+  /* Espacamento compacto mobile: 14-16 vertical entre blocos */
+  .transition{padding:14px 16px;margin:0}
   .transition p{font-size:16px}
-  .cta-strip{margin:0 auto;padding:16px 0}
+  .cta-strip{margin:0 auto;padding:12px 0}
   .modules-grid{grid-template-columns:1fr;gap:12px;margin-top:16px}
   .module-card{padding:22px 18px}
   .module-num{font-size:28px}
@@ -796,7 +797,7 @@ img{display:block;max-width:100%}
       </div>
     </div>
     <div class="problem-img">
-      <video autoplay muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/4pRp7j1.jpg" aria-label="Posto com pracinha vazia">
+      <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/4pRp7j1.jpg" aria-label="Posto com pracinha vazia">
         <source src="https://i.imgur.com/4pRp7j1.mp4" type="video/mp4">
       </video>
     </div>
@@ -885,7 +886,7 @@ img{display:block;max-width:100%}
     <!-- Reel 1 — DRNl7lLASjT (vídeo Imgur: OU2EW83) -->
     <a class="reel-card reveal" href="https://www.instagram.com/clubpetro/reel/DRNl7lLASjT/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DRNl7lLASjT'})">
       <div class="reel-thumb">
-        <video autoplay muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/OU2EW83.jpg" aria-label="Reel @clubpetro">
+        <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/OU2EW83.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/OU2EW83.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
@@ -902,7 +903,7 @@ img{display:block;max-width:100%}
     <!-- Reel 2 — DGnsqczRbwJ (vídeo Imgur: Lh3ebh2) -->
     <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/clubpetro/reel/DGnsqczRbwJ/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DGnsqczRbwJ'})">
       <div class="reel-thumb">
-        <video autoplay muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/Lh3ebh2.jpg" aria-label="Reel @clubpetro">
+        <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/Lh3ebh2.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/Lh3ebh2.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
@@ -919,7 +920,7 @@ img{display:block;max-width:100%}
     <!-- Reel 3 — DHeI_dJRQjz (vídeo Imgur: HO66l7V) -->
     <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/clubpetro/reel/DHeI_dJRQjz/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DHeI_dJRQjz'})">
       <div class="reel-thumb">
-        <video autoplay muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/HO66l7V.jpg" aria-label="Reel @clubpetro">
+        <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/HO66l7V.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/HO66l7V.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
@@ -1798,22 +1799,25 @@ document.addEventListener('DOMContentLoaded',function(){
   document.head.appendChild(s);
 });
 
-// === A2: Videos com play-on-viewport ===
-// Sai preload=metadata, sai autoplay. Os videos so carregam e dao .play()
-// quando entram no viewport. Economiza 3-8MB em mobile e ~1-2s de LCP.
+// === Videos autoplay loop (force play em mobile) ===
+// Autoplay nativo ja roda com muted+playsinline. Esse helper garante que se
+// o browser bloquear autoplay (ex Safari iOS com baixa bateria), a gente
+// tenta play() de novo quando o video entra no viewport.
 (function(){
   if(!('IntersectionObserver' in window))return;
-  var vids=document.querySelectorAll('video[data-lazy-play]');
+  var vids=document.querySelectorAll('.reel-thumb video, .problem-img video');
   if(!vids.length)return;
+  // Tenta tocar agora em cada um (caso autoplay tenha rodado)
+  vids.forEach(function(v){
+    try{var p=v.play();if(p&&p.catch)p.catch(function(){})}catch(e){}
+  });
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(en){
       if(en.isIntersecting){
         try{var p=en.target.play();if(p&&p.catch)p.catch(function(){})}catch(e){}
-      }else{
-        try{en.target.pause()}catch(e){}
       }
     });
-  },{threshold:0.5});
+  },{threshold:0.1});
   vids.forEach(function(v){io.observe(v)});
 })();
 </script>
