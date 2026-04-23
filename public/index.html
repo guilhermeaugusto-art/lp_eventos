@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Posto Cheio — o curso que enche a pista do seu posto | ClubPetro</title>
+<title>Posto Cheio · o curso que enche a pista do seu posto | ClubPetro</title>
 <meta name="description" content="O método que donos de posto usam pra lotar a pista com Reels, Google e R$ 10/dia de tráfego. Vaga por R$ 147 só pra quem veio do Evento Secreto.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -219,8 +219,9 @@ img{display:block;max-width:100%}
 .problem-img img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1) contrast(1.05);display:block}
 @media(min-width:880px){.problem-wrap{align-items:stretch}}
 /* Solution callout after problem */
-.solution-callout{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(37,211,102,.02));border-left:3px solid var(--green);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:24px;margin-top:24px}
-.solution-callout p{font-size:15px;color:var(--text-mid);line-height:1.7}
+.solution-callout{background:linear-gradient(135deg,rgba(37,211,102,.1),rgba(37,211,102,.03));border:1px solid rgba(37,211,102,.35);border-radius:20px;padding:24px 28px;margin-top:28px;box-shadow:0 14px 36px -14px rgba(37,211,102,.25),inset 0 1px 0 rgba(255,255,255,.04);opacity:0;transform:translateY(16px) scale(.98);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.solution-callout.is-visible{opacity:1;transform:translateY(0) scale(1)}
+.solution-callout p{font-size:15px;color:var(--text-mid);line-height:1.7;margin:0}
 .solution-callout strong{color:var(--green);font-weight:700}
 
 /* === COURSE MODULES === */
@@ -253,8 +254,8 @@ img{display:block;max-width:100%}
 .reel-card:hover{border-color:var(--border-accent);transform:translateY(-8px);box-shadow:var(--shadow-soft)}
 .reel-thumb{position:relative;aspect-ratio:9/16;max-height:340px;overflow:hidden;background:#111}
 .reel-thumb img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
-.reel-thumb video{width:100%;height:100%;object-fit:cover;object-position:center;display:block;background:#111;transform:scale(1.18);transform-origin:center;transition:transform .6s ease}
-.reel-card:hover .reel-thumb video{transform:scale(1.24)}
+.reel-thumb video{width:100%;height:100%;object-fit:cover;object-position:center;display:block;background:#000;transform:scale(1.32);transform-origin:center;transition:transform .6s ease}
+.reel-card:hover .reel-thumb video{transform:scale(1.38)}
 .reel-ig-hint{position:absolute;bottom:10px;left:10px;display:flex;align-items:center;gap:6px;padding:6px 10px;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);border-radius:100px;font-size:11.5px;font-weight:700;color:#fff;letter-spacing:.01em}
 .reel-ig-hint svg{width:13px;height:13px}
 .reel-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3)}
@@ -323,9 +324,10 @@ img{display:block;max-width:100%}
 .price-right{width:240px;background-size:cover;background-position:center;display:none;position:relative}
 @media(min-width:680px){.price-right{display:block}}
 .price-from{font-size:18px;color:#888;text-decoration:line-through;text-decoration-color:rgba(238,130,130,.7);text-decoration-thickness:2px;font-weight:500}
-.price-main{font-family:var(--font-display);font-size:76px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:1px;line-height:1;margin:6px 0;display:inline-flex;align-items:baseline;gap:4px}
-.price-main .price-currency{font-size:.48em;font-weight:700;letter-spacing:.5px;opacity:.92;transform:translateY(-2px)}
-.price-main .price-value{font-size:1em;font-weight:800;letter-spacing:.5px}
+.price-main{font-family:var(--font-display);font-size:84px;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-1.5px;line-height:1;margin:10px 0 6px;display:inline-flex;align-items:flex-start;gap:6px;justify-content:center}
+.price-main .price-currency{font-size:.36em;font-weight:700;letter-spacing:0;margin-top:.14em;line-height:1}
+.price-main .price-value{font-size:1em;font-weight:900;letter-spacing:-.03em;line-height:1}
+@media(max-width:560px){.price-main{font-size:72px}}
 .price-inst{font-size:14px;color:var(--text-mid);margin-bottom:24px}
 .price-checks{margin-bottom:26px}
 .price-check{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-mid);margin-bottom:10px}
@@ -691,7 +693,7 @@ img{display:block;max-width:100%}
 
 <!-- TRANSIÇÃO 1 -->
 <div class="transition reveal">
-  <p>Seu posto pode ter o melhor combustível, o melhor preço e o melhor frentista da cidade. Se o cliente <em>não te vê no celular</em>, ele abastece no da esquina. Hoje o cliente <strong>escolhe posto no feed</strong> — e você não precisa virar influencer pra estar lá.</p>
+  <p>Seu posto pode ter o melhor combustível, o melhor preço e o melhor frentista da cidade. Se o cliente <em>não te vê no celular</em>, ele abastece no da esquina. Hoje o cliente <strong>escolhe posto no feed</strong>. E você não precisa virar influencer pra estar lá.</p>
 </div>
 
 <div class="sec-divider"></div>
@@ -709,16 +711,16 @@ img{display:block;max-width:100%}
   <div class="problem-wrap">
     <div>
       <div class="problem-callout">
-        <p>Posto que não aparece no celular do cliente perde entre <strong>30% e 40% do movimento</strong> pro concorrente que aparece. O motorista decide onde abastecer antes de dar partida — se ele procura "posto perto de mim" e te acha no vizinho, ele vai no vizinho.</p>
+        <p>Posto que não aparece no celular do cliente perde entre <strong>30% e 40% do movimento</strong> pro concorrente que aparece. O motorista decide onde abastecer antes de dar partida. Se ele procura "posto perto de mim" e te acha no vizinho, ele vai no vizinho.</p>
       </div>
       <div class="problem-list">
         <div class="problem-item"><span class="problem-x">✕</span><div><strong>Você não tá no celular do cliente:</strong> Instagram parado, Google Maps sem avaliação, e quando o motorista pesquisa "posto perto de mim" é o concorrente que aparece.</div></div>
         <div class="problem-item"><span class="problem-x">✕</span><div><strong>Conta travada no terceiro post:</strong> você até criou Instagram, postou a inauguração, postou o preço da gasolina, travou. Perfil parado com 47 seguidores há um ano.</div></div>
-        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Frentista é seu melhor vendedor e ninguém tá usando:</strong> o cara atende 200 clientes por dia, tem carisma, mas nunca gravou um vídeo porque ninguém ensinou ele — nem você — como fazer.</div></div>
+        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Frentista é seu melhor vendedor e ninguém tá usando:</strong> o cara atende 200 clientes por dia, tem carisma, mas nunca gravou um vídeo porque ninguém ensinou ele (nem você) como fazer.</div></div>
         <div class="problem-item"><span class="problem-x">✕</span><div><strong>O concorrente tá comendo seu movimento:</strong> posto da esquina posta Reels toda semana, cliente chega lá dizendo "vi no Insta" e tanque cheio. Você perde venda sem nem saber que existiu a chance.</div></div>
       </div>
       <div class="solution-callout">
-        <p><strong>Posto Cheio resolve isso em 6 módulos.</strong> Você aprende a gravar Reels sem pagar agência, treinar seu frentista em 30 minutos, rodar anúncio de R$ 10 por dia no Google e no Meta, e dominar o Google Maps pra aparecer antes do concorrente. Tudo com exemplo de posto que já fez — não é teoria.</p>
+        <p><strong>Posto Cheio resolve isso em 6 módulos.</strong> Você aprende a gravar Reels sem pagar agência, treinar seu frentista em 30 minutos, rodar anúncio de R$ 10 por dia no Google e no Meta, e dominar o Google Maps pra aparecer antes do concorrente. Tudo com exemplo de posto que já fez. Não é teoria.</p>
       </div>
     </div>
     <div class="problem-img">
@@ -741,7 +743,7 @@ img{display:block;max-width:100%}
     <span class="sec-lead">O que você vai aprender</span>
     <div class="sec-tag">Dentro do Posto Cheio</div>
     <h2 class="sec-h reveal">6 módulos pra tirar seu posto do esquecimento. E <em>encher a pista</em>.</h2>
-    <p class="sec-p">Cada módulo foi desenhado pra você aplicar no turno seguinte. Nada de teoria — tudo baseado em posto real que saiu do zero e hoje tem pista cheia toda semana.</p>
+    <p class="sec-p">Cada módulo foi desenhado pra você aplicar no turno seguinte. Nada de teoria. Tudo baseado em posto real que saiu do zero e hoje tem pista cheia toda semana.</p>
   </div>
 
   <div class="modules-grid">
@@ -779,7 +781,7 @@ img{display:block;max-width:100%}
       <div class="bonus-tag">Bônus de quem travou vaga agora</div>
       <div class="module-num">+1</div>
       <div class="module-title">Copa 2026: o plano pronto pra transformar jogo do Brasil em pista cheia</div>
-      <div class="module-desc">Calendário pronto dos 7 jogos do Brasil, promoção que lota a pista no dia de jogo, Reels já roteirizado pra cada fase e plano de ação pra cada gol. Quando o apito tocar, seu posto já tá com fila na bomba — enquanto o concorrente ainda tá pensando no que fazer.</div>
+      <div class="module-desc">Calendário pronto dos 7 jogos do Brasil, promoção que lota a pista no dia de jogo, Reels já roteirizado pra cada fase e plano de ação pra cada gol. Quando o apito tocar, seu posto já tá com fila na bomba, enquanto o concorrente ainda tá pensando no que fazer.</div>
     </div>
   </div>
 </section>
@@ -791,7 +793,7 @@ img{display:block;max-width:100%}
 
 <!-- TRANSIÇÃO 2 -->
 <div class="transition reveal">
-  <p>Talvez você esteja pensando: <em>"beleza, mas isso funciona mesmo pra posto?"</em>. Pergunta justa. Não vou pedir pra você confiar na minha palavra — vou pedir pra você abrir o Instagram agora e olhar o <strong>@clubpetro</strong>. Se não for verdade, você fecha essa página.</p>
+  <p>Talvez você esteja pensando: <em>"beleza, mas isso funciona mesmo pra posto?"</em>. Pergunta justa. Não vou pedir pra você confiar na minha palavra. Vou pedir pra você abrir o Instagram agora e olhar o <strong>@clubpetro</strong>. Se não for verdade, você fecha essa página.</p>
 </div>
 
 <div class="sec-divider"></div>
@@ -802,7 +804,7 @@ img{display:block;max-width:100%}
     <span class="sec-lead">O método rodando no nosso Instagram</span>
     <div class="sec-tag">A ClubPetro aplica o que ensina</div>
     <h2 class="sec-h reveal">O Instagram da ClubPetro passou de zero a <em>mais de 2 milhões de views</em> usando esse mesmo método. O passo a passo que a gente aplica aqui é o que tá dentro do Posto Cheio.</h2>
-    <p class="sec-p">A ClubPetro não é influencer. É uma empresa de software pra posto — e toda semana nosso time roda o método que o André ensina, direto do Instagram @clubpetro. O resultado abaixo é público: dá pra abrir agora e conferir.</p>
+    <p class="sec-p">A ClubPetro não é influencer. É uma empresa de software pra posto. Toda semana nosso time roda o método que o André ensina, direto do Instagram @clubpetro. O resultado abaixo é público: dá pra abrir agora e conferir.</p>
     <span class="pull-line">Se funciona pra quem atende posto todo dia, funciona pro seu posto.</span>
   </div>
 
@@ -859,7 +861,7 @@ img{display:block;max-width:100%}
       </div>
     </a>
   </div>
-  <div class="reels-cta-note">Abre o <strong>@clubpetro</strong> no Instagram agora. O método que a gente usa lá é o mesmo que tá dentro do Posto Cheio — passo a passo, gravado, no seu e-mail em 2 minutos.</div>
+  <div class="reels-cta-note">Abre o <strong>@clubpetro</strong> no Instagram agora. O método que a gente usa lá é o mesmo que tá dentro do Posto Cheio. Passo a passo, gravado, no seu e-mail em 2 minutos.</div>
 </section>
 
 <div class="cta-strip">
@@ -892,27 +894,20 @@ img{display:block;max-width:100%}
       </div>
     </div>
     <div class="speaker-info">
-      <div>
-        <div class="speaker-name">ANDRÉ CARVALHAES</div>
-        <div class="speaker-role">3 anos na V4 Company · hoje ensinando posto a encher pista</div>
-      </div>
-      <p class="speaker-bio">O André passou <strong>3 anos dentro da V4 Company,</strong> a maior agência de anúncio do Brasil, rodando campanha pra dezenas de empresa. Quando saiu, escolheu um setor só pra trabalhar: <strong>postos de combustível.</strong> Hoje, o método que ele usava pra clientes grande, ele adaptou pra caber no dia de um posto, e é esse método que vira o Posto Cheio.</p>
+      <div class="speaker-name">ANDRÉ CARVALHAES</div>
+      <p class="speaker-bio">Passou <strong>3 anos dentro da V4 Company</strong>, a maior agência de anúncio do Brasil. Hoje aplica o mesmo método em <strong>postos de combustível</strong>.</p>
       <div class="speaker-creds">
         <div class="speaker-cred">
           <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/Bg3r3li.jpeg" alt="V4 Company" loading="lazy" decoding="async"></div>
-          <div><strong>3 anos na V4 Company,</strong> a maior agência de anúncio do Brasil</div>
+          <div><strong>3 anos na V4 Company</strong></div>
         </div>
         <div class="speaker-cred">
           <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/0gwRjTA.jpeg" alt="Meta" loading="lazy" decoding="async"></div>
-          <div><strong>Roda anúncio no Meta e no Google</strong> há 4 anos pra negócio de bairro</div>
-        </div>
-        <div class="speaker-cred">
-          <div class="speaker-cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h12"/><path d="M5 22V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v17"/><path d="M5 11h10"/><path d="M15 8h2a2 2 0 0 1 2 2v5a2 2 0 0 0 2 2v0a2 2 0 0 1-2 2h-2"/></svg></div>
-          <div><strong>Conhece posto por dentro.</strong> Do turno de madrugada à planilha do fechamento</div>
+          <div><strong>Especialista em anúncios e estratégia digital</strong></div>
         </div>
         <div class="speaker-cred">
           <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/WkKfAI4.jpeg" alt="ClubPetro" loading="lazy" decoding="async"></div>
-          <div><strong>8 anos de ClubPetro,</strong> liderando marketing e vendas pra posto de combustível</div>
+          <div><strong>8 anos de ClubPetro</strong>, liderando marketing e vendas pra posto</div>
         </div>
       </div>
     </div>
@@ -932,7 +927,7 @@ img{display:block;max-width:100%}
     <span class="sec-lead">Sua vaga no Posto Cheio</span>
     <div class="sec-tag">O que tá incluído</div>
     <h2 class="sec-h">Posto Cheio completo <em>por R$ 147</em></h2>
-    <p class="sec-p">Enquanto você decide, o concorrente tá gravando o Reels de amanhã. O valor de R$ 147 só vale pra quem participou do Evento Secreto e só enquanto o timer rodar. Depois, vira R$ 497 e sai da turma ao vivo — só o gravado.</p>
+    <p class="sec-p">Enquanto você decide, o concorrente tá gravando o Reels de amanhã. O valor de R$ 147 só vale pra quem participou do Evento Secreto e só enquanto o timer rodar. Depois, vira R$ 497 e sai da turma ao vivo. Só o gravado.</p>
   </div>
 
   <div class="roi-anchor reveal">
@@ -940,7 +935,7 @@ img{display:block;max-width:100%}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
     </div>
     <div class="roi-text">
-      Um único Reels que pega bem traz <strong>dezena de carro novo na pista</strong>. O Posto Cheio custa menos que <em>3 tanques cheios</em> — e se paga no primeiro conteúdo que funciona.
+      Um único Reels que pega bem traz <strong>dezena de carro novo na pista</strong>. O Posto Cheio custa menos que <em>3 tanques cheios</em> e se paga no primeiro conteúdo que funciona.
     </div>
   </div>
 
@@ -966,7 +961,7 @@ img{display:block;max-width:100%}
     </div>
     <div class="price-guarantee">
       <span>🛡️</span>
-      <div><strong>Garantia de 7 dias, sem conversa:</strong> entra, assiste tudo, testa na sua pista. Se em 7 dias você achar que não valeu, devolvemos 100% — só mandar WhatsApp "quero meu dinheiro de volta" e pronto.</div>
+      <div><strong>Garantia de 7 dias, sem conversa:</strong> entra, assiste tudo, testa na sua pista. Se em 7 dias você achar que não valeu, devolvemos 100%. Só mandar WhatsApp "quero meu dinheiro de volta" e pronto.</div>
     </div>
     <div class="price-or">ou</div>
     <div class="price-wpp">
@@ -982,7 +977,7 @@ img{display:block;max-width:100%}
 
 <!-- TRANSIÇÃO -->
 <div class="transition reveal">
-  <p>Sei que você ainda tem pergunta. Dono de posto sempre faz as mesmas 5 — então separei aqui embaixo, <strong>resposta direta</strong>, sem enrolação.</p>
+  <p>Sei que você ainda tem pergunta. Dono de posto sempre faz as mesmas 5. Então separei aqui embaixo, <strong>resposta direta</strong>, sem enrolação.</p>
 </div>
 
 <div class="sec-divider"></div>
@@ -999,7 +994,7 @@ img{display:block;max-width:100%}
     <div class="faq-list">
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-q"><span class="faq-num">01</span><span class="faq-q-text">Meu posto é pequeno, de bairro. Funciona pra mim?</span><span class="faq-plus"></span></div>
-        <div class="faq-a"><div class="faq-a-in">Funciona mais ainda. Posto de bairro tem uma coisa que rede grande não tem: cara. Um Reels do seu frentista chega em cada motorista de um raio de 10 km com um clique. Rede grande não bate bairro na disputa de local. Você não precisa de tamanho — precisa de método.</div></div>
+        <div class="faq-a"><div class="faq-a-in">Funciona mais ainda. Posto de bairro tem uma coisa que rede grande não tem: cara. Um Reels do seu frentista chega em cada motorista de um raio de 10 km com um clique. Rede grande não bate bairro na disputa de local. Você não precisa de tamanho. Precisa de método.</div></div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-q"><span class="faq-num">02</span><span class="faq-q-text">Não tenho tempo pra ficar postando Reels.</span><span class="faq-plus"></span></div>
@@ -1011,7 +1006,7 @@ img{display:block;max-width:100%}
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-q"><span class="faq-num">04</span><span class="faq-q-text">Já tentei postar e não veio cliente.</span><span class="faq-plus"></span></div>
-        <div class="faq-a"><div class="faq-a-in">Provavelmente faltou método. Postar foto do posto de vez em quando não funciona — funciona postar com plano, trend certa, hora certa e assunto que o motorista quer ver. É o mesmo método que o André rodava na V4 pra dezena de cliente, adaptado pro seu dia. Se em 7 dias não fizer sentido, devolvemos os R$ 147 e pronto.</div></div>
+        <div class="faq-a"><div class="faq-a-in">Provavelmente faltou método. Postar foto do posto de vez em quando não funciona. Funciona postar com plano, trend certa, hora certa e assunto que o motorista quer ver. É o mesmo método que o André rodava na V4 pra dezena de cliente, adaptado pro seu dia. Se em 7 dias não fizer sentido, devolvemos os R$ 147 e pronto.</div></div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-q"><span class="faq-num">05</span><span class="faq-q-text">Como eu acesso o curso depois que pago?</span><span class="faq-plus"></span></div>
@@ -1033,7 +1028,7 @@ img{display:block;max-width:100%}
   <div class="alert-icon">⚠️</div>
   <div class="alert-content">
     <div class="alert-title">QUANDO O TIMER ZERAR, O POSTO CHEIO VIRA R$ 497</div>
-    <div class="alert-text">Quando o timer zerar, o preço sobe de <strong>R$ 147 para R$ 497</strong>, o bônus da Copa 2026 sai do pacote e quem entrar depois pega só o gravado — sem turma ao vivo. Quem perder essa janela paga mais que o triplo do valor pra pegar menos conteúdo.</div>
+    <div class="alert-text">Quando o timer zerar, o preço sobe de <strong>R$ 147 para R$ 497</strong>, o bônus da Copa 2026 sai do pacote e quem entrar depois pega só o gravado, sem turma ao vivo. Quem perder essa janela paga mais que o triplo do valor pra pegar menos conteúdo.</div>
   </div>
 </div>
 
@@ -1049,7 +1044,7 @@ img{display:block;max-width:100%}
 
 <!-- FOOTER -->
 <div class="footer">
-  <p>ClubPetro © 2026 · Posto Cheio — o curso que enche a pista do seu posto · Turma Evento Secreto</p>
+  <p>ClubPetro © 2026 · Posto Cheio · o curso que enche a pista do seu posto · Turma Evento Secreto</p>
 </div>
 
 </div>
@@ -1058,9 +1053,9 @@ img{display:block;max-width:100%}
 <div class="exit-modal" id="exitModal" role="dialog" aria-modal="true">
   <div class="exit-card">
     <button class="exit-close" aria-label="Fechar" onclick="closeExit()">✕</button>
-    <span class="exit-eyebrow">Espera — 1 segundo</span>
+    <span class="exit-eyebrow">Só 1 segundo</span>
     <h3 class="exit-title">Antes de sair do <em>Posto Cheio</em></h3>
-    <p class="exit-text">Ficou alguma dúvida sobre o <strong>Posto Cheio</strong>? Manda mensagem pro <strong>André no WhatsApp</strong> — responde na hora, sem compromisso, só pra você decidir com a cabeça clara antes do timer zerar.</p>
+    <p class="exit-text">Ficou alguma dúvida sobre o <strong>Posto Cheio</strong>? Fala com a equipe pelo <strong>WhatsApp</strong>. Respondem na hora, sem compromisso, só pra você decidir com a cabeça clara antes do timer zerar.</p>
     <div class="exit-actions">
       <a href="https://wa.me/5534999999999?text=Oi%21+Quase+sa%C3%AD+da+p%C3%A1gina+do+Posto+Cheio.+Pode+me+ajudar+a+entender+melhor+antes+de+eu+fechar%3F" class="cta cta-wpp" onclick="trackWA('exit-intent')">
         <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
@@ -1071,7 +1066,7 @@ img{display:block;max-width:100%}
         <span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
     </div>
-    <button class="exit-skip" onclick="closeExit()">Fecha aí — ainda tô lendo</button>
+    <button class="exit-skip" onclick="closeExit()">Fecha aí, ainda tô lendo</button>
   </div>
 </div>
 
@@ -1083,7 +1078,7 @@ img{display:block;max-width:100%}
     <div class="modal-header">
       <span class="modal-eyebrow">Finalizar matrícula no Posto Cheio</span>
       <h3 class="modal-title" id="modalTitle">Falta pouco pra você entrar no Posto Cheio</h3>
-      <p class="modal-subtitle">Preenche em menos de 1 minuto. Pagou, libera no seu e-mail — na hora.</p>
+      <p class="modal-subtitle">Preenche em menos de 1 minuto. Pagou, libera no seu e-mail na hora.</p>
     </div>
 
     <div class="stepper">
@@ -1229,7 +1224,7 @@ img{display:block;max-width:100%}
           <p>O acesso já saiu pro seu e-mail. Em instante chega o login do Posto Cheio e você já começa pelo Módulo 1.</p>
           <div class="share-box">
             <div class="share-title">Conhece outro dono de posto com a pracinha vazia?</div>
-            <div class="share-text">Manda pra ele — e ajude mais um posto a <strong>encher a pista</strong>.</div>
+            <div class="share-text">Manda pra ele. Ajude mais um posto a <strong>encher a pista</strong>.</div>
             <div class="share-actions">
               <a class="share-btn share-wpp" href="https://wa.me/?text=Cara%2C+acabei+de+entrar+no+Posto+Cheio%2C+um+curso+de+marketing+pra+posto+da+ClubPetro.+Olha+a%C3%AD%3A+https%3A%2F%2Flp-teste-1.web.app" target="_blank" rel="noopener" onclick="trackShare('whatsapp')">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
@@ -1288,6 +1283,22 @@ img{display:block;max-width:100%}
       io.observe(el);
     });
   });
+  // Solution callout: entrada atrasada 2.5s depois de entrar na viewport
+  var solEls=document.querySelectorAll('.solution-callout');
+  if(solEls.length && 'IntersectionObserver' in window){
+    var solIo=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var target=en.target;
+          setTimeout(function(){target.classList.add('is-visible')},2500);
+          solIo.unobserve(target);
+        }
+      });
+    },{threshold:.35});
+    solEls.forEach(function(el){solIo.observe(el)});
+  }else{
+    solEls.forEach(function(el){el.classList.add('is-visible')});
+  }
 })();
 
 function toggleFaq(el){
