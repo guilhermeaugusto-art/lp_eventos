@@ -352,7 +352,8 @@ img{display:block;max-width:100%}
 .speaker-social{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.04);border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;color:var(--text-mid);transition:all .3s cubic-bezier(.2,.8,.2,1);text-decoration:none}
 .speaker-social:hover{background:var(--accent-soft);border-color:var(--accent-2);color:var(--accent-2);transform:translateY(-2px);box-shadow:0 8px 20px -8px rgba(232,89,60,.5)}
 .speaker-social svg{width:18px;height:18px}
-.speaker-creds{display:flex;flex-direction:column;gap:10px}
+.speaker-creds{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:760px){.speaker-creds{grid-template-columns:1fr}}
 .speaker-cred{display:flex;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;color:var(--text-mid);transition:border-color .3s}
 .speaker-cred:hover{border-color:var(--border-accent)}
 .speaker-cred-icon{width:36px;height:36px;border-radius:10px;background:var(--accent-soft);border:1px solid rgba(232,89,60,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-2);font-size:16px}
@@ -975,6 +976,10 @@ img{display:block;max-width:100%}
         <div class="speaker-cred">
           <div class="speaker-cred-icon is-brand-dark"><img src="https://i.imgur.com/WkKfAI4.jpeg" alt="ClubPetro" loading="lazy" decoding="async"></div>
           <div><strong>+8 anos liderando marketing e vendas do ClubPetro</strong></div>
+        </div>
+        <div class="speaker-cred">
+          <div class="speaker-cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg></div>
+          <div><strong>+R$ 5 milhões em receita gerada</strong> em campanhas</div>
         </div>
       </div>
     </div>
