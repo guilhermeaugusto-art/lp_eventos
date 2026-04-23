@@ -186,16 +186,16 @@ img{display:block;max-width:100%}
 .hero-title .mark{font-size:.92em;margin-left:6px;padding:0 14px}
 .hero-subtitle{font-size:13px;color:var(--text-mid);letter-spacing:.2px;margin-bottom:26px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.55;font-weight:400}
 
-.hero-card{position:relative;border-radius:28px;overflow:hidden;max-width:830px;margin:0 auto 20px;background:linear-gradient(135deg,var(--bg-card),var(--bg-card-light));border:1px solid var(--border);box-shadow:var(--shadow-soft)}
+.hero-card{position:relative;border-radius:28px;overflow:hidden;max-width:960px;margin:0 auto 24px;background:linear-gradient(135deg,var(--bg-card),var(--bg-card-light));border:1px solid var(--border);box-shadow:var(--shadow-soft)}
 .hero-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
 .hero-card-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(29,29,31,.92) 0%,rgba(29,29,31,.78) 50%,rgba(80,30,10,.6) 100%)}
 .hero-card-grad::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at left center,rgba(0,0,0,.6),transparent 70%)}
-.hero-card-inner{position:relative;padding:22px 24px 20px;z-index:2;display:grid;grid-template-columns:1.4fr 1fr;gap:20px;align-items:center}
+.hero-card-inner{position:relative;padding:36px 40px 32px;z-index:2;display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center;min-height:280px}
 @media(max-width:760px){.hero-card-inner{grid-template-columns:1fr;gap:16px;padding:22px 20px 18px}}
 .hero-card-left{text-align:left;min-width:0}
 .hero-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(232,89,60,.18);border:1px solid var(--accent);border-radius:100px;font-size:9px;font-weight:700;color:var(--accent-2);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
 .hero-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent-2);animation:blink 1.5s infinite;box-shadow:0 0 6px var(--accent-2)}
-.hero-h{font-family:var(--font-body);font-size:clamp(24px,3vw,38px);line-height:1.1;letter-spacing:-.4px;margin-bottom:12px;text-align:left;text-shadow:0 2px 14px rgba(0,0,0,.6);font-weight:700;color:#fff}
+.hero-h{font-family:var(--font-body);font-size:clamp(26px,3.3vw,42px);line-height:1.12;letter-spacing:-.4px;margin-bottom:14px;text-align:left;text-shadow:0 2px 14px rgba(0,0,0,.6);font-weight:700;color:#fff}
 .hero-h em{font-style:italic;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;padding-right:.12em}
 .hero-p{font-size:13px;color:#e5e5e5;text-align:left;line-height:1.6;margin-bottom:10px;text-shadow:0 1px 8px rgba(0,0,0,.7)}
 .hero-modules-link{display:inline-block;font-size:12px;font-weight:600;color:var(--accent-2);text-decoration:none;letter-spacing:.3px;border-bottom:1px dashed rgba(255,182,39,.45);padding-bottom:1px;margin-top:2px;transition:color .25s,border-color .25s}
@@ -345,6 +345,8 @@ img{display:block;max-width:100%}
 .speaker-bio strong{color:#fff}
 .speaker-cred-icon img{width:24px;height:24px;object-fit:contain;display:block}
 .speaker-cred-icon.is-brand{background:#fff;border-color:rgba(255,255,255,.18);padding:4px}
+.speaker-cred-icon.is-brand-dark{background:#0E0E0E;border-color:rgba(232,89,60,.25);padding:3px}
+.speaker-cred-icon.is-brand-dark img{width:26px;height:26px}
 .speaker-socials{display:flex;gap:12px;margin-top:0;flex-wrap:wrap;justify-content:center}
 .speaker-left .speaker-socials{margin-top:4px}
 .speaker-social{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.04);border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;color:var(--text-mid);transition:all .3s cubic-bezier(.2,.8,.2,1);text-decoration:none}
@@ -644,7 +646,9 @@ img{display:block;max-width:100%}
   .sec-p{font-size:13px;line-height:1.65;padding:0 4px}
   .sec-lead{font-size:11px;letter-spacing:1.4px;margin-bottom:12px}
   .pull-line{font-size:14px;margin-top:12px;padding:0 12px}
-  .problem-img{position:static;aspect-ratio:16/10;max-height:240px;min-height:0;height:auto}
+  .problem-wrap{grid-template-columns:1fr;display:grid}
+  .problem-wrap > :first-child{order:2}
+  .problem-img{position:static;aspect-ratio:9/16;max-height:520px;min-height:380px;height:auto;order:1;margin-bottom:8px}
   .transition{padding:28px 16px}
   .transition p{font-size:16px}
   .modules-grid{grid-template-columns:1fr;gap:12px;margin-top:16px}
@@ -723,8 +727,8 @@ img{display:block;max-width:100%}
     <div class="hero-card-inner">
       <div class="hero-card-left">
         <div class="hero-badge">Turma Evento Secreto · 2026</div>
-        <h2 class="hero-h">Postos que aparecem no celular do cliente vendem <em>até 40% mais</em> combustível. Os que não aparecem, dividem o que sobra.</h2>
-        <p class="hero-p">Enquanto o posto da esquina lota a pista com um Reels de R$ 0, você tá esperando o movimento cair do céu. O Posto Cheio muda isso em 6 módulos que você aplica já na segunda-feira.</p>
+        <h2 class="hero-h">Postos que aparecem no celular vendem <em>até 40% mais</em>. Os que não aparecem, dividem o que sobra.</h2>
+        <p class="hero-p">O Posto Cheio resolve isso em 6 módulos. Você aplica já na segunda.</p>
         <a href="#modulos" class="hero-modules-link">Ver os 6 módulos →</a>
       </div>
       <div class="hero-metrics">
@@ -872,11 +876,11 @@ img{display:block;max-width:100%}
   </div>
 
   <div class="reels-grid" id="casesGrid">
-    <!-- Reel 1 — DCmPXEMx8gV (vídeo Imgur: gff3qv1) -->
-    <a class="reel-card reveal" href="https://www.instagram.com/clubpetro/reel/DCmPXEMx8gV/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DCmPXEMx8gV'})">
+    <!-- Reel 1 — DRNl7lLASjT (vídeo Imgur: OU2EW83) -->
+    <a class="reel-card reveal" href="https://www.instagram.com/clubpetro/reel/DRNl7lLASjT/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DRNl7lLASjT'})">
       <div class="reel-thumb">
-        <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/gff3qv1.jpg" aria-label="Reel @clubpetro">
-          <source src="https://i.imgur.com/gff3qv1.mp4" type="video/mp4">
+        <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/OU2EW83.jpg" aria-label="Reel @clubpetro">
+          <source src="https://i.imgur.com/OU2EW83.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -889,11 +893,11 @@ img{display:block;max-width:100%}
         <div class="reel-caption">Reel publicado no @clubpetro aplicando o método</div>
       </div>
     </a>
-    <!-- Reel 2 — DA1UWaPxHPP (vídeo Imgur: vd4lqzz) -->
-    <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/clubpetro/reel/DA1UWaPxHPP/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DA1UWaPxHPP'})">
+    <!-- Reel 2 — DGnsqczRbwJ (vídeo Imgur: Lh3ebh2) -->
+    <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/clubpetro/reel/DGnsqczRbwJ/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DGnsqczRbwJ'})">
       <div class="reel-thumb">
-        <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/vd4lqzz.jpg" aria-label="Reel @clubpetro">
-          <source src="https://i.imgur.com/vd4lqzz.mp4" type="video/mp4">
+        <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/Lh3ebh2.jpg" aria-label="Reel @clubpetro">
+          <source src="https://i.imgur.com/Lh3ebh2.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -906,11 +910,11 @@ img{display:block;max-width:100%}
         <div class="reel-caption">Reel publicado no @clubpetro aplicando o método</div>
       </div>
     </a>
-    <!-- Reel 3 — DGnsqczRbwJ (vídeo Imgur: LxwDapV) -->
-    <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/clubpetro/reel/DGnsqczRbwJ/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DGnsqczRbwJ'})">
+    <!-- Reel 3 — DHeI_dJRQjz (vídeo Imgur: HO66l7V) -->
+    <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/clubpetro/reel/DHeI_dJRQjz/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DHeI_dJRQjz'})">
       <div class="reel-thumb">
-        <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/LxwDapV.jpg" aria-label="Reel @clubpetro">
-          <source src="https://i.imgur.com/LxwDapV.mp4" type="video/mp4">
+        <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/HO66l7V.jpg" aria-label="Reel @clubpetro">
+          <source src="https://i.imgur.com/HO66l7V.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -924,7 +928,7 @@ img{display:block;max-width:100%}
       </div>
     </a>
   </div>
-  <div class="reels-cta-note">Abre o <strong>@clubpetro</strong> no Instagram agora. O método que a gente usa lá é o mesmo que tá dentro do Posto Cheio. Passo a passo, gravado, no seu e-mail em 2 minutos.</div>
+  <div class="reels-cta-note">Cada Reels acima aplica o que você vai aprender dentro do <strong>Posto Cheio</strong>: frentista como protagonista, roteiro de 30 segundos, trend adaptada pra posto. No <strong>evento ao vivo dia 14 de maio</strong>, o André abre o método completo e mostra o passo a passo pra você fazer igual na sua pracinha.</div>
 </section>
 
 <div class="cta-strip">
@@ -945,7 +949,7 @@ img{display:block;max-width:100%}
   <div class="speaker-wrap">
     <div class="speaker-left">
       <div class="speaker-photo">
-        <img src="https://i.imgur.com/Yepugkv.jpeg" alt="André Carvalhaes" loading="lazy" decoding="async" width="600" height="600">
+        <img src="https://i.imgur.com/A3oGvjo.jpeg" alt="André Carvalhaes" loading="lazy" decoding="async" width="600" height="600">
       </div>
       <div class="speaker-socials">
         <a class="speaker-social" href="https://www.instagram.com/af.carvalhaes/" target="_blank" rel="noopener noreferrer" aria-label="Instagram do André" title="@af.carvalhaes">
@@ -962,15 +966,15 @@ img{display:block;max-width:100%}
       <div class="speaker-creds">
         <div class="speaker-cred">
           <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/Bg3r3li.jpeg" alt="V4 Company" loading="lazy" decoding="async"></div>
-          <div><strong>3 anos na V4 Company</strong></div>
+          <div><strong>+3 anos como sócio diretor da V4 Company</strong></div>
         </div>
         <div class="speaker-cred">
           <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/0gwRjTA.jpeg" alt="Meta" loading="lazy" decoding="async"></div>
-          <div><strong>Especialista em anúncios e estratégia digital</strong></div>
+          <div><strong>+4 anos gerenciando anúncios no Meta e Google</strong></div>
         </div>
         <div class="speaker-cred">
-          <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/WkKfAI4.jpeg" alt="ClubPetro" loading="lazy" decoding="async"></div>
-          <div><strong>8 anos de ClubPetro</strong>, liderando marketing e vendas pra posto</div>
+          <div class="speaker-cred-icon is-brand-dark"><img src="https://i.imgur.com/WkKfAI4.jpeg" alt="ClubPetro" loading="lazy" decoding="async"></div>
+          <div><strong>+8 anos liderando marketing e vendas do ClubPetro</strong></div>
         </div>
       </div>
     </div>
