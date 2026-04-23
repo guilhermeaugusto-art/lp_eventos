@@ -9,32 +9,38 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 
-<!-- ========== TRACKING PIXELS ========== -->
-<!-- Substitua os IDs abaixo pelos seus reais antes de subir pro ar -->
+<!-- ========== TRACKING PIXELS (desativados ate IDs reais) ==========
+     Reative TODO o bloco abaixo trocando os placeholders pelos IDs reais
+     de GA4 e Meta Pixel. Enquanto os placeholders estiverem ai, o carregamento
+     desperdica ~240KB e ~800ms de LCP sem gerar tracking util.
+     O resto da LP chama fbq/gtag sempre com guard (if(window.fbq)...) e o
+     helper cpTrack ja tem try/catch, entao manter comentado nao quebra nada.
+     (Blocos inner-comment substituidos por ## para nao quebrar o wrapper)
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments)}
-gtag('js',new Date());
-gtag('config','G-XXXXXXXXXX',{send_page_view:true});
-</script>
+     ## Google Analytics 4 ##
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+     <script>
+     window.dataLayer=window.dataLayer||[];
+     function gtag(){dataLayer.push(arguments)}
+     gtag('js',new Date());
+     gtag('config','G-XXXXXXXXXX',{send_page_view:true});
+     </script>
 
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','XXXXXXXXXXXXXXX'); // ← substituir pelo Pixel ID
-fbq('track','PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+     ## Meta Pixel ##
+     <script>
+     !function(f,b,e,v,n,t,s)
+     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+     n.queue=[];t=b.createElement(e);t.async=!0;
+     t.src=v;s=b.getElementsByTagName(e)[0];
+     s.parentNode.insertBefore(t,s)}(window, document,'script',
+     'https://connect.facebook.net/en_US/fbevents.js');
+     fbq('init','XXXXXXXXXXXXXXX'); // substituir pelo Pixel ID
+     fbq('track','PageView');
+     </script>
+     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+========== FIM TRACKING PIXELS desativados ========== -->
 
 <!-- Helper global de tracking -->
 <script>
@@ -101,7 +107,7 @@ body::before{content:'';position:fixed;inset:0;background:
 /* Reveal on scroll */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
 .reveal.in{opacity:1;transform:none}
-.reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}
+.reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 .w{max-width:1100px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
@@ -280,15 +286,10 @@ img{display:block;max-width:100%}
 .speaker-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,transparent 55%,rgba(232,89,60,.06));pointer-events:none}
 .speaker-info{display:flex;flex-direction:column;gap:20px}
 .speaker-name{font-family:var(--font-display);font-size:36px;letter-spacing:1px;color:#fff;line-height:1}
-.speaker-role{font-size:14px;color:var(--accent-2);font-weight:600;margin-top:4px}
 .speaker-bio{font-size:15px;color:var(--text-mid);line-height:1.75}
 .speaker-bio strong{color:#fff}
-.speaker-name-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:4px}
-.speaker-v4-badge{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px}
-.speaker-v4-label{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-dim);font-weight:600}
 .speaker-cred-icon img{width:24px;height:24px;object-fit:contain;display:block}
 .speaker-cred-icon.is-brand{background:#fff;border-color:rgba(255,255,255,.18);padding:4px}
-.speaker-cred-icon svg{width:20px;height:20px;stroke-width:2;color:var(--accent-2)}
 .speaker-socials{display:flex;gap:12px;margin-top:0;flex-wrap:wrap;justify-content:center}
 .speaker-left .speaker-socials{margin-top:4px}
 .speaker-social{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.04);border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;color:var(--text-mid);transition:all .3s cubic-bezier(.2,.8,.2,1);text-decoration:none}
@@ -299,21 +300,6 @@ img{display:block;max-width:100%}
 .speaker-cred:hover{border-color:var(--border-accent)}
 .speaker-cred-icon{width:36px;height:36px;border-radius:10px;background:var(--accent-soft);border:1px solid rgba(232,89,60,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-2);font-size:16px}
 .speaker-cred strong{color:#fff}
-
-/* === OFFER === */
-.offer-wrap{display:grid;grid-template-columns:1fr;gap:28px;align-items:start;max-width:1000px;margin:24px auto 0}
-@media(min-width:880px){.offer-wrap{grid-template-columns:.85fr 1.15fr}}
-.offer-img{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);position:sticky;top:90px;aspect-ratio:4/5;box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}
-.offer-img img{width:100%;height:100%;object-fit:cover}
-.offer-list{display:flex;flex-direction:column;gap:14px}
-.offer-item{display:flex;align-items:flex-start;gap:16px;padding:24px 22px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);transition:all .3s;position:relative}
-.offer-item:hover{border-color:var(--border-accent)}
-.offer-check{width:28px;height:28px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;margin-top:2px;border:1px solid rgba(37,211,102,.3)}
-.offer-item strong{color:var(--text);font-size:15px}
-.offer-item span{font-size:13px;color:var(--text-mid);display:block;margin-top:4px;line-height:1.6}
-.offer-highlight{border-color:transparent;background:linear-gradient(var(--bg-card),#0e0e0e) padding-box,linear-gradient(135deg,var(--accent),var(--accent-2)) border-box;border:1px solid transparent;position:relative;box-shadow:0 10px 40px -10px rgba(232,89,60,.4)}
-.offer-highlight .offer-check{background:var(--accent-soft);color:var(--accent-2);border-color:var(--accent)}
-.offer-tag{display:inline-block;padding:4px 9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-size:9px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;border-radius:4px;margin-left:8px;vertical-align:middle}
 
 /* === PRICE === */
 .price-section{text-align:center}
@@ -1277,7 +1263,7 @@ img{display:block;max-width:100%}
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})
   },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-  ['.sec-h','.sec-p','.problem-item','.reel-card','.module-card','.offer-item','.price-card','.faq-item','.hero-card','.hero-metric','.hero-title','.hero-subtitle','.problem-img','.speaker-photo','.speaker-cred','.final-cta'].forEach(function(sel){
+  ['.sec-h','.sec-p','.problem-item','.reel-card','.module-card','.price-card','.faq-item','.hero-card','.hero-metric','.hero-title','.hero-subtitle','.problem-img','.speaker-photo','.speaker-cred','.final-cta'].forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(el,i){
       if(!el.classList.contains('reveal'))el.classList.add('reveal');
       if(i%3===1)el.classList.add('reveal-d1');else if(i%3===2)el.classList.add('reveal-d2');
@@ -1441,8 +1427,11 @@ function goToStep(n){
   var btnText=document.getElementById('btnNextText');
   var btnNext=document.getElementById('btnNext');
   btnBack.style.display=n>1&&n<3?'flex':'none';
-  if(n===1)btnText.textContent='Continuar para pagamento';
-  else if(n===2)btnText.textContent='Finalizar e garantir vaga';
+  // Restaura handler do btnNext quando voltamos pros steps 1/2 (evita bug
+  // onde, apos o step 3 setar onclick=closeCheckout(), reabrir o modal
+  // travava o botao)
+  if(n===1){btnText.textContent='Continuar para pagamento';if(btnNext)btnNext.setAttribute('onclick','nextStep(event)')}
+  else if(n===2){btnText.textContent='Finalizar e garantir vaga';if(btnNext)btnNext.setAttribute('onclick','nextStep(event)')}
   else{btnText.textContent='Acessar o curso';btnNext.setAttribute('onclick','closeCheckout()')}
   document.querySelector('.modal-body').scrollTop=0;
 }
@@ -1452,9 +1441,15 @@ function nextStep(e){
   if(currentStep===1){if(!validateStep1())return;goToStep(2)}
   else if(currentStep===2){
     if(!validateStep2())return;
-    goToStep(3);
-    if(window.cpTrack)cpTrack('Purchase',{value:147,currency:'BRL',payment_method:selectedPay});
-    if(window.fbq)fbq('track','Purchase',{value:147,currency:'BRL'});
+    // Integracao de checkout pendente (Kiwify/Hotmart). Ate la, enviamos
+    // o lead pro WhatsApp pra fechar manualmente. NAO disparamos fbq/gtag
+    // 'Purchase' aqui pois nao houve cobranca real — fazer isso poluiria
+    // o funil e pode ser considerado tracking fraudulento.
+    var waNumber='5534999999999'; // TODO: substituir pelo numero real
+    var waMsg=encodeURIComponent('Oi! Fiz minha inscricao no Posto Cheio. Quero confirmar meu pagamento e proximos passos.');
+    window.open('https://wa.me/'+waNumber+'?text='+waMsg,'_blank','noopener,noreferrer');
+    closeCheckout();
+    return;
   }
 }
 
@@ -1684,7 +1679,7 @@ document.addEventListener('click',function(e){
       }
     });
   },{threshold:.15});
-  document.querySelectorAll('.reels-grid,.modules-grid,.problem-list,.offer-list,.speaker-creds').forEach(function(g){
+  document.querySelectorAll('.reels-grid,.modules-grid,.problem-list,.speaker-creds').forEach(function(g){
     Array.prototype.forEach.call(g.children,function(c){
       c.style.opacity='0';
       c.style.transform='translateY(24px)';

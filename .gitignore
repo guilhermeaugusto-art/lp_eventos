@@ -1,0 +1,19 @@
+# Firebase
+.firebase/
+firebase-debug.log
+
+# Claude Code
+.claude/
+
+# Node
+node_modules/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+.env.*.local
