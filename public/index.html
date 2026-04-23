@@ -224,7 +224,7 @@ img{display:block;max-width:100%}
 .cta-note::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
 .cta-wpp{background:linear-gradient(180deg,#2EE070 0%,#1EA952 100%);border:1px solid rgba(255,255,255,.18);font-size:14px;padding:14px 26px;box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 12px 30px -10px rgba(37,211,102,.45),0 4px 12px -4px rgba(0,0,0,.4)}
 .cta-wpp:hover{background:linear-gradient(180deg,#34F277 0%,#22BA5A 100%);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 18px 40px -12px rgba(37,211,102,.6),0 6px 16px -6px rgba(0,0,0,.5)}
-.cta-strip{padding:18px 0 20px;text-align:center}
+.cta-strip{padding:22px 0;text-align:center}
 
 /* === COUNTDOWN === */
 .countdown{text-align:center;margin:32px auto 14px;padding:24px 20px;max-width:560px;border-radius:var(--r);background:radial-gradient(circle at 50% 0%,rgba(232,89,60,.14),transparent 70%),linear-gradient(180deg,rgba(232,89,60,.04),transparent);border:1px solid rgba(232,89,60,.22);box-shadow:0 20px 50px -20px rgba(232,89,60,.35),inset 0 1px 0 rgba(255,255,255,.04)}
@@ -247,7 +247,7 @@ img{display:block;max-width:100%}
 }
 
 /* === SECTIONS === */
-.sec{padding:48px 0}
+.sec{padding:40px 0}
 /* A4: content-visibility:auto nas secoes abaixo do fold. O browser pula
    render/layout ate o conteudo entrar no viewport. Ganho de ~300-800ms
    em TBT. Nao aplicar em .hero (fold) nem em modais. */
@@ -422,7 +422,7 @@ img{display:block;max-width:100%}
 }
 
 /* === TRANSITION === */
-.transition{max-width:680px;margin:0 auto;padding:18px 24px 16px;text-align:center;position:relative}
+.transition{max-width:680px;margin:0 auto;padding:24px 24px;text-align:center;position:relative}
 .transition::before,.transition::after{content:'';position:absolute;left:50%;width:1px;background:linear-gradient(180deg,transparent,var(--accent),transparent);transform:translateX(-50%)}
 .transition::before{top:0;height:14px}
 .transition::after{bottom:0;height:14px}
@@ -431,17 +431,17 @@ img{display:block;max-width:100%}
 .transition p strong{color:#fff;font-weight:600}
 
 /* === ALERT BOX === */
-.alert-box{max-width:760px;margin:24px auto;background:rgba(174,44,44,.10);border:1px solid #AE2C2C;border-radius:18px;padding:28px 32px;display:flex;align-items:flex-start;gap:18px;box-shadow:0 0 60px -20px rgba(174,44,44,.35)}
+.alert-box{max-width:760px;margin:28px auto;background:rgba(174,44,44,.10);border:1px solid #AE2C2C;border-radius:18px;padding:28px 32px;display:flex;align-items:flex-start;gap:18px;box-shadow:0 0 60px -20px rgba(174,44,44,.35)}
 .alert-icon{font-size:32px;flex-shrink:0;animation:alertPulse 2s ease-in-out infinite}
 @keyframes alertPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
 .alert-content{flex:1}
 .alert-title{font-family:var(--font-display);font-size:22px;color:#FF8B8B;letter-spacing:.8px;margin-bottom:6px;line-height:1.1}
 .alert-text{font-size:14px;color:#E8C5C5;line-height:1.6}
 .alert-text strong{color:#FFB8B8}
-@media(max-width:760px){.alert-box{padding:20px 18px;gap:12px;margin:18px auto;border-radius:14px}.alert-icon{font-size:24px}.alert-title{font-size:17px}.alert-text{font-size:12px}}
+@media(max-width:760px){.alert-box{padding:20px 18px;gap:12px;margin:20px auto;border-radius:14px;max-width:calc(100% - 32px)}.alert-icon{font-size:24px}.alert-title{font-size:17px}.alert-text{font-size:12px}}
 
 /* === FINAL CTA === */
-.final-cta{text-align:center;padding:40px 32px 48px;position:relative;border-radius:var(--r);overflow:hidden;margin:12px auto 0;max-width:1100px}
+.final-cta{text-align:center;padding:40px 32px 48px;position:relative;border-radius:var(--r);overflow:hidden;margin:24px auto 0;max-width:1100px}
 .final-cta>*{position:relative;z-index:1}
 .final-cta .sec-h{margin-bottom:18px}
 .final-sub{font-size:14px;color:var(--text-mid);margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto}
@@ -624,7 +624,7 @@ img{display:block;max-width:100%}
   .nav-logo img{height:36px}
   .nav-live{padding:5px 10px;font-size:8.5px;letter-spacing:.5px;border-radius:10px}
   .nav-live-sub{font-size:7.5px}
-  .hero{padding:80px 0 28px}
+  .hero{padding:76px 0 20px}
   .hero-eyebrow{font-size:9px;padding:5px 12px;margin-bottom:10px;letter-spacing:1px}
   .hero-title{font-size:38px;letter-spacing:.5px;margin-bottom:4px;line-height:.98}
   .hero-title .mark{padding:0 10px;font-size:.85em;margin-left:4px}
@@ -641,7 +641,7 @@ img{display:block;max-width:100%}
   .hero-metric-label{font-size:8px}
   .cta{padding:18px 22px;font-size:14px;display:flex;width:100%;max-width:100%;border-radius:14px;gap:10px;min-height:56px}
   .cta-note{font-size:10px;gap:5px}
-  .sec{padding:36px 0}
+  .sec{padding:28px 0}
   .sec-tag{font-size:10px;letter-spacing:1.6px;padding:5px 12px 5px 10px}
   .sec-h{font-size:clamp(22px,5.5vw,32px);margin-bottom:10px}
   .sec-p{font-size:13px;line-height:1.65;padding:0 4px}
@@ -650,10 +650,10 @@ img{display:block;max-width:100%}
   .problem-wrap{grid-template-columns:1fr;display:grid}
   .problem-wrap > :first-child{order:2}
   .problem-img{position:static;aspect-ratio:9/16;max-height:520px;min-height:380px;max-width:320px;width:100%;height:auto;order:1;margin:0 auto 20px;justify-self:center}
-  /* Espacamento padronizado entre blocos no mobile: 32px entre sec/transition/alert/cta-strip */
-  .transition{padding:32px 16px;margin:0}
+  /* Espacamento padronizado: 20px vertical em transition/cta-strip mobile pra gap uniforme */
+  .transition{padding:20px 16px;margin:0}
   .transition p{font-size:16px}
-  .cta-strip{margin:0 auto;padding:20px 0}
+  .cta-strip{margin:0 auto;padding:16px 0}
   .modules-grid{grid-template-columns:1fr;gap:12px;margin-top:16px}
   .module-card{padding:22px 18px}
   .module-num{font-size:28px}
@@ -666,7 +666,6 @@ img{display:block;max-width:100%}
   .speaker-cred-icon img{width:28px;height:28px}
   .speaker-cred-icon.is-brand-dark img{width:34px;height:34px}
   .speaker-cred-icon svg{width:24px;height:24px}
-  .alert-box{margin:32px auto;max-width:calc(100% - 32px)}
 }
 
 /* B5 — Honra prefers-reduced-motion em todas as animacoes principais.
@@ -1034,8 +1033,7 @@ img{display:block;max-width:100%}
         </div>
         <a href="#" class="cta price-cta">Quero meu posto cheio por R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
-      <!-- TODO (feedback Bianca): substituir imagem do "quadro de investimento" por asset próprio -->
-      <div class="price-right" style="background-image:url('https://images.unsplash.com/photo-1545459720-aac8509eb02c?w=400&q=70&auto=format&fit=crop')"></div>
+      <div class="price-right" style="background-image:url('https://i.imgur.com/Y6PnmpK.jpg')"></div>
     </div>
     <div class="price-guarantee">
       <span>🛡️</span>
