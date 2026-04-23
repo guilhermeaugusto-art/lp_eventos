@@ -649,9 +649,11 @@ img{display:block;max-width:100%}
   .pull-line{font-size:14px;margin-top:12px;padding:0 12px}
   .problem-wrap{grid-template-columns:1fr;display:grid}
   .problem-wrap > :first-child{order:2}
-  .problem-img{position:static;aspect-ratio:9/16;max-height:520px;min-height:380px;max-width:320px;width:100%;height:auto;order:1;margin:0 auto 12px;justify-self:center}
-  .transition{padding:28px 16px}
+  .problem-img{position:static;aspect-ratio:9/16;max-height:520px;min-height:380px;max-width:320px;width:100%;height:auto;order:1;margin:0 auto 20px;justify-self:center}
+  /* Espacamento padronizado entre blocos no mobile: 32px entre sec/transition/alert/cta-strip */
+  .transition{padding:32px 16px;margin:0}
   .transition p{font-size:16px}
+  .cta-strip{margin:0 auto;padding:20px 0}
   .modules-grid{grid-template-columns:1fr;gap:12px;margin-top:16px}
   .module-card{padding:22px 18px}
   .module-num{font-size:28px}
@@ -659,8 +661,12 @@ img{display:block;max-width:100%}
   .speaker-wrap{gap:16px}
   .speaker-photo{position:static;aspect-ratio:1/1;max-width:280px;max-height:280px;margin:0 auto}
   .speaker-name{font-size:28px}
-  .sticky-cta{display:block}
-  .alert-box{margin:24px 16px}
+  /* Credenciais: aumentar icone/logo no mobile pra ficarem mais visiveis */
+  .speaker-cred-icon{width:44px;height:44px}
+  .speaker-cred-icon img{width:28px;height:28px}
+  .speaker-cred-icon.is-brand-dark img{width:34px;height:34px}
+  .speaker-cred-icon svg{width:24px;height:24px}
+  .alert-box{margin:32px auto;max-width:calc(100% - 32px)}
 }
 
 /* B5 — Honra prefers-reduced-motion em todas as animacoes principais.
@@ -791,7 +797,7 @@ img{display:block;max-width:100%}
       </div>
     </div>
     <div class="problem-img">
-      <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/4pRp7j1.jpg" aria-label="Posto com pracinha vazia">
+      <video autoplay muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/4pRp7j1.jpg" aria-label="Posto com pracinha vazia">
         <source src="https://i.imgur.com/4pRp7j1.mp4" type="video/mp4">
       </video>
     </div>
@@ -880,7 +886,7 @@ img{display:block;max-width:100%}
     <!-- Reel 1 — DRNl7lLASjT (vídeo Imgur: OU2EW83) -->
     <a class="reel-card reveal" href="https://www.instagram.com/clubpetro/reel/DRNl7lLASjT/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DRNl7lLASjT'})">
       <div class="reel-thumb">
-        <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/OU2EW83.jpg" aria-label="Reel @clubpetro">
+        <video autoplay muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/OU2EW83.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/OU2EW83.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
@@ -897,7 +903,7 @@ img{display:block;max-width:100%}
     <!-- Reel 2 — DGnsqczRbwJ (vídeo Imgur: Lh3ebh2) -->
     <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/clubpetro/reel/DGnsqczRbwJ/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DGnsqczRbwJ'})">
       <div class="reel-thumb">
-        <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/Lh3ebh2.jpg" aria-label="Reel @clubpetro">
+        <video autoplay muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/Lh3ebh2.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/Lh3ebh2.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
@@ -914,7 +920,7 @@ img{display:block;max-width:100%}
     <!-- Reel 3 — DHeI_dJRQjz (vídeo Imgur: HO66l7V) -->
     <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/clubpetro/reel/DHeI_dJRQjz/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DHeI_dJRQjz'})">
       <div class="reel-thumb">
-        <video muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/HO66l7V.jpg" aria-label="Reel @clubpetro">
+        <video autoplay muted loop playsinline preload="none" data-lazy-play poster="https://i.imgur.com/HO66l7V.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/HO66l7V.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
@@ -978,7 +984,7 @@ img{display:block;max-width:100%}
           <div><strong>+8 anos liderando marketing e vendas do ClubPetro</strong></div>
         </div>
         <div class="speaker-cred">
-          <div class="speaker-cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg></div>
+          <div class="speaker-cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg></div>
           <div><strong>+R$ 5 milhões em receita gerada</strong> em campanhas</div>
         </div>
       </div>
