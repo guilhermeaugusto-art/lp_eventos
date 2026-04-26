@@ -154,6 +154,19 @@ body::before{content:'';position:fixed;inset:0;background:
 @media(max-width:640px){.bg-lines{display:none}}
 @media(prefers-reduced-motion:reduce){.bg-line{animation:none!important}}
 
+/* Pausa animacoes ambientes quando a aba sai de foco (JS toggla .off-screen no body).
+   Economiza CPU/bateria sem alterar o visual quando a aba volta. */
+body.off-screen .blob,
+body.off-screen .bg-line,
+body.off-screen .hero-card::before,
+body.off-screen .speaker-photo::before,
+body.off-screen .alert-icon,
+body.off-screen .social-proof-dot,
+body.off-screen .fab-wpp,
+body.off-screen .nav-live-main::before,
+body.off-screen .hero-badge::before,
+body.off-screen .cd-label::before{animation-play-state:paused!important}
+
 /* Highlight marker */
 .mark{position:relative;display:inline-block;color:#fff;padding:0 10px;z-index:1}
 .mark::before{content:'';position:absolute;inset:6% -2% 8% -2%;background:linear-gradient(105deg,var(--accent) 0%,var(--accent-hover) 50%,#b83420 100%);transform:skew(-6deg);z-index:-1;border-radius:3px;box-shadow:0 8px 24px -4px rgba(232,89,60,.55),inset 0 1px 0 rgba(255,255,255,.15)}
@@ -238,7 +251,7 @@ img{display:block;max-width:100%}
 .hero-h em{font-style:italic;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;padding-right:.12em}
 /* Headline word stagger — split via JS, anima cada palavra com delay --i */
 .hero-h.split{opacity:1!important;transform:none!important;transition:none!important}
-.hero-h.split > .word,.hero-h.split > em{display:inline-block;opacity:0;transform:translateY(.5em);transition:opacity .55s var(--ease-cinematic),transform .55s var(--ease-cinematic);transition-delay:calc(var(--i,0) * 55ms);will-change:transform,opacity}
+.hero-h.split > .word,.hero-h.split > em{display:inline-block;opacity:0;transform:translateY(.5em);transition:opacity .55s var(--ease-cinematic),transform .55s var(--ease-cinematic);transition-delay:calc(var(--i,0) * 55ms)}
 .hero-h.split.in > .word,.hero-h.split.in > em{opacity:1;transform:none}
 @media(max-width:760px){.hero-h.split > .word,.hero-h.split > em{transition-duration:.45s;transition-delay:calc(var(--i,0) * 35ms)}}
 .hero-p{font-size:13px;color:#e5e5e5;text-align:left;line-height:1.6;margin-bottom:10px;text-shadow:0 1px 8px rgba(0,0,0,.7)}
@@ -271,7 +284,6 @@ img{display:block;max-width:100%}
 .cta.cta-in-view::before{animation:ctaShine 1.4s var(--ease-soft) .25s 1}
 @keyframes ctaShine{0%{left:-100%}100%{left:100%}}
 /* Metric pop quando count-up termina */
-.hero-metric-num{will-change:transform}
 .hero-metric-num.popped{animation:metricPop .55s cubic-bezier(.34,1.56,.64,1) 1}
 @keyframes metricPop{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
 /* Bonus card: burst de glow ao entrar no viewport (animacao de opacity em ::after, GPU-friendly) */
@@ -405,7 +417,7 @@ img{display:block;max-width:100%}
 .reel-summary{font-size:12.5px;color:var(--text-mid);line-height:1.6;font-weight:400}
 /* Tipografia animada do summary: cada palavra entra em stagger quando o card recebe .in.
    Stagger sutil (35ms) pra nao competir com o reveal-card. */
-.reel-summary > .word{display:inline-block;opacity:0;transform:translateY(.4em);transition:opacity .5s var(--ease-cinematic),transform .5s var(--ease-cinematic);transition-delay:calc(var(--i,0) * 30ms + 250ms);will-change:transform,opacity}
+.reel-summary > .word{display:inline-block;opacity:0;transform:translateY(.4em);transition:opacity .5s var(--ease-cinematic),transform .5s var(--ease-cinematic);transition-delay:calc(var(--i,0) * 30ms + 250ms)}
 .reel-card.in .reel-summary > .word{opacity:1;transform:none}
 .reel-card:hover .reel-title{background:linear-gradient(135deg,#fff 30%,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 
@@ -657,6 +669,9 @@ img{display:block;max-width:100%}
   .speaker-cred-icon img{width:28px;height:28px}
   .speaker-cred-icon.is-brand-dark img{width:34px;height:34px}
   .speaker-cred-icon svg{width:24px;height:24px}
+  /* Backdrop-filter eh caro no GPU. Em mobile reduz pra 4px (mantem o efeito sem
+     custo de paint pesado) ou substitui por background mais opaco. */
+  .nav,.hero-eyebrow,.sec-tag,.social-proof,.faq-item,.reel-ig-hint,.exit-modal{backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
   .price-card{border-radius:22px}
   .price-left{padding:28px 24px}
   .price-from{font-size:15px}
@@ -1387,6 +1402,12 @@ function goToHotmart(e){
   if(window.fbq)fbq('track','InitiateCheckout',{value:147,currency:'BRL'});
   // deixa o link abrir normalmente em nova aba
 }
+
+// === Pausa animacoes ambientes quando a aba esta em background ===
+// Toggle classe .off-screen no body, CSS aplica animation-play-state:paused.
+document.addEventListener('visibilitychange',function(){
+  document.body.classList.toggle('off-screen',document.hidden);
+});
 // Fecha exit modal com Esc
 document.addEventListener('keydown',function(e){
   if(e.key!=='Escape')return;
@@ -1444,17 +1465,26 @@ document.addEventListener('click',function(e){
 });
 
 // === MAGNETIC CTA ===
+// rAF guard: cada mousemove so dispara um setStyle por frame.
+// Sem isso, em hover prolongado dispara 100+ events/seg e force layout.
 (function(){
   if(window.matchMedia('(hover:none)').matches)return;
   document.querySelectorAll('.cta').forEach(function(btn){
-    btn.style.transition='transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .25s';
+    var lastE=null,ticking=false,rect=null;
+    btn.addEventListener('mouseenter',function(){rect=btn.getBoundingClientRect()},{passive:true});
     btn.addEventListener('mousemove',function(e){
-      var r=btn.getBoundingClientRect();
-      var x=e.clientX-r.left-r.width/2;
-      var y=e.clientY-r.top-r.height/2;
-      btn.style.transform='translate('+(x*.18)+'px,'+(y*.25-2)+'px)';
-    });
-    btn.addEventListener('mouseleave',function(){btn.style.transform=''});
+      lastE=e;
+      if(ticking)return;
+      ticking=true;
+      requestAnimationFrame(function(){
+        if(!rect)rect=btn.getBoundingClientRect();
+        var x=lastE.clientX-rect.left-rect.width/2;
+        var y=lastE.clientY-rect.top-rect.height/2;
+        btn.style.transform='translate('+(x*.18).toFixed(2)+'px,'+((y*.25)-2).toFixed(2)+'px)';
+        ticking=false;
+      });
+    },{passive:true});
+    btn.addEventListener('mouseleave',function(){btn.style.transform='';rect=null},{passive:true});
   });
 })();
 
@@ -1548,46 +1578,56 @@ document.addEventListener('DOMContentLoaded',function(){
   document.head.appendChild(s);
 });
 
-// === Videos autoplay loop (force play em mobile) ===
-// Autoplay nativo ja roda com muted+playsinline. Esse helper garante que se
-// o browser bloquear autoplay (ex Safari iOS com baixa bateria), a gente
-// tenta play() de novo quando o video entra no viewport.
+// === Videos autoplay loop (play/pause por viewport) ===
+// Sao 4 videos rodando em loop. Se todos tocarem o tempo todo, o decoder
+// trabalha em 4 streams paralelos — pesa muito em mobile. IO play quando
+// entra, pause quando sai. Reduz CPU/GPU dramatically em mobile.
 (function(){
   if(!('IntersectionObserver' in window))return;
   var vids=document.querySelectorAll('.reel-thumb video, .problem-img video');
   if(!vids.length)return;
-  // Tenta tocar agora em cada um (caso autoplay tenha rodado)
-  vids.forEach(function(v){
-    try{var p=v.play();if(p&&p.catch)p.catch(function(){})}catch(e){}
-  });
+  function safePlay(v){try{var p=v.play();if(p&&p.catch)p.catch(function(){})}catch(e){}}
+  function safePause(v){try{v.pause()}catch(e){}}
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(en){
-      if(en.isIntersecting){
-        try{var p=en.target.play();if(p&&p.catch)p.catch(function(){})}catch(e){}
-      }
+      if(en.isIntersecting)safePlay(en.target);
+      else safePause(en.target);
     });
-  },{threshold:0.1});
+  },{threshold:0.15});
   vids.forEach(function(v){io.observe(v)});
+  // Pausa todos quando a aba sai de foco (mais um ganho de CPU/bateria)
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden)vids.forEach(safePause);
+    else vids.forEach(function(v){
+      var r=v.getBoundingClientRect();
+      if(r.top<window.innerHeight&&r.bottom>0)safePlay(v);
+    });
+  });
 })();
 
 // === LENIS SMOOTH SCROLL ===
-// Inertia/lerp scroll cinematico. Desktop e mobile (smoothTouch ativado por
-// pedido explicito). Respeita prefers-reduced-motion. Fallback gracioso se
-// o CDN falhar (Lenis fica undefined e a pagina continua usando scroll nativo).
+// Em desktop, lerp cinematico no wheel. Em mobile (touch), smoothTouch:false:
+// o momentum nativo do iOS/Android e 60fps perfeito; smoothTouch:true entra
+// em conflito com scroll-snap (reels) e causa jank. Recomendacao oficial Lenis.
+// Respeita prefers-reduced-motion. Fallback gracioso se o CDN falhar.
 window.addEventListener('load',function(){
   if(typeof Lenis==='undefined')return;
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  var isTouch=window.matchMedia('(hover: none) and (pointer: coarse)').matches;
   var lenis=new Lenis({
-    duration:isTouch?1.1:1.8,
+    duration:1.4,
     easing:function(t){return 1-Math.pow(1-t,4)},
     smoothWheel:true,
-    smoothTouch:true,
-    touchMultiplier:isTouch?1.6:1,
-    wheelMultiplier:0.85
+    smoothTouch:false,
+    wheelMultiplier:0.9
   });
-  function raf(time){lenis.raf(time);requestAnimationFrame(raf)}
-  requestAnimationFrame(raf);
+  var rafId;
+  function raf(time){lenis.raf(time);rafId=requestAnimationFrame(raf)}
+  rafId=requestAnimationFrame(raf);
+  // Pausa o rAF do Lenis quando a aba sai de foco — evita render off-screen
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden){if(rafId)cancelAnimationFrame(rafId)}
+    else{rafId=requestAnimationFrame(raf)}
+  });
 });
 </script>
 </body>
