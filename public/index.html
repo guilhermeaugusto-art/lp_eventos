@@ -228,8 +228,6 @@ img{display:block;max-width:100%}
 .hero{padding:110px 0 24px;text-align:center;position:relative;min-height:auto}
 .hero-dots{position:absolute;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(rgba(232,89,60,.18) 1px,transparent 1.5px);background-size:22px 22px;mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);opacity:.7}
 .hero>*{position:relative;z-index:1}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(29,29,31,.6);border:1px solid rgba(255,255,255,.19);border-radius:300px;font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--text-mid);margin-bottom:28px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.hero-eyebrow span{color:var(--accent-2)}
 .hero-title{font-family:var(--font-display);font-size:clamp(40px,6.4vw,68px);letter-spacing:1.5px;line-height:.95;margin-bottom:8px}
 .hero-title em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
 .hero-title .mark{font-size:.92em;margin-left:6px;padding:0 14px}
@@ -255,8 +253,6 @@ img{display:block;max-width:100%}
 .hero-h.split.in > .word,.hero-h.split.in > em{opacity:1;transform:none}
 @media(max-width:760px){.hero-h.split > .word,.hero-h.split > em{transition-duration:.45s;transition-delay:calc(var(--i,0) * 35ms)}}
 .hero-p{font-size:13px;color:#e5e5e5;text-align:left;line-height:1.6;margin-bottom:10px;text-shadow:0 1px 8px rgba(0,0,0,.7)}
-.hero-modules-link{display:inline-block;font-size:12px;font-weight:600;color:var(--accent-2);text-decoration:none;letter-spacing:.3px;border-bottom:1px dashed rgba(255,182,39,.45);padding-bottom:1px;margin-top:2px;transition:color .25s,border-color .25s}
-.hero-modules-link:hover{color:#fff;border-bottom-color:#fff}
 .hero-metrics{display:grid;grid-template-columns:1fr;gap:8px}
 @media(max-width:760px){.hero-metrics{grid-template-columns:repeat(3,1fr)}}
 .hero-metric{padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);text-align:center;background:rgba(0,0,0,.5)}
@@ -623,7 +619,6 @@ img{display:block;max-width:100%}
   .nav-live{padding:5px 10px;font-size:8.5px;letter-spacing:.5px;border-radius:10px}
   .nav-live-sub{font-size:7.5px}
   .hero{padding:84px 0 20px}
-  .hero-eyebrow{font-size:9.5px;padding:6px 14px;margin-bottom:14px;letter-spacing:1.2px}
   .hero-title{font-size:clamp(34px,9vw,46px);letter-spacing:.6px;margin-bottom:8px;line-height:.98}
   .hero-title .mark{padding:0 10px;font-size:.86em;margin-left:4px}
   .hero-subtitle{font-size:12.5px;letter-spacing:.2px;margin-bottom:20px;padding:0 4px;line-height:1.55}
@@ -633,7 +628,6 @@ img{display:block;max-width:100%}
   .hero-badge{font-size:9px;padding:4px 11px;margin-bottom:10px}
   .hero-h{font-size:clamp(20px,5.4vw,26px);line-height:1.15;margin-bottom:10px;text-align:left;letter-spacing:-.2px}
   .hero-p{font-size:13px;line-height:1.6;text-align:left;margin:0}
-  .hero-modules-link{font-size:12px}
   .hero-metrics{gap:8px}
   .hero-metric{padding:12px 6px;border-radius:10px}
   .hero-metric-num{font-size:20px}
@@ -671,7 +665,7 @@ img{display:block;max-width:100%}
   .speaker-cred-icon svg{width:24px;height:24px}
   /* Backdrop-filter eh caro no GPU. Em mobile reduz pra 4px (mantem o efeito sem
      custo de paint pesado) ou substitui por background mais opaco. */
-  .nav,.hero-eyebrow,.sec-tag,.social-proof,.faq-item,.reel-ig-hint,.exit-modal{backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+  .nav,.sec-tag,.social-proof,.faq-item,.reel-ig-hint,.exit-modal{backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
   .price-card{border-radius:22px}
   .price-left{padding:28px 24px}
   .price-from{font-size:15px}
@@ -745,19 +739,17 @@ img{display:block;max-width:100%}
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-dots" aria-hidden="true"></div>
-  <div class="hero-eyebrow">CURSO ONLINE · <span>POSTO CHEIO</span></div>
-  <h1 class="hero-title reveal">PISTA VAZIA NÃO É FALTA DE CLIENTE. É <span class="mark">FALTA DE POSTO CHEIO</span>.</h1>
-  <p class="hero-subtitle reveal reveal-d1">O curso que ensina dono e gerente de posto a encher a pracinha de carro usando Reels, Google e R$ 10 por dia de anúncio. Sem jargão, sem agência, sem precisar contratar ninguém.</p>
+  <h1 class="hero-title reveal">PISTA VAZIA NÃO É FALTA DE CLIENTE. É <span class="mark">FALTA DE APARECER</span>.</h1>
+  <p class="hero-subtitle reveal reveal-d1">O método que enche pracinha de carro com Reels, Google e R$ 10 por dia. Sem agência, sem contratar ninguém, sem virar influencer.</p>
 
   <div class="hero-card reveal reveal-d2">
     <img class="hero-card-img" src="https://i.imgur.com/y2i8liD.jpeg" alt="Posto de combustível à noite" fetchpriority="high" decoding="async" width="720" height="480">
     <div class="hero-card-grad"></div>
     <div class="hero-card-inner">
       <div class="hero-card-left">
-        <div class="hero-badge">Curso completo · acesso imediato</div>
+        <div class="hero-badge">Posto Cheio · acesso imediato</div>
         <h2 class="hero-h">Postos que aparecem no celular vendem <em>até 40% mais</em>. Os que não aparecem, dividem o que sobra.</h2>
-        <p class="hero-p">O Posto Cheio resolve isso em 6 módulos. Você aplica já na segunda.</p>
-        <a href="#modulos" class="hero-modules-link">Ver os 6 módulos →</a>
+        <p class="hero-p">6 módulos. Você aplica já na próxima segunda.</p>
       </div>
       <div class="hero-metrics">
         <div class="hero-metric"><div class="hero-metric-num">+380</div><div class="hero-metric-label">Postos na pista</div></div>
@@ -814,7 +806,7 @@ img{display:block;max-width:100%}
         <div class="problem-item"><span class="problem-x">✕</span><div><strong>O concorrente tá comendo seu movimento:</strong> posto da esquina posta Reels toda semana, cliente chega lá dizendo "vi no Insta" e tanque cheio. Você perde venda sem nem saber que existiu a chance.</div></div>
       </div>
       <div class="solution-callout">
-        <p><strong>Posto Cheio resolve isso em 6 módulos.</strong> Você aprende a gravar Reels sem pagar agência, treinar seu frentista em 30 minutos, rodar anúncio de R$ 10 por dia no Google e no Meta, e dominar o Google Maps pra aparecer antes do concorrente. Tudo com exemplo de posto que já fez. Não é teoria.</p>
+        <p><strong>Posto Cheio resolve em 6 módulos.</strong> Tudo com exemplo de posto que já fez. Você aplica no turno seguinte. Não é teoria.</p>
       </div>
     </div>
     <div class="problem-img">
@@ -826,7 +818,7 @@ img{display:block;max-width:100%}
 </section>
 
 <div class="cta-strip">
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero meu posto cheio por R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero parar de perder cliente · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   <p class="cta-note">Método aplicado em +380 postos · 7 dias de garantia total</p>
 </div>
 
@@ -882,7 +874,7 @@ img{display:block;max-width:100%}
 </section>
 
 <div class="cta-strip">
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero meu posto cheio por R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero os 6 módulos · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   <p class="cta-note">6 módulos + bônus Copa 2026 · libera no seu e-mail em 2 minutos</p>
 </div>
 
@@ -967,7 +959,7 @@ img{display:block;max-width:100%}
 </section>
 
 <div class="cta-strip">
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero meu posto cheio por R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero aplicar esse método · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   <p class="cta-note">O mesmo método que levou o @clubpetro a 2M+ de views</p>
 </div>
 
@@ -1061,7 +1053,7 @@ img{display:block;max-width:100%}
           <div class="price-check">Grupo no WhatsApp só de dono e gerente de posto</div>
           <div class="price-check">Atualização grátis por 1 ano: Reels novo, trend nova, todo mês</div>
         </div>
-        <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta price-cta">Quero meu posto cheio por R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta price-cta">Quero meu acesso agora · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
       <div class="price-right" style="background-image:url('https://i.imgur.com/Y6PnmpK.jpg')"></div>
     </div>
@@ -1123,7 +1115,7 @@ img{display:block;max-width:100%}
 </section>
 
 <div class="cta-strip">
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Minhas dúvidas foram respondidas. Quero meu posto cheio por R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Resolveu. Quero meu posto cheio · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   <p class="cta-note">Garantia de 7 dias · devolvemos sem conversa</p>
 </div>
 
@@ -1143,7 +1135,7 @@ img{display:block;max-width:100%}
   <div class="sec-tag" style="justify-content:center">Última chamada · Posto Cheio</div>
   <h2 class="sec-h reveal">Daqui a 30 dias, um de vocês <em>tá com a pista cheia</em>. O outro tá vendo passar.</h2>
   <p class="final-sub">Não é frase de palestra, é matemática de bairro: <strong style="color:#fff">posto que aparece no celular ganha cliente, posto que não aparece, perde</strong>. <span style="color:var(--accent-2)">R$ 147</span> hoje é o que separa o dono que decide do que ainda tá pensando. Quando você acordar amanhã, ou seu posto vai estar a um Reels de aparecer pra mais 5 mil motoristas, ou vai estar igual hoje. <strong style="color:#fff">Decide.</strong></p>
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero meu posto cheio por R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero o lado da pista cheia · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   <p class="final-wpp">
     <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Posto+Cheio+e+quero+saber+mais+sobre+o+curso" data-wa="final-cta" onclick="trackWA('final-cta')"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use href="#icon-wpp"/></svg>Antes de comprar, tira dúvida no WhatsApp</a>
   </p>
