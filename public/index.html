@@ -1142,7 +1142,8 @@ img{display:block;max-width:100%}
 <script>
 // === HEADLINE WORD SPLIT (.hero-h) — split text em spans pra stagger por palavra
 (function(){
-  document.querySelectorAll('.hero-h').forEach(function(h){
+  var heroHs=document.querySelectorAll('.hero-h');
+  heroHs.forEach(function(h){
     // Wrappa <em> primeiro pra preservar gradiente, depois quebra text nodes em palavras
     var newHtml=h.innerHTML.replace(/(<\/?[^>]+>)|(\S+)/g,function(m,tag,word){
       if(tag)return tag;
@@ -1153,6 +1154,18 @@ img{display:block;max-width:100%}
     var i=0;
     Array.from(h.children).forEach(function(c){c.style.setProperty('--i',i++)});
   });
+  // Observer dedicado: .hero-h.split precisa de .in pra revelar as palavras.
+  // Como o hero esta acima do fold, em browsers sem IO ja entra como .in.
+  if(!('IntersectionObserver' in window)){
+    heroHs.forEach(function(h){h.classList.add('in')});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
+    });
+  },{threshold:.05});
+  heroHs.forEach(function(h){io.observe(h)});
 })();
 
 // Scroll reveal observer — sistema de 3 tiers (sutil, card, hero 3D)
