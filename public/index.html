@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Posto Cheio · o curso que enche a pista do seu posto | ClubPetro</title>
-<meta name="description" content="O método que donos de posto usam pra lotar a pista com Reels, Google e R$ 10/dia de tráfego. Vaga por R$ 147 — oferta limitada.">
+<meta name="description" content="O método que donos de posto usam pra lotar a pista com Reels, Google e R$ 10/dia de tráfego. Curso completo por R$ 147 — oferta limitada.">
 
 <link rel="canonical" href="https://lp-teste-1.web.app/">
 <link rel="icon" type="image/jpeg" href="https://i.imgur.com/WkKfAI4.jpeg">
@@ -12,7 +12,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Posto Cheio — o curso que enche a pista do seu posto">
-<meta property="og:description" content="O método que donos de posto usam pra lotar a pista com Reels, Google e R$ 10/dia de tráfego. Vaga por R$ 147 — oferta limitada.">
+<meta property="og:description" content="O método que donos de posto usam pra lotar a pista com Reels, Google e R$ 10/dia de tráfego. Curso completo por R$ 147 — oferta limitada.">
 <meta property="og:image" content="https://i.imgur.com/y2i8liD.jpeg">
 <meta property="og:url" content="https://lp-teste-1.web.app/">
 <meta property="og:site_name" content="ClubPetro">
@@ -21,7 +21,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Posto Cheio — o curso que enche a pista do seu posto">
-<meta name="twitter:description" content="Vaga por R$ 147 — oferta limitada. Método testado em +380 postos.">
+<meta name="twitter:description" content="Curso completo por R$ 147 — oferta limitada. Método testado em +380 postos.">
 <meta name="twitter:image" content="https://i.imgur.com/y2i8liD.jpeg">
 
 <!-- Schema.org JSON-LD -->
@@ -250,18 +250,21 @@ img{display:block;max-width:100%}
 .hero-metric-num{font-family:var(--font-display);font-size:22px;background:linear-gradient(135deg,#fff,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.8px;line-height:1}
 .hero-metric-label{font-size:9px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
 
-/* === CTA === */
-.cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;width:auto;max-width:none;margin:0 auto;padding:16px 30px;background:linear-gradient(180deg,#E8593C 0%,#D04A30 100%);color:#fff;border:1px solid rgba(255,182,39,.35);border-radius:14px;font-family:var(--font-body);font-size:15px;font-weight:600;letter-spacing:.2px;cursor:pointer;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,background .3s;text-align:center;text-decoration:none;box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 12px 30px -10px rgba(232,89,60,.45),0 4px 12px -4px rgba(0,0,0,.4);position:relative;overflow:hidden;line-height:1}
-.cta-arrow{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.18);transition:transform .35s cubic-bezier(.2,.8,.2,1),background .25s;flex-shrink:0}
+/* === CTA — botão 3D com bevel, depth stack e shine ===
+   Profundidade fake via empilhamento de box-shadows: 3 camadas escuras de
+   "altura" (`0 2px 0`, `0 4px 0`, `0 6px 0`) simulam o lado do botão,
+   inset highlights criam o bevel, e blur-shadows externas dao o glow. */
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;width:auto;max-width:none;margin:0 auto;padding:18px 32px;background:linear-gradient(180deg,#FF7950 0%,#E8593C 50%,#B83820 100%);color:#fff;border:none;border-radius:16px;font-family:var(--font-body);font-size:15.5px;font-weight:700;letter-spacing:.1px;cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s var(--ease-soft),filter .25s;text-align:center;text-decoration:none;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),inset 0 -1.5px 0 rgba(0,0,0,.25),inset 0 0 22px rgba(255,182,39,.18),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 0 #4a1808,0 14px 32px -10px rgba(232,89,60,.6),0 6px 18px -6px rgba(0,0,0,.5);position:relative;overflow:hidden;line-height:1;text-shadow:0 1px 2px rgba(0,0,0,.18)}
+.cta-arrow{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.22);transition:transform .35s cubic-bezier(.2,.8,.2,1),background .25s;flex-shrink:0;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(0,0,0,.18)}
 .cta-arrow svg{width:11px;height:11px;display:block}
-.cta:hover .cta-arrow{transform:translateX(4px);background:rgba(255,255,255,.28)}
-.cta:active{transform:translateY(0) scale(.98);transition-duration:.1s}
+.cta:hover .cta-arrow{transform:translateX(4px);background:rgba(255,255,255,.32)}
+.cta:active{transform:translateY(4px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),inset 0 -1.5px 0 rgba(0,0,0,.25),0 0 0 transparent,0 0 0 transparent,0 2px 0 #4a1808,0 8px 18px -8px rgba(232,89,60,.5);transition-duration:.08s}
 .cta-ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.4);transform:scale(0);animation:ripple .55s ease-out;pointer-events:none}
 @keyframes ripple{to{transform:scale(4);opacity:0}}
 .cta-strip,.hero,.final-cta,.price-section{text-align:center}
-.cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transition:left .6s}
-.cta:hover{transform:translateY(-2px);background:linear-gradient(180deg,#F06A4A 0%,#E8593C 100%);box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 18px 40px -12px rgba(232,89,60,.6),0 6px 16px -6px rgba(0,0,0,.5)}
-.cta-wpp .cta-arrow{background:rgba(255,255,255,.2)}
+.cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);transition:left .6s;pointer-events:none}
+.cta:hover{transform:translateY(-3px);filter:brightness(1.04);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.5),inset 0 -1.5px 0 rgba(0,0,0,.25),inset 0 0 28px rgba(255,182,39,.25),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 0 #4a1808,0 8px 0 #3a1206,0 22px 44px -10px rgba(232,89,60,.7),0 8px 20px -6px rgba(0,0,0,.5)}
+.cta-wpp .cta-arrow{background:rgba(255,255,255,.22)}
 .price-cta{display:block;width:100%}
 .cta:hover::before{left:100%}
 /* CTA shine sweep one-time quando entra no viewport (reusa o ::before existente) */
@@ -276,9 +279,10 @@ img{display:block;max-width:100%}
 @keyframes bonusBurst{0%{opacity:0}40%{opacity:1.5}100%{opacity:1}}
 .cta-note{text-align:center;font-size:12px;color:var(--text-dim);margin-top:14px;display:flex;align-items:center;justify-content:center;gap:6px}
 .cta-note::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
-.cta-wpp{background:linear-gradient(180deg,#2EE070 0%,#1EA952 100%);border:1px solid rgba(255,255,255,.18);font-size:14px;padding:14px 26px;box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 12px 30px -10px rgba(37,211,102,.45),0 4px 12px -4px rgba(0,0,0,.4)}
-.cta-wpp:hover{background:linear-gradient(180deg,#34F277 0%,#22BA5A 100%);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 18px 40px -12px rgba(37,211,102,.6),0 6px 16px -6px rgba(0,0,0,.5)}
-.cta-strip{padding:14px 0;text-align:center}
+.cta-wpp{background:linear-gradient(180deg,#3CEC7B 0%,#22B560 50%,#0F7E3F 100%);border:none;font-size:14px;padding:14px 24px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1.5px 0 rgba(0,0,0,.22),0 2px 0 #0a6630,0 4px 0 #084d24,0 6px 0 #062f17,0 14px 28px -10px rgba(37,211,102,.5),0 6px 16px -6px rgba(0,0,0,.45)}
+.cta-wpp:hover{filter:brightness(1.05);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),inset 0 -1.5px 0 rgba(0,0,0,.22),0 2px 0 #0a6630,0 4px 0 #084d24,0 6px 0 #062f17,0 8px 0 #04200f,0 22px 38px -10px rgba(37,211,102,.65),0 8px 20px -6px rgba(0,0,0,.5)}
+.cta-wpp:active{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1.5px 0 rgba(0,0,0,.22),0 2px 0 #062f17,0 8px 18px -8px rgba(37,211,102,.4)}
+.cta-strip{margin:var(--gap-block) auto;text-align:center}
 
 /* === COUNTDOWN === */
 .countdown{text-align:center;margin:32px auto 14px;padding:24px 20px;max-width:560px;border-radius:var(--r);background:radial-gradient(circle at 50% 0%,rgba(232,89,60,.14),transparent 70%),linear-gradient(180deg,rgba(232,89,60,.04),transparent);border:1px solid rgba(232,89,60,.22);box-shadow:0 20px 50px -20px rgba(232,89,60,.35),inset 0 1px 0 rgba(255,255,255,.04)}
@@ -300,14 +304,19 @@ img{display:block;max-width:100%}
   .cd-label{font-size:11.5px;letter-spacing:2px}
 }
 
-/* === SECTIONS === */
-.sec{padding:40px 0}
+/* === SECTIONS ===
+   Espacamento simetrico: cada bloco-irmao (.sec, .cta-strip, .sec-divider,
+   .transition, .alert-box) tem o mesmo margin vertical. Margens colapsam,
+   entao o gap entre dois blocos eh sempre `--gap-block`, independente da
+   ordem. Padding interno da .sec eh zero — quem cria o ritmo eh a margin. */
+:root{--gap-block:36px}
+.sec{padding:0}
 /* A4: content-visibility:auto nas secoes abaixo do fold. O browser pula
    render/layout ate o conteudo entrar no viewport. Ganho de ~300-800ms
    em TBT. Nao aplicar em .hero (fold) nem em modais. */
 .sec,.modules-grid,.reels-grid,.problem-wrap,.speaker-wrap,.faq-list,.final-cta{content-visibility:auto;contain-intrinsic-size:auto 600px}
 /* Section divider — linha sutil + diamante accent central */
-.sec-divider{height:24px;max-width:880px;margin:0 auto;position:relative;display:flex;align-items:center;justify-content:center;background:none;overflow:hidden}
+.sec-divider{height:24px;max-width:880px;margin:var(--gap-block) auto;position:relative;display:flex;align-items:center;justify-content:center;background:none;overflow:hidden}
 .sec-divider::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(232,89,60,.25) 50%,transparent 100%);transform:translateY(-50%)}
 .sec-divider::after{content:'';width:7px;height:7px;background:linear-gradient(135deg,var(--accent),var(--accent-2));transform:rotate(45deg);border-radius:1px;box-shadow:0 0 12px rgba(232,89,60,.55),0 0 24px rgba(255,182,39,.25);position:relative;z-index:1}
 .sec>*{margin-left:auto;margin-right:auto}
@@ -381,33 +390,40 @@ img{display:block;max-width:100%}
 .reel-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(160deg,rgba(255,182,39,.12),transparent 35%);opacity:0;transition:opacity .5s var(--ease-soft);pointer-events:none;z-index:2}
 .reel-card:hover{border-color:var(--border-accent);transform:translateY(-8px);box-shadow:0 26px 50px -18px rgba(0,0,0,.75),0 0 60px -10px rgba(232,89,60,.4),0 0 0 1px rgba(255,182,39,.25) inset}
 .reel-card:hover::after{opacity:1}
-/* REC badge no canto da thumb — pulse no ponto vermelho */
-.reel-thumb::before{content:'AO VIVO';position:absolute;top:10px;right:10px;display:flex;align-items:center;gap:6px;padding:5px 10px 5px 9px;background:linear-gradient(180deg,#FF3B3B,#C62828);color:#fff;font-size:10px;font-weight:800;letter-spacing:1.2px;border-radius:100px;z-index:3;box-shadow:0 4px 14px -4px rgba(255,59,59,.6),0 0 0 1px rgba(255,255,255,.18) inset;line-height:1}
-.reel-thumb::after{content:'';position:absolute;top:14.5px;right:60px;width:6px;height:6px;border-radius:50%;background:#fff;z-index:4;box-shadow:0 0 8px #fff;animation:recPulse 1.4s ease-in-out infinite}
-@keyframes recPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.85)}}
 .reel-thumb{position:relative;aspect-ratio:9/16;overflow:hidden;background:#000}
 .reel-thumb img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
 .reel-thumb video{width:100%;height:100%;object-fit:cover;object-position:center;display:block;background:#000;transition:transform .5s ease}
 .reel-card:hover .reel-thumb video{transform:scale(1.04)}
 .reel-ig-hint{position:absolute;bottom:10px;left:10px;display:flex;align-items:center;gap:6px;padding:6px 10px;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);border-radius:100px;font-size:11.5px;font-weight:700;color:#fff;letter-spacing:.01em}
 .reel-ig-hint svg{width:13px;height:13px}
-.reel-body{padding:16px 18px}
-.reel-handle{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px}
-.reel-location{font-size:11px;color:var(--text-dim)}
-.reel-caption{font-size:12px;color:var(--text-mid);margin-top:8px;line-height:1.5;font-style:italic}
-.reels-cta-note{text-align:center;font-size:13px;color:var(--text-mid);margin-top:20px;font-style:italic}
-.reels-cta-note strong{color:var(--accent-2)}
+.reel-body{padding:18px 20px 20px}
+.reel-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;font-size:11px}
+.reel-tag{display:inline-flex;align-items:center;gap:5px;padding:3px 9px 3px 8px;border-radius:100px;background:rgba(232,89,60,.14);border:1px solid rgba(232,89,60,.3);color:var(--accent-2);font-weight:700;letter-spacing:.5px;text-transform:uppercase;font-size:9.5px}
+.reel-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 6px rgba(232,89,60,.6)}
+.reel-handle{font-size:11px;font-weight:600;color:var(--text-dim);font-variant:all-small-caps;letter-spacing:.5px}
+.reel-title{font-family:var(--font-body);font-size:15px;font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.1px;margin-bottom:8px}
+.reel-summary{font-size:12.5px;color:var(--text-mid);line-height:1.6;font-weight:400}
+/* Tipografia animada do summary: cada palavra entra em stagger quando o card recebe .in.
+   Stagger sutil (35ms) pra nao competir com o reveal-card. */
+.reel-summary > .word{display:inline-block;opacity:0;transform:translateY(.4em);transition:opacity .5s var(--ease-cinematic),transform .5s var(--ease-cinematic);transition-delay:calc(var(--i,0) * 30ms + 250ms);will-change:transform,opacity}
+.reel-card.in .reel-summary > .word{opacity:1;transform:none}
+.reel-card:hover .reel-title{background:linear-gradient(135deg,#fff 30%,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 
 /* === AUTHORITY (SPEAKER) === */
 .speaker-wrap{max-width:1000px;margin:24px auto 0;display:grid;grid-template-columns:340px 1fr;gap:40px;align-items:start;justify-items:stretch}
 @media(max-width:760px){.speaker-wrap{grid-template-columns:1fr;gap:20px;max-width:100%}}
 .speaker-left{display:flex;flex-direction:column;align-items:center;gap:18px}
-.speaker-photo{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 50px -20px rgba(0,0,0,.6),0 0 60px -10px rgba(232,89,60,.3);aspect-ratio:1/1;width:100%;background:radial-gradient(circle at 30% 25%,rgba(232,89,60,.12),#0a0a0a 70%);position:relative}
-.speaker-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.speaker-photo:hover img{transform:scale(1.03)}
-.speaker-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,transparent 55%,rgba(232,89,60,.06));pointer-events:none}
-.speaker-info{display:flex;flex-direction:column;gap:20px}
-.speaker-name{font-family:var(--font-display);font-size:36px;letter-spacing:1px;color:#fff;line-height:1}
+/* Foto do Andre — frame 3D com gradient border, halo accent, sheen interno
+   e parallax 3D continuo (ja esta no JS). Aspect-ratio quadrado pra encaixar no grid. */
+.speaker-photo{border-radius:24px;overflow:hidden;aspect-ratio:1/1;width:100%;position:relative;background:#0a0a0a padding-box,linear-gradient(135deg,rgba(232,89,60,.55),rgba(255,182,39,.45) 40%,rgba(232,89,60,.15) 100%) border-box;border:1.5px solid transparent;box-shadow:0 30px 70px -20px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.04) inset,0 0 80px -10px rgba(232,89,60,.5),0 0 140px -30px rgba(255,182,39,.4)}
+.speaker-photo::before{content:'';position:absolute;inset:-30%;background:radial-gradient(ellipse 50% 35% at 30% 25%,rgba(232,89,60,.4),transparent 60%),radial-gradient(ellipse 40% 30% at 75% 80%,rgba(255,182,39,.32),transparent 65%);filter:blur(28px);z-index:0;pointer-events:none;animation:auroraDrift 22s ease-in-out infinite}
+.speaker-photo img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1;transition:transform .6s cubic-bezier(.2,.8,.2,1);filter:saturate(1.05) contrast(1.04)}
+.speaker-photo:hover img{transform:scale(1.04)}
+.speaker-photo::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.08) 0%,transparent 35%),linear-gradient(to top,rgba(0,0,0,.35),transparent 35%)}
+.speaker-info{display:flex;flex-direction:column;gap:14px}
+.speaker-name{font-family:var(--font-display);font-size:42px;letter-spacing:1.5px;color:#fff;line-height:1;margin-bottom:-4px}
+.speaker-role{font-size:13px;color:var(--accent-2);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.speaker-role::before{content:'';width:24px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px}
 .speaker-bio{font-size:15px;color:var(--text-mid);line-height:1.75}
 .speaker-bio strong{color:#fff}
 .speaker-cred-icon img{width:24px;height:24px;object-fit:contain;display:block}
@@ -421,10 +437,15 @@ img{display:block;max-width:100%}
 .speaker-social svg{width:18px;height:18px}
 .speaker-creds{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media(max-width:760px){.speaker-creds{grid-template-columns:1fr}}
-.speaker-cred{display:flex;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;color:var(--text-mid);transition:border-color .3s,transform .3s var(--ease-soft),box-shadow .3s var(--ease-soft)}
-.speaker-cred:hover{border-color:var(--accent-2);transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(255,182,39,.25),0 0 0 1px rgba(255,182,39,.15) inset}
-.speaker-cred-icon{width:36px;height:36px;border-radius:10px;background:var(--accent-soft);border:1px solid rgba(232,89,60,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-2);font-size:16px}
-.speaker-cred strong{color:#fff}
+/* Cards de credencial — 3D bevel sutil, depth stack, hover lift.
+   Mesma linguagem visual do .module-icon mas mais discreta (cards, nao icones). */
+.speaker-cred{display:flex;align-items:center;gap:14px;padding:16px 20px;background:linear-gradient(180deg,#1a1a1a 0%,#0e0e0e 100%);border:1px solid rgba(255,255,255,.06);border-radius:16px;font-size:13.5px;color:var(--text-mid);position:relative;transition:transform .4s var(--ease-soft),box-shadow .4s var(--ease-soft),border-color .3s;box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 1px 0 rgba(0,0,0,.5),0 4px 0 rgba(0,0,0,.3),0 14px 30px -14px rgba(0,0,0,.7);overflow:hidden}
+.speaker-cred::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(232,89,60,.45) 50%,transparent 100%);opacity:0;transition:opacity .35s}
+.speaker-cred:hover{transform:translateY(-3px);border-color:rgba(255,182,39,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 0 rgba(0,0,0,.5),0 4px 0 rgba(0,0,0,.3),0 22px 44px -14px rgba(232,89,60,.35),0 0 0 1px rgba(255,182,39,.15) inset}
+.speaker-cred:hover::before{opacity:1}
+.speaker-cred-icon{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#1f1410 0%,#0a0a0a 100%);border:1px solid rgba(232,89,60,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-2);font-size:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 4px 12px -4px rgba(232,89,60,.3),0 0 18px -6px rgba(255,182,39,.4) inset;transform:perspective(420px) rotateY(-8deg);transition:transform .4s var(--ease-soft)}
+.speaker-cred:hover .speaker-cred-icon{transform:perspective(420px) rotateY(-3deg) translateY(-2px)}
+.speaker-cred strong{color:#fff;font-weight:700}
 
 /* === PRICE === */
 .price-section{text-align:center}
@@ -450,12 +471,12 @@ img{display:block;max-width:100%}
 .price-cta{width:100%}
 .price-guarantee{display:flex;align-items:flex-start;gap:10px;padding:18px 32px;border-top:1px solid var(--border);font-size:13px;color:var(--text-mid);line-height:1.5;background:rgba(255,255,255,.02)}
 .price-guarantee strong{color:var(--accent-2)}
-.price-or{text-align:center;padding:10px;font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;position:relative}
-.price-or::before,.price-or::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:var(--border)}
-.price-or::before{left:15%}
-.price-or::after{right:15%}
-.price-wpp{padding:0 32px 26px}
-.price-wpp .cta-wpp{max-width:100%;font-size:14px;padding:16px}
+/* Tira-duvida WhatsApp do price-card: discreto, nao compete com o CTA principal */
+.price-wpp-mini{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:14px 24px 22px;font-size:12.5px;color:var(--text-dim);text-align:center}
+.price-wpp-mini > span{opacity:.85}
+.price-wpp-link{display:inline-flex;align-items:center;gap:6px;color:#3CEC7B;font-weight:700;font-size:12.5px;text-decoration:none;border-bottom:1px dashed rgba(60,236,123,.5);padding-bottom:1px;transition:color .25s,border-color .25s}
+.price-wpp-link:hover{color:#fff;border-bottom-color:#fff}
+.price-wpp-link svg{flex-shrink:0}
 .trust-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:20px 18px;border-top:1px solid var(--border);background:rgba(255,255,255,.02)}
 .trust-item{display:flex;align-items:center;gap:7px;font-size:13px;color:#e0e0e0;font-weight:500;transition:color .25s,transform .25s var(--ease-soft);cursor:default}
 .trust-item:hover{color:var(--accent-2);transform:translateY(-1px)}
@@ -472,31 +493,37 @@ img{display:block;max-width:100%}
 .roi-text em{font-style:normal;color:#5BE894;font-weight:600}
 @media(max-width:760px){.roi-anchor{padding:14px 16px;gap:12px}.roi-icon{width:36px;height:36px}.roi-text{font-size:12px}}
 
-/* === FAQ === */
+/* === FAQ ===
+   Numero como bola 3D com gradient + bevel, item com hover lift e accent
+   bar lateral quando aberto. Plus icon vira X com rotate. */
 .faq-layout{display:grid;grid-template-columns:1fr;gap:12px;max-width:760px;margin:24px auto 0}
-.faq-list{display:flex;flex-direction:column;gap:8px}
-.faq-item{background:linear-gradient(180deg,rgba(28,22,32,.7),rgba(14,11,18,.7));border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .3s,background .3s,transform .3s var(--ease-soft),box-shadow .3s;backdrop-filter:blur(8px)}
-.faq-item:hover{border-color:rgba(255,182,39,.4);transform:translateY(-1px);box-shadow:0 8px 24px -10px rgba(255,182,39,.18)}
-.faq-item:hover .faq-num{opacity:1}
-.faq-item.open{border-color:rgba(232,89,60,.55);background:linear-gradient(180deg,rgba(38,22,18,.7),rgba(20,12,15,.7))}
-.faq-q{display:flex;align-items:center;padding:20px 22px;font-size:15px;font-weight:600;gap:18px;color:#f0f0f0;line-height:1.4}
-.faq-num{font-family:var(--font-body);font-weight:700;font-size:13px;color:var(--accent-2);letter-spacing:.5px;flex-shrink:0;font-variant-numeric:tabular-nums;opacity:.7;transition:opacity .3s}
-.faq-item.open .faq-num{opacity:1}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:linear-gradient(180deg,rgba(28,22,32,.75),rgba(14,11,18,.75));border:1px solid rgba(255,255,255,.06);border-radius:18px;overflow:hidden;cursor:pointer;transition:border-color .3s,background .3s,transform .3s var(--ease-soft),box-shadow .3s;backdrop-filter:blur(8px);position:relative}
+.faq-item::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:0 3px 3px 0;background:linear-gradient(180deg,var(--accent),var(--accent-2));opacity:0;transform:scaleY(.4);transform-origin:center;transition:opacity .35s,transform .4s var(--ease-soft)}
+.faq-item:hover{border-color:rgba(255,182,39,.35);transform:translateY(-2px);box-shadow:0 14px 32px -14px rgba(255,182,39,.2),0 4px 12px -6px rgba(0,0,0,.5)}
+.faq-item:hover .faq-num{transform:perspective(420px) rotateY(-4deg) translateY(-1px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),0 4px 0 #6d2210,0 8px 18px -4px rgba(232,89,60,.5)}
+.faq-item.open{border-color:rgba(232,89,60,.45);background:linear-gradient(180deg,rgba(38,22,18,.7),rgba(20,12,15,.75))}
+.faq-item.open::before{opacity:1;transform:scaleY(1)}
+.faq-q{display:flex;align-items:center;padding:18px 22px;font-size:15px;font-weight:600;gap:18px;color:#f0f0f0;line-height:1.4}
+.faq-num{font-family:var(--font-display);font-weight:800;font-size:14px;color:#fff;letter-spacing:.6px;flex-shrink:0;font-variant-numeric:tabular-nums;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#FF7A4F 0%,#E8593C 50%,#A43620 100%);display:flex;align-items:center;justify-content:center;transform:perspective(420px) rotateY(-10deg);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(0,0,0,.25),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 14px -4px rgba(232,89,60,.5);transition:transform .4s var(--ease-soft),box-shadow .4s var(--ease-soft);text-shadow:0 1px 2px rgba(0,0,0,.3)}
 .faq-q-text{flex:1;min-width:0}
-.faq-plus{color:var(--accent);transition:transform .35s cubic-bezier(.2,.8,.2,1);flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;position:relative}
+.faq-plus{color:var(--accent);transition:transform .35s cubic-bezier(.2,.8,.2,1);flex-shrink:0;width:30px;height:30px;display:flex;align-items:center;justify-content:center;position:relative;border-radius:50%;background:rgba(232,89,60,.1);border:1px solid rgba(232,89,60,.3)}
 .faq-plus::before,.faq-plus::after{content:'';position:absolute;background:var(--accent-2);border-radius:1px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .faq-plus::before{width:12px;height:2px}
 .faq-plus::after{width:2px;height:12px}
+.faq-item.open .faq-plus{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent;box-shadow:0 4px 12px -2px rgba(232,89,60,.5)}
+.faq-item.open .faq-plus::before,.faq-item.open .faq-plus::after{background:#fff}
 .faq-item.open .faq-plus::after{transform:rotate(90deg);opacity:0}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.2,.8,.2,1)}
-.faq-a-in{padding:0 22px 22px 56px;font-size:14px;color:#b8b8b8;line-height:1.75}
+.faq-a-in{padding:0 24px 22px 80px;font-size:14px;color:#b8b8b8;line-height:1.75}
 @media(max-width:760px){
-  .faq-q{padding:16px 18px;font-size:13px;gap:14px}
-  .faq-a-in{padding:0 18px 18px 47px;font-size:12px}
+  .faq-q{padding:14px 16px;font-size:13.5px;gap:14px}
+  .faq-num{width:34px;height:34px;font-size:13px;border-radius:10px}
+  .faq-a-in{padding:0 18px 18px 64px;font-size:12.5px}
 }
 
 /* === TRANSITION === */
-.transition{max-width:680px;margin:0 auto;padding:20px 24px;text-align:center;position:relative}
+.transition{max-width:680px;margin:var(--gap-block) auto;padding:20px 24px;text-align:center;position:relative}
 .transition::before,.transition::after{content:'';position:absolute;left:50%;width:1px;background:linear-gradient(180deg,transparent,var(--accent),transparent);transform:translateX(-50%)}
 .transition::before{top:0;height:14px}
 .transition::after{bottom:0;height:14px}
@@ -505,7 +532,7 @@ img{display:block;max-width:100%}
 .transition p strong{color:#fff;font-weight:600}
 
 /* === ALERT BOX === */
-.alert-box{max-width:760px;margin:28px auto;background:rgba(174,44,44,.10);border:1px solid #AE2C2C;border-radius:18px;padding:28px 32px;display:flex;align-items:flex-start;gap:18px;box-shadow:0 0 60px -20px rgba(174,44,44,.35)}
+.alert-box{max-width:760px;margin:var(--gap-block) auto;background:rgba(174,44,44,.10);border:1px solid #AE2C2C;border-radius:18px;padding:28px 32px;display:flex;align-items:flex-start;gap:18px;box-shadow:0 0 60px -20px rgba(174,44,44,.35)}
 .alert-icon{font-size:32px;flex-shrink:0;animation:alertPulse 2s ease-in-out infinite}
 @keyframes alertPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
 .alert-content{flex:1}
@@ -515,11 +542,14 @@ img{display:block;max-width:100%}
 @media(max-width:760px){.alert-box{padding:18px 16px;gap:12px;margin:16px auto;border-radius:14px;max-width:calc(100% - 32px)}.alert-icon{font-size:24px}.alert-title{font-size:17px}.alert-text{font-size:12px}}
 
 /* === FINAL CTA === */
-.final-cta{text-align:center;padding:40px 32px 48px;position:relative;border-radius:var(--r);overflow:hidden;margin:24px auto 0;max-width:1100px}
+.final-cta{text-align:center;padding:40px 32px 48px;position:relative;border-radius:var(--r);overflow:hidden;margin:var(--gap-block) auto;max-width:1100px}
 .final-cta>*{position:relative;z-index:1}
 .final-cta .sec-h{margin-bottom:18px}
-.final-sub{font-size:14px;color:var(--text-mid);margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto}
-.final-cta .cta{margin-bottom:14px}
+.final-sub{font-size:14.5px;color:var(--text-mid);margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.7}
+.final-cta .cta{margin-bottom:18px}
+.final-wpp{text-align:center;margin-top:14px}
+.final-wpp a{display:inline-flex;align-items:center;gap:7px;color:#3CEC7B;font-size:13px;font-weight:600;text-decoration:none;border-bottom:1px dashed rgba(60,236,123,.5);padding-bottom:1px;transition:color .25s,border-color .25s}
+.final-wpp a:hover{color:#fff;border-bottom-color:#fff}
 
 /* === EXIT INTENT MODAL === */
 .exit-modal{position:fixed;inset:0;background:rgba(29,29,31,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .35s}
@@ -573,6 +603,7 @@ img{display:block;max-width:100%}
    proporcional, mesmo alinhamento (left-align no hero), mesmas animacoes,
    sem reordenacao. So ajusta tamanhos pra caber em 360-420px sem quebrar. */
 @media(max-width:760px){
+  :root{--gap-block:24px}
   html,body{overflow-x:hidden;max-width:100vw}
   .w{padding:0 18px;max-width:100%}
   .nav{padding:10px 14px}
@@ -597,7 +628,6 @@ img{display:block;max-width:100%}
   .hero-metric-label{font-size:8.5px;letter-spacing:.6px}
   .cta{padding:16px 22px;font-size:14.5px;display:flex;width:100%;max-width:100%;border-radius:14px;gap:10px;min-height:56px;font-weight:600}
   .cta-note{font-size:11px;gap:6px}
-  .sec{padding:28px 0}
   .sec-head{margin:0 auto 18px}
   .sec-tag{font-size:10px;letter-spacing:1.6px;padding:5px 12px 5px 10px}
   .sec-h{font-size:clamp(24px,6vw,34px);margin-bottom:12px;letter-spacing:-.3px;line-height:1.15}
@@ -612,9 +642,8 @@ img{display:block;max-width:100%}
   .problem-item{padding:14px 16px;font-size:13px;gap:12px}
   .solution-callout{padding:20px 22px}
   .solution-callout p{font-size:14px}
-  .transition{padding:14px 16px;margin:0}
+  .transition{padding:14px 16px}
   .transition p{font-size:15.5px;line-height:1.6}
-  .cta-strip{margin:0 auto;padding:10px 0}
   .modules-grid{grid-template-columns:1fr;gap:14px;margin-top:18px}
   .module-card{padding:22px 20px}
   .module-title{font-size:16px}
@@ -690,10 +719,9 @@ img{display:block;max-width:100%}
   <a class="nav-logo" href="#" aria-label="ClubPetro">
     <img src="https://i.imgur.com/WkKfAI4.jpeg" alt="ClubPetro" decoding="async">
   </a>
-  <!-- TODO: humano confirmar data exata do evento (assumido 14 de maio 2026) -->
   <div class="nav-live">
-    <span class="nav-live-main">Ao vivo 14 de maio</span>
-    <span class="nav-live-sub">Inscrições até 13 de maio</span>
+    <span class="nav-live-main">Posto Cheio · 2026</span>
+    <span class="nav-live-sub">acesso imediato</span>
   </div>
 </nav>
 
@@ -711,7 +739,7 @@ img{display:block;max-width:100%}
     <div class="hero-card-grad"></div>
     <div class="hero-card-inner">
       <div class="hero-card-left">
-        <div class="hero-badge">Vaga aberta · 2026</div>
+        <div class="hero-badge">Curso completo · acesso imediato</div>
         <h2 class="hero-h">Postos que aparecem no celular vendem <em>até 40% mais</em>. Os que não aparecem, dividem o que sobra.</h2>
         <p class="hero-p">O Posto Cheio resolve isso em 6 módulos. Você aplica já na segunda.</p>
         <a href="#modulos" class="hero-modules-link">Ver os 6 módulos →</a>
@@ -733,12 +761,12 @@ img{display:block;max-width:100%}
       <div class="cd-block"><div class="cd-num" id="m">40</div><div class="cd-lbl">Min</div></div>
       <div class="cd-block"><div class="cd-num" id="s">14</div><div class="cd-lbl">Seg</div></div>
     </div>
-    <p class="cd-note">Depois do timer, o curso volta pro preço cheio de R$ 497 e sai o acesso ao treinamento ao vivo.</p>
+    <p class="cd-note">Depois do timer, o curso volta pro preço cheio de R$ 497.</p>
   </div>
 
   <div class="social-proof reveal">
     <span class="social-proof-dot"></span>
-    <span><strong id="proof-count">12</strong> donos de posto travaram a vaga nas <em>últimas 3 horas</em></span>
+    <span><strong id="proof-count">12</strong> donos de posto entraram nas <em>últimas 3 horas</em></span>
   </div>
 </section>
 
@@ -830,7 +858,7 @@ img{display:block;max-width:100%}
       <div class="module-desc">R$ 10 por dia coloca seu anúncio na frente de milhares de motoristas no raio de 5 km. Passo a passo pra abrir conta no Meta e no Google, mesmo sem nunca ter feito.</div>
     </div>
     <div class="module-card module-bonus reveal">
-      <div class="bonus-tag">Bônus de quem travou vaga agora</div>
+      <div class="bonus-tag">Bônus exclusivo de quem entra agora</div>
       <div class="module-num">+1</div>
       <div class="module-title">Copa 2026: o plano pronto pra transformar jogo do Brasil em pista cheia</div>
       <div class="module-desc">Calendário pronto dos 7 jogos do Brasil, promoção que lota a pista no dia de jogo, Reels já roteirizado pra cada fase e plano de ação pra cada gol. Quando o apito tocar, seu posto já tá com fila na bomba, enquanto o concorrente ainda tá pensando no que fazer.</div>
@@ -855,9 +883,8 @@ img{display:block;max-width:100%}
   <div class="sec-head">
     <span class="sec-lead">O método rodando no nosso Instagram</span>
     <div class="sec-tag">A ClubPetro aplica o que ensina</div>
-    <h2 class="sec-h reveal">O Instagram da ClubPetro passou de zero a <em>mais de 2 milhões de views</em> usando esse mesmo método. O passo a passo que a gente aplica aqui é o que tá dentro do Posto Cheio.</h2>
-    <p class="sec-p">A ClubPetro não é influencer. É uma empresa de software pra posto. Toda semana nosso time roda o método que o André ensina, direto do Instagram @clubpetro. O resultado abaixo é público: dá pra abrir agora e conferir.</p>
-    <span class="pull-line">Se funciona pra quem atende posto todo dia, funciona pro seu posto.</span>
+    <h2 class="sec-h reveal">De zero a <em>2M+ de views</em> aplicando o método. O mesmo que tá dentro do Posto Cheio.</h2>
+    <p class="sec-p">A ClubPetro é uma empresa de software pra posto — não é agência, não é influencer. Toda semana o time aplica o método que o André ensina, em público, no @clubpetro. Os 3 Reels abaixo mostram em prática.</p>
   </div>
 
   <div class="reels-grid" id="casesGrid">
@@ -873,9 +900,12 @@ img{display:block;max-width:100%}
         </div>
       </div>
       <div class="reel-body">
-        <div class="reel-handle">@clubpetro</div>
-        <div class="reel-location">Instagram · Reel público</div>
-        <div class="reel-caption">Reel publicado no @clubpetro aplicando o método</div>
+        <div class="reel-meta">
+          <span class="reel-tag">Hábito do dono</span>
+          <span class="reel-handle">@clubpetro</span>
+        </div>
+        <h3 class="reel-title">Por que seu posto não aparece</h3>
+        <p class="reel-summary">Os 3 erros mais comuns que esvaziam a pista — e o ajuste simples que muda o jogo na semana que vem.</p>
       </div>
     </a>
     <!-- Reel 2 — DGnsqczRbwJ (vídeo Imgur: Lh3ebh2) -->
@@ -890,9 +920,12 @@ img{display:block;max-width:100%}
         </div>
       </div>
       <div class="reel-body">
-        <div class="reel-handle">@clubpetro</div>
-        <div class="reel-location">Instagram · Reel público</div>
-        <div class="reel-caption">Reel publicado no @clubpetro aplicando o método</div>
+        <div class="reel-meta">
+          <span class="reel-tag">Frentista protagonista</span>
+          <span class="reel-handle">@clubpetro</span>
+        </div>
+        <h3 class="reel-title">O melhor vendedor que você nunca usou</h3>
+        <p class="reel-summary">Como transformar quem atende em criador de conteúdo — sem agência, sem produção, gravando do próprio celular.</p>
       </div>
     </a>
     <!-- Reel 3 — DHeI_dJRQjz (vídeo Imgur: HO66l7V) -->
@@ -907,13 +940,15 @@ img{display:block;max-width:100%}
         </div>
       </div>
       <div class="reel-body">
-        <div class="reel-handle">@clubpetro</div>
-        <div class="reel-location">Instagram · Reel público</div>
-        <div class="reel-caption">Reel publicado no @clubpetro aplicando o método</div>
+        <div class="reel-meta">
+          <span class="reel-tag">Reel que viralizou</span>
+          <span class="reel-handle">@clubpetro</span>
+        </div>
+        <h3 class="reel-title">Numa terça viralizou. Na quarta, fila na bomba.</h3>
+        <p class="reel-summary">Gancho, roteiro e CTA do conteúdo que mais converteu motorista curioso em cliente real.</p>
       </div>
     </a>
   </div>
-  <div class="reels-cta-note">Cada Reels acima aplica o que você vai aprender dentro do <strong>Posto Cheio</strong>: frentista como protagonista, roteiro de 30 segundos, trend adaptada pra posto. No <strong>evento ao vivo dia 14 de maio</strong>, o André abre o método completo e mostra o passo a passo pra você fazer igual na sua pracinha.</div>
 </section>
 
 <div class="cta-strip">
@@ -947,23 +982,24 @@ img{display:block;max-width:100%}
     </div>
     <div class="speaker-info">
       <div class="speaker-name">ANDRÉ CARVALHAES</div>
-      <p class="speaker-bio">Passou <strong>3 anos dentro da V4 Company</strong>, a maior agência de anúncio do Brasil. Hoje aplica o mesmo método em <strong>postos de combustível</strong>.</p>
+      <p class="speaker-role">Head de Marketing · ClubPetro</p>
+      <p class="speaker-bio">Fundou a operação de marketing do <strong>ClubPetro</strong> depois de passar <strong>3 anos como sócio-diretor da V4 Company</strong>, a maior agência de marketing do Brasil. Em 8 anos liderando comunicação pra dentro do setor de combustível, rodou Meta, Google e tráfego orgânico que somam <strong>+R$ 5 milhões em receita</strong> gerada. O Posto Cheio é o mesmo método que ele aplica todo dia — adaptado pro dia a dia de quem opera posto.</p>
       <div class="speaker-creds">
         <div class="speaker-cred">
           <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/Bg3r3li.jpeg" alt="V4 Company" loading="lazy" decoding="async"></div>
-          <div><strong>+3 anos como sócio diretor da V4 Company</strong></div>
+          <div><strong>Sócio-diretor</strong> · V4 Company</div>
         </div>
         <div class="speaker-cred">
           <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/0gwRjTA.jpeg" alt="Meta" loading="lazy" decoding="async"></div>
-          <div><strong>+4 anos gerenciando anúncios no Meta e Google</strong></div>
+          <div><strong>+4 anos</strong> rodando Meta + Google Ads</div>
         </div>
         <div class="speaker-cred">
           <div class="speaker-cred-icon is-brand-dark"><img src="https://i.imgur.com/WkKfAI4.jpeg" alt="ClubPetro" loading="lazy" decoding="async"></div>
-          <div><strong>+8 anos liderando marketing e vendas do ClubPetro</strong></div>
+          <div><strong>Head de Marketing</strong> · ClubPetro (8 anos)</div>
         </div>
         <div class="speaker-cred">
           <div class="speaker-cred-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.85 15.6v1.15a.85.85 0 1 1-1.7 0V17.6c-1.85-.2-3.3-1.4-3.45-3.05a.95.95 0 0 1 1.9-.18c.07.7.85 1.3 2.05 1.3 1.2 0 2-.55 2-1.25 0-.7-.55-1.05-2.5-1.55-1.85-.45-3.55-1.1-3.55-3.05 0-1.55 1.3-2.6 3.05-2.85V5.85a.85.85 0 1 1 1.7 0V7c1.6.27 2.85 1.27 3.05 2.6a.95.95 0 0 1-1.88.27c-.1-.6-.85-1.15-1.95-1.15-1.1 0-1.85.5-1.85 1.15 0 .65.5.95 2.4 1.4 2.05.5 3.65 1.2 3.65 3.2 0 1.65-1.35 2.9-3.07 3.13z"/></svg></div>
-          <div><strong>+R$ 5 milhões em receita gerada</strong> em campanhas</div>
+          <div><strong>+R$ 5M em receita</strong> gerada via campanhas</div>
         </div>
       </div>
     </div>
@@ -980,10 +1016,10 @@ img{display:block;max-width:100%}
 <!-- ===== BLOCO 5 — PREÇO ===== -->
 <section class="sec price-section" id="comprar">
   <div class="sec-head">
-    <span class="sec-lead">Sua vaga no Posto Cheio</span>
+    <span class="sec-lead">A oferta inteira</span>
     <div class="sec-tag">O que tá incluído</div>
-    <h2 class="sec-h">Posto Cheio completo <em>por R$ 147</em></h2>
-    <p class="sec-p">Enquanto você decide, o concorrente tá gravando o Reels de amanhã. O valor de R$ 147 só vale enquanto o timer estiver rodando. Depois, vira R$ 497 e sai o treinamento ao vivo. Só o gravado.</p>
+    <h2 class="sec-h">Posto Cheio completo, <em>só R$ 147</em></h2>
+    <p class="sec-p">Enquanto você decide, o concorrente tá gravando o Reels de amanhã. O valor de R$ 147 só vale enquanto o timer estiver rodando. Depois, sobe pra R$ 497 e o bônus da Copa sai do pacote.</p>
   </div>
 
   <div class="roi-anchor reveal">
@@ -1018,9 +1054,9 @@ img{display:block;max-width:100%}
       <span>🛡️</span>
       <div><strong>Garantia de 7 dias, sem conversa:</strong> entra, assiste tudo, testa na sua pista. Se em 7 dias você achar que não valeu, devolvemos 100%. Só mandar WhatsApp "quero meu dinheiro de volta" e pronto.</div>
     </div>
-    <div class="price-or">ou</div>
-    <div class="price-wpp">
-      <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Posto+Cheio+e+quero+saber+mais+sobre+o+curso" class="cta cta-wpp" data-wa="price-card" onclick="trackWA('price-card')"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#icon-wpp"/></svg>Tirar dúvidas antes de garantir minha vaga</a>
+    <div class="price-wpp-mini">
+      <span>Ainda em dúvida antes de comprar?</span>
+      <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Posto+Cheio+e+quero+saber+mais+sobre+o+curso" class="price-wpp-link" data-wa="price-card" onclick="trackWA('price-card')"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use href="#icon-wpp"/></svg>Tira no WhatsApp →</a>
     </div>
     <div class="trust-row">
       <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Pagamento seguro</span>
@@ -1040,9 +1076,9 @@ img{display:block;max-width:100%}
 <!-- ===== BLOCO 6 — FAQ (5 perguntas) ===== -->
 <section class="sec">
   <div class="sec-head">
-    <span class="sec-lead">Antes de garantir sua vaga</span>
+    <span class="sec-lead">Antes de você decidir</span>
     <div class="sec-tag">Resposta reta</div>
-    <h2 class="sec-h">Antes de você <em>travar a vaga</em></h2>
+    <h2 class="sec-h">As 5 perguntas que <em>todo dono de posto</em> faz</h2>
   </div>
 
   <div class="faq-layout">
@@ -1083,18 +1119,19 @@ img{display:block;max-width:100%}
   <div class="alert-icon">⚠️</div>
   <div class="alert-content">
     <div class="alert-title">QUANDO O TIMER ZERAR, O POSTO CHEIO VIRA R$ 497</div>
-    <div class="alert-text">Quando o timer zerar, o preço sobe de <strong>R$ 147 para R$ 497</strong>, o bônus da Copa 2026 sai do pacote e quem entrar depois pega só o gravado, sem o treinamento ao vivo. Quem perder essa janela paga mais que o triplo do valor pra pegar menos conteúdo.</div>
+    <div class="alert-text">Quando o timer zerar, o preço sobe de <strong>R$ 147 pra R$ 497</strong> e o bônus da Copa 2026 sai do pacote. Quem perder essa janela paga mais que o triplo pra levar menos conteúdo.</div>
   </div>
 </div>
 
 <!-- ===== FINAL CTA ===== -->
 <section class="final-cta">
   <div class="sec-tag" style="justify-content:center">Última chamada · Posto Cheio</div>
-  <h2 class="sec-h reveal">Daqui a pouco o R$ 147 <em>some</em>. E com ele, sua vantagem sobre o concorrente.</h2>
-  <p class="final-sub">Amanhã seu concorrente vai postar mais um Reels. O cliente dele vai ver, o seu não. Daqui a 30 dias, ele tá com 10 mil seguidor e pista cheia na hora do almoço. E você? <strong style="color:#fff">Hoje, por R$ 147, você vira esse cara.</strong></p>
+  <h2 class="sec-h reveal">Daqui a 30 dias, um de vocês <em>tá com a pista cheia</em>. O outro tá vendo passar.</h2>
+  <p class="final-sub">Não é frase de palestra, é matemática de bairro: <strong style="color:#fff">posto que aparece no celular ganha cliente, posto que não aparece, perde</strong>. <span style="color:var(--accent-2)">R$ 147</span> hoje é o que separa o dono que decide do que ainda tá pensando. Quando você acordar amanhã, ou seu posto vai estar a um Reels de aparecer pra mais 5 mil motoristas, ou vai estar igual hoje. <strong style="color:#fff">Decide.</strong></p>
   <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero meu posto cheio por R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-  <div style="height:12px"></div>
-  <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Posto+Cheio+e+quero+saber+mais+sobre+o+curso" class="cta cta-wpp" data-wa="final-cta" onclick="trackWA('final-cta')" style="max-width:520px;margin:0 auto"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#icon-wpp"/></svg>Tirar dúvidas antes de garantir minha vaga</a>
+  <p class="final-wpp">
+    <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Posto+Cheio+e+quero+saber+mais+sobre+o+curso" data-wa="final-cta" onclick="trackWA('final-cta')"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use href="#icon-wpp"/></svg>Antes de comprar, tira dúvida no WhatsApp</a>
+  </p>
 </section>
 
 <!-- FOOTER -->
@@ -1114,7 +1151,7 @@ img{display:block;max-width:100%}
     <div class="exit-actions">
       <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Posto+Cheio+e+quero+saber+mais+sobre+o+curso" class="cta cta-wpp" onclick="trackWA('exit-intent')">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#icon-wpp"/></svg>
-        Tirar dúvidas antes de garantir minha vaga
+        Tirar dúvida no WhatsApp
       </a>
       <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="closeExit();goToHotmart(event)" class="cta">
         Quero meu posto cheio por R$ 147
@@ -1127,8 +1164,8 @@ img{display:block;max-width:100%}
 
 <!-- MINI STICKY PRICE BANNER (desktop) -->
 <div class="mini-price" id="miniPrice">
-  <div class="mini-price-text"><strong>R$ 147</strong> · 12x R$ 14,70 sem juros <span>· treinamento ao vivo</span></div>
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="mini-price-cta">Travar vaga →</a>
+  <div class="mini-price-text"><strong>R$ 147</strong> · 12x R$ 14,70 sem juros <span>· acesso imediato</span></div>
+  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="mini-price-cta">Quero acesso →</a>
 </div>
 
 <!-- FAB WHATSAPP MOBILE -->
@@ -1140,22 +1177,23 @@ img{display:block;max-width:100%}
 <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js" defer></script>
 
 <script>
-// === HEADLINE WORD SPLIT (.hero-h) — split text em spans pra stagger por palavra
+// === WORD SPLIT — quebra texto em <span class=word> pra stagger por palavra.
+// Aplica em .hero-h (animado pelo proprio observer abaixo) e .reel-summary
+// (animado quando o .reel-card pai recebe .in).
 (function(){
-  var heroHs=document.querySelectorAll('.hero-h');
-  heroHs.forEach(function(h){
-    // Wrappa <em> primeiro pra preservar gradiente, depois quebra text nodes em palavras
-    var newHtml=h.innerHTML.replace(/(<\/?[^>]+>)|(\S+)/g,function(m,tag,word){
+  function splitWords(el){
+    var newHtml=el.innerHTML.replace(/(<\/?[^>]+>)|(\S+)/g,function(m,tag,word){
       if(tag)return tag;
       return '<span class="word">'+word+'</span>';
     });
-    h.innerHTML=newHtml;
-    h.classList.add('split');
+    el.innerHTML=newHtml;
     var i=0;
-    Array.from(h.children).forEach(function(c){c.style.setProperty('--i',i++)});
-  });
+    Array.from(el.children).forEach(function(c){c.style.setProperty('--i',i++)});
+  }
+  var heroHs=document.querySelectorAll('.hero-h');
+  heroHs.forEach(function(h){splitWords(h);h.classList.add('split')});
+  document.querySelectorAll('.reel-summary').forEach(splitWords);
   // Observer dedicado: .hero-h.split precisa de .in pra revelar as palavras.
-  // Como o hero esta acima do fold, em browsers sem IO ja entra como .in.
   if(!('IntersectionObserver' in window)){
     heroHs.forEach(function(h){h.classList.add('in')});
     return;
