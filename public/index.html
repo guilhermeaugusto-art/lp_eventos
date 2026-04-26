@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Posto Cheio · o curso que enche a pista do seu posto | ClubPetro</title>
-<meta name="description" content="O método que donos de posto usam pra lotar a pista com Reels, Google e R$ 10/dia de tráfego. Vaga por R$ 147 só pra quem veio do Evento Secreto.">
+<meta name="description" content="O método que donos de posto usam pra lotar a pista com Reels, Google e R$ 10/dia de tráfego. Vaga por R$ 147 — oferta limitada.">
 
 <link rel="canonical" href="https://lp-teste-1.web.app/">
 <link rel="icon" type="image/jpeg" href="https://i.imgur.com/WkKfAI4.jpeg">
@@ -12,7 +12,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Posto Cheio — o curso que enche a pista do seu posto">
-<meta property="og:description" content="O método que donos de posto usam pra lotar a pista com Reels, Google e R$ 10/dia de tráfego. Vaga por R$ 147 só pra quem veio do Evento Secreto.">
+<meta property="og:description" content="O método que donos de posto usam pra lotar a pista com Reels, Google e R$ 10/dia de tráfego. Vaga por R$ 147 — oferta limitada.">
 <meta property="og:image" content="https://i.imgur.com/y2i8liD.jpeg">
 <meta property="og:url" content="https://lp-teste-1.web.app/">
 <meta property="og:site_name" content="ClubPetro">
@@ -21,7 +21,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Posto Cheio — o curso que enche a pista do seu posto">
-<meta name="twitter:description" content="Vaga por R$ 147 só pra quem veio do Evento Secreto. Método testado em +380 postos.">
+<meta name="twitter:description" content="Vaga por R$ 147 — oferta limitada. Método testado em +380 postos.">
 <meta name="twitter:image" content="https://i.imgur.com/y2i8liD.jpeg">
 
 <!-- Schema.org JSON-LD -->
@@ -190,8 +190,10 @@ body::before{content:'';position:fixed;inset:0;background:
   .reveal.reveal-3d.in{transform:none}
 }
 @media(prefers-reduced-motion:reduce){
-  .reveal,.reveal.reveal-card,.reveal.reveal-3d{transform:none!important;transition:opacity .3s ease!important}
+  .reveal,.reveal.reveal-card,.reveal.reveal-3d,.price-main.reveal{transform:none!important;transition:opacity .3s ease!important;animation:none!important}
   .reveal.reveal-h::after{transition:none!important;width:80px!important}
+  .cta.cta-in-view::before,.hero-metric-num.popped,.module-bonus.in::after,.reel-thumb::after,.hero-card::before{animation:none!important}
+  .hero-h.split > .word,.hero-h.split > em{opacity:1!important;transform:none!important;transition:none!important}
 }
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
@@ -221,6 +223,9 @@ img{display:block;max-width:100%}
 .hero-subtitle{font-size:13px;color:var(--text-mid);letter-spacing:.2px;margin-bottom:26px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.55;font-weight:400}
 
 .hero-card{position:relative;border-radius:28px;overflow:hidden;max-width:960px;margin:0 auto 24px;background:linear-gradient(135deg,var(--bg-card),var(--bg-card-light));border:1px solid var(--border);box-shadow:var(--shadow-soft)}
+/* Aurora mesh — drift lento atras da imagem do hero (transform-only, GPU) */
+.hero-card::before{content:'';position:absolute;inset:-20%;background:radial-gradient(ellipse 40% 35% at 20% 30%,rgba(232,89,60,.45),transparent 60%),radial-gradient(ellipse 35% 40% at 80% 70%,rgba(255,182,39,.35),transparent 60%),radial-gradient(ellipse 30% 30% at 60% 20%,rgba(232,89,60,.25),transparent 65%);filter:blur(40px);opacity:.55;z-index:0;animation:auroraDrift 18s ease-in-out infinite;will-change:transform;pointer-events:none}
+@keyframes auroraDrift{0%,100%{transform:translate3d(0,0,0) scale(1)}33%{transform:translate3d(3%,-2%,0) scale(1.06)}66%{transform:translate3d(-2%,3%,0) scale(.95)}}
 .hero-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
 .hero-card-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(29,29,31,.92) 0%,rgba(29,29,31,.78) 50%,rgba(80,30,10,.6) 100%)}
 .hero-card-grad::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at left center,rgba(0,0,0,.6),transparent 70%)}
@@ -231,6 +236,11 @@ img{display:block;max-width:100%}
 .hero-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent-2);animation:blink 1.5s infinite;box-shadow:0 0 6px var(--accent-2)}
 .hero-h{font-family:var(--font-body);font-size:clamp(26px,3.3vw,42px);line-height:1.12;letter-spacing:-.4px;margin-bottom:14px;text-align:left;text-shadow:0 2px 14px rgba(0,0,0,.6);font-weight:700;color:#fff}
 .hero-h em{font-style:italic;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;padding-right:.12em}
+/* Headline word stagger — split via JS, anima cada palavra com delay --i */
+.hero-h.split{opacity:1!important;transform:none!important;transition:none!important}
+.hero-h.split > .word,.hero-h.split > em{display:inline-block;opacity:0;transform:translateY(.5em);transition:opacity .55s var(--ease-cinematic),transform .55s var(--ease-cinematic);transition-delay:calc(var(--i,0) * 55ms);will-change:transform,opacity}
+.hero-h.split.in > .word,.hero-h.split.in > em{opacity:1;transform:none}
+@media(max-width:760px){.hero-h.split > .word,.hero-h.split > em{transition-duration:.45s;transition-delay:calc(var(--i,0) * 35ms)}}
 .hero-p{font-size:13px;color:#e5e5e5;text-align:left;line-height:1.6;margin-bottom:10px;text-shadow:0 1px 8px rgba(0,0,0,.7)}
 .hero-modules-link{display:inline-block;font-size:12px;font-weight:600;color:var(--accent-2);text-decoration:none;letter-spacing:.3px;border-bottom:1px dashed rgba(255,182,39,.45);padding-bottom:1px;margin-top:2px;transition:color .25s,border-color .25s}
 .hero-modules-link:hover{color:#fff;border-bottom-color:#fff}
@@ -252,13 +262,23 @@ img{display:block;max-width:100%}
 .cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transition:left .6s}
 .cta:hover{transform:translateY(-2px);background:linear-gradient(180deg,#F06A4A 0%,#E8593C 100%);box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 18px 40px -12px rgba(232,89,60,.6),0 6px 16px -6px rgba(0,0,0,.5)}
 .cta-wpp .cta-arrow{background:rgba(255,255,255,.2)}
-.price-cta,.sticky-cta .cta{display:block;width:100%}
+.price-cta{display:block;width:100%}
 .cta:hover::before{left:100%}
+/* CTA shine sweep one-time quando entra no viewport (reusa o ::before existente) */
+.cta.cta-in-view::before{animation:ctaShine 1.4s var(--ease-soft) .25s 1}
+@keyframes ctaShine{0%{left:-100%}100%{left:100%}}
+/* Metric pop quando count-up termina */
+.hero-metric-num{will-change:transform}
+.hero-metric-num.popped{animation:metricPop .55s cubic-bezier(.34,1.56,.64,1) 1}
+@keyframes metricPop{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+/* Bonus card: burst de glow ao entrar no viewport (animacao de opacity em ::after, GPU-friendly) */
+.module-bonus.in::after{animation:bonusBurst 2.2s var(--ease-soft) .4s 1}
+@keyframes bonusBurst{0%{opacity:0}40%{opacity:1.5}100%{opacity:1}}
 .cta-note{text-align:center;font-size:12px;color:var(--text-dim);margin-top:14px;display:flex;align-items:center;justify-content:center;gap:6px}
 .cta-note::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
 .cta-wpp{background:linear-gradient(180deg,#2EE070 0%,#1EA952 100%);border:1px solid rgba(255,255,255,.18);font-size:14px;padding:14px 26px;box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 12px 30px -10px rgba(37,211,102,.45),0 4px 12px -4px rgba(0,0,0,.4)}
 .cta-wpp:hover{background:linear-gradient(180deg,#34F277 0%,#22BA5A 100%);box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 -1px 0 rgba(0,0,0,.2) inset,0 18px 40px -12px rgba(37,211,102,.6),0 6px 16px -6px rgba(0,0,0,.5)}
-.cta-strip{padding:18px 0;text-align:center}
+.cta-strip{padding:14px 0;text-align:center}
 
 /* === COUNTDOWN === */
 .countdown{text-align:center;margin:32px auto 14px;padding:24px 20px;max-width:560px;border-radius:var(--r);background:radial-gradient(circle at 50% 0%,rgba(232,89,60,.14),transparent 70%),linear-gradient(180deg,rgba(232,89,60,.04),transparent);border:1px solid rgba(232,89,60,.22);box-shadow:0 20px 50px -20px rgba(232,89,60,.35),inset 0 1px 0 rgba(255,255,255,.04)}
@@ -281,12 +301,15 @@ img{display:block;max-width:100%}
 }
 
 /* === SECTIONS === */
-.sec{padding:32px 0}
+.sec{padding:40px 0}
 /* A4: content-visibility:auto nas secoes abaixo do fold. O browser pula
    render/layout ate o conteudo entrar no viewport. Ganho de ~300-800ms
    em TBT. Nao aplicar em .hero (fold) nem em modais. */
 .sec,.modules-grid,.reels-grid,.problem-wrap,.speaker-wrap,.faq-list,.final-cta{content-visibility:auto;contain-intrinsic-size:auto 600px}
-.sec-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0;max-width:880px;margin:0 auto}
+/* Section divider — linha sutil + diamante accent central */
+.sec-divider{height:24px;max-width:880px;margin:0 auto;position:relative;display:flex;align-items:center;justify-content:center;background:none;overflow:hidden}
+.sec-divider::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(232,89,60,.25) 50%,transparent 100%);transform:translateY(-50%)}
+.sec-divider::after{content:'';width:7px;height:7px;background:linear-gradient(135deg,var(--accent),var(--accent-2));transform:rotate(45deg);border-radius:1px;box-shadow:0 0 12px rgba(232,89,60,.55),0 0 24px rgba(255,182,39,.25);position:relative;z-index:1}
 .sec>*{margin-left:auto;margin-right:auto}
 .sec-head{max-width:760px;margin:0 auto 20px;text-align:center;display:flex;flex-direction:column;align-items:center}
 .sec-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;color:var(--accent-2);letter-spacing:2.5px;text-transform:uppercase;margin:0 auto 16px;padding:7px 16px 7px 12px;background:rgba(29,29,31,.6);border:1px solid rgba(255,255,255,.12);border-radius:300px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);width:fit-content}
@@ -326,6 +349,15 @@ img{display:block;max-width:100%}
 .module-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 0%,var(--accent) 25%,var(--accent-2) 75%,transparent 100%);transform:scaleX(.55);transform-origin:left;transition:transform .5s;opacity:.7}
 .module-card:hover::before{transform:scaleX(1);opacity:1}
 .module-num{font-family:var(--font-display);font-size:44px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:1px;line-height:1;margin-bottom:10px;opacity:.85}
+/* Module icon — bloco isometrico 3D com gradiente, profundidade simulada por sombras stack, halo de glow e sheen interno */
+.module-icon{width:64px;height:64px;border-radius:18px;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:18px;background:linear-gradient(135deg,#FF7A4F 0%,#E8593C 45%,#A43620 100%);transform:perspective(620px) rotateX(18deg) rotateY(-22deg);transform-style:preserve-3d;box-shadow:-2px 2px 0 #8a2c14,-4px 4px 0 #6d2210,-6px 6px 0 #511808,-12px 16px 28px -8px rgba(232,89,60,.55),-14px 20px 38px -14px rgba(0,0,0,.65);transition:transform .45s var(--ease-soft),box-shadow .45s var(--ease-soft)}
+.module-icon::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,.05) 38%,transparent 60%);pointer-events:none}
+.module-icon::after{content:'';position:absolute;inset:-14px;background:radial-gradient(circle at 32% 30%,rgba(255,182,39,.5),transparent 65%);filter:blur(14px);z-index:-1;pointer-events:none}
+.module-icon svg{width:56%;height:56%;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.45));transform:translateZ(10px);position:relative;z-index:1}
+.module-card:hover .module-icon{transform:perspective(620px) rotateX(14deg) rotateY(-18deg) translateY(-4px);box-shadow:-2px 2px 0 #8a2c14,-4px 4px 0 #6d2210,-6px 6px 0 #511808,-14px 22px 38px -6px rgba(232,89,60,.7),-16px 26px 50px -14px rgba(0,0,0,.7)}
+@media(max-width:760px){
+  .module-icon{width:54px;height:54px;border-radius:14px;margin-bottom:14px;transform:perspective(520px) rotateX(15deg) rotateY(-18deg);box-shadow:-2px 2px 0 #8a2c14,-3px 3px 0 #6d2210,-5px 5px 0 #511808,-8px 12px 22px -6px rgba(232,89,60,.5)}
+}
 .module-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3}
 .module-desc{font-size:13px;color:var(--text-mid);line-height:1.6}
 .module-bonus{grid-column:1/-1;border-color:transparent;background:linear-gradient(135deg,#1a0f0a 0%,#0e0e0e 65%) padding-box,linear-gradient(135deg,var(--accent),var(--accent-2)) border-box;border:1.5px solid transparent;box-shadow:0 20px 60px -15px rgba(232,89,60,.45),0 0 80px -20px rgba(255,182,39,.25);padding:28px 32px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;position:relative}
@@ -345,19 +377,20 @@ img{display:block;max-width:100%}
   .reels-grid::-webkit-scrollbar{display:none}
   .reels-grid .reel-card{flex:0 0 75%;scroll-snap-align:center;min-width:0}
 }
-.reel-card{background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s,border-color .3s;display:block;color:inherit;text-decoration:none}
-.reel-card:hover{border-color:var(--border-accent);transform:translateY(-8px);box-shadow:var(--shadow-soft)}
+.reel-card{background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s,border-color .3s;display:block;color:inherit;text-decoration:none;position:relative;box-shadow:0 14px 32px -16px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.02) inset}
+.reel-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(160deg,rgba(255,182,39,.12),transparent 35%);opacity:0;transition:opacity .5s var(--ease-soft);pointer-events:none;z-index:2}
+.reel-card:hover{border-color:var(--border-accent);transform:translateY(-8px);box-shadow:0 26px 50px -18px rgba(0,0,0,.75),0 0 60px -10px rgba(232,89,60,.4),0 0 0 1px rgba(255,182,39,.25) inset}
+.reel-card:hover::after{opacity:1}
+/* REC badge no canto da thumb — pulse no ponto vermelho */
+.reel-thumb::before{content:'AO VIVO';position:absolute;top:10px;right:10px;display:flex;align-items:center;gap:6px;padding:5px 10px 5px 9px;background:linear-gradient(180deg,#FF3B3B,#C62828);color:#fff;font-size:10px;font-weight:800;letter-spacing:1.2px;border-radius:100px;z-index:3;box-shadow:0 4px 14px -4px rgba(255,59,59,.6),0 0 0 1px rgba(255,255,255,.18) inset;line-height:1}
+.reel-thumb::after{content:'';position:absolute;top:14.5px;right:60px;width:6px;height:6px;border-radius:50%;background:#fff;z-index:4;box-shadow:0 0 8px #fff;animation:recPulse 1.4s ease-in-out infinite}
+@keyframes recPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.85)}}
 .reel-thumb{position:relative;aspect-ratio:9/16;overflow:hidden;background:#000}
 .reel-thumb img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
 .reel-thumb video{width:100%;height:100%;object-fit:cover;object-position:center;display:block;background:#000;transition:transform .5s ease}
 .reel-card:hover .reel-thumb video{transform:scale(1.04)}
 .reel-ig-hint{position:absolute;bottom:10px;left:10px;display:flex;align-items:center;gap:6px;padding:6px 10px;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);border-radius:100px;font-size:11.5px;font-weight:700;color:#fff;letter-spacing:.01em}
 .reel-ig-hint svg{width:13px;height:13px}
-.reel-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3)}
-.reel-play-icon{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.3)}
-.reel-play-icon svg{width:24px;height:24px;color:#fff;margin-left:3px}
-.reel-views{position:absolute;bottom:12px;left:12px;display:flex;align-items:center;gap:6px;padding:6px 12px;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);border-radius:100px;font-size:12px;font-weight:700;color:#fff}
-.reel-views svg{width:14px;height:14px}
 .reel-body{padding:16px 18px}
 .reel-handle{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px}
 .reel-location{font-size:11px;color:var(--text-dim)}
@@ -388,8 +421,8 @@ img{display:block;max-width:100%}
 .speaker-social svg{width:18px;height:18px}
 .speaker-creds{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media(max-width:760px){.speaker-creds{grid-template-columns:1fr}}
-.speaker-cred{display:flex;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;color:var(--text-mid);transition:border-color .3s}
-.speaker-cred:hover{border-color:var(--border-accent)}
+.speaker-cred{display:flex;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;color:var(--text-mid);transition:border-color .3s,transform .3s var(--ease-soft),box-shadow .3s var(--ease-soft)}
+.speaker-cred:hover{border-color:var(--accent-2);transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(255,182,39,.25),0 0 0 1px rgba(255,182,39,.15) inset}
 .speaker-cred-icon{width:36px;height:36px;border-radius:10px;background:var(--accent-soft);border:1px solid rgba(232,89,60,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-2);font-size:16px}
 .speaker-cred strong{color:#fff}
 
@@ -402,7 +435,11 @@ img{display:block;max-width:100%}
 .price-right{width:240px;background-size:cover;background-position:center;display:none;position:relative}
 @media(min-width:680px){.price-right{display:block}}
 .price-from{font-size:18px;color:#888;text-decoration:line-through;text-decoration-color:rgba(238,130,130,.7);text-decoration-thickness:2px;font-weight:500}
-.price-main{font-family:var(--font-display);font-size:84px;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-1.5px;line-height:1;margin:10px 0 6px;display:inline-flex;align-items:flex-start;gap:6px;justify-content:center}
+.price-main{font-family:var(--font-display);font-size:84px;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-1.5px;line-height:1;margin:10px 0 6px;display:inline-flex;align-items:flex-start;gap:6px;justify-content:center;will-change:transform,opacity}
+/* Entrada hero do R$147: scale dramatico + perspective + glow burst no fim */
+.price-main.reveal{opacity:0;transform:perspective(800px) scale(.55) rotateX(28deg) translateY(28px);transition:opacity 1.2s var(--ease-cinematic),transform 1.2s var(--ease-cinematic)}
+.price-main.reveal.in{opacity:1;transform:perspective(800px) scale(1) rotateX(0) translateY(0);animation:priceGlow 1.6s var(--ease-soft) .9s 1}
+@keyframes priceGlow{0%,100%{filter:drop-shadow(0 0 0 transparent)}45%{filter:drop-shadow(0 0 22px rgba(255,182,39,.65)) drop-shadow(0 0 38px rgba(232,89,60,.4))}}
 .price-main .price-currency{font-size:.36em;font-weight:700;letter-spacing:0;margin-top:.14em;line-height:1}
 .price-main .price-value{font-size:1em;font-weight:900;letter-spacing:-.03em;line-height:1}
 @media(max-width:560px){.price-main{font-size:72px}}
@@ -420,8 +457,10 @@ img{display:block;max-width:100%}
 .price-wpp{padding:0 32px 26px}
 .price-wpp .cta-wpp{max-width:100%;font-size:14px;padding:16px}
 .trust-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:20px 18px;border-top:1px solid var(--border);background:rgba(255,255,255,.02)}
-.trust-item{display:flex;align-items:center;gap:7px;font-size:13px;color:#e0e0e0;font-weight:500}
-.trust-item svg{width:16px;height:16px;color:#5BE894;flex-shrink:0}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:13px;color:#e0e0e0;font-weight:500;transition:color .25s,transform .25s var(--ease-soft);cursor:default}
+.trust-item:hover{color:var(--accent-2);transform:translateY(-1px)}
+.trust-item:hover svg{color:var(--accent-2)}
+.trust-item svg{width:16px;height:16px;color:#5BE894;flex-shrink:0;transition:color .25s}
 @media(max-width:760px){.trust-row{gap:14px;padding:16px 14px}.trust-item{font-size:11px;gap:6px}.trust-item svg{width:14px;height:14px}}
 
 /* === ROI ANCHOR === */
@@ -436,8 +475,9 @@ img{display:block;max-width:100%}
 /* === FAQ === */
 .faq-layout{display:grid;grid-template-columns:1fr;gap:12px;max-width:760px;margin:24px auto 0}
 .faq-list{display:flex;flex-direction:column;gap:8px}
-.faq-item{background:linear-gradient(180deg,rgba(28,22,32,.7),rgba(14,11,18,.7));border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .3s,background .3s;backdrop-filter:blur(8px)}
-.faq-item:hover{border-color:rgba(232,89,60,.3)}
+.faq-item{background:linear-gradient(180deg,rgba(28,22,32,.7),rgba(14,11,18,.7));border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .3s,background .3s,transform .3s var(--ease-soft),box-shadow .3s;backdrop-filter:blur(8px)}
+.faq-item:hover{border-color:rgba(255,182,39,.4);transform:translateY(-1px);box-shadow:0 8px 24px -10px rgba(255,182,39,.18)}
+.faq-item:hover .faq-num{opacity:1}
 .faq-item.open{border-color:rgba(232,89,60,.55);background:linear-gradient(180deg,rgba(38,22,18,.7),rgba(20,12,15,.7))}
 .faq-q{display:flex;align-items:center;padding:20px 22px;font-size:15px;font-weight:600;gap:18px;color:#f0f0f0;line-height:1.4}
 .faq-num{font-family:var(--font-body);font-weight:700;font-size:13px;color:var(--accent-2);letter-spacing:.5px;flex-shrink:0;font-variant-numeric:tabular-nums;opacity:.7;transition:opacity .3s}
@@ -524,65 +564,80 @@ img{display:block;max-width:100%}
 @keyframes fabPulse{0%,100%{box-shadow:0 14px 36px -8px rgba(37,211,102,.6),0 0 0 0 rgba(37,211,102,.5)}50%{box-shadow:0 14px 36px -8px rgba(37,211,102,.7),0 0 0 14px rgba(37,211,102,0)}}
 @media(max-width:760px){.fab-wpp{display:flex}}
 
-/* === STICKY CTA (mobile) === */
-.sticky-cta{position:fixed;bottom:0;left:0;right:0;padding:12px 16px;background:rgba(29,29,31,.95);backdrop-filter:blur(16px);border-top:1px solid var(--border);z-index:99;display:none}
-.sticky-cta .cta{padding:14px;font-size:15px;max-width:100%}
-
 /* === FOOTER === */
 .footer{text-align:center;padding:36px 0;border-top:1px solid var(--border);background:rgba(0,0,0,.3)}
 .footer p{font-size:11px;color:var(--text-dim)}
 
-/* === MOBILE OVERRIDES === */
+/* === MOBILE OVERRIDES ===
+   Filosofia: mobile mantem o mesmo design system do desktop. Mesma tipografia
+   proporcional, mesmo alinhamento (left-align no hero), mesmas animacoes,
+   sem reordenacao. So ajusta tamanhos pra caber em 360-420px sem quebrar. */
 @media(max-width:760px){
   html,body{overflow-x:hidden;max-width:100vw}
-  .w{padding:0 16px;max-width:100%}
+  .w{padding:0 18px;max-width:100%}
   .nav{padding:10px 14px}
   .nav-logo img{height:36px}
   .nav-live{padding:5px 10px;font-size:8.5px;letter-spacing:.5px;border-radius:10px}
   .nav-live-sub{font-size:7.5px}
-  .hero{padding:76px 0 20px}
-  .hero-eyebrow{font-size:9px;padding:5px 12px;margin-bottom:10px;letter-spacing:1px}
-  .hero-title{font-size:38px;letter-spacing:.5px;margin-bottom:4px;line-height:.98}
-  .hero-title .mark{padding:0 10px;font-size:.85em;margin-left:4px}
-  .hero-subtitle{font-size:10px;letter-spacing:1.2px;margin-bottom:16px;padding:0 8px}
-  .hero-card{margin:0 auto 18px;border-radius:12px}
-  .hero-card-inner{padding:18px 16px 16px;gap:14px}
-  .hero-card-left{text-align:center}
-  .hero-badge{font-size:9px;padding:4px 10px;margin-bottom:8px}
-  .hero-h{font-size:17px;line-height:1.15;margin-bottom:8px;text-align:center}
-  .hero-p{font-size:12px;line-height:1.55;text-align:center;margin:0 auto}
-  .hero-metrics{gap:6px}
-  .hero-metric{padding:10px 4px;border-radius:8px}
-  .hero-metric-num{font-size:16px}
-  .hero-metric-label{font-size:8px}
-  .cta{padding:18px 22px;font-size:14px;display:flex;width:100%;max-width:100%;border-radius:14px;gap:10px;min-height:56px}
-  .cta-note{font-size:10px;gap:5px}
-  .sec{padding:22px 0}
-  .sec-head{margin:0 auto 14px}
+  .hero{padding:84px 0 20px}
+  .hero-eyebrow{font-size:9.5px;padding:6px 14px;margin-bottom:14px;letter-spacing:1.2px}
+  .hero-title{font-size:clamp(34px,9vw,46px);letter-spacing:.6px;margin-bottom:8px;line-height:.98}
+  .hero-title .mark{padding:0 10px;font-size:.86em;margin-left:4px}
+  .hero-subtitle{font-size:12.5px;letter-spacing:.2px;margin-bottom:20px;padding:0 4px;line-height:1.55}
+  .hero-card{margin:0 auto 20px;border-radius:18px}
+  .hero-card-inner{padding:22px 20px 20px;gap:16px}
+  .hero-card-left{text-align:left}
+  .hero-badge{font-size:9px;padding:4px 11px;margin-bottom:10px}
+  .hero-h{font-size:clamp(20px,5.4vw,26px);line-height:1.15;margin-bottom:10px;text-align:left;letter-spacing:-.2px}
+  .hero-p{font-size:13px;line-height:1.6;text-align:left;margin:0}
+  .hero-modules-link{font-size:12px}
+  .hero-metrics{gap:8px}
+  .hero-metric{padding:12px 6px;border-radius:10px}
+  .hero-metric-num{font-size:20px}
+  .hero-metric-label{font-size:8.5px;letter-spacing:.6px}
+  .cta{padding:16px 22px;font-size:14.5px;display:flex;width:100%;max-width:100%;border-radius:14px;gap:10px;min-height:56px;font-weight:600}
+  .cta-note{font-size:11px;gap:6px}
+  .sec{padding:28px 0}
+  .sec-head{margin:0 auto 18px}
   .sec-tag{font-size:10px;letter-spacing:1.6px;padding:5px 12px 5px 10px}
-  .sec-h{font-size:clamp(22px,5.5vw,32px);margin-bottom:10px}
-  .sec-p{font-size:13px;line-height:1.65;padding:0 4px}
+  .sec-h{font-size:clamp(24px,6vw,34px);margin-bottom:12px;letter-spacing:-.3px;line-height:1.15}
+  .sec-p{font-size:13.5px;line-height:1.7;padding:0 4px}
   .sec-lead{font-size:11px;letter-spacing:1.4px;margin-bottom:12px}
-  .pull-line{font-size:14px;margin-top:12px;padding:0 12px}
-  .problem-wrap{grid-template-columns:1fr;display:grid}
-  .problem-wrap > :first-child{order:2}
-  .problem-img{position:static;aspect-ratio:9/16;max-height:520px;min-height:380px;max-width:320px;width:100%;height:auto;order:1;margin:0 auto 20px;justify-self:center}
-  /* Espacamento compacto mobile: 14-16 vertical entre blocos */
+  .pull-line{font-size:14.5px;margin-top:14px;padding:0 12px;line-height:1.5}
+  /* Mantem ordem do desktop: callout/itens primeiro, video depois */
+  .problem-wrap{grid-template-columns:1fr;display:grid;gap:20px}
+  .problem-img{position:static;aspect-ratio:16/10;max-height:300px;min-height:220px;width:100%;height:auto;margin:0;border-radius:var(--r-sm)}
+  .problem-callout{padding:20px}
+  .problem-callout p{font-size:14px}
+  .problem-item{padding:14px 16px;font-size:13px;gap:12px}
+  .solution-callout{padding:20px 22px}
+  .solution-callout p{font-size:14px}
   .transition{padding:14px 16px;margin:0}
-  .transition p{font-size:16px}
-  .cta-strip{margin:0 auto;padding:12px 0}
-  .modules-grid{grid-template-columns:1fr;gap:12px;margin-top:16px}
-  .module-card{padding:22px 18px}
-  .module-num{font-size:28px}
-  .module-title{font-size:15px}
-  .speaker-wrap{gap:16px}
-  .speaker-photo{position:static;aspect-ratio:1/1;max-width:280px;max-height:280px;margin:0 auto}
-  .speaker-name{font-size:28px}
+  .transition p{font-size:15.5px;line-height:1.6}
+  .cta-strip{margin:0 auto;padding:10px 0}
+  .modules-grid{grid-template-columns:1fr;gap:14px;margin-top:18px}
+  .module-card{padding:22px 20px}
+  .module-title{font-size:16px}
+  .module-desc{font-size:13.5px}
+  .speaker-wrap{gap:20px}
+  .speaker-photo{position:static;aspect-ratio:1/1;max-width:300px;max-height:300px;margin:0 auto}
+  .speaker-name{font-size:30px}
+  .speaker-bio{font-size:14px}
   /* Credenciais: aumentar icone/logo no mobile pra ficarem mais visiveis */
   .speaker-cred-icon{width:44px;height:44px}
   .speaker-cred-icon img{width:28px;height:28px}
   .speaker-cred-icon.is-brand-dark img{width:34px;height:34px}
   .speaker-cred-icon svg{width:24px;height:24px}
+  .price-card{border-radius:22px}
+  .price-left{padding:28px 24px}
+  .price-from{font-size:15px}
+  .price-inst{font-size:13px}
+  .price-check{font-size:12.5px}
+  .price-guarantee{padding:16px 22px;font-size:12.5px}
+  .price-wpp{padding:0 22px 22px}
+  .final-cta{padding:32px 18px 40px}
+  .final-sub{font-size:13.5px;margin-bottom:24px}
+  .footer{padding:28px 0}
 }
 
 /* B5 — Honra prefers-reduced-motion em todas as animacoes principais.
@@ -606,6 +661,13 @@ img{display:block;max-width:100%}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
     <symbol id="icon-wpp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+    <!-- Module icons — bold filled glyphs, 24x24, render bem em 36-40px -->
+    <symbol id="mod-1" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm17 1.5v9l-3-2.2v-4.6l3-2.2zM6 8.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></symbol>
+    <symbol id="mod-2" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 6v10h16V10H4zm3 2h3v3H7v-3zm5 0h3v3h-3v-3zM7 2v3h2V2H7zm8 0v3h2V2h-2z"/></symbol>
+    <symbol id="mod-3" viewBox="0 0 24 24"><path fill="currentColor" d="M3 4h12a2 2 0 0 1 2 2v2H5a2 2 0 0 0-2 2V4zm2 5h12a2 2 0 0 1 2 2v2H7a2 2 0 0 0-2 2V9zm2 5h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-5z"/></symbol>
+    <symbol id="mod-4" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></symbol>
+    <symbol id="mod-5" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-3.9 0-7 3.1-7 7 0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="mod-6" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-3 4h4.2a3.3 3.3 0 0 1 1.1 6.4l2.5 4.6h-2.5l-2.4-4.4H11V17H9V6zm2 2v3h2.2a1.5 1.5 0 0 0 0-3H11z"/></symbol>
   </defs>
 </svg>
 
@@ -649,7 +711,7 @@ img{display:block;max-width:100%}
     <div class="hero-card-grad"></div>
     <div class="hero-card-inner">
       <div class="hero-card-left">
-        <div class="hero-badge">Turma Evento Secreto · 2026</div>
+        <div class="hero-badge">Vaga aberta · 2026</div>
         <h2 class="hero-h">Postos que aparecem no celular vendem <em>até 40% mais</em>. Os que não aparecem, dividem o que sobra.</h2>
         <p class="hero-p">O Posto Cheio resolve isso em 6 módulos. Você aplica já na segunda.</p>
         <a href="#modulos" class="hero-modules-link">Ver os 6 módulos →</a>
@@ -671,7 +733,7 @@ img{display:block;max-width:100%}
       <div class="cd-block"><div class="cd-num" id="m">40</div><div class="cd-lbl">Min</div></div>
       <div class="cd-block"><div class="cd-num" id="s">14</div><div class="cd-lbl">Seg</div></div>
     </div>
-    <p class="cd-note">Depois do timer, o curso volta pro preço cheio de R$ 497 e sai da turma ao vivo.</p>
+    <p class="cd-note">Depois do timer, o curso volta pro preço cheio de R$ 497 e sai o acesso ao treinamento ao vivo.</p>
   </div>
 
   <div class="social-proof reveal">
@@ -738,32 +800,32 @@ img{display:block;max-width:100%}
 
   <div class="modules-grid">
     <div class="module-card reveal">
-      <div class="module-num">01</div>
+      <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-1"/></svg></div>
       <div class="module-title">Seu frentista virando o melhor vendedor do Instagram</div>
       <div class="module-desc">Escolher o frentista certo, roteiro de 30 segundos, gravação só no celular. Equipe gravando toda semana sem reclamar.</div>
     </div>
     <div class="module-card reveal reveal-d1">
-      <div class="module-num">02</div>
+      <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-2"/></svg></div>
       <div class="module-title">O que postar quando você não sabe o que postar</div>
       <div class="module-desc">Lista pronta de Reels que funciona pra posto, como achar trend toda semana e calendário de 30 dias. Nunca mais travar na hora de filmar.</div>
     </div>
     <div class="module-card reveal reveal-d2">
-      <div class="module-num">03</div>
+      <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-3"/></svg></div>
       <div class="module-title">1 mês de conteúdo gravado numa tarde</div>
       <div class="module-desc">Editor grátis no celular, fluxo de gravação em lote e agendador que posta sozinho. Uma tarde vira 30 dias de posto aparecendo.</div>
     </div>
     <div class="module-card reveal">
-      <div class="module-num">04</div>
+      <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-4"/></svg></div>
       <div class="module-title">Do Reels pra bomba: como seguidor vira cliente</div>
       <div class="module-desc">Promoção que motorista usa, CTA sem soar forçado, e como medir se o Reels trouxe venda de verdade. Viralizar é meio. Encher a pista é o fim.</div>
     </div>
     <div class="module-card reveal reveal-d1">
-      <div class="module-num">05</div>
+      <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-5"/></svg></div>
       <div class="module-title">Primeiro no "posto perto de mim" do Google</div>
       <div class="module-desc">Arrumar o perfil do Google, pedir avaliação sem chatear o cliente, passar na frente do concorrente que tá lá há anos. Aparecer antes é vender antes.</div>
     </div>
     <div class="module-card reveal reveal-d2">
-      <div class="module-num">06</div>
+      <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-6"/></svg></div>
       <div class="module-title">R$ 10 por dia no Meta e no Google, sem queimar dinheiro</div>
       <div class="module-desc">R$ 10 por dia coloca seu anúncio na frente de milhares de motoristas no raio de 5 km. Passo a passo pra abrir conta no Meta e no Google, mesmo sem nunca ter feito.</div>
     </div>
@@ -900,7 +962,7 @@ img{display:block;max-width:100%}
           <div><strong>+8 anos liderando marketing e vendas do ClubPetro</strong></div>
         </div>
         <div class="speaker-cred">
-          <div class="speaker-cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg></div>
+          <div class="speaker-cred-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.85 15.6v1.15a.85.85 0 1 1-1.7 0V17.6c-1.85-.2-3.3-1.4-3.45-3.05a.95.95 0 0 1 1.9-.18c.07.7.85 1.3 2.05 1.3 1.2 0 2-.55 2-1.25 0-.7-.55-1.05-2.5-1.55-1.85-.45-3.55-1.1-3.55-3.05 0-1.55 1.3-2.6 3.05-2.85V5.85a.85.85 0 1 1 1.7 0V7c1.6.27 2.85 1.27 3.05 2.6a.95.95 0 0 1-1.88.27c-.1-.6-.85-1.15-1.95-1.15-1.1 0-1.85.5-1.85 1.15 0 .65.5.95 2.4 1.4 2.05.5 3.65 1.2 3.65 3.2 0 1.65-1.35 2.9-3.07 3.13z"/></svg></div>
           <div><strong>+R$ 5 milhões em receita gerada</strong> em campanhas</div>
         </div>
       </div>
@@ -921,7 +983,7 @@ img{display:block;max-width:100%}
     <span class="sec-lead">Sua vaga no Posto Cheio</span>
     <div class="sec-tag">O que tá incluído</div>
     <h2 class="sec-h">Posto Cheio completo <em>por R$ 147</em></h2>
-    <p class="sec-p">Enquanto você decide, o concorrente tá gravando o Reels de amanhã. O valor de R$ 147 só vale pra quem participou do Evento Secreto e só enquanto o timer rodar. Depois, vira R$ 497 e sai da turma ao vivo. Só o gravado.</p>
+    <p class="sec-p">Enquanto você decide, o concorrente tá gravando o Reels de amanhã. O valor de R$ 147 só vale enquanto o timer estiver rodando. Depois, vira R$ 497 e sai o treinamento ao vivo. Só o gravado.</p>
   </div>
 
   <div class="roi-anchor reveal">
@@ -934,7 +996,7 @@ img{display:block;max-width:100%}
   </div>
 
   <div class="price-card">
-    <div class="price-banner">Oferta Evento Secreto · R$ 147 só até o timer zerar</div>
+    <div class="price-banner">Oferta especial · R$ 147 só até o timer zerar</div>
     <div class="price-body">
       <div class="price-left">
         <div class="price-from">de R$ 497 fora do evento, agora por:</div>
@@ -948,7 +1010,7 @@ img{display:block;max-width:100%}
           <div class="price-check">Grupo no WhatsApp só de dono e gerente de posto</div>
           <div class="price-check">Atualização grátis por 1 ano: Reels novo, trend nova, todo mês</div>
         </div>
-        <a href="#" class="cta price-cta">Quero meu posto cheio por R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta price-cta">Quero meu posto cheio por R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
       <div class="price-right" style="background-image:url('https://i.imgur.com/Y6PnmpK.jpg')"></div>
     </div>
@@ -958,7 +1020,7 @@ img{display:block;max-width:100%}
     </div>
     <div class="price-or">ou</div>
     <div class="price-wpp">
-      <a href="https://wa.me/5534999999999?text=Oi%21+Vim+do+Evento+Secreto+e+quero+saber+mais+sobre+o+curso+Posto+Cheio" class="cta cta-wpp" data-wa="price-card" onclick="trackWA('price-card')"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#icon-wpp"/></svg>Tirar dúvidas antes de garantir minha vaga</a>
+      <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Posto+Cheio+e+quero+saber+mais+sobre+o+curso" class="cta cta-wpp" data-wa="price-card" onclick="trackWA('price-card')"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#icon-wpp"/></svg>Tirar dúvidas antes de garantir minha vaga</a>
     </div>
     <div class="trust-row">
       <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Pagamento seguro</span>
@@ -1021,7 +1083,7 @@ img{display:block;max-width:100%}
   <div class="alert-icon">⚠️</div>
   <div class="alert-content">
     <div class="alert-title">QUANDO O TIMER ZERAR, O POSTO CHEIO VIRA R$ 497</div>
-    <div class="alert-text">Quando o timer zerar, o preço sobe de <strong>R$ 147 para R$ 497</strong>, o bônus da Copa 2026 sai do pacote e quem entrar depois pega só o gravado, sem turma ao vivo. Quem perder essa janela paga mais que o triplo do valor pra pegar menos conteúdo.</div>
+    <div class="alert-text">Quando o timer zerar, o preço sobe de <strong>R$ 147 para R$ 497</strong>, o bônus da Copa 2026 sai do pacote e quem entrar depois pega só o gravado, sem o treinamento ao vivo. Quem perder essa janela paga mais que o triplo do valor pra pegar menos conteúdo.</div>
   </div>
 </div>
 
@@ -1032,12 +1094,12 @@ img{display:block;max-width:100%}
   <p class="final-sub">Amanhã seu concorrente vai postar mais um Reels. O cliente dele vai ver, o seu não. Daqui a 30 dias, ele tá com 10 mil seguidor e pista cheia na hora do almoço. E você? <strong style="color:#fff">Hoje, por R$ 147, você vira esse cara.</strong></p>
   <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero meu posto cheio por R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   <div style="height:12px"></div>
-  <a href="https://wa.me/5534999999999?text=Oi%21+Vim+do+Evento+Secreto+e+quero+saber+mais+sobre+o+curso+Posto+Cheio" class="cta cta-wpp" data-wa="final-cta" onclick="trackWA('final-cta')" style="max-width:520px;margin:0 auto"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#icon-wpp"/></svg>Tirar dúvidas antes de garantir minha vaga</a>
+  <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Posto+Cheio+e+quero+saber+mais+sobre+o+curso" class="cta cta-wpp" data-wa="final-cta" onclick="trackWA('final-cta')" style="max-width:520px;margin:0 auto"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#icon-wpp"/></svg>Tirar dúvidas antes de garantir minha vaga</a>
 </section>
 
 <!-- FOOTER -->
 <div class="footer">
-  <p>ClubPetro © 2026 · Posto Cheio · o curso que enche a pista do seu posto · Turma Evento Secreto</p>
+  <p>ClubPetro © 2026 · Posto Cheio · o curso que enche a pista do seu posto</p>
 </div>
 
 </div>
@@ -1050,8 +1112,7 @@ img{display:block;max-width:100%}
     <h3 class="exit-title">Antes de sair do <em>Posto Cheio</em></h3>
     <p class="exit-text">Ficou alguma dúvida sobre o <strong>Posto Cheio</strong>? Fala com a equipe pelo <strong>WhatsApp</strong>. Respondem na hora, sem compromisso, só pra você decidir com a cabeça clara antes do timer zerar.</p>
     <div class="exit-actions">
-      <!-- TODO: inserir numero real de WhatsApp -->
-      <a href="#" class="cta cta-wpp" onclick="trackWA('exit-intent')">
+      <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Posto+Cheio+e+quero+saber+mais+sobre+o+curso" class="cta cta-wpp" onclick="trackWA('exit-intent')">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#icon-wpp"/></svg>
         Tirar dúvidas antes de garantir minha vaga
       </a>
@@ -1066,24 +1127,34 @@ img{display:block;max-width:100%}
 
 <!-- MINI STICKY PRICE BANNER (desktop) -->
 <div class="mini-price" id="miniPrice">
-  <div class="mini-price-text"><strong>R$ 147</strong> · 12x R$ 14,70 sem juros <span>· turma ao vivo</span></div>
+  <div class="mini-price-text"><strong>R$ 147</strong> · 12x R$ 14,70 sem juros <span>· treinamento ao vivo</span></div>
   <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="mini-price-cta">Travar vaga →</a>
 </div>
 
 <!-- FAB WHATSAPP MOBILE -->
-<a href="https://wa.me/5534999999999?text=Oi%21+Vim+do+Evento+Secreto+e+quero+saber+mais+sobre+o+Posto+Cheio" class="fab-wpp" aria-label="Falar no WhatsApp" data-wa="fab" onclick="trackWA('fab')">
+<a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Posto+Cheio+e+quero+saber+mais" class="fab-wpp" aria-label="Falar no WhatsApp" data-wa="fab" onclick="trackWA('fab')">
   <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-wpp"/></svg>
 </a>
 
-<!-- STICKY CTA MOBILE -->
-<div class="sticky-cta">
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta" style="font-size:14px;padding:14px">Quero meu Posto Cheio · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-</div>
-
-<!-- Lenis smooth scroll (desktop only, respeita prefers-reduced-motion) -->
+<!-- Lenis smooth scroll com momentum em mobile -->
 <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js" defer></script>
 
 <script>
+// === HEADLINE WORD SPLIT (.hero-h) — split text em spans pra stagger por palavra
+(function(){
+  document.querySelectorAll('.hero-h').forEach(function(h){
+    // Wrappa <em> primeiro pra preservar gradiente, depois quebra text nodes em palavras
+    var newHtml=h.innerHTML.replace(/(<\/?[^>]+>)|(\S+)/g,function(m,tag,word){
+      if(tag)return tag;
+      return '<span class="word">'+word+'</span>';
+    });
+    h.innerHTML=newHtml;
+    h.classList.add('split');
+    var i=0;
+    Array.from(h.children).forEach(function(c){c.style.setProperty('--i',i++)});
+  });
+})();
+
 // Scroll reveal observer — sistema de 3 tiers (sutil, card, hero 3D)
 (function(){
   if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')});return}
@@ -1092,7 +1163,7 @@ img{display:block;max-width:100%}
   },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
   // Cada grupo aplica tier especifico. Stagger por indice (i%3) cria cascata por linha em grids.
   var groups=[
-    {sel:'.sec-p,.hero-metric,.hero-title,.hero-subtitle,.speaker-cred,.final-cta,.problem-img',tier:''},
+    {sel:'.sec-p,.hero-metric,.hero-title,.hero-subtitle,.speaker-cred,.final-cta,.problem-img,.price-main',tier:''},
     {sel:'.sec-h',tier:'reveal-h'},
     {sel:'.problem-item,.reel-card,.module-card,.price-card,.faq-item,.hero-card',tier:'reveal-card'},
     {sel:'.speaker-photo',tier:'reveal-3d'}
@@ -1257,16 +1328,6 @@ window.trackWA=function(source){
   if(window.cpTrack)cpTrack('Lead',{source:source,channel:'whatsapp'});
   if(window.fbq)fbq('track','Contact',{source:source});
 };
-window.trackShare=function(channel){
-  if(window.cpTrack)cpTrack('Share',{channel:channel});
-};
-window.copyShareLink=function(btn){
-  var url=window.location.origin+window.location.pathname+'?src=indication';
-  if(navigator.clipboard)navigator.clipboard.writeText(url);
-  var orig=btn.innerHTML;
-  btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Link copiado!';
-  setTimeout(function(){btn.innerHTML=orig},2200);
-};
 
 // === HOTMART CHECKOUT ===
 const HOTMART_CHECKOUT_URL = 'https://pay.hotmart.com/T105532698T?off=4dwr5aeo';
@@ -1346,6 +1407,18 @@ document.addEventListener('click',function(e){
   });
 })();
 
+// === CTA shine sweep one-time quando entra no viewport ===
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('cta-in-view');io.unobserve(en.target)}
+    });
+  },{threshold:.6});
+  document.querySelectorAll('.cta').forEach(function(el){io.observe(el)});
+})();
+
 // === COUNT-UP hero metrics ===
 (function(){
   var els=document.querySelectorAll('.hero-metric-num');
@@ -1365,7 +1438,8 @@ document.addEventListener('click',function(e){
       var v=num*eased;
       var disp=hasComma?v.toFixed(1).replace('.',','):Math.floor(v);
       el.textContent=prefix+disp+suffix;
-      if(p<1)requestAnimationFrame(step);
+      if(p<1){requestAnimationFrame(step)}
+      else{el.classList.add('popped');setTimeout(function(){el.classList.remove('popped')},600)}
     }
     requestAnimationFrame(step);
   }
@@ -1446,18 +1520,19 @@ document.addEventListener('DOMContentLoaded',function(){
 })();
 
 // === LENIS SMOOTH SCROLL ===
-// Inertia/lerp scroll cinematico. Desktop only — em touch o momentum nativo
-// e melhor (Lenis recomenda smoothTouch:false). Pula tambem se o usuario
-// pediu prefers-reduced-motion. Fallback gracioso se o CDN falhar.
+// Inertia/lerp scroll cinematico. Desktop e mobile (smoothTouch ativado por
+// pedido explicito). Respeita prefers-reduced-motion. Fallback gracioso se
+// o CDN falhar (Lenis fica undefined e a pagina continua usando scroll nativo).
 window.addEventListener('load',function(){
   if(typeof Lenis==='undefined')return;
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  if(window.matchMedia('(hover: none) and (pointer: coarse)').matches)return;
+  var isTouch=window.matchMedia('(hover: none) and (pointer: coarse)').matches;
   var lenis=new Lenis({
-    duration:1.8,
+    duration:isTouch?1.1:1.8,
     easing:function(t){return 1-Math.pow(1-t,4)},
     smoothWheel:true,
-    smoothTouch:false,
+    smoothTouch:true,
+    touchMultiplier:isTouch?1.6:1,
     wheelMultiplier:0.85
   });
   function raf(time){lenis.raf(time);requestAnimationFrame(raf)}
