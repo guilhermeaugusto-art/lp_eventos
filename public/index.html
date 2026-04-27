@@ -336,14 +336,32 @@ img{display:block;max-width:100%}
 .cd-lbl{font-size:10.5px;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px;font-weight:700}
 .cd-note{text-align:center;font-size:13px;color:var(--text-mid);margin-top:16px;line-height:1.5}
 .cd-note strong{color:var(--accent-2);font-weight:700}
+/* Cronometro mobile — breakpoints calibrados pra caber em 360-414px sem
+   overflow horizontal. Base 560: ~340px de cd-row. <420: ~270px. <360: ~240px. */
 @media(max-width:560px){
-  .countdown{padding:22px 14px 18px;margin-top:26px;border-radius:18px}
-  .cd-row{gap:6px}
+  .countdown{padding:20px 12px 16px;margin-top:26px;border-radius:18px}
+  .cd-row{gap:5px}
   .cd-digits{gap:3px}
-  .cd-digit{width:46px;height:70px;font-size:48px;border-radius:8px}
-  .cd-sep{font-size:40px;margin:0 -1px}
-  .cd-label{font-size:10px;letter-spacing:2px;padding:5px 12px}
+  .cd-digit{width:42px;height:64px;border-radius:8px}
+  .cd-digit > b{font-size:46px}
+  .cd-sep{font-size:34px;margin:0}
+  .cd-label{font-size:10px;letter-spacing:2px;padding:5px 12px;margin-bottom:18px}
   .cd-lbl{font-size:9.5px;letter-spacing:1.5px}
+  .cd-note{font-size:12px;margin-top:14px}
+}
+@media(max-width:420px){
+  .countdown{padding:18px 10px 14px}
+  .cd-row{gap:4px}
+  .cd-digits{gap:2px}
+  .cd-digit{width:36px;height:56px;border-radius:7px}
+  .cd-digit > b{font-size:40px}
+  .cd-sep{font-size:28px}
+}
+@media(max-width:360px){
+  .countdown{padding:16px 8px 12px}
+  .cd-digit{width:32px;height:50px;border-radius:6px}
+  .cd-digit > b{font-size:36px}
+  .cd-sep{font-size:24px}
 }
 @media(prefers-reduced-motion:reduce){.cd-digit.flipping,.cd-pulse,.cd-sep,.cd-progress-fill{animation:none!important;transition:none!important}}
 
@@ -451,14 +469,16 @@ img{display:block;max-width:100%}
 .module-bonus .module-title{grid-column:2;margin-bottom:6px}
 .module-bonus .module-desc{grid-column:2;max-width:640px}
 @media(max-width:760px){
-  .module-bonus{grid-template-columns:1fr;gap:10px;padding:24px 20px;padding-top:70px;margin-top:60px;min-height:auto}
+  .module-bonus{grid-template-columns:1fr;gap:10px;padding:24px 20px;padding-top:75px;margin-top:65px;min-height:auto}
   .module-bonus .module-num{font-size:52px;grid-row:auto}
   .module-bonus .bonus-tag,.module-bonus .module-title,.module-bonus .module-desc{grid-column:auto}
-  /* Mobile: bola menor centralizada acima do card; esconde flag/trophy/streak */
-  .bonus-3d{width:auto;left:50%;right:auto;transform:translateX(-50%);height:auto;top:0}
-  .bonus-ball{width:120px;height:auto;top:-65px;right:auto;left:50%;transform:translateX(-50%) scale(.2) rotate(-180deg)}
-  .module-bonus.in .bonus-ball{transform:translateX(-50%) scale(1) rotate(0);animation:ballFloatMob 4.5s ease-in-out 1.2s infinite}
-  @keyframes ballFloatMob{0%,100%{transform:translateX(-50%) rotate(0) translateY(0)}50%{transform:translateX(-50%) rotate(8deg) translateY(-8px)}}
+  /* Mobile: container 100% width; bola centralizada via margin-left em vez de
+     translateX(-50%) no transform — assim motion.animate pode escrever scale/rotate
+     sem perder a centralizacao. */
+  .bonus-3d{width:100%;left:0;right:0;transform:none;height:auto;top:0}
+  .bonus-ball{width:120px;height:auto;top:-70px;right:auto;left:50%;margin-left:-60px;transform:scale(.15) rotate(-220deg) translateY(40px)}
+  .module-bonus.in .bonus-ball{transform:scale(1) rotate(-15deg);animation:ballFloatMob 4.5s ease-in-out 2.4s infinite}
+  @keyframes ballFloatMob{0%,100%{transform:scale(1) rotate(-15deg) translateY(0)}50%{transform:scale(1) rotate(-7deg) translateY(-10px)}}
   .bonus-flag,.bonus-trophy{display:none}
 }
 .bonus-tag{display:inline-block;padding:4px 10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:6px;margin-bottom:8px;box-shadow:0 6px 16px -6px rgba(232,89,60,.55)}
@@ -520,7 +540,9 @@ img{display:block;max-width:100%}
 .speaker-social:hover{background:var(--accent-soft);border-color:var(--accent-2);color:var(--accent-2);transform:translateY(-2px);box-shadow:0 8px 20px -8px rgba(232,89,60,.5)}
 .speaker-social svg{width:18px;height:18px}
 .speaker-creds{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(max-width:760px){.speaker-creds{grid-template-columns:1fr}}
+/* Mobile largo (480-760): mantem 2 cols pra nao virar lista alongada.
+   Mobile estreito (<480): 1 col. */
+@media(max-width:480px){.speaker-creds{grid-template-columns:1fr}}
 /* Cards de credencial — 3D bevel sutil, depth stack, hover lift.
    Mesma linguagem visual do .module-icon mas mais discreta (cards, nao icones). */
 .speaker-cred{display:flex;align-items:center;gap:14px;padding:16px 20px;background:linear-gradient(180deg,#1a1a1a 0%,#0e0e0e 100%);border:1px solid rgba(255,255,255,.06);border-radius:16px;font-size:13.5px;color:var(--text-mid);position:relative;transition:transform .4s var(--ease-soft),box-shadow .4s var(--ease-soft),border-color .3s;box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 1px 0 rgba(0,0,0,.5),0 4px 0 rgba(0,0,0,.3),0 14px 30px -14px rgba(0,0,0,.7);overflow:hidden}
@@ -623,7 +645,7 @@ img{display:block;max-width:100%}
 .alert-title{font-family:var(--font-display);font-size:22px;color:#FF8B8B;letter-spacing:.8px;margin-bottom:6px;line-height:1.1}
 .alert-text{font-size:14px;color:#E8C5C5;line-height:1.6}
 .alert-text strong{color:#FFB8B8}
-@media(max-width:760px){.alert-box{padding:18px 16px;gap:12px;margin:16px auto;border-radius:14px;max-width:calc(100% - 32px)}.alert-icon{font-size:24px}.alert-title{font-size:17px}.alert-text{font-size:12px}}
+@media(max-width:760px){.alert-box{padding:18px 16px;gap:12px;border-radius:14px;max-width:calc(100% - 24px)}.alert-icon{font-size:24px}.alert-title{font-size:16px;letter-spacing:.4px}.alert-text{font-size:12.5px;line-height:1.55}}
 
 /* === FINAL CTA === */
 .final-cta{text-align:center;padding:40px 32px 48px;position:relative;border-radius:var(--r);overflow:hidden;margin:var(--gap-block) auto;max-width:1100px}
@@ -687,9 +709,9 @@ img{display:block;max-width:100%}
   .hero-h{font-size:clamp(20px,5.4vw,26px);line-height:1.15;margin-bottom:10px;text-align:left;letter-spacing:-.2px}
   .hero-p{font-size:13px;line-height:1.6;text-align:left;margin:0}
   .hero-metrics{gap:8px}
-  .hero-metric{padding:12px 6px;border-radius:10px}
-  .hero-metric-num{font-size:20px}
-  .hero-metric-label{font-size:8.5px;letter-spacing:.6px}
+  .hero-metric{padding:12px 8px;border-radius:10px}
+  .hero-metric-num{font-size:22px}
+  .hero-metric-label{font-size:9.5px;letter-spacing:.8px;line-height:1.2;margin-top:4px}
   .cta{padding:16px 22px;font-size:14.5px;display:flex;width:100%;max-width:100%;border-radius:14px;gap:10px;min-height:56px;font-weight:600}
   .cta-note{font-size:11px;gap:6px}
   .sec-head{margin:0 auto 18px}
@@ -724,16 +746,23 @@ img{display:block;max-width:100%}
   /* Backdrop-filter eh caro no GPU. Em mobile reduz pra 4px (mantem o efeito sem
      custo de paint pesado) ou substitui por background mais opaco. */
   .nav,.sec-tag,.social-proof,.faq-item,.reel-ig-hint{backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+  .price-banner{font-size:10.5px;letter-spacing:1px;padding:12px}
   .price-card{border-radius:22px}
-  .price-left{padding:28px 24px}
-  .price-from{font-size:15px}
-  .price-inst{font-size:13px}
-  .price-check{font-size:12.5px}
-  .price-guarantee{padding:16px 22px;font-size:12.5px}
-  .price-wpp{padding:0 22px 22px}
-  .final-cta{padding:32px 18px 40px}
-  .final-sub{font-size:13.5px;margin-bottom:24px}
+  .price-left{padding:24px 20px}
+  .price-from{font-size:14px}
+  .price-inst{font-size:12.5px}
+  .price-check{font-size:12.5px;line-height:1.5}
+  .price-guarantee{padding:16px 20px;font-size:12.5px;line-height:1.5}
+  .price-wpp-mini{padding:14px 20px 18px;font-size:12px;flex-direction:column;gap:6px}
+  .trust-row{padding:14px 12px;gap:10px}
+  .trust-item{font-size:10.5px}
+  .final-cta{padding:32px 16px 38px}
+  .final-sub{font-size:13.5px;margin-bottom:24px;padding:0 4px}
+  .final-wpp a{font-size:12.5px}
   .footer{padding:28px 0}
+  .footer p{font-size:10.5px;padding:0 16px;line-height:1.6}
+  /* CTA-strip mobile: garantir que CTA não ultrapassa borda da viewport */
+  .cta-strip{padding:0 4px}
 }
 
 /* B5 — Honra prefers-reduced-motion em todas as animacoes principais.
@@ -1709,8 +1738,10 @@ window.addEventListener('load',function(){
     var trophy=document.querySelector('.bonus-trophy');
     var isMobile=window.matchMedia('(max-width:760px)').matches;
     if(bonus&&ball&&m.inView){
+      // Em mobile, a centralizacao da bola eh via margin-left (CSS), nao via translateX,
+      // pra motion.animate poder escrever scale/rotate/y sem desalinhar.
       ball.style.opacity='0';
-      ball.style.transform=(isMobile?'translateX(-50%) ':'')+'scale(.15) rotate(-220deg) translateY(40px)';
+      ball.style.transform='scale(.15) rotate(-220deg) translateY(40px)';
       if(flag){flag.style.opacity='0';flag.style.transform='translateX(60px) rotate(-14deg)'}
       if(trophy){trophy.style.opacity='0';trophy.style.transform='translateY(40px) rotateY(-90deg)'}
 
