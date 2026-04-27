@@ -585,20 +585,18 @@ img{display:block;max-width:100%}
 .price-check{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-mid);margin-bottom:10px}
 .price-check::before{content:'✓';color:var(--green);font-weight:700;width:18px;height:18px;border-radius:50%;background:var(--green-soft);display:flex;align-items:center;justify-content:center;font-size:11px}
 .price-cta{width:100%}
-.price-guarantee{display:flex;align-items:flex-start;gap:10px;padding:18px 32px;border-top:1px solid var(--border);font-size:13px;color:var(--text-mid);line-height:1.5;background:rgba(255,255,255,.02)}
-.price-guarantee strong{color:var(--accent-2)}
+.price-guarantee{display:flex;align-items:center;gap:14px;padding:20px 28px;border-top:1px solid var(--border);background:linear-gradient(180deg,rgba(91,232,148,.045) 0%,rgba(91,232,148,.01) 100%);position:relative}
+.price-guarantee::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(91,232,148,.35),transparent)}
+.price-guarantee-icon{flex-shrink:0;width:38px;height:38px;border-radius:50%;background:rgba(91,232,148,.1);border:1px solid rgba(91,232,148,.28);display:flex;align-items:center;justify-content:center;color:#5BE894;box-shadow:0 0 18px -6px rgba(91,232,148,.4)}
+.price-guarantee-text{display:flex;flex-direction:column;gap:3px;min-width:0}
+.price-guarantee-text strong{color:#fff;font-size:13.5px;font-weight:700;letter-spacing:.1px}
+.price-guarantee-text span{font-size:12.5px;color:var(--text-mid);line-height:1.45}
 /* Tira-duvida WhatsApp do price-card: discreto, nao compete com o CTA principal */
 .price-wpp-mini{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:14px 24px 22px;font-size:12.5px;color:var(--text-dim);text-align:center}
 .price-wpp-mini > span{opacity:.85}
 .price-wpp-link{display:inline-flex;align-items:center;gap:6px;color:#3CEC7B;font-weight:700;font-size:12.5px;text-decoration:none;border-bottom:1px dashed rgba(60,236,123,.5);padding-bottom:1px;transition:color .25s,border-color .25s}
 .price-wpp-link:hover{color:#fff;border-bottom-color:#fff}
 .price-wpp-link svg{flex-shrink:0}
-.trust-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:20px 18px;border-top:1px solid var(--border);background:rgba(255,255,255,.02)}
-.trust-item{display:flex;align-items:center;gap:7px;font-size:13px;color:#e0e0e0;font-weight:500;transition:color .25s,transform .25s var(--ease-soft);cursor:default}
-.trust-item:hover{color:var(--accent-2);transform:translateY(-1px)}
-.trust-item:hover svg{color:var(--accent-2)}
-.trust-item svg{width:16px;height:16px;color:#5BE894;flex-shrink:0;transition:color .25s}
-@media(max-width:760px){.trust-row{gap:14px;padding:16px 14px}.trust-item{font-size:11px;gap:6px}.trust-item svg{width:14px;height:14px}}
 
 /* === ROI ANCHOR === */
 .roi-anchor{display:flex;align-items:center;gap:14px;max-width:560px;margin:0 auto 22px;padding:16px 20px;background:linear-gradient(135deg,rgba(37,211,102,.10),rgba(37,211,102,.04));border:1px solid rgba(37,211,102,.35);border-radius:14px;text-align:left}
@@ -767,10 +765,12 @@ img{display:block;max-width:100%}
   .price-from{font-size:14px}
   .price-inst{font-size:12.5px}
   .price-check{font-size:12.5px;line-height:1.5}
-  .price-guarantee{padding:16px 20px;font-size:12.5px;line-height:1.5}
+  .price-guarantee{padding:16px 20px;gap:12px}
+  .price-guarantee-icon{width:34px;height:34px}
+  .price-guarantee-icon svg{width:17px;height:17px}
+  .price-guarantee-text strong{font-size:12.5px}
+  .price-guarantee-text span{font-size:11.5px;line-height:1.4}
   .price-wpp-mini{padding:14px 20px 18px;font-size:12px;flex-direction:column;gap:6px}
-  .trust-row{padding:14px 12px;gap:10px}
-  .trust-item{font-size:10.5px}
   .final-cta{padding:32px 16px 38px}
   .final-sub{font-size:13.5px;margin-bottom:24px;padding:0 4px}
   .final-wpp a{font-size:12.5px}
@@ -1184,17 +1184,17 @@ img{display:block;max-width:100%}
       <div class="price-right" style="background-image:url('https://i.imgur.com/Y6PnmpK.jpg')"></div>
     </div>
     <div class="price-guarantee">
-      <span>🛡️</span>
-      <div><strong>Garantia de 7 dias, sem conversa:</strong> entra, assiste tudo, testa na sua pista. Se em 7 dias você achar que não valeu, devolvemos 100%. Só mandar WhatsApp "quero meu dinheiro de volta" e pronto.</div>
+      <div class="price-guarantee-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      </div>
+      <div class="price-guarantee-text">
+        <strong>Garantia incondicional de 7 dias</strong>
+        <span>Não curtiu? Manda no WhatsApp e devolvemos 100%. Sem pergunta.</span>
+      </div>
     </div>
     <div class="price-wpp-mini">
       <span>Ainda em dúvida antes de comprar?</span>
       <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Pista+Cheia+2026+e+quero+saber+mais+antes+de+garantir+minha+vaga" class="price-wpp-link" data-wa="price-card" onclick="trackWA('price-card')"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use href="#icon-wpp"/></svg>Tira no WhatsApp →</a>
-    </div>
-    <div class="trust-row">
-      <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Pagamento seguro</span>
-      <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Garantia de 7 dias</span>
-      <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>Acesso imediato no e-mail</span>
     </div>
   </div>
 </section>
