@@ -615,19 +615,24 @@ img{display:block;max-width:100%}
 .faq-q{display:flex;align-items:center;padding:18px 22px;font-size:15px;font-weight:600;gap:18px;color:#f0f0f0;line-height:1.4}
 .faq-num{font-family:var(--font-display);font-weight:800;font-size:14px;color:#fff;letter-spacing:.6px;flex-shrink:0;font-variant-numeric:tabular-nums;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#FF7A4F 0%,#E8593C 50%,#A43620 100%);display:flex;align-items:center;justify-content:center;transform:perspective(420px) rotateY(-10deg);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(0,0,0,.25),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 14px -4px rgba(232,89,60,.5);transition:transform .4s var(--ease-soft),box-shadow .4s var(--ease-soft);text-shadow:0 1px 2px rgba(0,0,0,.3)}
 .faq-q-text{flex:1;min-width:0}
-.faq-plus{color:var(--accent);transition:transform .35s cubic-bezier(.2,.8,.2,1);flex-shrink:0;width:30px;height:30px;display:flex;align-items:center;justify-content:center;position:relative;border-radius:50%;background:rgba(232,89,60,.1);border:1px solid rgba(232,89,60,.3)}
-.faq-plus::before,.faq-plus::after{content:'';position:absolute;background:var(--accent-2);border-radius:1px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+/* Plus icon: rotacao mais cinematografica do simbolo + virando X. */
+.faq-plus{color:var(--accent);transition:background .4s var(--ease-soft),border-color .4s var(--ease-soft),box-shadow .4s var(--ease-soft),transform .5s var(--ease-cinematic);flex-shrink:0;width:30px;height:30px;display:flex;align-items:center;justify-content:center;position:relative;border-radius:50%;background:rgba(232,89,60,.1);border:1px solid rgba(232,89,60,.3)}
+.faq-plus::before,.faq-plus::after{content:'';position:absolute;background:var(--accent-2);border-radius:2px;transition:transform .5s var(--ease-cinematic),background .35s,opacity .35s}
 .faq-plus::before{width:12px;height:2px}
 .faq-plus::after{width:2px;height:12px}
-.faq-item.open .faq-plus{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent;box-shadow:0 4px 12px -2px rgba(232,89,60,.5)}
+.faq-item.open .faq-plus{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent;box-shadow:0 4px 12px -2px rgba(232,89,60,.5);transform:rotate(180deg)}
 .faq-item.open .faq-plus::before,.faq-item.open .faq-plus::after{background:#fff}
 .faq-item.open .faq-plus::after{transform:rotate(90deg);opacity:0}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.2,.8,.2,1)}
-.faq-a-in{padding:0 24px 22px 80px;font-size:14px;color:#b8b8b8;line-height:1.75}
+/* FAQ answer: max-height + fade-slide do conteudo interno em cascata.
+   Aberto: max-height anima primeiro, conteudo entra com delay (parece deslizando).
+   Fechado: conteudo some rapido, max-height colapsa. */
+.faq-a{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.16,1,.3,1)}
+.faq-a-in{padding:0 24px 22px 80px;font-size:14px;color:#b8b8b8;line-height:1.75;opacity:0;transform:translateY(-8px);transition:opacity .25s ease-out,transform .25s ease-out}
+.faq-item.open .faq-a-in{opacity:1;transform:translateY(0);transition:opacity .4s .15s var(--ease-soft),transform .5s .15s var(--ease-cinematic)}
 @media(max-width:760px){
   .faq-q{padding:14px 16px;font-size:13.5px;gap:14px}
   .faq-num{width:34px;height:34px;font-size:13px;border-radius:10px}
-  .faq-a-in{padding:0 18px 18px 64px;font-size:12.5px}
+  .faq-a-in{padding:0 18px 18px 64px;font-size:12.5px;line-height:1.6}
 }
 
 /* === TRANSITION === */
@@ -1985,25 +1990,9 @@ window.addEventListener('load',function(){
       });
     }
 
-    // --- FAQ open: animacao de altura com spring (substitui transition CSS) ---
-    document.querySelectorAll('.faq-item').forEach(function(item){
-      var ans=item.querySelector('.faq-a');
-      if(!ans)return;
-      // Observa mudancas de classe (open/close) via MutationObserver
-      var mo=new MutationObserver(function(){
-        var isOpen=item.classList.contains('open');
-        if(isOpen){
-          ans.style.maxHeight='none'; // libera pra medir
-          var h=ans.scrollHeight;
-          ans.style.maxHeight='0px';
-          m.animate(ans,{maxHeight:[0,h]},{type:'spring',stiffness:160,damping:22});
-        }else{
-          m.animate(ans,{maxHeight:[ans.scrollHeight||500,0]},{duration:.35,ease:[.4,0,.2,1]});
-        }
-      });
-      mo.observe(item,{attributes:true,attributeFilter:['class']});
-    });
-
+    // FAQ open: usa CSS transition do .faq-a (max-height) + fade+slide do
+    //  .faq-a-in interno. Mais fluido que spring em max-height (que criava
+    //  saltos visuais por causa do conteudo aparecendo de uma vez).
   }
   if(window.motion)init();
   else document.addEventListener('motion:ready',init);
