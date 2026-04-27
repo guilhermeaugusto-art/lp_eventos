@@ -479,13 +479,15 @@ img{display:block;max-width:100%}
      Tudo posicionado via left+margin-left em vez de translateX pra nao
      conflitar com motion.animate (que sobrescreve transform). */
   .bonus-3d{width:100%;left:0;right:0;transform:none;height:auto;top:0}
-  .bonus-flag{display:block;width:62px;height:auto;top:-58px;right:auto;left:50%;margin-left:-95px;transform:translateX(60px) rotate(-25deg);filter:drop-shadow(0 6px 12px rgba(0,0,0,.55)) drop-shadow(0 0 10px rgba(31,175,82,.4))}
+  /* Layout \ | /: bola alta no centro, bandeira/trofeu mais baixos nas
+     laterais, separados por ~22px pra criar respiro visual sem encostar. */
+  .bonus-flag{display:block;width:62px;height:auto;top:-52px;right:auto;left:50%;margin-left:-128px;transform:translateX(60px) rotate(-25deg);filter:drop-shadow(0 6px 12px rgba(0,0,0,.55)) drop-shadow(0 0 10px rgba(31,175,82,.4))}
   .module-bonus.in .bonus-flag{transform:rotate(-25deg);animation:ballFlagMob 6s ease-in-out 2.5s infinite}
   @keyframes ballFlagMob{0%,100%{transform:rotate(-25deg) translateY(0)}50%{transform:rotate(-22deg) translateY(-4px)}}
-  .bonus-ball{width:78px;height:auto;top:-72px;right:auto;left:50%;margin-left:-39px;transform:scale(.15) rotate(-220deg) translateY(40px)}
+  .bonus-ball{width:78px;height:auto;top:-78px;right:auto;left:50%;margin-left:-39px;transform:scale(.15) rotate(-220deg) translateY(40px)}
   .module-bonus.in .bonus-ball{transform:scale(1) rotate(0);animation:ballFloatMob 4.5s ease-in-out 2.4s infinite}
   @keyframes ballFloatMob{0%,100%{transform:scale(1) rotate(0) translateY(0)}50%{transform:scale(1) rotate(8deg) translateY(-8px)}}
-  .bonus-trophy{display:block;width:46px;height:auto;top:-66px;right:auto;left:50%;margin-left:35px;bottom:auto;transform:translateY(40px) rotateY(-90deg);filter:drop-shadow(0 6px 12px rgba(0,0,0,.6)) drop-shadow(0 0 10px rgba(255,182,39,.45))}
+  .bonus-trophy{display:block;width:46px;height:auto;top:-58px;right:auto;left:50%;margin-left:62px;bottom:auto;transform:translateY(40px) rotateY(-90deg);filter:drop-shadow(0 6px 12px rgba(0,0,0,.6)) drop-shadow(0 0 10px rgba(255,182,39,.45))}
   .module-bonus.in .bonus-trophy{transform:rotate(25deg) rotateY(0);animation:trophyFloatMob 5.5s ease-in-out 2.7s infinite}
   @keyframes trophyFloatMob{0%,100%{transform:rotate(25deg) translateY(0)}50%{transform:rotate(22deg) translateY(-4px)}}
 }
