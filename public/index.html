@@ -216,7 +216,7 @@ body.off-screen .cd-label::before{animation-play-state:paused!important}
 @media(prefers-reduced-motion:reduce){
   .reveal,.reveal.reveal-card,.reveal.reveal-3d,.price-main.reveal{transform:none!important;transition:opacity .3s ease!important;animation:none!important}
   .reveal.reveal-h::after{transition:none!important;width:80px!important}
-  .cta.cta-in-view::before,.hero-metric-num.popped,.module-bonus.in::after,.reel-thumb::after,.hero-card::before{animation:none!important}
+  .cta.cta-in-view::before,.hero-metric-num.popped,.reel-thumb::after,.hero-card::before{animation:none!important}
   .hero-h.split > .word,.hero-h.split > em{opacity:1!important;transform:none!important;transition:none!important}
 }
 a{color:inherit;text-decoration:none}
@@ -244,15 +244,22 @@ img{display:block;max-width:100%}
 .hero-title .mark{font-size:.92em;margin-left:6px;padding:0 14px}
 .hero-subtitle{font-size:13px;color:var(--text-mid);letter-spacing:.2px;margin-bottom:26px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.55;font-weight:400}
 
-.hero-card{position:relative;border-radius:28px;overflow:hidden;max-width:960px;margin:0 auto 24px;background:linear-gradient(135deg,var(--bg-card),var(--bg-card-light));border:1px solid var(--border);box-shadow:var(--shadow-soft)}
+/* Hero card — segue aspect-ratio 16:9 da imagem nova. min-height pra
+   garantir visual em telas baixas; aspect-ratio domina em telas comuns. */
+.hero-card{position:relative;border-radius:28px;overflow:hidden;max-width:960px;margin:0 auto 24px;background:linear-gradient(135deg,var(--bg-card),var(--bg-card-light));border:1px solid var(--border);box-shadow:var(--shadow-soft);aspect-ratio:16/9;min-height:420px}
 /* Aurora mesh — drift lento atras da imagem do hero (transform-only, GPU) */
 .hero-card::before{content:'';position:absolute;inset:-20%;background:radial-gradient(ellipse 40% 35% at 20% 30%,rgba(232,89,60,.45),transparent 60%),radial-gradient(ellipse 35% 40% at 80% 70%,rgba(255,182,39,.35),transparent 60%),radial-gradient(ellipse 30% 30% at 60% 20%,rgba(232,89,60,.25),transparent 65%);filter:blur(40px);opacity:.55;z-index:0;animation:auroraDrift 18s ease-in-out infinite;will-change:transform;pointer-events:none}
 @keyframes auroraDrift{0%,100%{transform:translate3d(0,0,0) scale(1)}33%{transform:translate3d(3%,-2%,0) scale(1.06)}66%{transform:translate3d(-2%,3%,0) scale(.95)}}
-.hero-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
-.hero-card-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(29,29,31,.92) 0%,rgba(29,29,31,.78) 50%,rgba(80,30,10,.6) 100%)}
-.hero-card-grad::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at left center,rgba(0,0,0,.6),transparent 70%)}
-.hero-card-inner{position:relative;padding:36px 40px 32px;z-index:2;display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center;min-height:280px}
-@media(max-width:760px){.hero-card-inner{grid-template-columns:1fr;gap:16px;padding:22px 20px 18px}}
+.hero-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.85}
+/* Gradiente forte no lado esquerdo (legibilidade do texto) e suave no
+   resto pra imagem aparecer no canto direito. */
+.hero-card-grad{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.78) 35%,rgba(10,10,10,.35) 65%,rgba(10,10,10,.15) 100%)}
+.hero-card-grad::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 35%)}
+.hero-card-inner{position:relative;padding:48px 52px 44px;z-index:2;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center;height:100%}
+@media(max-width:760px){
+  .hero-card{aspect-ratio:auto;min-height:auto}
+  .hero-card-inner{grid-template-columns:1fr;gap:16px;padding:24px 22px 22px;height:auto}
+}
 .hero-card-left{text-align:left;min-width:0}
 .hero-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(232,89,60,.18);border:1px solid var(--accent);border-radius:100px;font-size:9px;font-weight:700;color:var(--accent-2);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
 .hero-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent-2);animation:blink 1.5s infinite;box-shadow:0 0 6px var(--accent-2)}
@@ -294,8 +301,6 @@ img{display:block;max-width:100%}
 .hero-metric-num.popped{animation:metricPop .55s cubic-bezier(.34,1.56,.64,1) 1}
 @keyframes metricPop{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
 /* Bonus card: burst de glow ao entrar no viewport (animacao de opacity em ::after, GPU-friendly) */
-.module-bonus.in::after{animation:bonusBurst 2.2s var(--ease-soft) .4s 1}
-@keyframes bonusBurst{0%{opacity:0}40%{opacity:1.5}100%{opacity:1}}
 .cta-note{text-align:center;font-size:12px;color:var(--text-dim);margin-top:14px;display:flex;align-items:center;justify-content:center;gap:6px}
 .cta-note::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
 .cta-wpp{background:linear-gradient(180deg,#3CEC7B 0%,#22B560 50%,#0F7E3F 100%);border:none;font-size:14px;padding:14px 24px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1.5px 0 rgba(0,0,0,.22),0 2px 0 #0a6630,0 4px 0 #084d24,0 6px 0 #062f17,0 14px 28px -10px rgba(37,211,102,.5),0 6px 16px -6px rgba(0,0,0,.45)}
@@ -303,25 +308,44 @@ img{display:block;max-width:100%}
 .cta-wpp:active{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1.5px 0 rgba(0,0,0,.22),0 2px 0 #062f17,0 8px 18px -8px rgba(37,211,102,.4)}
 .cta-strip{margin:var(--gap-block) auto;text-align:center}
 
-/* === COUNTDOWN === */
-.countdown{text-align:center;margin:32px auto 14px;padding:24px 20px;max-width:560px;border-radius:var(--r);background:radial-gradient(circle at 50% 0%,rgba(232,89,60,.14),transparent 70%),linear-gradient(180deg,rgba(232,89,60,.04),transparent);border:1px solid rgba(232,89,60,.22);box-shadow:0 20px 50px -20px rgba(232,89,60,.35),inset 0 1px 0 rgba(255,255,255,.04)}
-.cd-label{font-size:13px;color:var(--accent-2);letter-spacing:2.4px;text-transform:uppercase;font-weight:700;margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:10px}
-.cd-label::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:cd-pulse 1.3s ease-in-out infinite}
-@keyframes cd-pulse{0%,100%{box-shadow:0 0 8px var(--accent);transform:scale(1);opacity:1}50%{box-shadow:0 0 22px var(--accent),0 0 40px rgba(232,89,60,.5);transform:scale(1.35);opacity:.85}}
-.cd-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.cd-block{padding:22px 26px;border:1px solid rgba(232,89,60,.3);border-radius:var(--r-sm);min-width:112px;background:linear-gradient(180deg,#1a0f0c 0%,#0e0e0e 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 12px 30px -10px rgba(0,0,0,.6),0 0 30px -12px rgba(232,89,60,.4);position:relative;transition:transform .3s}
-.cd-block::after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(232,89,60,.08),transparent 60%);pointer-events:none}
-.cd-block:hover{transform:translateY(-2px)}
-.cd-num{font-family:var(--font-display);font-size:64px;font-weight:800;background:linear-gradient(180deg,#fff 0%,#ffb99e 55%,var(--accent-2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;letter-spacing:-.02em;text-shadow:0 0 40px rgba(232,89,60,.25)}
-.cd-lbl{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1.8px;margin-top:8px;font-weight:600}
-.cd-note{text-align:center;font-size:13px;color:var(--text-mid);margin-top:16px;line-height:1.45}
+/* === COUNTDOWN — flip clock moderno ===
+   Container glassy com glow vibrante, barra de progresso top, dois digitos
+   por bloco (estilo flip clock) e separadores ":" pulsando entre eles.
+   Cada digito tem split horizontal sutil no centro pra sugerir mecanica flip. */
+.countdown{position:relative;text-align:center;margin:36px auto 16px;padding:28px 24px 22px;max-width:580px;border-radius:24px;background:radial-gradient(ellipse 100% 80% at 50% 0%,rgba(232,89,60,.18) 0%,transparent 60%),linear-gradient(180deg,rgba(20,12,10,.95) 0%,rgba(8,6,5,.95) 100%);border:1px solid rgba(232,89,60,.28);box-shadow:inset 0 1px 0 rgba(255,182,39,.12),0 24px 50px -20px rgba(232,89,60,.45),0 0 100px -30px rgba(255,182,39,.3),0 0 160px -50px rgba(232,89,60,.35);overflow:hidden;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+/* Barra de progresso fina no top: visualiza o tempo restante consumindo. */
+.cd-progress{position:absolute;top:0;left:0;right:0;height:2px;background:rgba(255,255,255,.05);overflow:hidden}
+.cd-progress-fill{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--accent) 0%,var(--accent-2) 100%);transform-origin:left center;transform:scaleX(1);transition:transform 1s linear;box-shadow:0 0 12px rgba(255,182,39,.6)}
+.cd-label{font-family:var(--font-body);font-size:11.5px;color:#fff;letter-spacing:3.2px;text-transform:uppercase;font-weight:800;margin-bottom:22px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:6px 16px 6px 14px;background:linear-gradient(135deg,rgba(232,89,60,.18),rgba(255,182,39,.1));border:1px solid rgba(232,89,60,.35);border-radius:100px}
+.cd-pulse{width:8px;height:8px;border-radius:50%;background:#FF3B3B;box-shadow:0 0 8px #FF3B3B,0 0 16px rgba(255,59,59,.5);animation:cd-pulse 1.2s ease-in-out infinite;flex-shrink:0}
+@keyframes cd-pulse{0%,100%{transform:scale(1);box-shadow:0 0 8px #FF3B3B,0 0 16px rgba(255,59,59,.5)}50%{transform:scale(1.3);box-shadow:0 0 14px #FF3B3B,0 0 28px rgba(255,59,59,.7)}}
+.cd-row{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:nowrap}
+.cd-block{display:flex;flex-direction:column;align-items:center;gap:10px}
+.cd-digits{display:flex;gap:4px}
+/* Cada digito: card glass escuro (background do .cd-digit) + texto gradient
+   no <b> filho com background-clip:text + linha horizontal central (::after)
+   simulando flip clock mecanico. */
+.cd-digit{position:relative;display:inline-flex;align-items:center;justify-content:center;width:58px;height:88px;border-radius:10px;background:linear-gradient(180deg,#231410 0%,#0c0706 50%,#1a0e0b 50%,#060403 100%);border:1px solid rgba(232,89,60,.28);box-shadow:inset 0 1px 0 rgba(255,182,39,.18),inset 0 -1px 0 rgba(0,0,0,.55),0 10px 20px -6px rgba(0,0,0,.65),0 0 22px -6px rgba(232,89,60,.4);will-change:transform;perspective:400px}
+.cd-digit > b{font-family:var(--font-display);font-size:62px;font-weight:800;line-height:1;letter-spacing:-.02em;background:linear-gradient(180deg,#fff 0%,#ffb99e 55%,var(--accent-2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-align:center;display:inline-block;font-style:normal;position:relative;z-index:1}
+.cd-digit::after{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(0,0,0,.65);box-shadow:0 1px 0 rgba(255,182,39,.06);z-index:2}
+/* Animacao de flip quando muda valor (motion ou JS adiciona .flipping). */
+.cd-digit.flipping{animation:cdFlip .55s cubic-bezier(.5,.05,.2,1)}
+@keyframes cdFlip{0%{transform:rotateX(0)}45%{transform:rotateX(-90deg)}55%{transform:rotateX(90deg)}100%{transform:rotateX(0)}}
+.cd-sep{font-family:var(--font-display);font-size:54px;font-weight:900;color:var(--accent-2);line-height:1;align-self:center;margin:0 -2px;animation:cdBlink 1s ease-in-out infinite;text-shadow:0 0 18px rgba(255,182,39,.6),0 0 32px rgba(232,89,60,.4)}
+@keyframes cdBlink{0%,49%{opacity:1}50%,100%{opacity:.25}}
+.cd-lbl{font-size:10.5px;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px;font-weight:700}
+.cd-note{text-align:center;font-size:13px;color:var(--text-mid);margin-top:16px;line-height:1.5}
+.cd-note strong{color:var(--accent-2);font-weight:700}
 @media(max-width:560px){
-  .countdown{padding:22px 14px;margin-top:26px}
-  .cd-row{gap:10px}
-  .cd-block{padding:18px 16px;min-width:88px}
-  .cd-num{font-size:52px}
-  .cd-label{font-size:11.5px;letter-spacing:2px}
+  .countdown{padding:22px 14px 18px;margin-top:26px;border-radius:18px}
+  .cd-row{gap:6px}
+  .cd-digits{gap:3px}
+  .cd-digit{width:46px;height:70px;font-size:48px;border-radius:8px}
+  .cd-sep{font-size:40px;margin:0 -1px}
+  .cd-label{font-size:10px;letter-spacing:2px;padding:5px 12px}
+  .cd-lbl{font-size:9.5px;letter-spacing:1.5px}
 }
+@media(prefers-reduced-motion:reduce){.cd-digit.flipping,.cd-pulse,.cd-sep,.cd-progress-fill{animation:none!important;transition:none!important}}
 
 /* === SECTIONS ===
    Espacamento simetrico: cada bloco-irmao (.sec, .cta-strip, .sec-divider,
@@ -374,8 +398,11 @@ img{display:block;max-width:100%}
 .modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;max-width:1000px;margin:24px auto 0}
 .module-card{padding:28px 24px;background:linear-gradient(180deg,var(--bg-card) 0%,#0a0a0a 100%);border:1px solid var(--border);border-radius:var(--r);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .3s;position:relative;overflow:hidden;box-shadow:0 12px 30px -18px rgba(0,0,0,.7)}
 .module-card:hover{border-color:var(--border-accent);transform:translateY(-4px);box-shadow:0 24px 60px -20px rgba(0,0,0,.7),0 0 40px -10px rgba(232,89,60,.35)}
-.module-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 0%,var(--accent) 25%,var(--accent-2) 75%,transparent 100%);transform:scaleX(.55);transform-origin:left;transition:transform .5s;opacity:.7}
-.module-card:hover::before{transform:scaleX(1);opacity:1}
+/* Linha top accent dos modules — suavizada de 2px/opacity .7 pra 1px/opacity .25
+   pra nao criar "campo laranja" visivel atras dos elementos 3D do bonus card.
+   Hover ainda intensifica como microfeedback. */
+.module-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,var(--accent) 35%,var(--accent-2) 65%,transparent 100%);transform:scaleX(.45);transform-origin:left;transition:transform .5s,opacity .35s;opacity:.25}
+.module-card:hover::before{transform:scaleX(1);opacity:.6}
 .module-num{font-family:var(--font-display);font-size:44px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:1px;line-height:1;margin-bottom:10px;opacity:.85}
 /* Module icon — bloco isometrico 3D com gradiente, profundidade simulada por sombras stack, halo de glow e sheen interno */
 .module-icon{width:64px;height:64px;border-radius:18px;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:18px;background:linear-gradient(135deg,#FF7A4F 0%,#E8593C 45%,#A43620 100%);transform:perspective(620px) rotateX(18deg) rotateY(-22deg);transform-style:preserve-3d;box-shadow:-2px 2px 0 #8a2c14,-4px 4px 0 #6d2210,-6px 6px 0 #511808,-12px 16px 28px -8px rgba(232,89,60,.55),-14px 20px 38px -14px rgba(0,0,0,.65);transition:transform .45s var(--ease-soft),box-shadow .45s var(--ease-soft)}
@@ -388,14 +415,52 @@ img{display:block;max-width:100%}
 }
 .module-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3}
 .module-desc{font-size:13px;color:var(--text-mid);line-height:1.6}
-.module-bonus{grid-column:1/-1;border-color:transparent;background:linear-gradient(135deg,#1a0f0a 0%,#0e0e0e 65%) padding-box,linear-gradient(135deg,var(--accent),var(--accent-2)) border-box;border:1.5px solid transparent;box-shadow:0 20px 60px -15px rgba(232,89,60,.45),0 0 80px -20px rgba(255,182,39,.25);padding:28px 32px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;position:relative}
-.module-bonus::before{transform:scaleX(1);opacity:1;height:3px}
-.module-bonus::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 100% 50%,rgba(255,182,39,.08),transparent 70%);pointer-events:none;border-radius:inherit}
+/* Bonus card: sem borda colorida, sem ::before/::after laranja chapados.
+   So glow externo difuso que se mistura com o fundo da pagina sem criar
+   "linha de campo" ou caixa visual rigida. */
+.module-bonus{grid-column:1/-1;background:linear-gradient(135deg,#1a0f0a 0%,#0e0e0e 70%);border:1px solid rgba(255,255,255,.05);padding:28px 32px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;position:relative;overflow:visible;margin-top:100px;min-height:160px;box-shadow:0 22px 60px -18px rgba(232,89,60,.32),0 0 120px -40px rgba(255,182,39,.22),0 0 200px -60px rgba(232,89,60,.28)}
+/* === BÔNUS COPA — decoração 3D ===
+   Imgs sao renders 3D em fundo preto sem alpha. mix-blend-mode:screen
+   "remove" o preto (preto + qualquer cor = mantem cor). Object-fit:contain
+   pra preservar proporcao da imagem original.
+   Entrada coordenada: cada elemento parte do estado fora-de-viewport e
+   so anima quando .module-bonus recebe .in (pelo IntersectionObserver). */
+/* Container ocupa o card todo; cada elemento tem zona propria sem amontoar.
+   Tamanhos compactos pra nao dominar visualmente. Motion (window.motion) anima
+   entrada+loop com spring physics; CSS aqui eh fallback se a lib nao carregar. */
+.bonus-3d{position:absolute;inset:0;pointer-events:none;z-index:10}
+.bonus-ball,.bonus-flag,.bonus-trophy{position:absolute;object-fit:contain;will-change:transform,opacity;opacity:0}
+.bonus-ball{top:-90px;right:-5px;width:140px;height:auto;filter:drop-shadow(0 18px 28px rgba(0,0,0,.85)) drop-shadow(0 0 28px rgba(255,182,39,.55)) drop-shadow(0 0 50px rgba(232,89,60,.4));transform:scale(.15) rotate(-220deg) translateY(40px);transition:opacity 1.6s var(--ease-cinematic),transform 2.2s var(--ease-cinematic);z-index:3}
+.bonus-flag{top:-15px;right:140px;width:125px;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.65)) drop-shadow(0 0 16px rgba(31,175,82,.45));transform:translateX(60px) rotate(-14deg);transition:opacity 1.3s var(--ease-cinematic) .5s,transform 1.8s var(--ease-cinematic) .5s;z-index:1}
+.bonus-trophy{bottom:10px;right:50px;width:62px;height:auto;filter:drop-shadow(0 14px 22px rgba(0,0,0,.75)) drop-shadow(0 0 18px rgba(255,182,39,.6));transform:translateY(50px) rotate(0deg) rotateY(-90deg);transition:opacity 1.3s var(--ease-cinematic) .9s,transform 1.8s var(--ease-cinematic) .9s;z-index:2}
+/* Final diagonal: bola fica em -15deg pra parecer flutuando dinamica. */
+.module-bonus.in .bonus-ball{opacity:1;transform:scale(1) rotate(-15deg);animation:ballFloat 5s ease-in-out 2.4s infinite}
+.module-bonus.in .bonus-flag{opacity:.95;transform:translateX(0) rotate(-10deg);animation:flagWave 6s ease-in-out 2.5s infinite}
+.module-bonus.in .bonus-trophy{opacity:1;transform:translateY(0) rotate(14deg) rotateY(0);animation:trophyFloat 5.5s ease-in-out 2.7s infinite}
+@keyframes ballFloat{0%,100%{transform:scale(1) rotate(-15deg) translateY(0)}50%{transform:scale(1) rotate(-7deg) translateY(-10px)}}
+@keyframes flagWave{0%,100%{transform:translateX(0) rotate(-10deg) translateY(0)}50%{transform:translateX(0) rotate(-6deg) translateY(-6px)}}
+@keyframes trophyFloat{0%,100%{transform:translateY(0) rotate(14deg) rotateY(0)}50%{transform:translateY(-5px) rotate(8deg) rotateY(8deg)}}
+/* motion-on: classe adicionada via JS quando window.motion carrega. Desliga
+   o keyframes/transition CSS (motion assume controle via JS). */
+.motion-on .bonus-ball,.motion-on .bonus-flag,.motion-on .bonus-trophy{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){.bonus-ball,.bonus-flag,.bonus-trophy{animation:none!important;transition:opacity .3s ease!important}.module-bonus.in .bonus-ball,.module-bonus.in .bonus-flag,.module-bonus.in .bonus-trophy{transform:none!important}}
+.module-bonus::before{display:none}
+.module-bonus::after{display:none}
 .module-bonus .module-num{opacity:1;font-size:72px;margin-bottom:0;grid-row:1/3;align-self:center}
 .module-bonus .bonus-tag{grid-column:2;align-self:end;margin-bottom:0}
 .module-bonus .module-title{grid-column:2;margin-bottom:6px}
 .module-bonus .module-desc{grid-column:2;max-width:640px}
-@media(max-width:760px){.module-bonus{grid-template-columns:1fr;gap:10px;padding:24px 20px}.module-bonus .module-num{font-size:52px;grid-row:auto}.module-bonus .bonus-tag,.module-bonus .module-title,.module-bonus .module-desc{grid-column:auto}}
+@media(max-width:760px){
+  .module-bonus{grid-template-columns:1fr;gap:10px;padding:24px 20px;padding-top:70px;margin-top:60px;min-height:auto}
+  .module-bonus .module-num{font-size:52px;grid-row:auto}
+  .module-bonus .bonus-tag,.module-bonus .module-title,.module-bonus .module-desc{grid-column:auto}
+  /* Mobile: bola menor centralizada acima do card; esconde flag/trophy/streak */
+  .bonus-3d{width:auto;left:50%;right:auto;transform:translateX(-50%);height:auto;top:0}
+  .bonus-ball{width:120px;height:auto;top:-65px;right:auto;left:50%;transform:translateX(-50%) scale(.2) rotate(-180deg)}
+  .module-bonus.in .bonus-ball{transform:translateX(-50%) scale(1) rotate(0);animation:ballFloatMob 4.5s ease-in-out 1.2s infinite}
+  @keyframes ballFloatMob{0%,100%{transform:translateX(-50%) rotate(0) translateY(0)}50%{transform:translateX(-50%) rotate(8deg) translateY(-8px)}}
+  .bonus-flag,.bonus-trophy{display:none}
+}
 .bonus-tag{display:inline-block;padding:4px 10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:6px;margin-bottom:8px;box-shadow:0 6px 16px -6px rgba(232,89,60,.55)}
 
 /* === REELS / SOCIAL PROOF === */
@@ -521,7 +586,7 @@ img{display:block;max-width:100%}
 .faq-item::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:0 3px 3px 0;background:linear-gradient(180deg,var(--accent),var(--accent-2));opacity:0;transform:scaleY(.4);transform-origin:center;transition:opacity .35s,transform .4s var(--ease-soft)}
 .faq-item:hover{border-color:rgba(255,182,39,.35);transform:translateY(-2px);box-shadow:0 14px 32px -14px rgba(255,182,39,.2),0 4px 12px -6px rgba(0,0,0,.5)}
 .faq-item:hover .faq-num{transform:perspective(420px) rotateY(-4deg) translateY(-1px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),0 4px 0 #6d2210,0 8px 18px -4px rgba(232,89,60,.5)}
-.faq-item.open{border-color:rgba(232,89,60,.45);background:linear-gradient(180deg,rgba(38,22,18,.7),rgba(20,12,15,.75))}
+.faq-item.open{border-color:rgba(232,89,60,.32);background:linear-gradient(180deg,rgba(38,22,18,.7),rgba(20,12,15,.75));box-shadow:0 18px 40px -16px rgba(232,89,60,.3),0 0 60px -20px rgba(255,182,39,.18)}
 .faq-item.open::before{opacity:1;transform:scaleY(1)}
 .faq-q{display:flex;align-items:center;padding:18px 22px;font-size:15px;font-weight:600;gap:18px;color:#f0f0f0;line-height:1.4}
 .faq-num{font-family:var(--font-display);font-weight:800;font-size:14px;color:#fff;letter-spacing:.6px;flex-shrink:0;font-variant-numeric:tabular-nums;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#FF7A4F 0%,#E8593C 50%,#A43620 100%);display:flex;align-items:center;justify-content:center;transform:perspective(420px) rotateY(-10deg);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(0,0,0,.25),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 14px -4px rgba(232,89,60,.5);transition:transform .4s var(--ease-soft),box-shadow .4s var(--ease-soft);text-shadow:0 1px 2px rgba(0,0,0,.3)}
@@ -736,7 +801,7 @@ img{display:block;max-width:100%}
   <p class="hero-subtitle reveal reveal-d1">O evento online que reúne dono e gerente de posto pra encher a pracinha de carro com Reels, Google e R$ 10 por dia. Sem agência, sem contratar ninguém, sem virar influencer.</p>
 
   <div class="hero-card reveal reveal-d2">
-    <img class="hero-card-img" src="https://i.imgur.com/y2i8liD.jpeg" alt="Posto de combustível à noite" fetchpriority="high" decoding="async" width="720" height="480">
+    <img class="hero-card-img" src="https://i.imgur.com/5iFkpwM.png" alt="Posto Cheio · evento de marketing pra postos de combustível" fetchpriority="high" decoding="async" width="1672" height="941">
     <div class="hero-card-grad"></div>
     <div class="hero-card-inner">
       <div class="hero-card-left">
@@ -755,13 +820,31 @@ img{display:block;max-width:100%}
   <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero meu posto cheio por R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
 
   <div class="countdown">
-    <div class="cd-label">O valor de R$ 147 expira em</div>
+    <div class="cd-progress" aria-hidden="true"><span class="cd-progress-fill"></span></div>
+    <div class="cd-label"><span class="cd-pulse"></span>R$ 147 expira em</div>
     <div class="cd-row">
-      <div class="cd-block"><div class="cd-num" id="h">23</div><div class="cd-lbl">Horas</div></div>
-      <div class="cd-block"><div class="cd-num" id="m">40</div><div class="cd-lbl">Min</div></div>
-      <div class="cd-block"><div class="cd-num" id="s">14</div><div class="cd-lbl">Seg</div></div>
+      <div class="cd-block">
+        <div class="cd-digits" data-cd="h">
+          <span class="cd-digit"><b>2</b></span><span class="cd-digit"><b>3</b></span>
+        </div>
+        <div class="cd-lbl">horas</div>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block">
+        <div class="cd-digits" data-cd="m">
+          <span class="cd-digit"><b>4</b></span><span class="cd-digit"><b>0</b></span>
+        </div>
+        <div class="cd-lbl">min</div>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block">
+        <div class="cd-digits" data-cd="s">
+          <span class="cd-digit"><b>1</b></span><span class="cd-digit"><b>4</b></span>
+        </div>
+        <div class="cd-lbl">seg</div>
+      </div>
     </div>
-    <p class="cd-note">Depois do timer, a vaga ao vivo fecha e o replay sai por R$ 497.</p>
+    <p class="cd-note">Quando o timer zerar, sobe pra <strong>R$ 497</strong> e o bônus Copa 2026 sai do pacote.</p>
   </div>
 
   <div class="social-proof reveal">
@@ -858,6 +941,12 @@ img{display:block;max-width:100%}
       <div class="module-desc">R$ 10 por dia coloca seu anúncio na frente de milhares de motoristas no raio de 5 km. Passo a passo pra abrir conta no Meta e no Google, mesmo sem nunca ter feito.</div>
     </div>
     <div class="module-card module-bonus reveal">
+      <!-- Decoração 3D: bola + bandeira + troféu, alinhados sobre o card -->
+      <div class="bonus-3d" aria-hidden="true">
+        <img class="bonus-flag" src="img/copa-bandeira.png" alt="" loading="lazy" decoding="async" width="1210" height="524">
+        <img class="bonus-trophy" src="img/copa-trofeu.png" alt="" loading="lazy" decoding="async" width="347" height="878">
+        <img class="bonus-ball" src="img/copa-bola.png" alt="" loading="lazy" decoding="async" width="664" height="651">
+      </div>
       <div class="bonus-tag">Bônus de quem garante vaga na edição ao vivo</div>
       <div class="module-num">+1</div>
       <div class="module-title">Copa 2026: o plano pronto pra transformar jogo do Brasil em pista cheia</div>
@@ -1155,6 +1244,13 @@ img{display:block;max-width:100%}
 <!-- Lenis smooth scroll com momentum em mobile -->
 <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js" defer></script>
 
+<!-- Motion (motion.dev) — biblioteca de animacao via CDN ESM, exposta em window.motion -->
+<script type="module">
+  import * as motion from 'https://cdn.jsdelivr.net/npm/motion@11/+esm';
+  window.motion = motion;
+  document.dispatchEvent(new CustomEvent('motion:ready'));
+</script>
+
 <script>
 // === WORD SPLIT — quebra texto em <span class=word> pra stagger por palavra.
 // Aplica em .hero-h (animado pelo proprio observer abaixo) e .reel-summary
@@ -1206,12 +1302,13 @@ img{display:block;max-width:100%}
       io.observe(el);
     });
   });
-  // Andre: parallax 3D continuo apos entrada (desktop, sem reduced-motion)
+  // Andre: parallax 3D continuo apos entrada — so ativa se motion lib NAO carregou.
+  // Quando motion-on tiver setado, motion controla o tilt via mouse hover (mais natural).
   var photo=document.querySelector('.speaker-photo.reveal-3d');
   if(photo && !window.matchMedia('(max-width:760px)').matches && !window.matchMedia('(prefers-reduced-motion:reduce)').matches){
-    photo.addEventListener('transitionend',function onEnd(e){
-      if(e.propertyName!=='transform')return;
-      photo.removeEventListener('transitionend',onEnd);
+    var fallbackTimeout=setTimeout(function(){
+      // Espera 1.5s pelo motion. Se nao carregou, ativa fallback do tilt.
+      if(document.body.classList.contains('motion-on'))return;
       photo.classList.add('tilt-on');
       var ticking=false;
       function update(){
@@ -1219,7 +1316,6 @@ img{display:block;max-width:100%}
         var vh=window.innerHeight||document.documentElement.clientHeight;
         var progress=(r.top+r.height/2-vh/2)/(vh/2);
         if(progress<-1)progress=-1;else if(progress>1)progress=1;
-        // tilt sutil: 2.5deg rotateX, 8px translateY contra a rolagem
         photo.style.transform='perspective(1200px) rotateX('+(progress*-2.5).toFixed(2)+'deg) translateY('+(progress*-8).toFixed(1)+'px)';
         ticking=false;
       }
@@ -1229,7 +1325,7 @@ img{display:block;max-width:100%}
         ticking=true;
       },{passive:true});
       update();
-    });
+    },1500);
   }
   // Solution callout: entrada atrasada 2.5s depois de entrar na viewport
   var solEls=document.querySelectorAll('.solution-callout');
@@ -1265,7 +1361,10 @@ function toggleFaq(el){
   }
 }
 
-// === COUNTDOWN — persistente ===
+// === COUNTDOWN — flip clock persistente ===
+// Cada digito tem seu proprio span. Quando o valor muda, o digito recebe
+// .flipping (animation flip) por 550ms. Barra de progresso top consome
+// proporcionalmente ao tempo restante na janela.
 (function(){
   var KEY='cp_course_deadline_v1';
   var WINDOW_MS=24*60*60*1000;
@@ -1275,16 +1374,37 @@ function toggleFaq(el){
     deadline=now+WINDOW_MS;
     try{localStorage.setItem(KEY,deadline)}catch(e){}
   }
-  var elH=document.getElementById('h'),elM=document.getElementById('m'),elS=document.getElementById('s');
+  function digits(unit){return document.querySelectorAll('[data-cd="'+unit+'"] .cd-digit')}
+  var dH=digits('h'),dM=digits('m'),dS=digits('s');
+  var progressFill=document.querySelector('.cd-progress-fill');
+  var prevH='--',prevM='--',prevS='--';
   function pad(n){return n<10?'0'+n:''+n}
+  function setUnit(spans,oldStr,newStr){
+    if(oldStr===newStr)return;
+    for(var i=0;i<spans.length;i++){
+      if(oldStr[i]!==newStr[i]){
+        var inner=spans[i].firstElementChild;
+        if(inner)inner.textContent=newStr[i];
+        else spans[i].textContent=newStr[i];
+        spans[i].classList.remove('flipping');
+        void spans[i].offsetWidth;
+        spans[i].classList.add('flipping');
+      }
+    }
+  }
   function tick(){
     var diff=Math.max(0,deadline-Date.now());
-    var h=Math.floor(diff/3600000);
-    var m=Math.floor((diff%3600000)/60000);
-    var s=Math.floor((diff%60000)/1000);
-    if(elH)elH.textContent=pad(h);
-    if(elM)elM.textContent=pad(m);
-    if(elS)elS.textContent=pad(s);
+    var h=pad(Math.floor(diff/3600000));
+    var m=pad(Math.floor((diff%3600000)/60000));
+    var s=pad(Math.floor((diff%60000)/1000));
+    if(dH.length)setUnit(dH,prevH,h);
+    if(dM.length)setUnit(dM,prevM,m);
+    if(dS.length)setUnit(dS,prevS,s);
+    prevH=h;prevM=m;prevS=s;
+    if(progressFill){
+      var pct=diff/WINDOW_MS;
+      progressFill.style.transform='scaleX('+pct.toFixed(4)+')';
+    }
     if(diff===0){
       deadline=Date.now()+WINDOW_MS;
       try{localStorage.setItem(KEY,deadline)}catch(e){}
@@ -1388,13 +1508,15 @@ document.addEventListener('click',function(e){
 
 // === MAGNETIC CTA ===
 // rAF guard: cada mousemove so dispara um setStyle por frame.
-// Sem isso, em hover prolongado dispara 100+ events/seg e force layout.
+// Quando motion lib esta ativa (.motion-on no body), motion assume o hover
+// com spring physics — esse listener cede o controle pra evitar conflito.
 (function(){
   if(window.matchMedia('(hover:none)').matches)return;
   document.querySelectorAll('.cta').forEach(function(btn){
     var lastE=null,ticking=false,rect=null;
     btn.addEventListener('mouseenter',function(){rect=btn.getBoundingClientRect()},{passive:true});
     btn.addEventListener('mousemove',function(e){
+      if(document.body.classList.contains('motion-on'))return;
       lastE=e;
       if(ticking)return;
       ticking=true;
@@ -1406,7 +1528,10 @@ document.addEventListener('click',function(e){
         ticking=false;
       });
     },{passive:true});
-    btn.addEventListener('mouseleave',function(){btn.style.transform='';rect=null},{passive:true});
+    btn.addEventListener('mouseleave',function(){
+      if(document.body.classList.contains('motion-on'))return;
+      btn.style.transform='';rect=null;
+    },{passive:true});
   });
 })();
 
@@ -1427,6 +1552,7 @@ document.addEventListener('click',function(e){
   var els=document.querySelectorAll('.hero-metric-num');
   if(!els.length||!('IntersectionObserver' in window))return;
   function animate(el){
+    if(document.body.classList.contains('motion-on'))return; // motion controla
     var raw=el.textContent.trim();
     var prefix=(raw.match(/^[^\d]*/)||[''])[0];
     var suffix=(raw.match(/[^\d]*$/)||[''])[0];
@@ -1485,7 +1611,8 @@ document.addEventListener('click',function(e){
       }
     });
   },{threshold:.15});
-  document.querySelectorAll('.reels-grid,.modules-grid,.problem-list,.speaker-creds').forEach(function(g){
+  // .reels-grid eh controlado pelo motion (entrada cascata via spring) — exclui da lista
+  document.querySelectorAll('.modules-grid,.problem-list,.speaker-creds').forEach(function(g){
     Array.prototype.forEach.call(g.children,function(c){
       c.style.opacity='0';
       c.style.transform='translateY(24px)';
@@ -1551,6 +1678,318 @@ window.addEventListener('load',function(){
     else{rafId=requestAnimationFrame(raf)}
   });
 });
+
+// === MOTION ENHANCEMENTS ===
+// Usa window.motion (motion.dev v11) carregado via ESM no <head>. Aplica spring
+// physics e timing fino em pontos onde transition CSS fica engessada. CSS
+// keyframes ficam como fallback se a lib nao carregar (motion-on toggla a take-over).
+(function(){
+  function init(){
+    if(!window.motion||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var m=window.motion;
+    document.body.classList.add('motion-on');
+
+    // --- Bonus card: pulse de glow infinito (substitui borda chapada por respiracao). ---
+    var bonusCard=document.querySelector('.module-bonus');
+    if(bonusCard){
+      m.animate(bonusCard,
+        {boxShadow:[
+          '0 22px 60px -18px rgba(232,89,60,.32),0 0 120px -40px rgba(255,182,39,.22),0 0 200px -60px rgba(232,89,60,.28)',
+          '0 26px 70px -16px rgba(232,89,60,.45),0 0 140px -32px rgba(255,182,39,.32),0 0 240px -50px rgba(232,89,60,.4)',
+          '0 22px 60px -18px rgba(232,89,60,.32),0 0 120px -40px rgba(255,182,39,.22),0 0 200px -60px rgba(232,89,60,.28)'
+        ]},
+        {duration:4.5,repeat:Infinity,ease:'easeInOut'}
+      );
+    }
+
+    // --- Bonus 3D: entrada coordenada (lenta, cinematografica) + loop infinito ---
+    var bonus=document.querySelector('.module-bonus');
+    var ball=document.querySelector('.bonus-ball');
+    var flag=document.querySelector('.bonus-flag');
+    var trophy=document.querySelector('.bonus-trophy');
+    var isMobile=window.matchMedia('(max-width:760px)').matches;
+    if(bonus&&ball&&m.inView){
+      ball.style.opacity='0';
+      ball.style.transform=(isMobile?'translateX(-50%) ':'')+'scale(.15) rotate(-220deg) translateY(40px)';
+      if(flag){flag.style.opacity='0';flag.style.transform='translateX(60px) rotate(-14deg)'}
+      if(trophy){trophy.style.opacity='0';trophy.style.transform='translateY(40px) rotateY(-90deg)'}
+
+      m.inView(bonus,function(){
+        // Bola: spring lento, termina em diagonal -15deg pra parecer dinamica
+        m.animate(ball,
+          {opacity:[0,1],scale:[.15,1],rotate:[-220,-15],y:[40,0]},
+          {duration:2.2,ease:[.16,1,.3,1]}
+        ).finished.then(function(){
+          m.animate(ball,
+            {y:[0,-10,0],rotate:[-15,-7,-15]},
+            {duration:5,repeat:Infinity,ease:'easeInOut'}
+          );
+        });
+
+        if(flag){
+          m.animate(flag,
+            {opacity:[0,.95],x:[60,0],rotate:[-14,-10]},
+            {duration:1.8,delay:.5,ease:[.16,1,.3,1]}
+          ).finished.then(function(){
+            m.animate(flag,
+              {y:[0,-6,0],rotate:[-10,-6,-10]},
+              {duration:6,repeat:Infinity,ease:'easeInOut'}
+            );
+          });
+        }
+
+        if(trophy){
+          // Trofeu termina em diagonal (rotate 14deg) escapando pelo bottom
+          m.animate(trophy,
+            {opacity:[0,1],y:[50,0],rotate:[0,14],rotateY:[-90,0]},
+            {duration:1.8,delay:.9,ease:[.16,1,.3,1]}
+          ).finished.then(function(){
+            m.animate(trophy,
+              {y:[0,-5,0],rotate:[14,8,14],rotateY:[0,8,0]},
+              {duration:5.5,repeat:Infinity,ease:'easeInOut'}
+            );
+          });
+        }
+      },{amount:.3});
+    }
+
+    // --- CTA: hover spring (substitui o magnetic CTA do CSS, mais elegante) ---
+    if(!window.matchMedia('(hover:none)').matches){
+      document.querySelectorAll('.cta').forEach(function(cta){
+        cta.addEventListener('mouseenter',function(){
+          m.animate(cta,{scale:1.03,y:-3},{type:'spring',stiffness:300,damping:18});
+        });
+        cta.addEventListener('mouseleave',function(){
+          m.animate(cta,{scale:1,y:0},{type:'spring',stiffness:300,damping:22});
+        });
+      });
+    }
+
+    // --- Hover spring nos cards de conteudo: lift sutil + leve scale.
+    //     Aplicado em modules, problem-items, faq-items, speaker-creds, reel-cards. ---
+    if(!window.matchMedia('(hover:none)').matches){
+      var hoverConfigs=[
+        {sel:'.module-card:not(.module-bonus)',y:-6,scale:1.015},
+        {sel:'.problem-item',y:-3,x:6,scale:1.01},
+        {sel:'.faq-item',y:-2,scale:1.005},
+        {sel:'.speaker-cred',y:-3,scale:1.02},
+        {sel:'.reel-card',y:-8,scale:1.02}
+      ];
+      hoverConfigs.forEach(function(cfg){
+        document.querySelectorAll(cfg.sel).forEach(function(el){
+          el.addEventListener('mouseenter',function(){
+            var to={};
+            if(cfg.y!==undefined)to.y=cfg.y;
+            if(cfg.x!==undefined)to.x=cfg.x;
+            if(cfg.scale!==undefined)to.scale=cfg.scale;
+            m.animate(el,to,{type:'spring',stiffness:300,damping:22});
+          });
+          el.addEventListener('mouseleave',function(){
+            var to={};
+            if(cfg.y!==undefined)to.y=0;
+            if(cfg.x!==undefined)to.x=0;
+            if(cfg.scale!==undefined)to.scale=1;
+            m.animate(el,to,{type:'spring',stiffness:300,damping:24});
+          });
+        });
+      });
+    }
+
+    // --- Reel cards: entrada cascata com spring quando entram no viewport ---
+    if(m.inView){
+      var reels=document.querySelectorAll('.reel-card');
+      reels.forEach(function(reel){
+        reel.style.opacity='0';
+        reel.style.transform='translateY(40px)';
+      });
+      m.inView(document.querySelector('.reels-grid'),function(){
+        reels.forEach(function(reel,i){
+          m.animate(reel,
+            {opacity:[0,1],y:[40,0]},
+            {duration:.8,delay:i*.15,ease:[.16,1,.3,1]}
+          );
+        });
+      },{amount:.2});
+    }
+
+    // --- Speaker photo: tilt 3D mouse-tracking + idle floating subtle.
+    //     Aguarda o reveal-3d do CSS terminar antes de assumir o controle, senao
+    //     o transform da entrada conflita com o motion. ---
+    var photo=document.querySelector('.speaker-photo');
+    if(photo&&!isMobile){
+      function activatePhoto(){
+        // Reseta e fixa o transform inicial pra motion controlar
+        photo.style.transition='none';
+        photo.style.transform='perspective(1000px) rotateY(0) rotateX(0)';
+        photo.classList.add('motion-controlled');
+        // Idle: respiracao 3D sutil (rotateY oscilando pra parecer vivo)
+        m.animate(photo,
+          {rotateY:[0,2,0,-2,0],rotateX:[0,-1,0,1,0]},
+          {duration:8,repeat:Infinity,ease:'easeInOut'}
+        );
+        // Hover: mouse tracking com spring
+        var photoRect=null,idle=true;
+        photo.addEventListener('mouseenter',function(){photoRect=photo.getBoundingClientRect();idle=false});
+        photo.addEventListener('mousemove',function(e){
+          if(!photoRect)return;
+          var x=(e.clientX-photoRect.left)/photoRect.width-.5;
+          var y=(e.clientY-photoRect.top)/photoRect.height-.5;
+          m.animate(photo,
+            {rotateY:x*10,rotateX:-y*10,scale:1.02},
+            {type:'spring',stiffness:220,damping:24}
+          );
+        });
+        photo.addEventListener('mouseleave',function(){
+          m.animate(photo,
+            {rotateY:0,rotateX:0,scale:1},
+            {type:'spring',stiffness:150,damping:20}
+          ).finished.then(function(){
+            // Volta pro idle floating depois
+            m.animate(photo,
+              {rotateY:[0,2,0,-2,0],rotateX:[0,-1,0,1,0]},
+              {duration:8,repeat:Infinity,ease:'easeInOut'}
+            );
+          });
+          photoRect=null;
+        });
+      }
+      // Espera o reveal-3d do CSS terminar (~1.4s pelo --motion-hero) antes de ativar
+      setTimeout(activatePhoto,1600);
+    }
+
+    // --- CTAs: entrada animada quando entram no viewport.
+    //     Spring suave (stiffness baixa pra ficar lento e cinematografico). ---
+    if(m.inView){
+      var ctas=document.querySelectorAll('.cta-strip .cta, .final-cta .cta, .price-cta');
+      ctas.forEach(function(cta){
+        cta.style.opacity='0';
+        cta.style.transform='scale(.8) translateY(28px)';
+      });
+      ctas.forEach(function(cta){
+        m.inView(cta,function(){
+          m.animate(cta,
+            {opacity:[0,1],scale:[.8,1],y:[28,0]},
+            {type:'spring',stiffness:90,damping:16,delay:.2}
+          );
+        },{amount:.5});
+      });
+    }
+
+    // --- Bonus +1 (numero gigante): entrada com pop + rotate ---
+    if(m.inView){
+      var bonusNum=document.querySelector('.module-bonus .module-num');
+      if(bonusNum){
+        bonusNum.style.opacity='0';
+        bonusNum.style.transform='scale(.5) rotate(-30deg)';
+        m.inView(bonusNum,function(){
+          m.animate(bonusNum,
+            {opacity:[0,1],scale:[.5,1],rotate:[-30,0]},
+            {type:'spring',stiffness:100,damping:14,delay:.4}
+          );
+        },{amount:.5});
+      }
+      // Modulos 1-6: SEM entrada animada — so o hover tilt 3D ja existente.
+    }
+
+    // --- Hero metric counters: count-up suave usando motion ---
+    if(m.animate&&m.inView){
+      var metrics=document.querySelectorAll('.hero-metric-num');
+      metrics.forEach(function(el){
+        var raw=el.textContent.trim();
+        var prefix=(raw.match(/^[^\d]*/)||[''])[0];
+        var suffix=(raw.match(/[^\d]*$/)||[''])[0];
+        var target=parseFloat(raw.replace(/[^\d.,]/g,'').replace(',','.'));
+        if(isNaN(target))return;
+        var hasComma=raw.indexOf(',')>-1;
+        el.textContent=prefix+'0'+suffix; // estado inicial
+        m.inView(el,function(){
+          // motion.animate com from-to numerico via onUpdate
+          var ctrl={value:0};
+          m.animate(0,target,{
+            duration:1.8,
+            ease:[.16,1,.3,1],
+            onUpdate:function(v){
+              var disp=hasComma?v.toFixed(1).replace('.',','):Math.floor(v);
+              el.textContent=prefix+disp+suffix;
+            }
+          }).finished.then(function(){
+            // Pop final no fim do count-up
+            m.animate(el,
+              {scale:[1,1.18,1]},
+              {duration:.5,ease:[.34,1.56,.64,1]}
+            );
+          });
+        },{amount:.5});
+      });
+    }
+
+    // --- Price main: entrada dramatica quando entra na secao de preco ---
+    var priceMain=document.querySelector('.price-main');
+    if(priceMain&&m.inView){
+      priceMain.style.opacity='0';
+      priceMain.style.transform='perspective(800px) scale(.55) rotateX(28deg) translateY(28px)';
+      m.inView(priceMain,function(){
+        m.animate(priceMain,
+          {opacity:[0,1],scale:[.55,1],rotateX:[28,0],y:[28,0]},
+          {duration:1.5,ease:[.16,1,.3,1]}
+        ).finished.then(function(){
+          // glow burst no final
+          m.animate(priceMain,
+            {filter:['drop-shadow(0 0 0 transparent)','drop-shadow(0 0 22px rgba(255,182,39,.65)) drop-shadow(0 0 38px rgba(232,89,60,.4))','drop-shadow(0 0 0 transparent)']},
+            {duration:1.6,ease:'easeInOut'}
+          );
+        });
+      },{amount:.4});
+    }
+
+    // --- Module icons: tilt 3D com mouse hover (substitui CSS perspective static) ---
+    if(!isMobile){
+      document.querySelectorAll('.module-card:not(.module-bonus) .module-icon').forEach(function(icon){
+        var card=icon.closest('.module-card');
+        var rect=null;
+        card.addEventListener('mouseenter',function(){rect=icon.getBoundingClientRect()});
+        card.addEventListener('mousemove',function(e){
+          if(!rect)return;
+          var x=(e.clientX-rect.left-rect.width/2)/rect.width;
+          var y=(e.clientY-rect.top-rect.height/2)/rect.height;
+          m.animate(icon,
+            {rotateY:-22+x*16,rotateX:18-y*16,transformPerspective:620},
+            {type:'spring',stiffness:250,damping:22}
+          );
+        });
+        card.addEventListener('mouseleave',function(){
+          m.animate(icon,
+            {rotateY:-22,rotateX:18,transformPerspective:620},
+            {type:'spring',stiffness:200,damping:25}
+          );
+          rect=null;
+        });
+      });
+    }
+
+    // --- FAQ open: animacao de altura com spring (substitui transition CSS) ---
+    document.querySelectorAll('.faq-item').forEach(function(item){
+      var ans=item.querySelector('.faq-a');
+      if(!ans)return;
+      // Observa mudancas de classe (open/close) via MutationObserver
+      var mo=new MutationObserver(function(){
+        var isOpen=item.classList.contains('open');
+        if(isOpen){
+          ans.style.maxHeight='none'; // libera pra medir
+          var h=ans.scrollHeight;
+          ans.style.maxHeight='0px';
+          m.animate(ans,{maxHeight:[0,h]},{type:'spring',stiffness:160,damping:22});
+        }else{
+          m.animate(ans,{maxHeight:[ans.scrollHeight||500,0]},{duration:.35,ease:[.4,0,.2,1]});
+        }
+      });
+      mo.observe(item,{attributes:true,attributeFilter:['class']});
+    });
+
+  }
+  if(window.motion)init();
+  else document.addEventListener('motion:ready',init);
+})();
 </script>
 </body>
 </html>
