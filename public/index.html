@@ -127,12 +127,9 @@ window.cpTrack=function(event,data){
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 /* Desktop escala 83% — requisito do produto: "quem olha em 100% precisa ver
    como 83%". Mobile mantem 100%. zoom aplicado no body pra nao quebrar scroll. */
-/* Scroll snap proximity nas .sec — cria leve "encaixe" por secao sem bloquear
-   o scroll livre. scroll-padding-top reserva espaco pro nav fixo. */
-html{scroll-behavior:smooth;font-size:100%;scroll-snap-type:y proximity;scroll-padding-top:80px}
+html{scroll-behavior:smooth;font-size:100%}
 body{zoom:0.83}
-@media(max-width:760px){body{zoom:1}html{scroll-padding-top:64px}}
-.sec,.hero,.final-cta{scroll-snap-align:start;scroll-snap-stop:normal}
+@media(max-width:760px){body{zoom:1}}
 input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{font-family:var(--font-body);background:var(--brand-dark);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
