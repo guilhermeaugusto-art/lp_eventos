@@ -67,6 +67,14 @@
 <!-- TODO (A3): adicionar <link rel=preload as=font> apontando para URLs woff2 exatas do Google Fonts quando elas forem fixadas (podem mudar a cada update do CSS2 API) -->
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
 
+<!-- Phosphor icons (regular + fill + duotone) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+
+<!-- Lucide icons (UMD bundle) -->
+<script src="https://unpkg.com/lucide@latest" defer></script>
+
 <!-- ========== TRACKING PIXELS (desativados ate IDs reais) ==========
      Reative TODO o bloco abaixo trocando os placeholders pelos IDs reais
      de GA4 e Meta Pixel. Enquanto os placeholders estiverem ai, o carregamento
@@ -228,9 +236,11 @@ body.off-screen .cd-label::before{animation-play-state:paused!important}
 }
 @media(prefers-reduced-motion:reduce){
   .reveal,.reveal.reveal-card,.reveal.reveal-3d,.price-main.reveal{transform:none!important;transition:opacity .3s ease!important;animation:none!important}
-  .reveal.reveal-h::after{transition:none!important;width:80px!important}
+  .reveal.reveal-h::after{transition:none!important;width:128px!important}
   .cta.cta-in-view::before,.hero-metric-num.popped,.reel-thumb::after,.hero-card::before{animation:none!important}
   .hero-h.split > .word,.hero-h.split > em{opacity:1!important;transform:none!important;transition:none!important}
+  .alert-icon,.problem-item.in .problem-x,.module-card:hover .module-icon i,.reel-card:hover .reel-play{animation:none!important;transform:none!important}
+  .price-check{opacity:1!important;transform:none!important;transition:none!important}
 }
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
@@ -416,7 +426,10 @@ img{display:block;max-width:100%}
 .problem-list{display:flex;flex-direction:column;gap:10px}
 .problem-item{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;color:var(--text-mid);line-height:1.6;transition:all .3s}
 .problem-item:hover{border-color:var(--border-accent);transform:translateX(4px)}
-.problem-x{color:var(--accent);font-size:16px;font-weight:700;flex-shrink:0;margin-top:2px;width:24px;height:24px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center}
+.problem-x{color:var(--accent);flex-shrink:0;margin-top:2px;width:28px;height:28px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center}
+.problem-x svg{width:18px;height:18px;stroke-width:2.4}
+.problem-item.in .problem-x{animation:iconShake .6s var(--ease-cinematic) .3s 1}
+@keyframes iconShake{0%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}75%{transform:rotate(-2deg)}}
 .problem-item strong{color:var(--text)}
 .problem-img{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 50px -20px rgba(0,0,0,.6);height:100%;min-height:360px;align-self:stretch;background:#000}
 .problem-img img,.problem-img video{width:100%;height:100%;object-fit:cover;filter:saturate(1.08) contrast(1.05);display:block}
@@ -442,6 +455,8 @@ img{display:block;max-width:100%}
 .module-icon::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,.05) 38%,transparent 60%);pointer-events:none}
 .module-icon::after{content:'';position:absolute;inset:-14px;background:radial-gradient(circle at 32% 30%,rgba(255,182,39,.5),transparent 65%);filter:blur(14px);z-index:-1;pointer-events:none}
 .module-icon svg{width:56%;height:56%;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.45));transform:translateZ(10px);position:relative;z-index:1}
+.module-icon i{font-size:24px;color:#fff;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.45));transform:translateZ(10px);position:relative;z-index:1;transition:transform .35s var(--ease-soft)}
+.module-card:hover .module-icon i{transform:translateZ(10px) scale(1.12)}
 .module-card:hover .module-icon{transform:perspective(620px) rotateX(14deg) rotateY(-18deg) translateY(-4px);box-shadow:-2px 2px 0 #8a2c14,-4px 4px 0 #6d2210,-6px 6px 0 #511808,-14px 22px 38px -6px rgba(242,102,0,.7),-16px 26px 50px -14px rgba(0,0,0,.7)}
 @media(max-width:760px){
   .module-icon{width:54px;height:54px;border-radius:14px;margin-bottom:14px;transform:perspective(520px) rotateX(15deg) rotateY(-18deg);box-shadow:-2px 2px 0 #8a2c14,-3px 3px 0 #6d2210,-5px 5px 0 #511808,-8px 12px 22px -6px rgba(242,102,0,.5)}
@@ -521,7 +536,10 @@ img{display:block;max-width:100%}
 .reel-thumb img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
 .reel-thumb video{width:100%;height:100%;object-fit:cover;object-position:center;display:block;background:#000;transition:transform .5s ease}
 .reel-card:hover .reel-thumb video{transform:scale(1.04)}
-.reel-ig-hint{position:absolute;bottom:10px;left:10px;display:flex;align-items:center;gap:6px;padding:6px 10px;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);border-radius:100px;font-size:11.5px;font-weight:700;color:#fff;letter-spacing:.01em}
+.reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.95);width:64px;height:64px;border-radius:50%;background:rgba(242,102,0,.92);border:2px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;color:#fff;z-index:3;pointer-events:none;box-shadow:0 12px 32px -6px rgba(0,0,0,.55),0 0 32px -6px rgba(242,102,0,.5);transition:transform .35s var(--ease-soft),box-shadow .35s var(--ease-soft);backdrop-filter:blur(4px)}
+.reel-play svg{width:26px;height:26px;fill:currentColor;stroke:none;margin-left:3px}
+.reel-card:hover .reel-play{transform:translate(-50%,-50%) scale(1.15);box-shadow:0 18px 40px -6px rgba(0,0,0,.6),0 0 48px -4px rgba(242,102,0,.7)}
+.reel-ig-hint{position:absolute;bottom:10px;left:10px;display:flex;align-items:center;gap:6px;padding:6px 10px;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);border-radius:100px;font-size:11.5px;font-weight:700;color:#fff;letter-spacing:.01em;z-index:3}
 .reel-ig-hint svg{width:13px;height:13px}
 .reel-body{padding:18px 20px 20px}
 .reel-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;font-size:11px}
@@ -596,8 +614,15 @@ img{display:block;max-width:100%}
 @media(max-width:560px){.price-main{font-size:72px}}
 .price-inst{font-size:14px;color:var(--text-mid);margin-bottom:24px}
 .price-checks{margin-bottom:26px}
-.price-check{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-mid);margin-bottom:10px}
-.price-check::before{content:'✓';color:var(--green);font-weight:700;width:18px;height:18px;border-radius:50%;background:var(--green-soft);display:flex;align-items:center;justify-content:center;font-size:11px}
+.price-check{display:flex;align-items:center;gap:12px;font-size:13.5px;color:#d8d8d8;margin-bottom:11px;opacity:0;transform:translateX(-12px);transition:opacity .5s var(--ease-cinematic),transform .5s var(--ease-cinematic)}
+.price-card.in .price-check{opacity:1;transform:none}
+.price-card.in .price-check:nth-child(1){transition-delay:.05s}
+.price-card.in .price-check:nth-child(2){transition-delay:.13s}
+.price-card.in .price-check:nth-child(3){transition-delay:.21s}
+.price-card.in .price-check:nth-child(4){transition-delay:.29s}
+.price-card.in .price-check:nth-child(5){transition-delay:.37s}
+.price-card.in .price-check:nth-child(6){transition-delay:.45s}
+.price-check::before{content:'';flex-shrink:0;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-glow));-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='m9 12 2 2 4-4'/></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='m9 12 2 2 4-4'/></svg>") center/contain no-repeat}
 .price-cta{width:100%}
 .price-guarantee{display:flex;align-items:center;justify-content:center;gap:14px;padding:20px 28px;border-top:1px solid var(--border);background:linear-gradient(180deg,rgba(91,232,148,.045) 0%,rgba(91,232,148,.01) 100%);position:relative;text-align:center}
 .price-guarantee::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(91,232,148,.35),transparent)}
@@ -636,13 +661,10 @@ img{display:block;max-width:100%}
 .faq-num{font-family:var(--font-numeric);font-weight:900;font-size:18px;color:#fff;letter-spacing:-.02em;flex-shrink:0;font-variant-numeric:tabular-nums;width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#ff8c3a 0%,#f26600 50%,#A43620 100%);display:flex;align-items:center;justify-content:center;transform:perspective(420px) rotateY(-10deg);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(0,0,0,.25),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 14px -4px rgba(242,102,0,.55);transition:transform .4s var(--ease-soft),box-shadow .4s var(--ease-soft);text-shadow:0 1px 2px rgba(0,0,0,.3)}
 .faq-q-text{flex:1;min-width:0}
 /* Plus icon: rotacao mais cinematografica do simbolo + virando X. */
-.faq-plus{color:var(--accent);transition:background .4s var(--ease-soft),border-color .4s var(--ease-soft),box-shadow .4s var(--ease-soft),transform .5s var(--ease-cinematic);flex-shrink:0;width:30px;height:30px;display:flex;align-items:center;justify-content:center;position:relative;border-radius:50%;background:rgba(242,102,0,.1);border:1px solid rgba(242,102,0,.3)}
-.faq-plus::before,.faq-plus::after{content:'';position:absolute;background:var(--accent-2);border-radius:2px;transition:transform .5s var(--ease-cinematic),background .35s,opacity .35s}
-.faq-plus::before{width:12px;height:2px}
-.faq-plus::after{width:2px;height:12px}
-.faq-item.open .faq-plus{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent;box-shadow:0 4px 12px -2px rgba(242,102,0,.5);transform:rotate(180deg)}
-.faq-item.open .faq-plus::before,.faq-item.open .faq-plus::after{background:#fff}
-.faq-item.open .faq-plus::after{transform:rotate(90deg);opacity:0}
+.faq-plus{color:var(--accent-2);transition:background .35s var(--ease-soft),border-color .35s var(--ease-soft),box-shadow .35s var(--ease-soft),transform .4s var(--ease-cinematic),color .25s;flex-shrink:0;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(242,102,0,.12);border:1px solid rgba(242,102,0,.32)}
+.faq-plus svg{width:18px;height:18px;stroke-width:2.6;transition:transform .35s var(--ease-soft)}
+.faq-item.open .faq-plus{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent;box-shadow:0 6px 16px -4px rgba(242,102,0,.55);color:#fff}
+.faq-item.open .faq-plus svg{transform:rotate(180deg)}
 /* FAQ answer: max-height + fade-slide do conteudo interno em cascata.
    Aberto: max-height anima primeiro, conteudo entra com delay (parece deslizando).
    Fechado: conteudo some rapido, max-height colapsa. */
@@ -666,13 +688,14 @@ img{display:block;max-width:100%}
 
 /* === ALERT BOX === */
 .alert-box{max-width:760px;margin:var(--gap-block) auto;background:rgba(174,44,44,.10);border:1px solid #AE2C2C;border-radius:18px;padding:28px 32px;display:flex;align-items:flex-start;gap:18px;box-shadow:0 0 60px -20px rgba(174,44,44,.35)}
-.alert-icon{font-size:32px;flex-shrink:0;animation:alertPulse 2s ease-in-out infinite}
-@keyframes alertPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.alert-icon{flex-shrink:0;width:44px;height:44px;border-radius:12px;background:rgba(174,44,44,.18);border:1px solid rgba(255,139,139,.35);display:flex;align-items:center;justify-content:center;color:#FF8B8B;animation:alertShake 5s ease-in-out infinite}
+.alert-icon svg{width:24px;height:24px;stroke-width:2.4}
+@keyframes alertShake{0%,84%,100%{transform:rotate(0)}86%{transform:rotate(-6deg)}88%{transform:rotate(5deg)}90%{transform:rotate(-4deg)}92%{transform:rotate(3deg)}94%{transform:rotate(-2deg)}}
 .alert-content{flex:1}
 .alert-title{font-family:var(--font-display);font-size:22px;color:#FF8B8B;letter-spacing:.8px;margin-bottom:6px;line-height:1.1}
 .alert-text{font-size:14px;color:#E8C5C5;line-height:1.6}
 .alert-text strong{color:#FFB8B8}
-@media(max-width:760px){.alert-box{padding:18px 16px;gap:12px;border-radius:14px;max-width:calc(100% - 24px)}.alert-icon{font-size:24px}.alert-title{font-size:16px;letter-spacing:.4px}.alert-text{font-size:12.5px;line-height:1.55}}
+@media(max-width:760px){.alert-box{padding:18px 16px;gap:12px;border-radius:14px;max-width:calc(100% - 24px)}.alert-icon{width:36px;height:36px;border-radius:10px}.alert-icon svg{width:20px;height:20px}.alert-title{font-size:16px;letter-spacing:.4px}.alert-text{font-size:12.5px;line-height:1.55}}
 
 /* === FINAL CTA === */
 .final-cta{text-align:center;padding:64px 32px 56px;position:relative;border-radius:var(--r);overflow:hidden;margin:var(--gap-block) auto;max-width:1100px;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(242,102,0,.25),transparent 70%),linear-gradient(180deg,rgba(20,12,10,.6),rgba(8,6,5,.4));border:1px solid rgba(242,102,0,.18)}
@@ -947,10 +970,10 @@ img{display:block;max-width:100%}
         <p>Posto que não aparece no celular do cliente perde entre <strong>30% e 40% do movimento</strong> pro concorrente que aparece. O motorista decide onde abastecer antes de dar partida. Se ele procura "posto perto de mim" e te acha no vizinho, ele vai no vizinho.</p>
       </div>
       <div class="problem-list">
-        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Você não tá no celular do cliente:</strong> Instagram parado, Google Maps sem avaliação, e quando o motorista pesquisa "posto perto de mim" é o concorrente que aparece.</div></div>
-        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Conta travada no terceiro post:</strong> você até criou Instagram, postou a inauguração, postou o preço da gasolina, travou. Perfil parado com 47 seguidores há um ano.</div></div>
-        <div class="problem-item"><span class="problem-x">✕</span><div><strong>Frentista é seu melhor vendedor e ninguém tá usando:</strong> o cara atende 200 clientes por dia, tem carisma, mas nunca gravou um vídeo porque ninguém ensinou ele (nem você) como fazer.</div></div>
-        <div class="problem-item"><span class="problem-x">✕</span><div><strong>O concorrente tá comendo seu movimento:</strong> posto da esquina posta Reels toda semana, cliente chega lá dizendo "vi no Insta" e tanque cheio. Você perde venda sem nem saber que existiu a chance.</div></div>
+        <div class="problem-item"><span class="problem-x"><i data-lucide="circle-x"></i></span><div><strong>Você não tá no celular do cliente:</strong> Instagram parado, Google Maps sem avaliação, e quando o motorista pesquisa "posto perto de mim" é o concorrente que aparece.</div></div>
+        <div class="problem-item"><span class="problem-x"><i data-lucide="circle-x"></i></span><div><strong>Conta travada no terceiro post:</strong> você até criou Instagram, postou a inauguração, postou o preço da gasolina, travou. Perfil parado com 47 seguidores há um ano.</div></div>
+        <div class="problem-item"><span class="problem-x"><i data-lucide="circle-x"></i></span><div><strong>Frentista é seu melhor vendedor e ninguém tá usando:</strong> o cara atende 200 clientes por dia, tem carisma, mas nunca gravou um vídeo porque ninguém ensinou ele (nem você) como fazer.</div></div>
+        <div class="problem-item"><span class="problem-x"><i data-lucide="circle-x"></i></span><div><strong>O concorrente tá comendo seu movimento:</strong> posto da esquina posta Reels toda semana, cliente chega lá dizendo "vi no Insta" e tanque cheio. Você perde venda sem nem saber que existiu a chance.</div></div>
       </div>
       <div class="solution-callout">
         <p><strong>Pista Cheia resolve em 6 frentes do evento.</strong> 2 noites ao vivo · 25 e 26 de maio. Você sai da segunda noite com plano pronto pra aplicar na manhã seguinte. Tudo com exemplo de posto que já fez. Não é teoria.</p>
@@ -983,37 +1006,37 @@ img{display:block;max-width:100%}
   <div class="modules-grid">
     <div class="module-card reveal">
       <div class="module-num">01</div>
-      <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-1"/></svg></div>
+      <div class="module-icon"><i class="ph-fill ph-users-three" aria-hidden="true"></i></div>
       <div class="module-title">Seu frentista virando o melhor vendedor do Instagram</div>
       <div class="module-desc">Escolher o frentista certo, roteiro de 30 segundos, gravação só no celular. Equipe gravando toda semana sem reclamar.</div>
     </div>
     <div class="module-card reveal reveal-d1">
       <div class="module-num">02</div>
-      <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-2"/></svg></div>
+      <div class="module-icon"><i class="ph-fill ph-lightbulb" aria-hidden="true"></i></div>
       <div class="module-title">O que postar quando você não sabe o que postar</div>
       <div class="module-desc">Lista pronta de Reels que funciona pra posto, como achar trend toda semana e calendário de 30 dias. Nunca mais travar na hora de filmar.</div>
     </div>
     <div class="module-card reveal reveal-d2">
       <div class="module-num">03</div>
-      <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-3"/></svg></div>
+      <div class="module-icon"><i class="ph-fill ph-calendar-check" aria-hidden="true"></i></div>
       <div class="module-title">1 mês de conteúdo gravado numa tarde</div>
       <div class="module-desc">Editor grátis no celular, fluxo de gravação em lote e agendador que posta sozinho. Uma tarde vira 30 dias de posto aparecendo.</div>
     </div>
     <div class="module-card reveal">
       <div class="module-num">04</div>
-      <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-4"/></svg></div>
+      <div class="module-icon"><i class="ph-fill ph-funnel" aria-hidden="true"></i></div>
       <div class="module-title">Do Reels pra bomba: como seguidor vira cliente</div>
       <div class="module-desc">Promoção que motorista usa, CTA sem soar forçado, e como medir se o Reels trouxe venda de verdade. Viralizar é meio. Encher a pista é o fim.</div>
     </div>
     <div class="module-card reveal reveal-d1">
       <div class="module-num">05</div>
-      <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-5"/></svg></div>
+      <div class="module-icon"><i class="ph-fill ph-map-pin" aria-hidden="true"></i></div>
       <div class="module-title">Primeiro no "posto perto de mim" do Google</div>
       <div class="module-desc">Arrumar o perfil do Google, pedir avaliação sem chatear o cliente, passar na frente do concorrente que tá lá há anos. Aparecer antes é vender antes.</div>
     </div>
     <div class="module-card reveal reveal-d2">
       <div class="module-num">06</div>
-      <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-6"/></svg></div>
+      <div class="module-icon"><i class="ph-fill ph-chart-line-up" aria-hidden="true"></i></div>
       <div class="module-title">R$ 10 por dia no Meta e no Google, sem queimar dinheiro</div>
       <div class="module-desc">R$ 10 por dia coloca seu anúncio na frente de milhares de motoristas no raio de 5 km. Passo a passo pra abrir conta no Meta e no Google, mesmo sem nunca ter feito.</div>
     </div>
@@ -1051,6 +1074,7 @@ img{display:block;max-width:100%}
     <!-- Reel 1 — DRNl7lLASjT (vídeo Imgur: OU2EW83) -->
     <a class="reel-card reveal" href="https://www.instagram.com/clubpetro/reel/DRNl7lLASjT/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DRNl7lLASjT'})">
       <div class="reel-thumb">
+        <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
         <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/OU2EW83.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/OU2EW83.mp4" type="video/mp4">
         </video>
@@ -1071,6 +1095,7 @@ img{display:block;max-width:100%}
     <!-- Reel 2 — DGnsqczRbwJ (vídeo Imgur: Lh3ebh2) -->
     <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/clubpetro/reel/DGnsqczRbwJ/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DGnsqczRbwJ'})">
       <div class="reel-thumb">
+        <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
         <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/Lh3ebh2.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/Lh3ebh2.mp4" type="video/mp4">
         </video>
@@ -1091,6 +1116,7 @@ img{display:block;max-width:100%}
     <!-- Reel 3 — DHeI_dJRQjz (vídeo Imgur: HO66l7V) -->
     <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/clubpetro/reel/DHeI_dJRQjz/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DHeI_dJRQjz'})">
       <div class="reel-thumb">
+        <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
         <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/HO66l7V.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/HO66l7V.mp4" type="video/mp4">
         </video>
@@ -1244,23 +1270,23 @@ img{display:block;max-width:100%}
   <div class="faq-layout">
     <div class="faq-list">
       <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
-        <div class="faq-q"><span class="faq-num">01</span><span class="faq-q-text">Meu posto é pequeno, de bairro. Funciona pra mim?</span><span class="faq-plus"></span></div>
+        <div class="faq-q"><span class="faq-num">01</span><span class="faq-q-text">Meu posto é pequeno, de bairro. Funciona pra mim?</span><span class="faq-plus"><i data-lucide="chevron-down"></i></span></div>
         <div class="faq-a"><div class="faq-a-in">Funciona mais ainda. Posto de bairro tem uma coisa que rede grande não tem: cara. Um Reels do seu frentista chega em cada motorista de um raio de 10 km com um clique. Rede grande não bate bairro na disputa de local. Você não precisa de tamanho. Precisa de método.</div></div>
       </div>
       <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
-        <div class="faq-q"><span class="faq-num">02</span><span class="faq-q-text">Não tenho tempo pra ficar postando Reels.</span><span class="faq-plus"></span></div>
+        <div class="faq-q"><span class="faq-num">02</span><span class="faq-q-text">Não tenho tempo pra ficar postando Reels.</span><span class="faq-plus"><i data-lucide="chevron-down"></i></span></div>
         <div class="faq-a"><div class="faq-a-in">Por isso a frente 3 do evento é sobre gravar 30 dias de conteúdo numa tarde só. Depois disso, são 15 minutos por semana pra manter a coisa rodando. Menos tempo do que você gasta conferindo nota do caixa no fim do turno.</div></div>
       </div>
       <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
-        <div class="faq-q"><span class="faq-num">03</span><span class="faq-q-text">Eu nem sei usar Instagram direito. Vou conseguir?</span><span class="faq-plus"></span></div>
+        <div class="faq-q"><span class="faq-num">03</span><span class="faq-q-text">Eu nem sei usar Instagram direito. Vou conseguir?</span><span class="faq-plus"><i data-lucide="chevron-down"></i></span></div>
         <div class="faq-a"><div class="faq-a-in">O Pista Cheia foi feito pra quem nunca postou um Reels na vida. O André conduz tudo passo a passo, do zero: como abrir conta, o que gravar, como editar no celular, como agendar. Se você sabe mandar mensagem no WhatsApp, você consegue encher a pista pelo Instagram.</div></div>
       </div>
       <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
-        <div class="faq-q"><span class="faq-num">04</span><span class="faq-q-text">Já tentei postar e não veio cliente.</span><span class="faq-plus"></span></div>
+        <div class="faq-q"><span class="faq-num">04</span><span class="faq-q-text">Já tentei postar e não veio cliente.</span><span class="faq-plus"><i data-lucide="chevron-down"></i></span></div>
         <div class="faq-a"><div class="faq-a-in">Provavelmente faltou método. Postar foto do posto de vez em quando não funciona. Funciona postar com plano, trend certa, hora certa e assunto que o motorista quer ver. É o mesmo método que o André rodava na V4 pra dezena de cliente, adaptado pro seu dia. Se em 7 dias não fizer sentido, devolvemos os R$ 147 e pronto.</div></div>
       </div>
       <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
-        <div class="faq-q"><span class="faq-num">05</span><span class="faq-q-text">Como eu acesso depois que pago?</span><span class="faq-plus"></span></div>
+        <div class="faq-q"><span class="faq-num">05</span><span class="faq-q-text">Como eu acesso depois que pago?</span><span class="faq-plus"><i data-lucide="chevron-down"></i></span></div>
         <div class="faq-a"><div class="faq-a-in">Na hora. Assim que o pagamento cai, chega no seu e-mail o link da área do evento. Nas 2 noites — <strong>25 e 26 de maio às 19h30</strong> — você acompanha o Pista Cheia ao vivo. Depois, o replay completo fica disponível por 1 ano — você revê quantas vezes quiser, no celular, tablet ou computador.</div></div>
       </div>
     </div>
@@ -1276,7 +1302,7 @@ img{display:block;max-width:100%}
 
 <!-- ===== ALERT URGÊNCIA ===== -->
 <div class="alert-box reveal">
-  <div class="alert-icon">⚠️</div>
+  <div class="alert-icon"><i data-lucide="alert-triangle"></i></div>
   <div class="alert-content">
     <div class="alert-title">QUANDO O TIMER ZERAR, A VAGA NA EDIÇÃO AO VIVO FECHA</div>
     <div class="alert-text">Quando o timer zerar, o preço sobe de <strong>R$ 147 pra R$ 497</strong>, o bônus Copa 2026 sai do pacote e quem entrar depois pega só o replay, sem turma ao vivo. Quem perder essa janela paga mais que o triplo pra pegar menos.</div>
@@ -2003,6 +2029,19 @@ window.addEventListener('load',function(){
   }
   if(window.motion)init();
   else document.addEventListener('motion:ready',init);
+})();
+
+// === Lucide icons — render SVGs em todos os <i data-lucide="..."> ===
+// Roda apos defer do unpkg + DOMContentLoaded pra garantir que window.lucide existe
+(function(){
+  function renderLucide(){
+    if(window.lucide&&typeof lucide.createIcons==='function'){lucide.createIcons()}
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',function(){setTimeout(renderLucide,0)});
+  }else{
+    setTimeout(renderLucide,0);
+  }
 })();
 </script>
 </body>
