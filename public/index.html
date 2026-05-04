@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pista Cheia 2026 · o evento que enche a pista do seu posto | ClubPetro</title>
-<meta name="description" content="Evento online ao vivo dia 14 de maio. O método que donos de posto usam pra lotar a pista com Reels, Google e R$ 10/dia de tráfego. Vaga na turma ao vivo por R$ 147.">
+<meta name="description" content="2 noites ao vivo · 25 e 26 de maio às 19h30. O método que donos de posto usam pra lotar a pista com Reels, Google e R$ 10/dia de tráfego. Vaga na turma ao vivo por R$ 147.">
 
 <link rel="canonical" href="https://lp-teste-1.web.app/">
 <link rel="icon" type="image/jpeg" href="https://i.imgur.com/WkKfAI4.jpeg">
@@ -12,7 +12,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pista Cheia 2026 — o evento que enche a pista do seu posto">
-<meta property="og:description" content="Evento online ao vivo dia 14 de maio. Método aplicado em +380 postos. Vaga na turma ao vivo por R$ 147.">
+<meta property="og:description" content="2 noites ao vivo · 25 e 26 de maio às 19h30. Método aplicado em +380 postos. Vaga na turma ao vivo por R$ 147.">
 <meta property="og:image" content="https://i.imgur.com/y2i8liD.jpeg">
 <meta property="og:url" content="https://lp-teste-1.web.app/">
 <meta property="og:site_name" content="ClubPetro">
@@ -21,7 +21,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pista Cheia 2026 — o evento que enche a pista do seu posto">
-<meta name="twitter:description" content="Evento online ao vivo dia 14 de maio. Vaga na turma ao vivo por R$ 147. Método testado em +380 postos.">
+<meta name="twitter:description" content="2 noites ao vivo · 25 e 26 de maio às 19h30. Vaga na turma ao vivo por R$ 147. Método testado em +380 postos.">
 <meta name="twitter:image" content="https://i.imgur.com/y2i8liD.jpeg">
 
 <!-- Schema.org JSON-LD -->
@@ -30,9 +30,9 @@
   "@context":"https://schema.org",
   "@type":"Event",
   "name":"Pista Cheia 2026",
-  "description":"Evento online ao vivo de marketing pra postos de combustível. O André Carvalhaes abre o método que enche a pracinha com Reels, Google e R$ 10/dia de tráfego.",
-  "startDate":"2026-05-14T19:00:00-03:00",
-  "endDate":"2026-05-14T22:00:00-03:00",
+  "description":"Evento online ao vivo em 2 noites — 25 e 26 de maio às 19h30. O André Carvalhaes abre o método que enche a pracinha com Reels, Google e R$ 10/dia de tráfego.",
+  "startDate":"2026-05-25T19:30:00-03:00",
+  "endDate":"2026-05-26T22:00:00-03:00",
   "eventStatus":"https://schema.org/EventScheduled",
   "eventAttendanceMode":"https://schema.org/OnlineEventAttendanceMode",
   "location":{
@@ -57,7 +57,7 @@
     "priceCurrency":"BRL",
     "availability":"https://schema.org/InStock",
     "url":"https://lp-teste-1.web.app/",
-    "validThrough":"2026-05-13T23:59:59-03:00"
+    "validThrough":"2026-05-25T19:30:00-03:00"
   }
 }
 </script>
@@ -65,7 +65,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- TODO (A3): adicionar <link rel=preload as=font> apontando para URLs woff2 exatas do Google Fonts quando elas forem fixadas (podem mudar a cada update do CSS2 API) -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
 
 <!-- ========== TRACKING PIXELS (desativados ate IDs reais) ==========
      Reative TODO o bloco abaixo trocando os placeholders pelos IDs reais
@@ -110,15 +110,28 @@ window.cpTrack=function(event,data){
 </script>
 <style>
 :root {
-  --bg:#0A0A0A;--bg-card:#161616;--bg-card-light:#1f1f1f;--text:#F5F5F5;--text-mid:#A8A8A8;--text-dim:#8A8A8A;
-  --accent:#E8593C;--accent-2:#FFB627;--accent-hover:#D04A30;--accent-soft:rgba(232,89,60,.12);
-  --green:#25D366;--green-soft:rgba(37,211,102,.12);--green-check:#0B845A;
-  --border:rgba(255,255,255,.08);--border-accent:rgba(232,89,60,.35);
+  /* Paleta principal — ClubPetro orange #f26600 (firmado) + amber acento */
+  --accent:#f26600;--accent-hover:#c75200;--accent-deep:#8b3a00;--accent-glow:#ff8c3a;
+  --accent-2:#FFB627;--accent-2-deep:#d97706;
+  --accent-soft:rgba(242,102,0,.12);--accent-strong:rgba(242,102,0,.45);
+  /* Backgrounds em camadas — dark immersivo (postos a noite) */
+  --bg:#0A0A0A;--bg-card:#161616;--bg-card-light:#1f1f1f;--bg-warm:#1a1410;
   --brand-dark:#1D1D1F;
-  --font-display:'Bebas Neue',Impact,sans-serif;--font-body:'DM Sans',sans-serif;
+  /* Light tokens (reservados pra blocos especificos) */
+  --bg-light:#fafaf7;--bg-light-2:#f1ede5;
+  /* Tipografia */
+  --text:#F5F5F5;--text-mid:#A8A8A8;--text-dim:#8A8A8A;--text-dark:#1a1a1a;
+  --border:rgba(255,255,255,.08);--border-accent:rgba(242,102,0,.4);--border-light:#d4d4d4;
+  /* Apoio */
+  --green:#25D366;--green-soft:rgba(37,211,102,.12);--green-check:#0B845A;
+  /* Stack de fontes — Bebas (display headlines) + Big Shoulders (numerais gigantes) + Plus Jakarta (body moderno) */
+  --font-display:'Bebas Neue',Impact,sans-serif;
+  --font-numeric:'Big Shoulders Display','Bebas Neue',Impact,sans-serif;
+  --font-body:'Plus Jakarta Sans','DM Sans',sans-serif;
   --r:22px;--r-sm:14px;
-  --shadow-soft:0 25px 80px -20px rgba(0,0,0,.5),0 8px 30px -10px rgba(232,89,60,.15);
-  --shadow-glow:0 20px 60px -20px rgba(232,89,60,.35);
+  --shadow-soft:0 25px 80px -20px rgba(0,0,0,.5),0 8px 30px -10px rgba(242,102,0,.15);
+  --shadow-glow:0 20px 60px -20px rgba(242,102,0,.4);
+  --shadow-cta-solid:0 4px 0 var(--accent-hover),0 8px 0 var(--accent-deep),0 14px 32px -10px rgba(242,102,0,.6);
   /* Motion design system — tokens compartilhados pra consistencia */
   --ease-soft:cubic-bezier(.22,1,.36,1);
   --ease-cinematic:cubic-bezier(.16,1,.3,1);
@@ -134,18 +147,18 @@ input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{ou
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{font-family:var(--font-body);background:var(--brand-dark);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
 body::before{content:'';position:fixed;inset:0;background:
-  radial-gradient(ellipse 90% 60% at 50% -10%,rgba(232,89,60,.18),transparent 60%),
+  radial-gradient(ellipse 90% 60% at 50% -10%,rgba(242,102,0,.18),transparent 60%),
   radial-gradient(ellipse 70% 50% at 85% 30%,rgba(255,182,39,.08),transparent 60%),
-  radial-gradient(ellipse 60% 50% at 15% 70%,rgba(232,89,60,.06),transparent 60%),
-  radial-gradient(circle at 50% 100%,rgba(232,89,60,.10),transparent 50%);
+  radial-gradient(ellipse 60% 50% at 15% 70%,rgba(242,102,0,.06),transparent 60%),
+  radial-gradient(circle at 50% 100%,rgba(242,102,0,.10),transparent 50%);
   pointer-events:none;z-index:0}
 
 /* === NEON BLOB LIGHTS === */
 .blob{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);opacity:.55;will-change:transform}
-.blob-1{width:520px;height:520px;background:radial-gradient(circle,rgba(232,89,60,.5) 0%,rgba(232,89,60,0) 70%);top:-120px;left:-180px;animation:blobFloat 14s ease-in-out infinite}
+.blob-1{width:520px;height:520px;background:radial-gradient(circle,rgba(242,102,0,.5) 0%,rgba(242,102,0,0) 70%);top:-120px;left:-180px;animation:blobFloat 14s ease-in-out infinite}
 .blob-2{width:460px;height:460px;background:radial-gradient(circle,rgba(255,182,39,.4) 0%,rgba(255,182,39,0) 70%);top:18%;right:-160px;animation:blobFloat 18s ease-in-out infinite -5s reverse}
-.blob-3{width:600px;height:600px;background:radial-gradient(circle,rgba(232,89,60,.3) 0%,rgba(232,89,60,0) 70%);top:55%;left:-220px;animation:blobFloat 22s ease-in-out infinite -8s}
-.blob-4{width:480px;height:480px;background:radial-gradient(circle,rgba(232,89,60,.35) 0%,rgba(232,89,60,0) 70%);top:78%;right:-140px;animation:blobFloat 16s ease-in-out infinite -3s reverse}
+.blob-3{width:600px;height:600px;background:radial-gradient(circle,rgba(242,102,0,.3) 0%,rgba(242,102,0,0) 70%);top:55%;left:-220px;animation:blobFloat 22s ease-in-out infinite -8s}
+.blob-4{width:480px;height:480px;background:radial-gradient(circle,rgba(242,102,0,.35) 0%,rgba(242,102,0,0) 70%);top:78%;right:-140px;animation:blobFloat 16s ease-in-out infinite -3s reverse}
 .blob-5{width:380px;height:380px;background:radial-gradient(circle,rgba(255,182,39,.3) 0%,rgba(255,182,39,0) 70%);bottom:8%;left:30%;animation:blobFloat 20s ease-in-out infinite -11s}
 @keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(20px,-15px) scale(1.08)}66%{transform:translate(-15px,10px) scale(.96)}}
 @media(max-width:760px){.blob{filter:blur(60px);opacity:.35}.blob-1,.blob-3,.blob-5{display:none}}
@@ -180,7 +193,7 @@ body.off-screen .cd-label::before{animation-play-state:paused!important}
 
 /* Highlight marker */
 .mark{position:relative;display:inline-block;color:#fff;padding:0 10px;z-index:1}
-.mark::before{content:'';position:absolute;inset:6% -2% 8% -2%;background:linear-gradient(105deg,var(--accent) 0%,var(--accent-hover) 50%,#b83420 100%);transform:skew(-6deg);z-index:-1;border-radius:3px;box-shadow:0 8px 24px -4px rgba(232,89,60,.55),inset 0 1px 0 rgba(255,255,255,.15)}
+.mark::before{content:'';position:absolute;inset:6% -2% 8% -2%;background:linear-gradient(105deg,var(--accent) 0%,var(--accent-hover) 50%,#b83420 100%);transform:skew(-6deg);z-index:-1;border-radius:3px;box-shadow:0 8px 24px -4px rgba(242,102,0,.55),inset 0 1px 0 rgba(255,255,255,.15)}
 .mark-amber::before{background:linear-gradient(105deg,var(--accent-2) 0%,#f59f0b 50%,#d97706 100%);box-shadow:0 8px 24px -4px rgba(255,182,39,.55),inset 0 1px 0 rgba(255,255,255,.2)}
 
 /* === REVEAL SYSTEM ===
@@ -197,9 +210,9 @@ body.off-screen .cd-label::before{animation-play-state:paused!important}
 .reveal.reveal-card.in{transform:none}
 
 /* Header line — risco gradiente desenhando da esquerda */
-.reveal.reveal-h{position:relative;padding-bottom:18px}
-.reveal.reveal-h::after{content:'';position:absolute;left:50%;bottom:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px;transform:translateX(-50%);transition:width 1s var(--ease-soft) .25s}
-.reveal.reveal-h.in::after{width:80px}
+.reveal.reveal-h{position:relative;padding-bottom:22px}
+.reveal.reveal-h::after{content:'';position:absolute;left:50%;bottom:0;height:5px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:3px;transform:translateX(-50%);transition:width 1.1s var(--ease-soft) .25s;box-shadow:0 0 22px rgba(242,102,0,.5)}
+.reveal.reveal-h.in::after{width:128px}
 
 /* Tier 3 — Andre: entrada cinematografica 3D + glow (parallax tilt via JS) */
 .reveal.reveal-3d{transform:perspective(1200px) rotateY(-18deg) rotateX(10deg) translateZ(-80px) translateY(40px);transition:opacity var(--motion-hero) var(--ease-cinematic),transform var(--motion-hero) var(--ease-cinematic);will-change:transform,opacity}
@@ -227,28 +240,28 @@ img{display:block;max-width:100%}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(29,29,31,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
 .nav-logo{display:flex;align-items:center}
 .nav-logo img{height:46px;width:auto;display:block}
-.nav-live{display:flex;flex-direction:column;align-items:flex-end;gap:2px;padding:7px 14px;border:1px solid var(--accent);border-radius:14px;font-size:10.5px;font-weight:700;color:var(--accent);letter-spacing:.8px;text-transform:uppercase;background:var(--accent-soft);line-height:1.25;text-align:right}
+.nav-live{display:flex;flex-direction:column;align-items:flex-end;gap:3px;padding:8px 16px;border:1.5px solid var(--accent);border-radius:14px;font-size:11.5px;font-weight:800;color:#fff;letter-spacing:1.2px;text-transform:uppercase;background:linear-gradient(135deg,rgba(242,102,0,.22),rgba(255,182,39,.10));line-height:1.2;text-align:right;box-shadow:0 0 24px -6px rgba(242,102,0,.55),inset 0 1px 0 rgba(255,255,255,.08)}
 .nav-live-main{display:flex;align-items:center;gap:6px}
 .nav-live-sub{font-size:9px;color:var(--accent-2);opacity:.95;letter-spacing:.6px;font-weight:600}
-.nav-live-main::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 1.5s infinite;box-shadow:0 0 8px var(--accent);flex-shrink:0}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.nav-live-main::before{content:'';width:8px;height:8px;border-radius:50%;background:#ff5252;animation:blink 1.4s infinite;box-shadow:0 0 0 0 rgba(255,82,82,.7);flex-shrink:0;position:relative}
+@keyframes blink{0%{box-shadow:0 0 0 0 rgba(255,82,82,.65),0 0 8px #ff5252;opacity:1}70%{box-shadow:0 0 0 10px rgba(255,82,82,0),0 0 14px #ff5252;opacity:.85}100%{box-shadow:0 0 0 0 rgba(255,82,82,0),0 0 8px #ff5252;opacity:1}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
 
 /* === HERO === */
 .hero{padding:110px 0 24px;text-align:center;position:relative;min-height:auto}
-.hero-dots{position:absolute;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(rgba(232,89,60,.18) 1px,transparent 1.5px);background-size:22px 22px;mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);opacity:.7}
+.hero-dots{position:absolute;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(rgba(242,102,0,.18) 1px,transparent 1.5px);background-size:22px 22px;mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);opacity:.7}
 .hero>*{position:relative;z-index:1}
-.hero-title{font-family:var(--font-display);font-size:clamp(40px,6.4vw,68px);letter-spacing:1.5px;line-height:.95;margin-bottom:8px}
+.hero-title{font-family:var(--font-display);font-size:clamp(48px,8.4vw,104px);letter-spacing:1.2px;line-height:.92;margin-bottom:12px;text-transform:uppercase}
 .hero-title em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
 .hero-title .mark{font-size:.92em;margin-left:6px;padding:0 14px}
-.hero-subtitle{font-size:13px;color:var(--text-mid);letter-spacing:.2px;margin-bottom:26px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.55;font-weight:400}
+.hero-subtitle{font-size:15px;color:#d8d8d8;letter-spacing:.1px;margin-bottom:30px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.6;font-weight:500}
 
 /* Hero card — segue aspect-ratio 16:9 da imagem nova. min-height pra
    garantir visual em telas baixas; aspect-ratio domina em telas comuns. */
 .hero-card{position:relative;border-radius:28px;overflow:hidden;max-width:960px;margin:0 auto 24px;background:linear-gradient(135deg,var(--bg-card),var(--bg-card-light));border:1px solid var(--border);box-shadow:var(--shadow-soft);aspect-ratio:16/9;min-height:420px}
 /* Aurora mesh — drift lento atras da imagem do hero (transform-only, GPU) */
-.hero-card::before{content:'';position:absolute;inset:-20%;background:radial-gradient(ellipse 40% 35% at 20% 30%,rgba(232,89,60,.45),transparent 60%),radial-gradient(ellipse 35% 40% at 80% 70%,rgba(255,182,39,.35),transparent 60%),radial-gradient(ellipse 30% 30% at 60% 20%,rgba(232,89,60,.25),transparent 65%);filter:blur(24px);opacity:.55;z-index:0;animation:auroraDrift 18s ease-in-out infinite;will-change:transform;pointer-events:none}
+.hero-card::before{content:'';position:absolute;inset:-20%;background:radial-gradient(ellipse 40% 35% at 20% 30%,rgba(242,102,0,.45),transparent 60%),radial-gradient(ellipse 35% 40% at 80% 70%,rgba(255,182,39,.35),transparent 60%),radial-gradient(ellipse 30% 30% at 60% 20%,rgba(242,102,0,.25),transparent 65%);filter:blur(24px);opacity:.55;z-index:0;animation:auroraDrift 18s ease-in-out infinite;will-change:transform;pointer-events:none}
 @keyframes auroraDrift{0%,100%{transform:translate3d(0,0,0) scale(1)}33%{transform:translate3d(3%,-2%,0) scale(1.06)}66%{transform:translate3d(-2%,3%,0) scale(.95)}}
 .hero-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.85}
 /* Gradiente forte no lado esquerdo (legibilidade do texto) e suave no
@@ -261,10 +274,10 @@ img{display:block;max-width:100%}
   .hero-card-inner{grid-template-columns:1fr;gap:16px;padding:24px 22px 22px;height:auto}
 }
 .hero-card-left{text-align:left;min-width:0}
-.hero-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(232,89,60,.18);border:1px solid var(--accent);border-radius:100px;font-size:9px;font-weight:700;color:var(--accent-2);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.hero-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(242,102,0,.18);border:1px solid var(--accent);border-radius:100px;font-size:9px;font-weight:700;color:var(--accent-2);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
 .hero-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent-2);animation:blink 1.5s infinite;box-shadow:0 0 6px var(--accent-2)}
-.hero-h{font-family:var(--font-body);font-size:clamp(26px,3.3vw,42px);line-height:1.12;letter-spacing:-.4px;margin-bottom:14px;text-align:left;text-shadow:0 2px 14px rgba(0,0,0,.6);font-weight:700;color:#fff}
-.hero-h em{font-style:italic;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;padding-right:.12em}
+.hero-h{font-family:var(--font-body);font-size:clamp(26px,3.3vw,42px);line-height:1.1;letter-spacing:-.5px;margin-bottom:14px;text-align:left;text-shadow:0 2px 14px rgba(0,0,0,.6);font-weight:800;color:#fff}
+.hero-h em{font-style:italic;background:linear-gradient(135deg,var(--accent-glow),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800;padding-right:.12em}
 /* Headline word stagger — split via JS, anima cada palavra com delay --i */
 .hero-h.split{opacity:1!important;transform:none!important;transition:none!important}
 .hero-h.split > .word,.hero-h.split > em{display:inline-block;opacity:0;transform:translateY(.5em);transition:opacity .55s var(--ease-cinematic),transform .55s var(--ease-cinematic);transition-delay:calc(var(--i,0) * 55ms)}
@@ -274,23 +287,23 @@ img{display:block;max-width:100%}
 .hero-metrics{display:grid;grid-template-columns:1fr;gap:8px}
 @media(max-width:760px){.hero-metrics{grid-template-columns:repeat(3,1fr)}}
 .hero-metric{padding:10px 12px;border:1px solid var(--border);border-radius:var(--r-sm);text-align:center;background:rgba(0,0,0,.5)}
-.hero-metric-num{font-family:var(--font-display);font-size:22px;background:linear-gradient(135deg,#fff,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.8px;line-height:1}
+.hero-metric-num{font-family:var(--font-numeric);font-size:30px;font-weight:900;background:linear-gradient(135deg,#fff,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.02em;line-height:.95}
 .hero-metric-label{font-size:9px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
 
 /* === CTA — botão 3D com bevel, depth stack e shine ===
    Profundidade fake via empilhamento de box-shadows: 3 camadas escuras de
    "altura" (`0 2px 0`, `0 4px 0`, `0 6px 0`) simulam o lado do botão,
    inset highlights criam o bevel, e blur-shadows externas dao o glow. */
-.cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;width:auto;max-width:none;margin:0 auto;padding:18px 32px;background:linear-gradient(180deg,#FF7950 0%,#E8593C 50%,#B83820 100%);color:#fff;border:none;border-radius:16px;font-family:var(--font-body);font-size:15.5px;font-weight:700;letter-spacing:.1px;cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s var(--ease-soft),filter .25s;text-align:center;text-decoration:none;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),inset 0 -1.5px 0 rgba(0,0,0,.25),inset 0 0 22px rgba(255,182,39,.18),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 0 #4a1808,0 14px 32px -10px rgba(232,89,60,.6),0 6px 18px -6px rgba(0,0,0,.5);position:relative;overflow:hidden;line-height:1;text-shadow:0 1px 2px rgba(0,0,0,.18)}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;width:auto;max-width:none;margin:0 auto;padding:20px 36px;background:linear-gradient(180deg,#ff8c3a 0%,#f26600 50%,#B83820 100%);color:#fff;border:none;border-radius:16px;font-family:var(--font-body);font-size:16px;font-weight:800;letter-spacing:.1px;cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s var(--ease-soft),filter .25s;text-align:center;text-decoration:none;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),inset 0 -1.5px 0 rgba(0,0,0,.25),inset 0 0 22px rgba(255,182,39,.18),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 0 #4a1808,0 14px 32px -10px rgba(242,102,0,.6),0 6px 18px -6px rgba(0,0,0,.5);position:relative;overflow:hidden;line-height:1;text-shadow:0 1px 2px rgba(0,0,0,.18);text-transform:none}
 .cta-arrow{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.22);transition:transform .35s cubic-bezier(.2,.8,.2,1),background .25s;flex-shrink:0;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(0,0,0,.18)}
 .cta-arrow svg{width:11px;height:11px;display:block}
 .cta:hover .cta-arrow{transform:translateX(4px);background:rgba(255,255,255,.32)}
-.cta:active{transform:translateY(4px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),inset 0 -1.5px 0 rgba(0,0,0,.25),0 0 0 transparent,0 0 0 transparent,0 2px 0 #4a1808,0 8px 18px -8px rgba(232,89,60,.5);transition-duration:.08s}
+.cta:active{transform:translateY(4px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),inset 0 -1.5px 0 rgba(0,0,0,.25),0 0 0 transparent,0 0 0 transparent,0 2px 0 #4a1808,0 8px 18px -8px rgba(242,102,0,.5);transition-duration:.08s}
 .cta-ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.4);transform:scale(0);animation:ripple .55s ease-out;pointer-events:none}
 @keyframes ripple{to{transform:scale(4);opacity:0}}
 .cta-strip,.hero,.final-cta,.price-section{text-align:center}
 .cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);transition:left .6s;pointer-events:none}
-.cta:hover{transform:translateY(-3px);filter:brightness(1.04);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.5),inset 0 -1.5px 0 rgba(0,0,0,.25),inset 0 0 28px rgba(255,182,39,.25),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 0 #4a1808,0 8px 0 #3a1206,0 22px 44px -10px rgba(232,89,60,.7),0 8px 20px -6px rgba(0,0,0,.5)}
+.cta:hover{transform:translateY(-3px);filter:brightness(1.04);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.5),inset 0 -1.5px 0 rgba(0,0,0,.25),inset 0 0 28px rgba(255,182,39,.25),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 0 #4a1808,0 8px 0 #3a1206,0 22px 44px -10px rgba(242,102,0,.7),0 8px 20px -6px rgba(0,0,0,.5)}
 .cta-wpp .cta-arrow{background:rgba(255,255,255,.22)}
 .price-cta{display:block;width:100%}
 .cta:hover::before{left:100%}
@@ -312,11 +325,11 @@ img{display:block;max-width:100%}
    Container glassy com glow vibrante, barra de progresso top, dois digitos
    por bloco (estilo flip clock) e separadores ":" pulsando entre eles.
    Cada digito tem split horizontal sutil no centro pra sugerir mecanica flip. */
-.countdown{position:relative;text-align:center;margin:36px auto 16px;padding:28px 24px 22px;max-width:580px;border-radius:24px;background:radial-gradient(ellipse 100% 80% at 50% 0%,rgba(232,89,60,.18) 0%,transparent 60%),linear-gradient(180deg,rgba(20,12,10,.95) 0%,rgba(8,6,5,.95) 100%);border:1px solid rgba(232,89,60,.28);box-shadow:inset 0 1px 0 rgba(255,182,39,.12),0 24px 50px -20px rgba(232,89,60,.45),0 0 100px -30px rgba(255,182,39,.3),0 0 160px -50px rgba(232,89,60,.35);overflow:hidden;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.countdown{position:relative;text-align:center;margin:36px auto 16px;padding:28px 24px 22px;max-width:580px;border-radius:24px;background:radial-gradient(ellipse 100% 80% at 50% 0%,rgba(242,102,0,.18) 0%,transparent 60%),linear-gradient(180deg,rgba(20,12,10,.95) 0%,rgba(8,6,5,.95) 100%);border:1px solid rgba(242,102,0,.28);box-shadow:inset 0 1px 0 rgba(255,182,39,.12),0 24px 50px -20px rgba(242,102,0,.45),0 0 100px -30px rgba(255,182,39,.3),0 0 160px -50px rgba(242,102,0,.35);overflow:hidden;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 /* Barra de progresso fina no top: visualiza o tempo restante consumindo. */
 .cd-progress{position:absolute;top:0;left:0;right:0;height:2px;background:rgba(255,255,255,.05);overflow:hidden}
 .cd-progress-fill{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--accent) 0%,var(--accent-2) 100%);transform-origin:left center;transform:scaleX(1);transition:transform 1s linear;box-shadow:0 0 12px rgba(255,182,39,.6)}
-.cd-label{font-family:var(--font-body);font-size:11.5px;color:#fff;letter-spacing:3.2px;text-transform:uppercase;font-weight:800;margin-bottom:22px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:6px 16px 6px 14px;background:linear-gradient(135deg,rgba(232,89,60,.18),rgba(255,182,39,.1));border:1px solid rgba(232,89,60,.35);border-radius:100px}
+.cd-label{font-family:var(--font-body);font-size:11.5px;color:#fff;letter-spacing:3.2px;text-transform:uppercase;font-weight:800;margin-bottom:22px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:6px 16px 6px 14px;background:linear-gradient(135deg,rgba(242,102,0,.18),rgba(255,182,39,.1));border:1px solid rgba(242,102,0,.35);border-radius:100px}
 .cd-pulse{width:8px;height:8px;border-radius:50%;background:#FF3B3B;box-shadow:0 0 8px #FF3B3B,0 0 16px rgba(255,59,59,.5);animation:cd-pulse 1.2s ease-in-out infinite;flex-shrink:0}
 @keyframes cd-pulse{0%,100%{transform:scale(1);box-shadow:0 0 8px #FF3B3B,0 0 16px rgba(255,59,59,.5)}50%{transform:scale(1.3);box-shadow:0 0 14px #FF3B3B,0 0 28px rgba(255,59,59,.7)}}
 .cd-row{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:nowrap}
@@ -325,7 +338,7 @@ img{display:block;max-width:100%}
 /* Cada digito: card glass escuro (background do .cd-digit) + texto gradient
    no <b> filho com background-clip:text + linha horizontal central (::after)
    simulando flip clock mecanico. */
-.cd-digit{position:relative;display:inline-flex;align-items:center;justify-content:center;width:58px;height:88px;border-radius:10px;background:linear-gradient(180deg,#231410 0%,#0c0706 50%,#1a0e0b 50%,#060403 100%);border:1px solid rgba(232,89,60,.28);box-shadow:inset 0 1px 0 rgba(255,182,39,.18),inset 0 -1px 0 rgba(0,0,0,.55),0 10px 20px -6px rgba(0,0,0,.65),0 0 22px -6px rgba(232,89,60,.4);will-change:transform;perspective:400px}
+.cd-digit{position:relative;display:inline-flex;align-items:center;justify-content:center;width:58px;height:88px;border-radius:10px;background:linear-gradient(180deg,#231410 0%,#0c0706 50%,#1a0e0b 50%,#060403 100%);border:1px solid rgba(242,102,0,.28);box-shadow:inset 0 1px 0 rgba(255,182,39,.18),inset 0 -1px 0 rgba(0,0,0,.55),0 10px 20px -6px rgba(0,0,0,.65),0 0 22px -6px rgba(242,102,0,.4);will-change:transform;perspective:400px}
 .cd-digit > b{font-family:var(--font-display);font-size:62px;font-weight:800;line-height:1;letter-spacing:-.02em;background:linear-gradient(180deg,#fff 0%,#ffb99e 55%,var(--accent-2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-align:center;display:inline-block;font-style:normal;position:relative;z-index:1}
 .cd-digit::after{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(0,0,0,.65);box-shadow:0 1px 0 rgba(255,182,39,.06);z-index:2}
 /* Animacao de flip quando muda valor (motion ou JS adiciona .flipping). */
@@ -333,7 +346,7 @@ img{display:block;max-width:100%}
    pra disfarcar o back face. Da pra ver claramente o digito girando. */
 .cd-digit.flipping{animation:cdFlip 1.1s cubic-bezier(.45,0,.3,1)}
 @keyframes cdFlip{0%{transform:rotateX(0);opacity:1}50%{transform:rotateX(-180deg);opacity:.3}100%{transform:rotateX(-360deg);opacity:1}}
-.cd-sep{font-family:var(--font-display);font-size:54px;font-weight:900;color:var(--accent-2);line-height:1;align-self:center;margin:0 -2px;animation:cdBlink 1s ease-in-out infinite;text-shadow:0 0 18px rgba(255,182,39,.6),0 0 32px rgba(232,89,60,.4)}
+.cd-sep{font-family:var(--font-display);font-size:54px;font-weight:900;color:var(--accent-2);line-height:1;align-self:center;margin:0 -2px;animation:cdBlink 1s ease-in-out infinite;text-shadow:0 0 18px rgba(255,182,39,.6),0 0 32px rgba(242,102,0,.4)}
 @keyframes cdBlink{0%,49%{opacity:1}50%,100%{opacity:.25}}
 .cd-lbl{font-size:10.5px;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px;font-weight:700}
 .cd-note{text-align:center;font-size:13px;color:var(--text-mid);margin-top:16px;line-height:1.5}
@@ -379,17 +392,17 @@ img{display:block;max-width:100%}
    em TBT. Nao aplicar em .hero (fold) nem em modais. */
 .sec,.modules-grid,.reels-grid,.problem-wrap,.speaker-wrap,.faq-list,.final-cta{content-visibility:auto;contain-intrinsic-size:auto 600px}
 /* Section divider — linha sutil + diamante accent central */
-.sec-divider{height:24px;max-width:880px;margin:var(--gap-block) auto;position:relative;display:flex;align-items:center;justify-content:center;background:none;overflow:hidden}
-.sec-divider::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(232,89,60,.25) 50%,transparent 100%);transform:translateY(-50%)}
-.sec-divider::after{content:'';width:7px;height:7px;background:linear-gradient(135deg,var(--accent),var(--accent-2));transform:rotate(45deg);border-radius:1px;box-shadow:0 0 12px rgba(232,89,60,.55),0 0 24px rgba(255,182,39,.25);position:relative;z-index:1}
+.sec-divider{height:32px;max-width:880px;margin:var(--gap-block) auto;position:relative;display:flex;align-items:center;justify-content:center;background:none;overflow:hidden}
+.sec-divider::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(242,102,0,.4) 50%,transparent 100%);transform:translateY(-50%)}
+.sec-divider::after{content:'';width:9px;height:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));transform:rotate(45deg);border-radius:1px;box-shadow:0 0 18px rgba(242,102,0,.7),0 0 36px rgba(255,182,39,.35);position:relative;z-index:1}
 .sec>*{margin-left:auto;margin-right:auto}
 .sec-head{max-width:760px;margin:0 auto 20px;text-align:center;display:flex;flex-direction:column;align-items:center}
-.sec-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;color:var(--accent-2);letter-spacing:2.5px;text-transform:uppercase;margin:0 auto 16px;padding:7px 16px 7px 12px;background:rgba(29,29,31,.6);border:1px solid rgba(255,255,255,.12);border-radius:300px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);width:fit-content}
+.sec-tag{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:800;color:var(--accent-2);letter-spacing:3px;text-transform:uppercase;margin:0 auto 22px;padding:8px 18px 8px 14px;background:rgba(29,29,31,.6);border:1px solid rgba(255,255,255,.14);border-radius:300px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);width:fit-content}
 .sec-tag::before{content:'';width:24px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px}
-.sec-h{font-family:var(--font-body);font-size:clamp(28px,4.2vw,42px);line-height:1.1;letter-spacing:-.4px;margin:0 auto 14px;text-align:center;max-width:780px;font-weight:700;text-transform:none;color:#fff}
-.sec-h em{font-style:italic;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;padding-right:.12em}
+.sec-h{font-family:var(--font-display);font-size:clamp(40px,5.6vw,80px);line-height:.98;letter-spacing:.6px;margin:0 auto 16px;text-align:center;max-width:880px;font-weight:400;text-transform:uppercase;color:#fff}
+.sec-h em{font-style:normal;background:linear-gradient(135deg,var(--accent-glow),var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:400;padding-right:.04em;filter:drop-shadow(0 0 18px rgba(242,102,0,.35))}
 .sec-p{font-size:15px;color:var(--text-mid);margin:0 auto;max-width:660px;line-height:1.75;text-align:center}
-.sec-lead{display:block;text-align:center;margin:0 auto 14px;font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--accent-2);text-transform:uppercase;letter-spacing:1.8px}
+.sec-lead{display:block;text-align:center;margin:0 auto 14px;font-family:var(--font-body);font-size:13px;font-weight:700;color:var(--accent-2);text-transform:uppercase;letter-spacing:2.4px}
 .sec-content{max-width:1000px;margin:24px auto 0}
 .pull-line{display:block;max-width:620px;margin:18px auto 0;font-size:16px;font-weight:500;font-style:italic;color:#f0f0f0;line-height:1.55;padding:0 24px;border-left:0;position:relative}
 .pull-line::before{content:'';display:block;width:36px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px;margin:0 auto 12px}
@@ -416,29 +429,29 @@ img{display:block;max-width:100%}
 
 /* === COURSE MODULES === */
 .modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;max-width:1000px;margin:24px auto 0}
-.module-card{padding:28px 24px;background:linear-gradient(180deg,var(--bg-card) 0%,#0a0a0a 100%);border:1px solid var(--border);border-radius:var(--r);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .3s;position:relative;overflow:hidden;box-shadow:0 12px 30px -18px rgba(0,0,0,.7)}
-.module-card:hover{border-color:var(--border-accent);transform:translateY(-4px);box-shadow:0 24px 60px -20px rgba(0,0,0,.7),0 0 40px -10px rgba(232,89,60,.35)}
+.module-card{padding:36px 28px 28px;background:linear-gradient(180deg,var(--bg-card) 0%,#0a0a0a 100%);border:1px solid var(--border);border-radius:var(--r);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .3s;position:relative;overflow:hidden;box-shadow:0 12px 30px -18px rgba(0,0,0,.7)}
+.module-card:hover{border-color:var(--accent);transform:translateY(-6px);box-shadow:0 28px 70px -20px rgba(0,0,0,.75),0 0 60px -10px rgba(242,102,0,.45),0 0 0 1px rgba(242,102,0,.25) inset}
 /* Linha top accent dos modules — suavizada de 2px/opacity .7 pra 1px/opacity .25
    pra nao criar "campo laranja" visivel atras dos elementos 3D do bonus card.
    Hover ainda intensifica como microfeedback. */
 .module-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,var(--accent) 35%,var(--accent-2) 65%,transparent 100%);transform:scaleX(.45);transform-origin:left;transition:transform .5s,opacity .35s;opacity:.25}
 .module-card:hover::before{transform:scaleX(1);opacity:.6}
-.module-num{font-family:var(--font-display);font-size:44px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:1px;line-height:1;margin-bottom:10px;opacity:.85}
+.module-num{font-family:var(--font-numeric);font-size:clamp(72px,7vw,112px);font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent-glow) 60%,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.04em;line-height:.85;margin-bottom:6px;opacity:1;text-shadow:0 0 38px rgba(242,102,0,.35)}
 /* Module icon — bloco isometrico 3D com gradiente, profundidade simulada por sombras stack, halo de glow e sheen interno */
-.module-icon{width:64px;height:64px;border-radius:18px;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:18px;background:linear-gradient(135deg,#FF7A4F 0%,#E8593C 45%,#A43620 100%);transform:perspective(620px) rotateX(18deg) rotateY(-22deg);transform-style:preserve-3d;box-shadow:-2px 2px 0 #8a2c14,-4px 4px 0 #6d2210,-6px 6px 0 #511808,-12px 16px 28px -8px rgba(232,89,60,.55),-14px 20px 38px -14px rgba(0,0,0,.65);transition:transform .45s var(--ease-soft),box-shadow .45s var(--ease-soft)}
+.module-icon{width:46px;height:46px;border-radius:13px;position:absolute;top:26px;right:26px;display:flex;align-items:center;justify-content:center;margin:0;background:linear-gradient(135deg,#ff8c3a 0%,#f26600 45%,#A43620 100%);transform:perspective(620px) rotateX(18deg) rotateY(-22deg);transform-style:preserve-3d;box-shadow:-2px 2px 0 #8a2c14,-3px 3px 0 #6d2210,-5px 5px 0 #511808,-8px 12px 22px -6px rgba(242,102,0,.55),-10px 16px 30px -12px rgba(0,0,0,.65);transition:transform .45s var(--ease-soft),box-shadow .45s var(--ease-soft);z-index:2}
 .module-icon::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,.05) 38%,transparent 60%);pointer-events:none}
 .module-icon::after{content:'';position:absolute;inset:-14px;background:radial-gradient(circle at 32% 30%,rgba(255,182,39,.5),transparent 65%);filter:blur(14px);z-index:-1;pointer-events:none}
 .module-icon svg{width:56%;height:56%;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.45));transform:translateZ(10px);position:relative;z-index:1}
-.module-card:hover .module-icon{transform:perspective(620px) rotateX(14deg) rotateY(-18deg) translateY(-4px);box-shadow:-2px 2px 0 #8a2c14,-4px 4px 0 #6d2210,-6px 6px 0 #511808,-14px 22px 38px -6px rgba(232,89,60,.7),-16px 26px 50px -14px rgba(0,0,0,.7)}
+.module-card:hover .module-icon{transform:perspective(620px) rotateX(14deg) rotateY(-18deg) translateY(-4px);box-shadow:-2px 2px 0 #8a2c14,-4px 4px 0 #6d2210,-6px 6px 0 #511808,-14px 22px 38px -6px rgba(242,102,0,.7),-16px 26px 50px -14px rgba(0,0,0,.7)}
 @media(max-width:760px){
-  .module-icon{width:54px;height:54px;border-radius:14px;margin-bottom:14px;transform:perspective(520px) rotateX(15deg) rotateY(-18deg);box-shadow:-2px 2px 0 #8a2c14,-3px 3px 0 #6d2210,-5px 5px 0 #511808,-8px 12px 22px -6px rgba(232,89,60,.5)}
+  .module-icon{width:54px;height:54px;border-radius:14px;margin-bottom:14px;transform:perspective(520px) rotateX(15deg) rotateY(-18deg);box-shadow:-2px 2px 0 #8a2c14,-3px 3px 0 #6d2210,-5px 5px 0 #511808,-8px 12px 22px -6px rgba(242,102,0,.5)}
 }
 .module-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3}
 .module-desc{font-size:13px;color:var(--text-mid);line-height:1.6}
 /* Bonus card: sem borda colorida, sem ::before/::after laranja chapados.
    So glow externo difuso que se mistura com o fundo da pagina sem criar
    "linha de campo" ou caixa visual rigida. */
-.module-bonus{grid-column:1/-1;background:linear-gradient(135deg,#1a0f0a 0%,#0e0e0e 70%);border:1px solid rgba(255,255,255,.05);padding:28px 32px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;position:relative;overflow:visible;margin-top:100px;min-height:160px;box-shadow:0 22px 60px -18px rgba(232,89,60,.32),0 0 120px -40px rgba(255,182,39,.22),0 0 200px -60px rgba(232,89,60,.28)}
+.module-bonus{grid-column:1/-1;background:linear-gradient(135deg,#1a0f0a 0%,#0e0e0e 70%);border:1px solid rgba(255,255,255,.05);padding:28px 32px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;position:relative;overflow:visible;margin-top:100px;min-height:160px;box-shadow:0 22px 60px -18px rgba(242,102,0,.32),0 0 120px -40px rgba(255,182,39,.22),0 0 200px -60px rgba(242,102,0,.28)}
 /* === BÔNUS COPA — decoração 3D ===
    Imgs sao renders 3D em fundo preto sem alpha. mix-blend-mode:screen
    "remove" o preto (preto + qualquer cor = mantem cor). Object-fit:contain
@@ -450,7 +463,7 @@ img{display:block;max-width:100%}
    entrada+loop com spring physics; CSS aqui eh fallback se a lib nao carregar. */
 .bonus-3d{position:absolute;inset:0;pointer-events:none;z-index:10}
 .bonus-ball,.bonus-flag,.bonus-trophy{position:absolute;object-fit:contain;will-change:transform,opacity;opacity:0}
-.bonus-ball{top:-90px;right:-5px;width:140px;height:auto;filter:drop-shadow(0 18px 28px rgba(0,0,0,.85)) drop-shadow(0 0 28px rgba(255,182,39,.55)) drop-shadow(0 0 50px rgba(232,89,60,.4));transform:scale(.15) rotate(-220deg) translateY(40px);transition:opacity 1.6s var(--ease-cinematic),transform 2.2s var(--ease-cinematic);z-index:3}
+.bonus-ball{top:-90px;right:-5px;width:140px;height:auto;filter:drop-shadow(0 18px 28px rgba(0,0,0,.85)) drop-shadow(0 0 28px rgba(255,182,39,.55)) drop-shadow(0 0 50px rgba(242,102,0,.4));transform:scale(.15) rotate(-220deg) translateY(40px);transition:opacity 1.6s var(--ease-cinematic),transform 2.2s var(--ease-cinematic);z-index:3}
 .bonus-flag{top:-15px;right:140px;width:125px;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.65)) drop-shadow(0 0 16px rgba(31,175,82,.45));transform:translateX(60px) rotate(-14deg);transition:opacity 1.3s var(--ease-cinematic) .5s,transform 1.8s var(--ease-cinematic) .5s;z-index:1}
 .bonus-trophy{bottom:10px;right:50px;width:62px;height:auto;filter:drop-shadow(0 14px 22px rgba(0,0,0,.75)) drop-shadow(0 0 18px rgba(255,182,39,.6));transform:translateY(50px) rotate(0deg) rotateY(-90deg);transition:opacity 1.3s var(--ease-cinematic) .9s,transform 1.8s var(--ease-cinematic) .9s;z-index:2}
 /* Final diagonal: bola fica em -15deg pra parecer flutuando dinamica. */
@@ -491,7 +504,7 @@ img{display:block;max-width:100%}
   .module-bonus.in .bonus-trophy{transform:rotate(25deg) rotateY(0);animation:trophyFloatMob 5.5s ease-in-out 2.7s infinite}
   @keyframes trophyFloatMob{0%,100%{transform:rotate(25deg) translateY(0)}50%{transform:rotate(22deg) translateY(-4px)}}
 }
-.bonus-tag{display:inline-block;padding:4px 10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:6px;margin-bottom:8px;box-shadow:0 6px 16px -6px rgba(232,89,60,.55)}
+.bonus-tag{display:inline-block;padding:4px 10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:6px;margin-bottom:8px;box-shadow:0 6px 16px -6px rgba(242,102,0,.55)}
 
 /* === REELS / SOCIAL PROOF === */
 .reels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,280px));gap:20px;max-width:900px;margin:24px auto 0;justify-content:center}
@@ -502,7 +515,7 @@ img{display:block;max-width:100%}
 }
 .reel-card{background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s,border-color .3s;display:block;color:inherit;text-decoration:none;position:relative;box-shadow:0 14px 32px -16px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.02) inset}
 .reel-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(160deg,rgba(255,182,39,.12),transparent 35%);opacity:0;transition:opacity .5s var(--ease-soft);pointer-events:none;z-index:2}
-.reel-card:hover{border-color:var(--border-accent);transform:translateY(-8px);box-shadow:0 26px 50px -18px rgba(0,0,0,.75),0 0 60px -10px rgba(232,89,60,.4),0 0 0 1px rgba(255,182,39,.25) inset}
+.reel-card:hover{border-color:var(--border-accent);transform:translateY(-8px);box-shadow:0 26px 50px -18px rgba(0,0,0,.75),0 0 60px -10px rgba(242,102,0,.4),0 0 0 1px rgba(255,182,39,.25) inset}
 .reel-card:hover::after{opacity:1}
 .reel-thumb{position:relative;aspect-ratio:9/16;overflow:hidden;background:#000}
 .reel-thumb img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
@@ -512,10 +525,10 @@ img{display:block;max-width:100%}
 .reel-ig-hint svg{width:13px;height:13px}
 .reel-body{padding:18px 20px 20px}
 .reel-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;font-size:11px}
-.reel-tag{display:inline-flex;align-items:center;gap:5px;padding:3px 9px 3px 8px;border-radius:100px;background:rgba(232,89,60,.14);border:1px solid rgba(232,89,60,.3);color:var(--accent-2);font-weight:700;letter-spacing:.5px;text-transform:uppercase;font-size:9.5px}
-.reel-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 6px rgba(232,89,60,.6)}
+.reel-tag{display:inline-flex;align-items:center;gap:5px;padding:3px 9px 3px 8px;border-radius:100px;background:rgba(242,102,0,.14);border:1px solid rgba(242,102,0,.3);color:var(--accent-2);font-weight:700;letter-spacing:.5px;text-transform:uppercase;font-size:9.5px}
+.reel-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 6px rgba(242,102,0,.6)}
 .reel-handle{font-size:11px;font-weight:600;color:var(--text-dim);font-variant:all-small-caps;letter-spacing:.5px}
-.reel-title{font-family:var(--font-body);font-size:15px;font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.1px;margin-bottom:8px}
+.reel-title{font-family:var(--font-body);font-size:17px;font-weight:800;color:#fff;line-height:1.2;letter-spacing:-.3px;margin-bottom:8px}
 .reel-summary{font-size:12.5px;color:var(--text-mid);line-height:1.6;font-weight:400}
 /* Tipografia animada do summary: cada palavra entra em stagger quando o card recebe .in.
    Stagger sutil (35ms) pra nao competir com o reveal-card. */
@@ -529,25 +542,25 @@ img{display:block;max-width:100%}
 .speaker-left{display:flex;flex-direction:column;align-items:center;gap:18px}
 /* Foto do Andre — frame 3D com gradient border, halo accent, sheen interno
    e parallax 3D continuo (ja esta no JS). Aspect-ratio quadrado pra encaixar no grid. */
-.speaker-photo{border-radius:24px;overflow:hidden;aspect-ratio:1/1;width:100%;position:relative;background:#0a0a0a padding-box,linear-gradient(135deg,rgba(232,89,60,.55),rgba(255,182,39,.45) 40%,rgba(232,89,60,.15) 100%) border-box;border:1.5px solid transparent;box-shadow:0 30px 70px -20px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.04) inset,0 0 80px -10px rgba(232,89,60,.5),0 0 140px -30px rgba(255,182,39,.4)}
-.speaker-photo::before{content:'';position:absolute;inset:-30%;background:radial-gradient(ellipse 50% 35% at 30% 25%,rgba(232,89,60,.4),transparent 60%),radial-gradient(ellipse 40% 30% at 75% 80%,rgba(255,182,39,.32),transparent 65%);filter:blur(18px);z-index:0;pointer-events:none;animation:auroraDrift 22s ease-in-out infinite;will-change:transform}
+.speaker-photo{border-radius:24px;overflow:hidden;aspect-ratio:1/1;width:100%;position:relative;background:#0a0a0a padding-box,linear-gradient(135deg,rgba(242,102,0,.55),rgba(255,182,39,.45) 40%,rgba(242,102,0,.15) 100%) border-box;border:1.5px solid transparent;box-shadow:0 30px 70px -20px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.04) inset,0 0 80px -10px rgba(242,102,0,.5),0 0 140px -30px rgba(255,182,39,.4)}
+.speaker-photo::before{content:'';position:absolute;inset:-30%;background:radial-gradient(ellipse 50% 35% at 30% 25%,rgba(242,102,0,.4),transparent 60%),radial-gradient(ellipse 40% 30% at 75% 80%,rgba(255,182,39,.32),transparent 65%);filter:blur(18px);z-index:0;pointer-events:none;animation:auroraDrift 22s ease-in-out infinite;will-change:transform}
 .speaker-photo img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1;transition:transform .6s cubic-bezier(.2,.8,.2,1);filter:saturate(1.05) contrast(1.04)}
 .speaker-photo:hover img{transform:scale(1.04)}
 .speaker-photo::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.08) 0%,transparent 35%),linear-gradient(to top,rgba(0,0,0,.35),transparent 35%)}
 .speaker-info{display:flex;flex-direction:column;gap:14px}
-.speaker-name{font-family:var(--font-display);font-size:42px;letter-spacing:1.5px;color:#fff;line-height:1;margin-bottom:-4px}
+.speaker-name{font-family:var(--font-display);font-size:clamp(48px,5.4vw,72px);letter-spacing:1.4px;color:#fff;line-height:.95;margin-bottom:-4px;text-transform:uppercase}
 .speaker-role{font-size:13px;color:var(--accent-2);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:10px}
 .speaker-role::before{content:'';width:24px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px}
-.speaker-bio{font-size:15px;color:var(--text-mid);line-height:1.75}
+.speaker-bio{font-size:16px;color:#c5c5c5;line-height:1.7}
 .speaker-bio strong{color:#fff}
 .speaker-cred-icon img{width:24px;height:24px;object-fit:contain;display:block}
 .speaker-cred-icon.is-brand{background:#fff;border-color:rgba(255,255,255,.18);padding:4px}
-.speaker-cred-icon.is-brand-dark{background:#0E0E0E;border-color:rgba(232,89,60,.25);padding:3px}
+.speaker-cred-icon.is-brand-dark{background:#0E0E0E;border-color:rgba(242,102,0,.25);padding:3px}
 .speaker-cred-icon.is-brand-dark img{width:26px;height:26px}
 .speaker-socials{display:flex;gap:12px;margin-top:0;flex-wrap:wrap;justify-content:center}
 .speaker-left .speaker-socials{margin-top:4px}
 .speaker-social{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.04);border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;color:var(--text-mid);transition:all .3s cubic-bezier(.2,.8,.2,1);text-decoration:none}
-.speaker-social:hover{background:var(--accent-soft);border-color:var(--accent-2);color:var(--accent-2);transform:translateY(-2px);box-shadow:0 8px 20px -8px rgba(232,89,60,.5)}
+.speaker-social:hover{background:var(--accent-soft);border-color:var(--accent-2);color:var(--accent-2);transform:translateY(-2px);box-shadow:0 8px 20px -8px rgba(242,102,0,.5)}
 .speaker-social svg{width:18px;height:18px}
 .speaker-creds{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 /* Mobile largo (480-760): mantem 2 cols pra nao virar lista alongada.
@@ -556,27 +569,28 @@ img{display:block;max-width:100%}
 /* Cards de credencial — 3D bevel sutil, depth stack, hover lift.
    Mesma linguagem visual do .module-icon mas mais discreta (cards, nao icones). */
 .speaker-cred{display:flex;align-items:center;gap:14px;padding:16px 20px;background:linear-gradient(180deg,#1a1a1a 0%,#0e0e0e 100%);border:1px solid rgba(255,255,255,.06);border-radius:16px;font-size:13.5px;color:var(--text-mid);position:relative;transition:transform .4s var(--ease-soft),box-shadow .4s var(--ease-soft),border-color .3s;box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 1px 0 rgba(0,0,0,.5),0 4px 0 rgba(0,0,0,.3),0 14px 30px -14px rgba(0,0,0,.7);overflow:hidden}
-.speaker-cred::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(232,89,60,.45) 50%,transparent 100%);opacity:0;transition:opacity .35s}
-.speaker-cred:hover{transform:translateY(-3px);border-color:rgba(255,182,39,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 0 rgba(0,0,0,.5),0 4px 0 rgba(0,0,0,.3),0 22px 44px -14px rgba(232,89,60,.35),0 0 0 1px rgba(255,182,39,.15) inset}
+.speaker-cred::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(242,102,0,.45) 50%,transparent 100%);opacity:0;transition:opacity .35s}
+.speaker-cred:hover{transform:translateY(-3px);border-color:rgba(255,182,39,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 0 rgba(0,0,0,.5),0 4px 0 rgba(0,0,0,.3),0 22px 44px -14px rgba(242,102,0,.35),0 0 0 1px rgba(255,182,39,.15) inset}
 .speaker-cred:hover::before{opacity:1}
-.speaker-cred-icon{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#1f1410 0%,#0a0a0a 100%);border:1px solid rgba(232,89,60,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-2);font-size:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 4px 12px -4px rgba(232,89,60,.3),0 0 18px -6px rgba(255,182,39,.4) inset;transform:perspective(420px) rotateY(-8deg);transition:transform .4s var(--ease-soft)}
+.speaker-cred-icon{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#1f1410 0%,#0a0a0a 100%);border:1px solid rgba(242,102,0,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-2);font-size:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 4px 12px -4px rgba(242,102,0,.3),0 0 18px -6px rgba(255,182,39,.4) inset;transform:perspective(420px) rotateY(-8deg);transition:transform .4s var(--ease-soft)}
 .speaker-cred:hover .speaker-cred-icon{transform:perspective(420px) rotateY(-3deg) translateY(-2px)}
 .speaker-cred strong{color:#fff;font-weight:700}
 
 /* === PRICE === */
 .price-section{text-align:center}
-.price-card{background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid var(--border-accent);border-radius:28px;overflow:hidden;max-width:760px;margin:0 auto;box-shadow:0 40px 120px -30px rgba(232,89,60,.4),0 20px 60px -20px rgba(0,0,0,.6);position:relative}
+.price-card{background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid var(--border-accent);border-radius:28px;overflow:hidden;max-width:760px;margin:0 auto;box-shadow:0 40px 120px -30px rgba(242,102,0,.4),0 20px 60px -20px rgba(0,0,0,.6);position:relative}
 .price-banner{padding:14px;background:linear-gradient(90deg,var(--accent),var(--accent-2));text-align:center;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.2)}
 .price-body{display:flex;gap:0}
 .price-left{flex:1;padding:36px 32px;text-align:left}
 .price-right{width:240px;background-size:cover;background-position:center;display:none;position:relative}
 @media(min-width:680px){.price-right{display:block}}
-.price-from{font-size:18px;color:#888;text-decoration:line-through;text-decoration-color:rgba(238,130,130,.7);text-decoration-thickness:2px;font-weight:500}
-.price-main{font-family:var(--font-display);font-size:84px;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-1.5px;line-height:1;margin:10px 0 6px;display:inline-flex;align-items:flex-start;gap:6px;justify-content:center;will-change:transform,opacity}
+.price-from{font-size:15px;color:#9d9d9d;font-weight:500;line-height:1.4;display:flex;flex-direction:column;gap:2px}
+.price-from::before{content:'antes R$ 497';font-family:var(--font-numeric);font-size:32px;font-weight:800;color:#7d6f6a;text-decoration:line-through;text-decoration-color:rgba(238,130,130,.85);text-decoration-thickness:3px;letter-spacing:-.01em;line-height:1;margin-bottom:4px}
+.price-main{font-family:var(--font-numeric);font-size:clamp(96px,11vw,144px);font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent-glow) 50%,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.04em;line-height:.92;margin:14px 0 8px;display:inline-flex;align-items:flex-start;gap:8px;justify-content:center;will-change:transform,opacity}
 /* Entrada hero do R$147: scale dramatico + perspective + glow burst no fim */
 .price-main.reveal{opacity:0;transform:perspective(800px) scale(.55) rotateX(28deg) translateY(28px);transition:opacity 1.2s var(--ease-cinematic),transform 1.2s var(--ease-cinematic)}
 .price-main.reveal.in{opacity:1;transform:perspective(800px) scale(1) rotateX(0) translateY(0);animation:priceGlow 1.6s var(--ease-soft) .9s 1}
-@keyframes priceGlow{0%,100%{filter:drop-shadow(0 0 0 transparent)}45%{filter:drop-shadow(0 0 22px rgba(255,182,39,.65)) drop-shadow(0 0 38px rgba(232,89,60,.4))}}
+@keyframes priceGlow{0%,100%{filter:drop-shadow(0 0 0 transparent)}45%{filter:drop-shadow(0 0 22px rgba(255,182,39,.65)) drop-shadow(0 0 38px rgba(242,102,0,.4))}}
 .price-main .price-currency{font-size:.36em;font-weight:700;letter-spacing:0;margin-top:.14em;line-height:1}
 .price-main .price-value{font-size:1em;font-weight:900;letter-spacing:-.03em;line-height:1}
 @media(max-width:560px){.price-main{font-size:72px}}
@@ -615,18 +629,18 @@ img{display:block;max-width:100%}
 .faq-item{background:linear-gradient(180deg,rgba(28,22,32,.75),rgba(14,11,18,.75));border:1px solid rgba(255,255,255,.06);border-radius:18px;overflow:hidden;cursor:pointer;transition:border-color .3s,background .3s,transform .3s var(--ease-soft),box-shadow .3s;backdrop-filter:blur(8px);position:relative}
 .faq-item::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:0 3px 3px 0;background:linear-gradient(180deg,var(--accent),var(--accent-2));opacity:0;transform:scaleY(.4);transform-origin:center;transition:opacity .35s,transform .4s var(--ease-soft)}
 .faq-item:hover{border-color:rgba(255,182,39,.35);transform:translateY(-2px);box-shadow:0 14px 32px -14px rgba(255,182,39,.2),0 4px 12px -6px rgba(0,0,0,.5)}
-.faq-item:hover .faq-num{transform:perspective(420px) rotateY(-4deg) translateY(-1px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),0 4px 0 #6d2210,0 8px 18px -4px rgba(232,89,60,.5)}
-.faq-item.open{border-color:rgba(232,89,60,.32);background:linear-gradient(180deg,rgba(38,22,18,.7),rgba(20,12,15,.75));box-shadow:0 18px 40px -16px rgba(232,89,60,.3),0 0 60px -20px rgba(255,182,39,.18)}
+.faq-item:hover .faq-num{transform:perspective(420px) rotateY(-4deg) translateY(-1px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),0 4px 0 #6d2210,0 8px 18px -4px rgba(242,102,0,.5)}
+.faq-item.open{border-color:rgba(242,102,0,.32);background:linear-gradient(180deg,rgba(38,22,18,.7),rgba(20,12,15,.75));box-shadow:0 18px 40px -16px rgba(242,102,0,.3),0 0 60px -20px rgba(255,182,39,.18)}
 .faq-item.open::before{opacity:1;transform:scaleY(1)}
-.faq-q{display:flex;align-items:center;padding:18px 22px;font-size:15px;font-weight:600;gap:18px;color:#f0f0f0;line-height:1.4}
-.faq-num{font-family:var(--font-display);font-weight:800;font-size:14px;color:#fff;letter-spacing:.6px;flex-shrink:0;font-variant-numeric:tabular-nums;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#FF7A4F 0%,#E8593C 50%,#A43620 100%);display:flex;align-items:center;justify-content:center;transform:perspective(420px) rotateY(-10deg);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(0,0,0,.25),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 14px -4px rgba(232,89,60,.5);transition:transform .4s var(--ease-soft),box-shadow .4s var(--ease-soft);text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.faq-q{display:flex;align-items:center;padding:22px 24px;font-size:17px;font-weight:700;gap:20px;color:#fafafa;line-height:1.35;letter-spacing:-.1px}
+.faq-num{font-family:var(--font-numeric);font-weight:900;font-size:18px;color:#fff;letter-spacing:-.02em;flex-shrink:0;font-variant-numeric:tabular-nums;width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#ff8c3a 0%,#f26600 50%,#A43620 100%);display:flex;align-items:center;justify-content:center;transform:perspective(420px) rotateY(-10deg);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(0,0,0,.25),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 14px -4px rgba(242,102,0,.55);transition:transform .4s var(--ease-soft),box-shadow .4s var(--ease-soft);text-shadow:0 1px 2px rgba(0,0,0,.3)}
 .faq-q-text{flex:1;min-width:0}
 /* Plus icon: rotacao mais cinematografica do simbolo + virando X. */
-.faq-plus{color:var(--accent);transition:background .4s var(--ease-soft),border-color .4s var(--ease-soft),box-shadow .4s var(--ease-soft),transform .5s var(--ease-cinematic);flex-shrink:0;width:30px;height:30px;display:flex;align-items:center;justify-content:center;position:relative;border-radius:50%;background:rgba(232,89,60,.1);border:1px solid rgba(232,89,60,.3)}
+.faq-plus{color:var(--accent);transition:background .4s var(--ease-soft),border-color .4s var(--ease-soft),box-shadow .4s var(--ease-soft),transform .5s var(--ease-cinematic);flex-shrink:0;width:30px;height:30px;display:flex;align-items:center;justify-content:center;position:relative;border-radius:50%;background:rgba(242,102,0,.1);border:1px solid rgba(242,102,0,.3)}
 .faq-plus::before,.faq-plus::after{content:'';position:absolute;background:var(--accent-2);border-radius:2px;transition:transform .5s var(--ease-cinematic),background .35s,opacity .35s}
 .faq-plus::before{width:12px;height:2px}
 .faq-plus::after{width:2px;height:12px}
-.faq-item.open .faq-plus{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent;box-shadow:0 4px 12px -2px rgba(232,89,60,.5);transform:rotate(180deg)}
+.faq-item.open .faq-plus{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent;box-shadow:0 4px 12px -2px rgba(242,102,0,.5);transform:rotate(180deg)}
 .faq-item.open .faq-plus::before,.faq-item.open .faq-plus::after{background:#fff}
 .faq-item.open .faq-plus::after{transform:rotate(90deg);opacity:0}
 /* FAQ answer: max-height + fade-slide do conteudo interno em cascata.
@@ -646,7 +660,7 @@ img{display:block;max-width:100%}
 .transition::before,.transition::after{content:'';position:absolute;left:50%;width:1px;background:linear-gradient(180deg,transparent,var(--accent),transparent);transform:translateX(-50%)}
 .transition::before{top:0;height:14px}
 .transition::after{bottom:0;height:14px}
-.transition p{font-family:var(--font-body);font-size:19px;line-height:1.65;color:#d8d8d8;font-weight:400;letter-spacing:.1px}
+.transition p{font-family:var(--font-body);font-size:22px;line-height:1.55;color:#e8e8e8;font-weight:500;letter-spacing:-.1px}
 .transition p em{font-style:italic;color:var(--accent-2);font-weight:500}
 .transition p strong{color:#fff;font-weight:600}
 
@@ -661,10 +675,10 @@ img{display:block;max-width:100%}
 @media(max-width:760px){.alert-box{padding:18px 16px;gap:12px;border-radius:14px;max-width:calc(100% - 24px)}.alert-icon{font-size:24px}.alert-title{font-size:16px;letter-spacing:.4px}.alert-text{font-size:12.5px;line-height:1.55}}
 
 /* === FINAL CTA === */
-.final-cta{text-align:center;padding:40px 32px 48px;position:relative;border-radius:var(--r);overflow:hidden;margin:var(--gap-block) auto;max-width:1100px}
+.final-cta{text-align:center;padding:64px 32px 56px;position:relative;border-radius:var(--r);overflow:hidden;margin:var(--gap-block) auto;max-width:1100px;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(242,102,0,.25),transparent 70%),linear-gradient(180deg,rgba(20,12,10,.6),rgba(8,6,5,.4));border:1px solid rgba(242,102,0,.18)}
 .final-cta>*{position:relative;z-index:1}
-.final-cta .sec-h{margin-bottom:18px}
-.final-sub{font-size:14.5px;color:var(--text-mid);margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.7}
+.final-cta .sec-h{margin-bottom:22px;font-size:clamp(48px,7vw,96px)}
+.final-sub{font-size:16px;color:#cfcfcf;margin-bottom:32px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.6}
 .final-cta .cta{margin-bottom:18px}
 .final-wpp{text-align:center;margin-top:14px}
 .final-wpp a{display:inline-flex;align-items:center;gap:7px;color:#3CEC7B;font-size:13px;font-weight:600;text-decoration:none;border-bottom:1px dashed rgba(60,236,123,.5);padding-bottom:1px;transition:color .25s,border-color .25s}
@@ -679,14 +693,18 @@ img{display:block;max-width:100%}
 @media(max-width:760px){.social-proof{font-size:11px;padding:10px 14px;gap:10px;margin-top:14px}}
 
 
-/* === MINI STICKY PRICE BANNER (desktop) === */
-.mini-price{position:fixed;left:50%;bottom:-100px;transform:translateX(-50%);z-index:97;display:flex;align-items:center;gap:14px;padding:10px 12px 10px 18px;background:linear-gradient(180deg,rgba(29,29,31,.97),rgba(14,14,14,.97));border:1px solid rgba(232,89,60,.4);border-radius:100px;box-shadow:0 20px 60px -20px rgba(0,0,0,.8),0 0 40px -10px rgba(232,89,60,.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:bottom .5s cubic-bezier(.2,.8,.2,1);max-width:calc(100% - 32px)}
+/* === MINI STICKY PRICE BANNER (desktop) ===
+   Pílula horizontal: pricing à esquerda alinhado em coluna compacta,
+   CTA à direita com mesma linguagem visual do .cta principal (gradient
+   laranja + bevel sutil). Altura uniforme, padding equilibrado. */
+.mini-price{position:fixed;left:50%;bottom:-100px;transform:translateX(-50%);z-index:97;display:flex;align-items:center;gap:18px;padding:8px 8px 8px 22px;background:linear-gradient(180deg,rgba(29,29,31,.97),rgba(14,14,14,.97));border:1px solid rgba(242,102,0,.4);border-radius:100px;box-shadow:0 20px 60px -20px rgba(0,0,0,.8),0 0 40px -10px rgba(242,102,0,.35);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:bottom .5s cubic-bezier(.2,.8,.2,1);max-width:calc(100% - 32px)}
 .mini-price.show{bottom:24px}
-.mini-price-text{font-size:13px;color:#fff;line-height:1.2;white-space:nowrap}
-.mini-price-text strong{font-weight:700;color:var(--accent-2);margin-right:4px}
-.mini-price-text span{color:var(--text-dim);font-size:11px}
-.mini-price-cta{padding:11px 20px;background:linear-gradient(180deg,#E8593C 0%,#D04A30 100%);color:#fff;border-radius:100px;font-size:12px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:6px;border:1px solid rgba(255,182,39,.4);box-shadow:0 6px 16px -6px rgba(232,89,60,.6);white-space:nowrap;transition:transform .25s}
-.mini-price-cta:hover{transform:translateY(-1px)}
+.mini-price-text{display:flex;align-items:baseline;gap:8px;font-size:13px;color:#fff;line-height:1.15;white-space:nowrap}
+.mini-price-text strong{font-family:var(--font-numeric);font-weight:900;font-size:22px;color:var(--accent-2);letter-spacing:-.02em;line-height:1;margin-right:2px}
+.mini-price-text span{color:var(--text-dim);font-size:11px;font-weight:500;letter-spacing:.1px}
+.mini-price-cta{padding:13px 22px;background:linear-gradient(180deg,#ff8c3a 0%,#f26600 50%,#B83820 100%);color:#fff;border-radius:100px;font-family:var(--font-body);font-size:13px;font-weight:800;letter-spacing:.1px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;border:none;line-height:1;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(0,0,0,.2),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 8px 18px -6px rgba(242,102,0,.55);white-space:nowrap;transition:transform .25s var(--ease-soft),box-shadow .25s var(--ease-soft);text-shadow:0 1px 1px rgba(0,0,0,.18)}
+.mini-price-cta:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(0,0,0,.2),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 0 #4a1808,0 12px 24px -6px rgba(242,102,0,.7)}
+.mini-price-cta:active{transform:translateY(2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 2px 0 #4a1808,0 6px 14px -6px rgba(242,102,0,.45)}
 @media(max-width:760px){.mini-price{display:none}}
 
 /* === FAB WHATSAPP === */
@@ -712,7 +730,7 @@ img{display:block;max-width:100%}
   .nav-live{padding:5px 10px;font-size:8.5px;letter-spacing:.5px;border-radius:10px}
   .nav-live-sub{font-size:7.5px}
   .hero{padding:84px 0 20px}
-  .hero-title{font-size:clamp(34px,9vw,46px);letter-spacing:.6px;margin-bottom:8px;line-height:.98}
+  .hero-title{font-size:clamp(40px,11vw,60px);letter-spacing:.8px;margin-bottom:12px;line-height:.92}
   .hero-title .mark{padding:0 10px;font-size:.86em;margin-left:4px}
   .hero-subtitle{font-size:12.5px;letter-spacing:.2px;margin-bottom:20px;padding:0 4px;line-height:1.55}
   .hero-card{margin:0 auto 20px;border-radius:18px}
@@ -729,7 +747,7 @@ img{display:block;max-width:100%}
   .cta-note{font-size:11px;gap:6px}
   .sec-head{margin:0 auto 18px}
   .sec-tag{font-size:10px;letter-spacing:1.6px;padding:5px 12px 5px 10px}
-  .sec-h{font-size:clamp(24px,6vw,34px);margin-bottom:12px;letter-spacing:-.3px;line-height:1.15}
+  .sec-h{font-size:clamp(32px,8vw,52px);margin-bottom:14px;letter-spacing:.4px;line-height:.96}
   .sec-p{font-size:13.5px;line-height:1.7;padding:0 4px}
   .sec-lead{font-size:11px;letter-spacing:1.4px;margin-bottom:12px}
   .pull-line{font-size:14.5px;margin-top:14px;padding:0 12px;line-height:1.5}
@@ -744,7 +762,9 @@ img{display:block;max-width:100%}
   .transition{padding:14px 16px}
   .transition p{font-size:15.5px;line-height:1.6}
   .modules-grid{grid-template-columns:1fr;gap:14px;margin-top:18px}
-  .module-card{padding:22px 20px}
+  .module-card{padding:28px 20px 22px}
+  .module-num{font-size:64px;margin-bottom:4px}
+  .module-icon{width:38px;height:38px;border-radius:11px;top:18px;right:18px}
   .module-title{font-size:16px}
   .module-desc{font-size:13.5px}
   .speaker-wrap{gap:20px}
@@ -831,8 +851,8 @@ img{display:block;max-width:100%}
     <img src="https://i.imgur.com/WkKfAI4.jpeg" alt="ClubPetro" decoding="async">
   </a>
   <div class="nav-live">
-    <span class="nav-live-main">Ao vivo · 14 de maio</span>
-    <span class="nav-live-sub">Pista Cheia 2026</span>
+    <span class="nav-live-main">Ao vivo · 25 e 26 de maio · 19h30</span>
+    <span class="nav-live-sub">Pista Cheia 2026 · 2 noites</span>
   </div>
 </nav>
 
@@ -849,9 +869,9 @@ img{display:block;max-width:100%}
     <div class="hero-card-grad"></div>
     <div class="hero-card-inner">
       <div class="hero-card-left">
-        <div class="hero-badge">Pista Cheia 2026 · turma ao vivo</div>
+        <div class="hero-badge">Pista Cheia 2026 · 2 noites ao vivo</div>
         <h2 class="hero-h">Postos que aparecem no celular vendem <em>até 40% mais</em>. Os que não aparecem, dividem o que sobra.</h2>
-        <p class="hero-p">6 frentes do evento, ao vivo dia 14 de maio. Você sai com plano pronto pra aplicar na segunda.</p>
+        <p class="hero-p">6 frentes do evento, ao vivo em <strong>2 noites · 25 e 26 de maio às 19h30</strong>. Você sai com plano pronto pra aplicar na segunda.</p>
       </div>
       <div class="hero-metrics">
         <div class="hero-metric"><div class="hero-metric-num">+380</div><div class="hero-metric-label">Postos na pista</div></div>
@@ -865,8 +885,15 @@ img{display:block;max-width:100%}
 
   <div class="countdown">
     <div class="cd-progress" aria-hidden="true"><span class="cd-progress-fill"></span></div>
-    <div class="cd-label"><span class="cd-pulse"></span>R$ 147 expira em</div>
+    <div class="cd-label"><span class="cd-pulse"></span>Sala abre em · R$ 147 só até lá</div>
     <div class="cd-row">
+      <div class="cd-block">
+        <div class="cd-digits" data-cd="d">
+          <span class="cd-digit"><b>2</b></span><span class="cd-digit"><b>1</b></span>
+        </div>
+        <div class="cd-lbl">dias</div>
+      </div>
+      <span class="cd-sep">:</span>
       <div class="cd-block">
         <div class="cd-digits" data-cd="h">
           <span class="cd-digit"><b>2</b></span><span class="cd-digit"><b>3</b></span>
@@ -888,12 +915,12 @@ img{display:block;max-width:100%}
         <div class="cd-lbl">seg</div>
       </div>
     </div>
-    <p class="cd-note">Quando o timer zerar, sobe pra <strong>R$ 497</strong> e o bônus Copa 2026 sai do pacote.</p>
+    <p class="cd-note">Sala abre <strong>25 de maio às 19h30</strong>. Depois disso, sobe pra <strong>R$ 497</strong> (só replay · sem ao vivo · sem bônus Copa · sem grupo no WhatsApp).</p>
   </div>
 
   <div class="social-proof reveal">
     <span class="social-proof-dot"></span>
-    <span><strong id="proof-count">12</strong> donos de posto entraram nas <em>últimas 3 horas</em></span>
+    <span><strong id="proof-count">+380</strong> donos de posto <em>já garantiram vaga</em> na turma ao vivo</span>
   </div>
 </section>
 
@@ -926,7 +953,7 @@ img{display:block;max-width:100%}
         <div class="problem-item"><span class="problem-x">✕</span><div><strong>O concorrente tá comendo seu movimento:</strong> posto da esquina posta Reels toda semana, cliente chega lá dizendo "vi no Insta" e tanque cheio. Você perde venda sem nem saber que existiu a chance.</div></div>
       </div>
       <div class="solution-callout">
-        <p><strong>Pista Cheia resolve em 6 frentes do evento.</strong> Você sai dia 14 com plano pronto pra aplicar na segunda de manhã. Tudo com exemplo de posto que já fez. Não é teoria.</p>
+        <p><strong>Pista Cheia resolve em 6 frentes do evento.</strong> 2 noites ao vivo · 25 e 26 de maio. Você sai da segunda noite com plano pronto pra aplicar na manhã seguinte. Tudo com exemplo de posto que já fez. Não é teoria.</p>
       </div>
     </div>
     <div class="problem-img">
@@ -955,46 +982,46 @@ img{display:block;max-width:100%}
 
   <div class="modules-grid">
     <div class="module-card reveal">
+      <div class="module-num">01</div>
       <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-1"/></svg></div>
       <div class="module-title">Seu frentista virando o melhor vendedor do Instagram</div>
       <div class="module-desc">Escolher o frentista certo, roteiro de 30 segundos, gravação só no celular. Equipe gravando toda semana sem reclamar.</div>
     </div>
     <div class="module-card reveal reveal-d1">
+      <div class="module-num">02</div>
       <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-2"/></svg></div>
       <div class="module-title">O que postar quando você não sabe o que postar</div>
       <div class="module-desc">Lista pronta de Reels que funciona pra posto, como achar trend toda semana e calendário de 30 dias. Nunca mais travar na hora de filmar.</div>
     </div>
     <div class="module-card reveal reveal-d2">
+      <div class="module-num">03</div>
       <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-3"/></svg></div>
       <div class="module-title">1 mês de conteúdo gravado numa tarde</div>
       <div class="module-desc">Editor grátis no celular, fluxo de gravação em lote e agendador que posta sozinho. Uma tarde vira 30 dias de posto aparecendo.</div>
     </div>
     <div class="module-card reveal">
+      <div class="module-num">04</div>
       <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-4"/></svg></div>
       <div class="module-title">Do Reels pra bomba: como seguidor vira cliente</div>
       <div class="module-desc">Promoção que motorista usa, CTA sem soar forçado, e como medir se o Reels trouxe venda de verdade. Viralizar é meio. Encher a pista é o fim.</div>
     </div>
     <div class="module-card reveal reveal-d1">
+      <div class="module-num">05</div>
       <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-5"/></svg></div>
       <div class="module-title">Primeiro no "posto perto de mim" do Google</div>
       <div class="module-desc">Arrumar o perfil do Google, pedir avaliação sem chatear o cliente, passar na frente do concorrente que tá lá há anos. Aparecer antes é vender antes.</div>
     </div>
     <div class="module-card reveal reveal-d2">
+      <div class="module-num">06</div>
       <div class="module-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#mod-6"/></svg></div>
       <div class="module-title">R$ 10 por dia no Meta e no Google, sem queimar dinheiro</div>
       <div class="module-desc">R$ 10 por dia coloca seu anúncio na frente de milhares de motoristas no raio de 5 km. Passo a passo pra abrir conta no Meta e no Google, mesmo sem nunca ter feito.</div>
     </div>
     <div class="module-card module-bonus reveal">
-      <!-- Decoração 3D: bola + bandeira + troféu, alinhados sobre o card -->
-      <div class="bonus-3d" aria-hidden="true">
-        <img class="bonus-flag" src="img/copa-bandeira.png" alt="" loading="lazy" decoding="async" width="1210" height="524">
-        <img class="bonus-trophy" src="img/copa-trofeu.png" alt="" loading="lazy" decoding="async" width="347" height="878">
-        <img class="bonus-ball" src="img/copa-bola.png" alt="" loading="lazy" decoding="async" width="664" height="651">
-      </div>
       <div class="bonus-tag">Bônus de quem garante vaga na edição ao vivo</div>
       <div class="module-num">+1</div>
-      <div class="module-title">Copa 2026: o plano pronto pra transformar jogo do Brasil em pista cheia</div>
-      <div class="module-desc">Calendário pronto dos 7 jogos do Brasil, promoção que lota a pista no dia de jogo, Reels já roteirizado pra cada fase e plano de ação pra cada gol. Quando o apito tocar, seu posto já tá com fila na bomba, enquanto o concorrente ainda tá pensando no que fazer.</div>
+      <div class="module-title">Copa 2026: o plano pronto pra dia de jogo do Brasil</div>
+      <div class="module-desc">Calendário com os 7 jogos do Brasil, promoção pronta pra dia de jogo, Reels roteirizado pra cada fase do torneio. Em junho, quando todo mundo tá ligado na Copa, seu posto vira ponto de encontro do bairro — não outdoor da concorrência.</div>
     </div>
   </div>
 </section>
@@ -1016,7 +1043,7 @@ img{display:block;max-width:100%}
   <div class="sec-head">
     <span class="sec-lead">O método rodando no nosso Instagram</span>
     <div class="sec-tag">A ClubPetro aplica o que ensina</div>
-    <h2 class="sec-h reveal">De zero a <em>2M+ de views</em> aplicando o método. O mesmo que o André abre <em>dia 14 no Pista Cheia</em>.</h2>
+    <h2 class="sec-h reveal">De zero a <em>2M+ de views</em> aplicando o método. O mesmo que o André abre <em>25 e 26 de maio no Pista Cheia</em>.</h2>
     <p class="sec-p">A ClubPetro é uma empresa de software pra posto — não é agência, não é influencer. Toda semana o time aplica o método em público, no @clubpetro. Os 3 Reels abaixo mostram em prática o que o André vai destrinchar no evento ao vivo.</p>
   </div>
 
@@ -1077,7 +1104,7 @@ img{display:block;max-width:100%}
           <span class="reel-tag">Reel que viralizou</span>
           <span class="reel-handle">@clubpetro</span>
         </div>
-        <h3 class="reel-title">Numa terça viralizou. Na quarta, fila na bomba.</h3>
+        <h3 class="reel-title">Numa terça viralizou. Na quarta, pista cheia.</h3>
         <p class="reel-summary">Gancho, roteiro e CTA do conteúdo que mais converteu motorista curioso em cliente real.</p>
       </div>
     </a>
@@ -1116,7 +1143,7 @@ img{display:block;max-width:100%}
     <div class="speaker-info">
       <div class="speaker-name">ANDRÉ CARVALHAES</div>
       <p class="speaker-role">Head de Marketing · ClubPetro</p>
-      <p class="speaker-bio">Fundou a operação de marketing do <strong>ClubPetro</strong> depois de passar <strong>3 anos como sócio-diretor da V4 Company</strong>, a maior agência de marketing do Brasil. Em 8 anos liderando comunicação pra dentro do setor de combustível, rodou Meta, Google e tráfego orgânico que somam <strong>+R$ 5 milhões em receita</strong> gerada. <strong>Dia 14, no Pista Cheia ao vivo</strong>, ele abre o método inteiro — o mesmo que aplica todo dia, adaptado pro dia a dia de quem opera posto.</p>
+      <p class="speaker-bio">Fundou a operação de marketing do <strong>ClubPetro</strong> depois de passar <strong>3 anos como sócio-diretor da V4 Company</strong>, a maior agência de marketing do Brasil. Em 8 anos liderando comunicação pra dentro do setor de combustível, rodou Meta, Google e tráfego orgânico que somam <strong>+R$ 5 milhões em receita</strong> gerada. <strong>25 e 26 de maio às 19h30, no Pista Cheia ao vivo</strong>, ele abre o método em 2 noites — o mesmo que aplica todo dia, adaptado pro dia a dia de quem opera posto.</p>
       <div class="speaker-creds">
         <div class="speaker-cred">
           <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/Bg3r3li.jpeg" alt="V4 Company" loading="lazy" decoding="async"></div>
@@ -1151,8 +1178,8 @@ img{display:block;max-width:100%}
   <div class="sec-head">
     <span class="sec-lead">A vaga na edição ao vivo</span>
     <div class="sec-tag">O que tá incluído</div>
-    <h2 class="sec-h">Vaga no Pista Cheia 2026, <em>só R$ 147</em></h2>
-    <p class="sec-p">Enquanto você decide, o concorrente tá gravando o Reels de amanhã. R$ 147 só vale até o timer zerar. Depois, a turma ao vivo fecha, sobe pra R$ 497 e o bônus da Copa sai do pacote.</p>
+    <h2 class="sec-h">Vaga nas 2 noites do Pista Cheia 2026, <em>só R$ 147</em></h2>
+    <p class="sec-p">Enquanto você decide, o concorrente tá gravando o Reels de amanhã. R$ 147 só vale até a sala abrir, dia <strong>25 de maio às 19h30</strong>. Depois, a turma ao vivo fecha, sobe pra R$ 497 e quem entra pega só o replay — sem bônus Copa, sem grupo no WhatsApp.</p>
   </div>
 
   <div class="roi-anchor reveal">
@@ -1168,16 +1195,16 @@ img{display:block;max-width:100%}
     <div class="price-banner">Oferta da edição ao vivo · R$ 147 só até o timer zerar</div>
     <div class="price-body">
       <div class="price-left">
-        <div class="price-from">de R$ 497 no replay · R$ 147 agora pra entrar na turma ao vivo:</div>
+        <div class="price-from">de R$ 497 (só replay, depois que a sala fechar) · R$ 147 agora pra entrar na turma ao vivo:</div>
         <div class="price-main"><span class="price-currency">R$</span><span class="price-value">147</span></div>
         <div class="price-inst">ou 12× de R$ 14,70 sem juros no cartão</div>
         <div class="price-checks">
-          <div class="price-check">Pista Cheia 2026 ao vivo dia 14 + replay completo · acesso imediato</div>
+          <div class="price-check">Pista Cheia 2026 ao vivo · 2 noites · 25 e 26 de maio às 19h30</div>
+          <div class="price-check">Replay completo por 1 ano · acesso liberado no e-mail</div>
           <div class="price-check">Bônus Copa 2026: o plano pronto dos 7 jogos do Brasil</div>
           <div class="price-check">Biblioteca de roteiro pronto: 30 ideias de Reels pra posto</div>
           <div class="price-check">Calendário de 30 dias: o que postar cada dia do mês</div>
           <div class="price-check">Grupo no WhatsApp só de dono e gerente de posto</div>
-          <div class="price-check">Atualização grátis por 1 ano: Reels novo, trend nova, todo mês</div>
         </div>
         <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta price-cta">Quero meu acesso agora · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
@@ -1234,7 +1261,7 @@ img{display:block;max-width:100%}
       </div>
       <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
         <div class="faq-q"><span class="faq-num">05</span><span class="faq-q-text">Como eu acesso depois que pago?</span><span class="faq-plus"></span></div>
-        <div class="faq-a"><div class="faq-a-in">Na hora. Assim que o pagamento cai, chega no seu e-mail o link da área do evento. Dia 14 de maio você acompanha o Pista Cheia ao vivo. Depois, o replay completo fica disponível por 1 ano, com atualização grátis todo mês — você revê quantas vezes quiser, no celular, tablet ou computador.</div></div>
+        <div class="faq-a"><div class="faq-a-in">Na hora. Assim que o pagamento cai, chega no seu e-mail o link da área do evento. Nas 2 noites — <strong>25 e 26 de maio às 19h30</strong> — você acompanha o Pista Cheia ao vivo. Depois, o replay completo fica disponível por 1 ano — você revê quantas vezes quiser, no celular, tablet ou computador.</div></div>
       </div>
     </div>
   </div>
@@ -1260,7 +1287,7 @@ img{display:block;max-width:100%}
 <section class="final-cta">
   <div class="sec-tag" style="justify-content:center">Última chamada · Pista Cheia 2026</div>
   <h2 class="sec-h reveal">Daqui a 30 dias, um de vocês <em>tá com a pista cheia</em>. O outro tá vendo passar.</h2>
-  <p class="final-sub">Não é frase de palestra, é matemática de bairro: <strong style="color:#fff">posto que aparece no celular ganha cliente, posto que não aparece, perde</strong>. <span style="color:var(--accent-2)">R$ 147</span> hoje é o que separa o dono que entra na turma ao vivo do que vai ver de fora. <strong style="color:#fff">Dia 14, no Pista Cheia, você vira o lado da pista cheia — por R$ 147.</strong></p>
+  <p class="final-sub">Não é frase de palestra, é matemática de bairro: <strong style="color:#fff">posto que aparece no celular ganha cliente, posto que não aparece, perde</strong>. <span style="color:var(--accent-2)">R$ 147</span> hoje é o que separa o dono que entra na turma ao vivo do que vai ver de fora. <strong style="color:#fff">25 e 26 de maio às 19h30, no Pista Cheia, você vira o lado da pista cheia — por R$ 147.</strong></p>
   <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero o lado da pista cheia · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   <p class="final-wpp">
     <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Pista+Cheia+2026+e+quero+saber+mais+antes+de+garantir+minha+vaga" data-wa="final-cta" onclick="trackWA('final-cta')"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use href="#icon-wpp"/></svg>Antes de comprar, tira dúvida no WhatsApp</a>
@@ -1405,23 +1432,16 @@ function toggleFaq(el){
   }
 }
 
-// === COUNTDOWN — flip clock persistente ===
-// Cada digito tem seu proprio span. Quando o valor muda, o digito recebe
-// .flipping (animation flip) por 550ms. Barra de progresso top consome
-// proporcionalmente ao tempo restante na janela.
+// === COUNTDOWN — flip clock ancorado em data fixa (sala abrindo) ===
+// Deadline = 25/05/2026 às 19h30 BRT. Não reseta a cada visita.
+// Barra de progresso usa janela de 30 dias antes do evento como denominador.
 (function(){
-  var KEY='cp_course_deadline_v1';
-  var WINDOW_MS=24*60*60*1000;
-  var deadline=parseInt(localStorage.getItem(KEY)||'0',10);
-  var now=Date.now();
-  if(!deadline||deadline<now){
-    deadline=now+WINDOW_MS;
-    try{localStorage.setItem(KEY,deadline)}catch(e){}
-  }
+  var deadline=new Date('2026-05-25T19:30:00-03:00').getTime();
+  var WINDOW_MS=30*24*60*60*1000;
   function digits(unit){return document.querySelectorAll('[data-cd="'+unit+'"] .cd-digit')}
-  var dH=digits('h'),dM=digits('m'),dS=digits('s');
+  var dD=digits('d'),dH=digits('h'),dM=digits('m'),dS=digits('s');
   var progressFill=document.querySelector('.cd-progress-fill');
-  var prevH='--',prevM='--',prevS='--';
+  var prevD='--',prevH='--',prevM='--',prevS='--';
   function pad(n){return n<10?'0'+n:''+n}
   function setUnit(spans,oldStr,newStr){
     if(oldStr===newStr)return;
@@ -1438,48 +1458,26 @@ function toggleFaq(el){
   }
   function tick(){
     var diff=Math.max(0,deadline-Date.now());
-    var h=pad(Math.floor(diff/3600000));
+    var d=pad(Math.floor(diff/86400000));
+    var h=pad(Math.floor((diff%86400000)/3600000));
     var m=pad(Math.floor((diff%3600000)/60000));
     var s=pad(Math.floor((diff%60000)/1000));
+    if(dD.length)setUnit(dD,prevD,d);
     if(dH.length)setUnit(dH,prevH,h);
     if(dM.length)setUnit(dM,prevM,m);
     if(dS.length)setUnit(dS,prevS,s);
-    prevH=h;prevM=m;prevS=s;
+    prevD=d;prevH=h;prevM=m;prevS=s;
     if(progressFill){
-      var pct=diff/WINDOW_MS;
+      var pct=Math.min(1,diff/WINDOW_MS);
       progressFill.style.transform='scaleX('+pct.toFixed(4)+')';
-    }
-    if(diff===0){
-      deadline=Date.now()+WINDOW_MS;
-      try{localStorage.setItem(KEY,deadline)}catch(e){}
     }
   }
   tick();
   setInterval(tick,1000);
 })();
 
-// === SOCIAL PROOF — incremento orgânico ===
-(function(){
-  var el=document.getElementById('proof-count');
-  if(!el)return;
-  var KEY='cp_proof_v2';
-  var stored=parseInt(localStorage.getItem(KEY)||'0',10);
-  var base=12;
-  var n=stored>=base?stored:base;
-  el.textContent=n;
-  function bump(){
-    if(Math.random()<.35){
-      n++;
-      try{localStorage.setItem(KEY,n)}catch(e){}
-      el.style.transition='transform .35s cubic-bezier(.34,1.56,.64,1)';
-      el.style.transform='scale(1.25)';
-      el.textContent=n;
-      setTimeout(function(){el.style.transform='scale(1)'},350);
-    }
-    setTimeout(bump,60000+Math.random()*120000);
-  }
-  setTimeout(bump,30000+Math.random()*30000);
-})();
+// === SOCIAL PROOF — número estático (validado pelo André: sem bump artificial) ===
+// O texto fixo já está no HTML ("+380 donos de posto já garantiram vaga"). Sem JS.
 
 // === WhatsApp tracking ===
 window.trackWA=function(source){
@@ -1960,7 +1958,7 @@ window.addEventListener('load',function(){
         ).finished.then(function(){
           // glow burst no final
           m.animate(priceMain,
-            {filter:['drop-shadow(0 0 0 transparent)','drop-shadow(0 0 22px rgba(255,182,39,.65)) drop-shadow(0 0 38px rgba(232,89,60,.4))','drop-shadow(0 0 0 transparent)']},
+            {filter:['drop-shadow(0 0 0 transparent)','drop-shadow(0 0 22px rgba(255,182,39,.65)) drop-shadow(0 0 38px rgba(242,102,0,.4))','drop-shadow(0 0 0 transparent)']},
             {duration:1.6,ease:'easeInOut'}
           );
         });
