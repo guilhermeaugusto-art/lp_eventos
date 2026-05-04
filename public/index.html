@@ -169,7 +169,9 @@ body::before{content:'';position:fixed;inset:0;background:
 .blob-4{width:480px;height:480px;background:radial-gradient(circle,rgba(242,102,0,.35) 0%,rgba(242,102,0,0) 70%);top:78%;right:-140px;animation:blobFloat 16s ease-in-out infinite -3s reverse}
 .blob-5{width:380px;height:380px;background:radial-gradient(circle,rgba(255,182,39,.3) 0%,rgba(255,182,39,0) 70%);bottom:8%;left:30%;animation:blobFloat 20s ease-in-out infinite -11s}
 @keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(20px,-15px) scale(1.08)}66%{transform:translate(-15px,10px) scale(.96)}}
-@media(max-width:760px){.blob{filter:blur(60px);opacity:.35}.blob-1,.blob-3,.blob-5{display:none}}
+@media(max-width:760px){.blob{filter:blur(60px);opacity:.3}.blob-1,.blob-3,.blob-4,.blob-5{display:none}}
+/* Devices que prefere reduce: zera blob/bg-line motion mas mantem visual estatico */
+@media(prefers-reduced-motion:reduce){.blob,.bg-line,body::before{animation:none!important}}
 @media(prefers-reduced-motion:reduce){.blob{animation:none!important}}
 
 /* === BG NEON LINES === */
@@ -467,31 +469,6 @@ img{display:block;max-width:100%}
    So glow externo difuso que se mistura com o fundo da pagina sem criar
    "linha de campo" ou caixa visual rigida. */
 .module-bonus{grid-column:1/-1;background:linear-gradient(135deg,#1a0f0a 0%,#0e0e0e 70%);border:1px solid rgba(255,255,255,.05);padding:28px 32px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;position:relative;overflow:visible;margin-top:100px;min-height:160px;box-shadow:0 22px 60px -18px rgba(242,102,0,.32),0 0 120px -40px rgba(255,182,39,.22),0 0 200px -60px rgba(242,102,0,.28)}
-/* === BÔNUS COPA — decoração 3D ===
-   Imgs sao renders 3D em fundo preto sem alpha. mix-blend-mode:screen
-   "remove" o preto (preto + qualquer cor = mantem cor). Object-fit:contain
-   pra preservar proporcao da imagem original.
-   Entrada coordenada: cada elemento parte do estado fora-de-viewport e
-   so anima quando .module-bonus recebe .in (pelo IntersectionObserver). */
-/* Container ocupa o card todo; cada elemento tem zona propria sem amontoar.
-   Tamanhos compactos pra nao dominar visualmente. Motion (window.motion) anima
-   entrada+loop com spring physics; CSS aqui eh fallback se a lib nao carregar. */
-.bonus-3d{position:absolute;inset:0;pointer-events:none;z-index:10}
-.bonus-ball,.bonus-flag,.bonus-trophy{position:absolute;object-fit:contain;will-change:transform,opacity;opacity:0}
-.bonus-ball{top:-90px;right:-5px;width:140px;height:auto;filter:drop-shadow(0 18px 28px rgba(0,0,0,.85)) drop-shadow(0 0 28px rgba(255,182,39,.55)) drop-shadow(0 0 50px rgba(242,102,0,.4));transform:scale(.15) rotate(-220deg) translateY(40px);transition:opacity 1.6s var(--ease-cinematic),transform 2.2s var(--ease-cinematic);z-index:3}
-.bonus-flag{top:-15px;right:140px;width:125px;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.65)) drop-shadow(0 0 16px rgba(31,175,82,.45));transform:translateX(60px) rotate(-14deg);transition:opacity 1.3s var(--ease-cinematic) .5s,transform 1.8s var(--ease-cinematic) .5s;z-index:1}
-.bonus-trophy{bottom:10px;right:50px;width:62px;height:auto;filter:drop-shadow(0 14px 22px rgba(0,0,0,.75)) drop-shadow(0 0 18px rgba(255,182,39,.6));transform:translateY(50px) rotate(0deg) rotateY(-90deg);transition:opacity 1.3s var(--ease-cinematic) .9s,transform 1.8s var(--ease-cinematic) .9s;z-index:2}
-/* Final diagonal: bola fica em -15deg pra parecer flutuando dinamica. */
-.module-bonus.in .bonus-ball{opacity:1;transform:scale(1) rotate(-15deg);animation:ballFloat 5s ease-in-out 2.4s infinite}
-.module-bonus.in .bonus-flag{opacity:.95;transform:translateX(0) rotate(-10deg);animation:flagWave 6s ease-in-out 2.5s infinite}
-.module-bonus.in .bonus-trophy{opacity:1;transform:translateY(0) rotate(14deg) rotateY(0);animation:trophyFloat 5.5s ease-in-out 2.7s infinite}
-@keyframes ballFloat{0%,100%{transform:scale(1) rotate(-15deg) translateY(0)}50%{transform:scale(1) rotate(-7deg) translateY(-10px)}}
-@keyframes flagWave{0%,100%{transform:translateX(0) rotate(-10deg) translateY(0)}50%{transform:translateX(0) rotate(-6deg) translateY(-6px)}}
-@keyframes trophyFloat{0%,100%{transform:translateY(0) rotate(14deg) rotateY(0)}50%{transform:translateY(-5px) rotate(8deg) rotateY(8deg)}}
-/* motion-on: classe adicionada via JS quando window.motion carrega. Desliga
-   o keyframes/transition CSS (motion assume controle via JS). */
-.motion-on .bonus-ball,.motion-on .bonus-flag,.motion-on .bonus-trophy{animation:none!important;transition:none!important}
-@media(prefers-reduced-motion:reduce){.bonus-ball,.bonus-flag,.bonus-trophy{animation:none!important;transition:opacity .3s ease!important}.module-bonus.in .bonus-ball,.module-bonus.in .bonus-flag,.module-bonus.in .bonus-trophy{transform:none!important}}
 .module-bonus::before{display:none}
 .module-bonus::after{display:none}
 .module-bonus .module-num{opacity:1;font-size:72px;margin-bottom:0;grid-row:1/3;align-self:center}
@@ -499,25 +476,9 @@ img{display:block;max-width:100%}
 .module-bonus .module-title{grid-column:2;margin-bottom:6px}
 .module-bonus .module-desc{grid-column:2;max-width:640px}
 @media(max-width:760px){
-  .module-bonus{grid-template-columns:1fr;gap:10px;padding:24px 20px;padding-top:90px;margin-top:75px;min-height:auto}
+  .module-bonus{grid-template-columns:1fr;gap:10px;padding:24px 20px;margin-top:32px;min-height:auto}
   .module-bonus .module-num{font-size:52px;grid-row:auto}
   .module-bonus .bonus-tag,.module-bonus .module-title,.module-bonus .module-desc{grid-column:auto}
-  /* Mobile: 3 imagens pequenas em formato \ | /, escapando pelo topo do card.
-     Bandeira esquerda inclinada (\), bola central reta (|), trofeu direita (/).
-     Tudo posicionado via left+margin-left em vez de translateX pra nao
-     conflitar com motion.animate (que sobrescreve transform). */
-  .bonus-3d{width:100%;left:0;right:0;transform:none;height:auto;top:0}
-  /* Layout \ | /: bola alta no centro, bandeira/trofeu mais baixos nas
-     laterais, separados por ~22px pra criar respiro visual sem encostar. */
-  .bonus-flag{display:block;width:62px;height:auto;top:-52px;right:auto;left:50%;margin-left:-128px;transform:translateX(60px) rotate(-25deg);filter:drop-shadow(0 6px 12px rgba(0,0,0,.55)) drop-shadow(0 0 10px rgba(31,175,82,.4))}
-  .module-bonus.in .bonus-flag{transform:rotate(-25deg);animation:ballFlagMob 6s ease-in-out 2.5s infinite}
-  @keyframes ballFlagMob{0%,100%{transform:rotate(-25deg) translateY(0)}50%{transform:rotate(-22deg) translateY(-4px)}}
-  .bonus-ball{width:78px;height:auto;top:-78px;right:auto;left:50%;margin-left:-39px;transform:scale(.15) rotate(-220deg) translateY(40px)}
-  .module-bonus.in .bonus-ball{transform:scale(1) rotate(0);animation:ballFloatMob 4.5s ease-in-out 2.4s infinite}
-  @keyframes ballFloatMob{0%,100%{transform:scale(1) rotate(0) translateY(0)}50%{transform:scale(1) rotate(8deg) translateY(-8px)}}
-  .bonus-trophy{display:block;width:46px;height:auto;top:-58px;right:auto;left:50%;margin-left:62px;bottom:auto;transform:translateY(40px) rotateY(-90deg);filter:drop-shadow(0 6px 12px rgba(0,0,0,.6)) drop-shadow(0 0 10px rgba(255,182,39,.45))}
-  .module-bonus.in .bonus-trophy{transform:rotate(25deg) rotateY(0);animation:trophyFloatMob 5.5s ease-in-out 2.7s infinite}
-  @keyframes trophyFloatMob{0%,100%{transform:rotate(25deg) translateY(0)}50%{transform:rotate(22deg) translateY(-4px)}}
 }
 .bonus-tag{display:inline-block;padding:4px 10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:6px;margin-bottom:8px;box-shadow:0 6px 16px -6px rgba(242,102,0,.55)}
 
@@ -844,13 +805,6 @@ img{display:block;max-width:100%}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
     <symbol id="icon-wpp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
-    <!-- Module icons — bold filled glyphs, 24x24, render bem em 36-40px -->
-    <symbol id="mod-1" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm17 1.5v9l-3-2.2v-4.6l3-2.2zM6 8.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></symbol>
-    <symbol id="mod-2" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 6v10h16V10H4zm3 2h3v3H7v-3zm5 0h3v3h-3v-3zM7 2v3h2V2H7zm8 0v3h2V2h-2z"/></symbol>
-    <symbol id="mod-3" viewBox="0 0 24 24"><path fill="currentColor" d="M3 4h12a2 2 0 0 1 2 2v2H5a2 2 0 0 0-2 2V4zm2 5h12a2 2 0 0 1 2 2v2H7a2 2 0 0 0-2 2V9zm2 5h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-5z"/></symbol>
-    <symbol id="mod-4" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></symbol>
-    <symbol id="mod-5" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-3.9 0-7 3.1-7 7 0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></symbol>
-    <symbol id="mod-6" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-3 4h4.2a3.3 3.3 0 0 1 1.1 6.4l2.5 4.6h-2.5l-2.4-4.4H11V17H9V6zm2 2v3h2.2a1.5 1.5 0 0 0 0-3H11z"/></symbol>
   </defs>
 </svg>
 
@@ -980,7 +934,7 @@ img{display:block;max-width:100%}
       </div>
     </div>
     <div class="problem-img">
-      <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/4pRp7j1.jpg" aria-label="Posto com pracinha vazia">
+      <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/4pRp7j1.jpg" aria-label="Posto com pracinha vazia">
         <source src="https://i.imgur.com/4pRp7j1.mp4" type="video/mp4">
       </video>
     </div>
@@ -1075,7 +1029,7 @@ img{display:block;max-width:100%}
     <a class="reel-card reveal" href="https://www.instagram.com/clubpetro/reel/DRNl7lLASjT/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DRNl7lLASjT'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
-        <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/OU2EW83.jpg" aria-label="Reel @clubpetro">
+        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/OU2EW83.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/OU2EW83.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
@@ -1096,7 +1050,7 @@ img{display:block;max-width:100%}
     <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/clubpetro/reel/DGnsqczRbwJ/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DGnsqczRbwJ'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
-        <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/Lh3ebh2.jpg" aria-label="Reel @clubpetro">
+        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/Lh3ebh2.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/Lh3ebh2.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
@@ -1117,7 +1071,7 @@ img{display:block;max-width:100%}
     <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/clubpetro/reel/DHeI_dJRQjz/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DHeI_dJRQjz'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
-        <video autoplay muted loop playsinline preload="metadata" poster="https://i.imgur.com/HO66l7V.jpg" aria-label="Reel @clubpetro">
+        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/HO66l7V.jpg" aria-label="Reel @clubpetro">
           <source src="https://i.imgur.com/HO66l7V.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
@@ -1757,64 +1711,6 @@ window.addEventListener('load',function(){
     var m=window.motion;
     document.body.classList.add('motion-on');
 
-    // (Removido o pulse de box-shadow infinito do bonus card — animar box-shadow
-    //  forca paint a cada frame e era a maior causa de jank na pagina. Glow
-    //  estatico no CSS faz o mesmo papel visual sem custo de paint.)
-
-    // --- Bonus 3D: entrada coordenada (lenta, cinematografica) + loop infinito ---
-    var bonus=document.querySelector('.module-bonus');
-    var ball=document.querySelector('.bonus-ball');
-    var flag=document.querySelector('.bonus-flag');
-    var trophy=document.querySelector('.bonus-trophy');
-    var isMobile=window.matchMedia('(max-width:760px)').matches;
-    if(bonus&&ball&&m.inView){
-      // Estado inicial e final variam em mobile (layout \ | /) vs desktop (triangulo)
-      var ballRotFinal=isMobile?0:-15;
-      var flagRotFinal=isMobile?-25:-10;
-      var trophyRotFinal=isMobile?25:14;
-
-      ball.style.opacity='0';
-      ball.style.transform='scale(.15) rotate(-220deg) translateY(40px)';
-      if(flag){flag.style.opacity='0';flag.style.transform=(isMobile?'translateX(40px) ':'translateX(60px) ')+'rotate('+(isMobile?-40:-14)+'deg)'}
-      if(trophy){trophy.style.opacity='0';trophy.style.transform='translateY(40px) rotate(0deg) rotateY(-90deg)'}
-
-      m.inView(bonus,function(){
-        m.animate(ball,
-          {opacity:[0,1],scale:[.15,1],rotate:[-220,ballRotFinal],y:[40,0]},
-          {duration:2.2,ease:[.16,1,.3,1]}
-        ).finished.then(function(){
-          m.animate(ball,
-            {y:[0,-10,0],rotate:[ballRotFinal,ballRotFinal+8,ballRotFinal]},
-            {duration:5,repeat:Infinity,ease:'easeInOut'}
-          );
-        });
-
-        if(flag){
-          m.animate(flag,
-            {opacity:[0,.95],x:[isMobile?40:60,0],rotate:[isMobile?-40:-14,flagRotFinal]},
-            {duration:1.8,delay:.5,ease:[.16,1,.3,1]}
-          ).finished.then(function(){
-            m.animate(flag,
-              {y:[0,-5,0],rotate:[flagRotFinal,flagRotFinal+4,flagRotFinal]},
-              {duration:6,repeat:Infinity,ease:'easeInOut'}
-            );
-          });
-        }
-
-        if(trophy){
-          m.animate(trophy,
-            {opacity:[0,1],y:[40,0],rotate:[0,trophyRotFinal],rotateY:[-90,0]},
-            {duration:1.8,delay:.9,ease:[.16,1,.3,1]}
-          ).finished.then(function(){
-            m.animate(trophy,
-              {y:[0,-4,0],rotate:[trophyRotFinal,trophyRotFinal-4,trophyRotFinal]},
-              {duration:5.5,repeat:Infinity,ease:'easeInOut'}
-            );
-          });
-        }
-      },{amount:.3});
-    }
-
     // --- CTA: hover spring (substitui o magnetic CTA do CSS, mais elegante) ---
     if(!window.matchMedia('(hover:none)').matches){
       document.querySelectorAll('.cta').forEach(function(cta){
@@ -2029,6 +1925,47 @@ window.addEventListener('load',function(){
   }
   if(window.motion)init();
   else document.addEventListener('motion:ready',init);
+})();
+
+// === LAZY VIDEO PLAY ===
+// 5 videos autoplay simultaneo era o maior gargalo (CPU/GPU em loop infinito).
+// Agora cada video so toca quando >= 35% visivel, pausa quando sai do viewport.
+// preload="none" no markup garante zero traffic ate o IO disparar load+play.
+(function(){
+  var vids=document.querySelectorAll('video[data-lazy-video]');
+  if(!vids.length)return;
+  if(!('IntersectionObserver' in window)){
+    // Fallback: navegadores antigos rodam tudo — comportamento original
+    vids.forEach(function(v){v.play().catch(function(){})});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      var v=en.target;
+      if(en.isIntersecting){
+        // Lazy load src so quando entra (preload=none nao carrega antes)
+        if(!v.dataset.loaded){
+          v.load();
+          v.dataset.loaded='1';
+        }
+        v.play().catch(function(){});
+      }else{
+        v.pause();
+      }
+    });
+  },{threshold:.35});
+  vids.forEach(function(v){io.observe(v)});
+  // Pausa global quando aba sai de foco
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden){vids.forEach(function(v){v.pause()})}
+    else{
+      // Ao voltar, retoma so quem esta visivel
+      vids.forEach(function(v){
+        var r=v.getBoundingClientRect();
+        if(r.top<window.innerHeight&&r.bottom>0)v.play().catch(function(){});
+      });
+    }
+  });
 })();
 
 // === Lucide icons — render SVGs em todos os <i data-lucide="..."> ===
