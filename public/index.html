@@ -482,12 +482,19 @@ img{display:block;max-width:100%}
 }
 .bonus-tag{display:inline-block;padding:4px 10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:6px;margin-bottom:8px;box-shadow:0 6px 16px -6px rgba(242,102,0,.55)}
 
-/* === REELS / SOCIAL PROOF === */
-.reels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,280px));gap:20px;max-width:900px;margin:24px auto 0;justify-content:center}
+/* === REELS / SOCIAL PROOF ===
+   Desktop: grid 6-col com cards span(2). 3 cards na linha 1, 2 cards
+   centralizados na linha 2 (col 2-3 e 4-5). Mobile: scroll horizontal snap. */
+.reels-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;max-width:920px;margin:24px auto 0}
+.reels-grid .reel-card{grid-column:span 2}
+.reels-grid .reel-card:nth-child(4){grid-column:2/span 2}
+.reels-grid .reel-card:nth-child(5){grid-column:4/span 2}
 @media(max-width:760px){
   .reels-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:4px 16px 18px;margin:24px -16px 0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .reels-grid::-webkit-scrollbar{display:none}
-  .reels-grid .reel-card{flex:0 0 75%;scroll-snap-align:center;min-width:0}
+  .reels-grid .reel-card,
+  .reels-grid .reel-card:nth-child(4),
+  .reels-grid .reel-card:nth-child(5){flex:0 0 75%;scroll-snap-align:center;min-width:0;grid-column:auto}
 }
 .reel-card{background:linear-gradient(180deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s,border-color .3s;display:block;color:inherit;text-decoration:none;position:relative;box-shadow:0 14px 32px -16px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.02) inset}
 .reel-card::after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(160deg,rgba(255,182,39,.12),transparent 35%);opacity:0;transition:opacity .5s var(--ease-soft);pointer-events:none;z-index:2}
@@ -502,13 +509,22 @@ img{display:block;max-width:100%}
 .reel-card:hover .reel-play{transform:translate(-50%,-50%) scale(1.15);box-shadow:0 18px 40px -6px rgba(0,0,0,.6),0 0 48px -4px rgba(242,102,0,.7)}
 .reel-ig-hint{position:absolute;bottom:10px;left:10px;display:flex;align-items:center;gap:6px;padding:6px 10px;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);border-radius:100px;font-size:11.5px;font-weight:700;color:#fff;letter-spacing:.01em;z-index:3}
 .reel-ig-hint svg{width:13px;height:13px}
-.reel-body{padding:18px 20px 20px}
-.reel-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;font-size:11px}
-.reel-tag{display:inline-flex;align-items:center;gap:5px;padding:3px 9px 3px 8px;border-radius:100px;background:rgba(242,102,0,.14);border:1px solid rgba(242,102,0,.3);color:var(--accent-2);font-weight:700;letter-spacing:.5px;text-transform:uppercase;font-size:9.5px}
-.reel-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 6px rgba(242,102,0,.6)}
-.reel-handle{font-size:11px;font-weight:600;color:var(--text-dim);font-variant:all-small-caps;letter-spacing:.5px}
-.reel-title{font-family:var(--font-body);font-size:17px;font-weight:800;color:#fff;line-height:1.2;letter-spacing:-.3px;margin-bottom:8px}
-.reel-summary{font-size:12.5px;color:var(--text-mid);line-height:1.6;font-weight:400}
+.reel-body{padding:18px 20px 18px}
+.reel-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+/* Avatar do posto: placeholder com Phosphor gas-pump em gradient laranja.
+   Quando tiver logo real, trocar pra <img class="reel-avatar"> */
+.reel-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-glow));display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;border:1.5px solid rgba(255,182,39,.45);box-shadow:0 4px 12px -2px rgba(242,102,0,.45),inset 0 1px 0 rgba(255,255,255,.25)}
+.reel-avatar i{font-size:18px;line-height:1}
+img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
+.reel-handle-block{display:flex;flex-direction:column;line-height:1.2;min-width:0;flex:1}
+.reel-handle{font-size:13px;font-weight:700;color:#fff;letter-spacing:-.1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reel-place{font-size:11px;color:var(--text-dim);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.reel-summary{font-size:12.5px;color:var(--text-mid);line-height:1.55;font-weight:400;margin:0}
+/* Stats do reel: views (play), comentarios (msg), shares — divisor sutil acima */
+.reel-stats{display:flex;gap:18px;margin-top:12px;padding-top:11px;border-top:1px solid rgba(255,255,255,.07)}
+.reel-stat{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:#cfcfcf;font-weight:700;letter-spacing:.1px;font-variant-numeric:tabular-nums}
+.reel-stat svg{width:14px;height:14px;stroke-width:2.4;color:var(--accent-glow);flex-shrink:0}
+.reel-stat span{line-height:1}
 /* Tipografia animada do summary: cada palavra entra em stagger quando o card recebe .in.
    Stagger sutil (35ms) pra nao competir com o reveal-card. */
 .reel-summary > .word{display:inline-block;opacity:0;transform:translateY(.4em);transition:opacity .5s var(--ease-cinematic),transform .5s var(--ease-cinematic);transition-delay:calc(var(--i,0) * 30ms + 250ms)}
@@ -1015,22 +1031,22 @@ img{display:block;max-width:100%}
 
 <div class="sec-divider"></div>
 
-<!-- ===== BLOCO 3 — PROVA SOCIAL (Reels @clubpetro) ===== -->
+<!-- ===== BLOCO 3 — PROVA SOCIAL (Casos reais de postos clientes) ===== -->
 <section class="sec">
   <div class="sec-head">
-    <span class="sec-lead">O método rodando no nosso Instagram</span>
-    <div class="sec-tag">A ClubPetro aplica o que ensina</div>
-    <h2 class="sec-h reveal">De zero a <em>2M+ de views</em> aplicando o método. O mesmo que o André abre <em>25 e 26 de maio no Pista Cheia</em>.</h2>
-    <p class="sec-p">A ClubPetro é uma empresa de software pra posto — não é agência, não é influencer. Toda semana o time aplica o método em público, no @clubpetro. Os 3 Reels abaixo mostram em prática o que o André vai destrinchar no evento ao vivo.</p>
+    <span class="sec-lead">Postos que encheram a pracinha</span>
+    <div class="sec-tag">Casos reais · você é o próximo</div>
+    <h2 class="sec-h reveal">Cinco postos viraram <em>referência</em> na cidade. Cada um aplicando uma frente diferente do método.</h2>
+    <p class="sec-p">Não tem agência por trás. Nenhum virou influencer. Cada dono aplicou uma frente — Reel educativo, trend bem usada, R$ 10 por dia no Meta, frentista virando rosto da marca — e viu cliente novo entrar na pracinha. O <strong>Pista Cheia</strong> abre o passo a passo de cada um. O próximo pode ser o seu posto.</p>
   </div>
 
   <div class="reels-grid" id="casesGrid">
-    <!-- Reel 1 — DRNl7lLASjT (vídeo Imgur: OU2EW83) -->
-    <a class="reel-card reveal" href="https://www.instagram.com/clubpetro/reel/DRNl7lLASjT/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DRNl7lLASjT'})">
+    <!-- Reel 1 — DVMtRsHiWF0 · TODO preencher dados reais: @handle, nome do posto, cidade/UF, views, comments, shares, avatar -->
+    <a class="reel-card reveal" href="https://www.instagram.com/reel/DVMtRsHiWF0/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DVMtRsHiWF0'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
-        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/OU2EW83.jpg" aria-label="Reel @clubpetro">
-          <source src="https://i.imgur.com/OU2EW83.mp4" type="video/mp4">
+        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/i3j882O.jpg" aria-label="Reel de posto cliente">
+          <source src="https://i.imgur.com/i3j882O.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -1039,19 +1055,26 @@ img{display:block;max-width:100%}
       </div>
       <div class="reel-body">
         <div class="reel-meta">
-          <span class="reel-tag">Hábito do dono</span>
-          <span class="reel-handle">@clubpetro</span>
+          <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
+          <div class="reel-handle-block">
+            <span class="reel-handle">@posto_exemplo_1</span>
+            <span class="reel-place">Posto cliente · Cidade/UF</span>
+          </div>
         </div>
-        <h3 class="reel-title">Por que seu posto não aparece</h3>
-        <p class="reel-summary">Os 3 erros mais comuns que esvaziam a pista — e o ajuste simples que muda o jogo na semana que vem.</p>
+        <p class="reel-summary">Reel educativo com dica prática que parou o scroll do motorista — salvamento e share viraram visita na pracinha.</p>
+        <div class="reel-stats" aria-label="Métricas do reel">
+          <span class="reel-stat"><i data-lucide="play" aria-hidden="true"></i><span>--K</span></span>
+          <span class="reel-stat"><i data-lucide="message-circle" aria-hidden="true"></i><span>--</span></span>
+          <span class="reel-stat"><i data-lucide="share-2" aria-hidden="true"></i><span>--</span></span>
+        </div>
       </div>
     </a>
-    <!-- Reel 2 — DGnsqczRbwJ (vídeo Imgur: Lh3ebh2) -->
-    <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/clubpetro/reel/DGnsqczRbwJ/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DGnsqczRbwJ'})">
+    <!-- Reel 2 — DOln8ttjVzr · TODO preencher dados reais -->
+    <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/reel/DOln8ttjVzr/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DOln8ttjVzr'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
-        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/Lh3ebh2.jpg" aria-label="Reel @clubpetro">
-          <source src="https://i.imgur.com/Lh3ebh2.mp4" type="video/mp4">
+        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/zu1c8sz.jpg" aria-label="Reel de posto cliente">
+          <source src="https://i.imgur.com/zu1c8sz.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -1060,19 +1083,26 @@ img{display:block;max-width:100%}
       </div>
       <div class="reel-body">
         <div class="reel-meta">
-          <span class="reel-tag">Frentista protagonista</span>
-          <span class="reel-handle">@clubpetro</span>
+          <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
+          <div class="reel-handle-block">
+            <span class="reel-handle">@posto_exemplo_2</span>
+            <span class="reel-place">Posto cliente · Cidade/UF</span>
+          </div>
         </div>
-        <h3 class="reel-title">O melhor vendedor que você nunca usou</h3>
-        <p class="reel-summary">Como transformar quem atende em criador de conteúdo — sem agência, sem produção, gravando do próprio celular.</p>
+        <p class="reel-summary">Trend do momento adaptada pra rotina do posto. Pulou pra aba "explore" e trouxe motorista novo na semana seguinte.</p>
+        <div class="reel-stats" aria-label="Métricas do reel">
+          <span class="reel-stat"><i data-lucide="play" aria-hidden="true"></i><span>--K</span></span>
+          <span class="reel-stat"><i data-lucide="message-circle" aria-hidden="true"></i><span>--</span></span>
+          <span class="reel-stat"><i data-lucide="share-2" aria-hidden="true"></i><span>--</span></span>
+        </div>
       </div>
     </a>
-    <!-- Reel 3 — DHeI_dJRQjz (vídeo Imgur: HO66l7V) -->
-    <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/clubpetro/reel/DHeI_dJRQjz/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DHeI_dJRQjz'})">
+    <!-- Reel 3 — DWWgxgukyHX · TODO preencher dados reais -->
+    <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/reel/DWWgxgukyHX/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DWWgxgukyHX'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
-        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/HO66l7V.jpg" aria-label="Reel @clubpetro">
-          <source src="https://i.imgur.com/HO66l7V.mp4" type="video/mp4">
+        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/KLQcV6N.jpg" aria-label="Reel de posto cliente">
+          <source src="https://i.imgur.com/KLQcV6N.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -1081,11 +1111,74 @@ img{display:block;max-width:100%}
       </div>
       <div class="reel-body">
         <div class="reel-meta">
-          <span class="reel-tag">Reel que viralizou</span>
-          <span class="reel-handle">@clubpetro</span>
+          <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
+          <div class="reel-handle-block">
+            <span class="reel-handle">@posto_exemplo_3</span>
+            <span class="reel-place">Posto cliente · Cidade/UF</span>
+          </div>
         </div>
-        <h3 class="reel-title">Numa terça viralizou. Na quarta, pista cheia.</h3>
-        <p class="reel-summary">Gancho, roteiro e CTA do conteúdo que mais converteu motorista curioso em cliente real.</p>
+        <p class="reel-summary">Conteúdo simples — problema do motorista, solução do posto. Dois minutos pra gravar, semana cheia de cliente novo.</p>
+        <div class="reel-stats" aria-label="Métricas do reel">
+          <span class="reel-stat"><i data-lucide="play" aria-hidden="true"></i><span>--K</span></span>
+          <span class="reel-stat"><i data-lucide="message-circle" aria-hidden="true"></i><span>--</span></span>
+          <span class="reel-stat"><i data-lucide="share-2" aria-hidden="true"></i><span>--</span></span>
+        </div>
+      </div>
+    </a>
+    <!-- Reel 4 — DVrknulkuGu · TODO preencher dados reais -->
+    <a class="reel-card reveal" href="https://www.instagram.com/reel/DVrknulkuGu/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DVrknulkuGu'})">
+      <div class="reel-thumb">
+        <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
+        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/JYeSmku.jpg" aria-label="Reel de posto cliente">
+          <source src="https://i.imgur.com/JYeSmku.mp4" type="video/mp4">
+        </video>
+        <div class="reel-ig-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Ver no Instagram
+        </div>
+      </div>
+      <div class="reel-body">
+        <div class="reel-meta">
+          <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
+          <div class="reel-handle-block">
+            <span class="reel-handle">@posto_exemplo_4</span>
+            <span class="reel-place">Posto cliente · Cidade/UF</span>
+          </div>
+        </div>
+        <p class="reel-summary">R$ 10 por dia no Meta colocou o vídeo no celular de quem dirige no raio de 5km — anúncio pago que se paga sozinho.</p>
+        <div class="reel-stats" aria-label="Métricas do reel">
+          <span class="reel-stat"><i data-lucide="play" aria-hidden="true"></i><span>--K</span></span>
+          <span class="reel-stat"><i data-lucide="message-circle" aria-hidden="true"></i><span>--</span></span>
+          <span class="reel-stat"><i data-lucide="share-2" aria-hidden="true"></i><span>--</span></span>
+        </div>
+      </div>
+    </a>
+    <!-- Reel 5 — DN1SBJjwl2M · TODO preencher dados reais -->
+    <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/reel/DN1SBJjwl2M/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DN1SBJjwl2M'})">
+      <div class="reel-thumb">
+        <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
+        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/oOyRpPH.jpg" aria-label="Reel de posto cliente">
+          <source src="https://i.imgur.com/oOyRpPH.mp4" type="video/mp4">
+        </video>
+        <div class="reel-ig-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Ver no Instagram
+        </div>
+      </div>
+      <div class="reel-body">
+        <div class="reel-meta">
+          <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
+          <div class="reel-handle-block">
+            <span class="reel-handle">@posto_exemplo_5</span>
+            <span class="reel-place">Posto cliente · Cidade/UF</span>
+          </div>
+        </div>
+        <p class="reel-summary">Frentista do turno virou rosto da marca. Vídeo de 30 segundos, gravado entre dois clientes, sem produção.</p>
+        <div class="reel-stats" aria-label="Métricas do reel">
+          <span class="reel-stat"><i data-lucide="play" aria-hidden="true"></i><span>--K</span></span>
+          <span class="reel-stat"><i data-lucide="message-circle" aria-hidden="true"></i><span>--</span></span>
+          <span class="reel-stat"><i data-lucide="share-2" aria-hidden="true"></i><span>--</span></span>
+        </div>
       </div>
     </a>
   </div>
@@ -1093,7 +1186,7 @@ img{display:block;max-width:100%}
 
 <div class="cta-strip">
   <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero aplicar esse método · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-  <p class="cta-note">O mesmo método que levou o @clubpetro a 2M+ de views</p>
+  <p class="cta-note">Mesmo método aplicado pelos cinco postos acima</p>
 </div>
 
 <div class="sec-divider"></div>
