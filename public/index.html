@@ -485,12 +485,12 @@ img{display:block;max-width:100%}
 /* === REELS / SOCIAL PROOF ===
    Desktop: grid 6-col com cards span(2). 3 cards na linha 1, 2 cards
    centralizados na linha 2 (col 2-3 e 4-5). Mobile: scroll horizontal snap. */
-.reels-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;max-width:920px;margin:24px auto 0}
+.reels-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:24px 24px;max-width:940px;margin:32px auto 0}
 .reels-grid .reel-card{grid-column:span 2}
 .reels-grid .reel-card:nth-child(4){grid-column:2/span 2}
 .reels-grid .reel-card:nth-child(5){grid-column:4/span 2}
 @media(max-width:760px){
-  .reels-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:4px 16px 18px;margin:24px -16px 0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .reels-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;padding:4px 16px 18px;margin:24px -16px 0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .reels-grid::-webkit-scrollbar{display:none}
   .reels-grid .reel-card,
   .reels-grid .reel-card:nth-child(4),
