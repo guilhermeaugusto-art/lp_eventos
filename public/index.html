@@ -518,12 +518,12 @@ img{display:block;max-width:100%}
 img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 .reel-handle{font-size:12.5px;font-weight:700;color:#fff;letter-spacing:-.1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
 .reel-summary{font-size:11.5px;color:var(--text-mid);line-height:1.5;font-weight:400;margin:0}
-/* Stats Insta-like: heart (vermelho), comments (branco), send/share (branco) */
+/* Stats Insta-like: heart (vermelho), comments (cinza), send/share (cinza) */
 .reel-stats{display:flex;gap:14px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.07)}
 .reel-stat{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:#e0e0e0;font-weight:700;letter-spacing:.1px;font-variant-numeric:tabular-nums}
 .reel-stat svg{width:14px;height:14px;stroke-width:2.2;flex-shrink:0}
 .reel-stat span{line-height:1}
-.reel-stat-like svg{color:#ed4956;fill:#ed4956}
+.reel-stat-like svg{color:#ed4956;fill:#ed4956;stroke:none}
 .reel-stat-comment svg,.reel-stat-share svg{color:#cfcfcf;fill:none}
 /* Tipografia animada do summary: cada palavra entra em stagger quando o card recebe .in.
    Stagger sutil (35ms) pra nao competir com o reveal-card. */
@@ -1042,7 +1042,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   </div>
 
   <div class="reels-grid" id="casesGrid">
-    <!-- Reel 1 — @zemaickon · DVMtRsHiWF0 · 10K likes · 102 comments (fevereiro/2026) -->
+    <!-- Reel 1 — @zemaickon · DVMtRsHiWF0 · 10.297 likes · 102 comments (fonte: og:description + embed/captioned) -->
     <a class="reel-card reveal" href="https://www.instagram.com/zemaickon/reel/DVMtRsHiWF0/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DVMtRsHiWF0'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
@@ -1061,13 +1061,13 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
         </div>
         <p class="reel-summary">Humor curto que pega no dia a dia do posto. Motorista identifica, comenta, compartilha — sem cair em palhaçada.</p>
         <div class="reel-stats" aria-label="Métricas do reel">
-          <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">10K</span></span>
+          <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">10.297</span></span>
           <span class="reel-stat reel-stat-comment"><i data-lucide="message-circle" aria-hidden="true"></i><span data-stat="comments">102</span></span>
           <span class="reel-stat reel-stat-share"><i data-lucide="send" aria-hidden="true"></i><span data-stat="shares">—</span></span>
         </div>
       </div>
     </a>
-    <!-- Reel 2 — @leonardo.ala · DOln8ttjVzr · perfil oculta likes/comments — preencher manualmente -->
+    <!-- Reel 2 — @leonardo.ala · DOln8ttjVzr · 359 likes · 50 comments (fonte: embed/captioned) -->
     <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/leonardo.ala/reel/DOln8ttjVzr/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DOln8ttjVzr'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
@@ -1086,13 +1086,13 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
         </div>
         <p class="reel-summary">Trend do momento adaptada pra rotina do posto. Pulou pra aba "explore" e trouxe motorista novo na semana seguinte.</p>
         <div class="reel-stats" aria-label="Métricas do reel">
-          <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">—</span></span>
-          <span class="reel-stat reel-stat-comment"><i data-lucide="message-circle" aria-hidden="true"></i><span data-stat="comments">—</span></span>
+          <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">359</span></span>
+          <span class="reel-stat reel-stat-comment"><i data-lucide="message-circle" aria-hidden="true"></i><span data-stat="comments">50</span></span>
           <span class="reel-stat reel-stat-share"><i data-lucide="send" aria-hidden="true"></i><span data-stat="shares">—</span></span>
         </div>
       </div>
     </a>
-    <!-- Reel 3 — @postosredebrasil · DWWgxgukyHX · perfil oculta likes/comments — preencher manualmente -->
+    <!-- Reel 3 — @postosredebrasil · DWWgxgukyHX · 14 comments (likes ocultos pelo perfil — fonte: embed/captioned) -->
     <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/postosredebrasil/reel/DWWgxgukyHX/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DWWgxgukyHX'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
@@ -1112,12 +1112,12 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
         <p class="reel-summary">Conteúdo simples — problema do motorista, solução do posto. Dois minutos pra gravar, semana cheia de cliente novo.</p>
         <div class="reel-stats" aria-label="Métricas do reel">
           <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">—</span></span>
-          <span class="reel-stat reel-stat-comment"><i data-lucide="message-circle" aria-hidden="true"></i><span data-stat="comments">—</span></span>
+          <span class="reel-stat reel-stat-comment"><i data-lucide="message-circle" aria-hidden="true"></i><span data-stat="comments">14</span></span>
           <span class="reel-stat reel-stat-share"><i data-lucide="send" aria-hidden="true"></i><span data-stat="shares">—</span></span>
         </div>
       </div>
     </a>
-    <!-- Reel 4 — @zemaickon · DVrknulkuGu · 8.355 likes · 128 comments (março/2026) -->
+    <!-- Reel 4 — @zemaickon · DVrknulkuGu · 8.355 likes · 128 comments (fonte: og:description + embed/captioned) -->
     <a class="reel-card reveal" href="https://www.instagram.com/zemaickon/reel/DVrknulkuGu/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DVrknulkuGu'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
@@ -1142,7 +1142,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
         </div>
       </div>
     </a>
-    <!-- Reel 5 — @clubpetro · DN1SBJjwl2M · perfil oculta likes/comments — preencher manualmente -->
+    <!-- Reel 5 — @clubpetro · DN1SBJjwl2M · 26/08/2025 · likes/comments ocultos pelo perfil (preencher logado) -->
     <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/clubpetro/reel/DN1SBJjwl2M/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DN1SBJjwl2M'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
