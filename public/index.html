@@ -509,27 +509,27 @@ img{display:block;max-width:100%}
 .reel-card:hover .reel-play{transform:translate(-50%,-50%) scale(1.15);box-shadow:0 18px 40px -6px rgba(0,0,0,.6),0 0 48px -4px rgba(242,102,0,.7)}
 .reel-ig-hint{position:absolute;bottom:10px;left:10px;display:flex;align-items:center;gap:6px;padding:6px 10px;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);border-radius:100px;font-size:11.5px;font-weight:700;color:#fff;letter-spacing:.01em;z-index:3}
 .reel-ig-hint svg{width:13px;height:13px}
-.reel-body{padding:18px 20px 18px}
-.reel-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.reel-body{padding:14px 16px 14px}
+.reel-meta{display:flex;align-items:center;gap:9px;margin-bottom:10px}
 /* Avatar do posto: placeholder com Phosphor gas-pump em gradient laranja.
    Quando tiver logo real, trocar pra <img class="reel-avatar"> */
-.reel-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-glow));display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;border:1.5px solid rgba(255,182,39,.45);box-shadow:0 4px 12px -2px rgba(242,102,0,.45),inset 0 1px 0 rgba(255,255,255,.25)}
-.reel-avatar i{font-size:18px;line-height:1}
+.reel-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-glow));display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;border:1.5px solid rgba(255,182,39,.4);box-shadow:0 3px 9px -2px rgba(242,102,0,.4),inset 0 1px 0 rgba(255,255,255,.22)}
+.reel-avatar i{font-size:16px;line-height:1}
 img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
-.reel-handle-block{display:flex;flex-direction:column;line-height:1.2;min-width:0;flex:1}
-.reel-handle{font-size:13px;font-weight:700;color:#fff;letter-spacing:-.1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.reel-place{font-size:11px;color:var(--text-dim);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
-.reel-summary{font-size:12.5px;color:var(--text-mid);line-height:1.55;font-weight:400;margin:0}
-/* Stats do reel: views (play), comentarios (msg), shares — divisor sutil acima */
-.reel-stats{display:flex;gap:18px;margin-top:12px;padding-top:11px;border-top:1px solid rgba(255,255,255,.07)}
-.reel-stat{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:#cfcfcf;font-weight:700;letter-spacing:.1px;font-variant-numeric:tabular-nums}
-.reel-stat svg{width:14px;height:14px;stroke-width:2.4;color:var(--accent-glow);flex-shrink:0}
+.reel-handle{font-size:12.5px;font-weight:700;color:#fff;letter-spacing:-.1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+.reel-summary{font-size:11.5px;color:var(--text-mid);line-height:1.5;font-weight:400;margin:0}
+/* Stats Insta-like: heart (vermelho), comments (branco), send/share (branco) */
+.reel-stats{display:flex;gap:14px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.07)}
+.reel-stat{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:#e0e0e0;font-weight:700;letter-spacing:.1px;font-variant-numeric:tabular-nums}
+.reel-stat svg{width:14px;height:14px;stroke-width:2.2;flex-shrink:0}
 .reel-stat span{line-height:1}
+.reel-stat-like svg{color:#ed4956;fill:#ed4956}
+.reel-stat-comment svg,.reel-stat-share svg{color:#cfcfcf;fill:none}
 /* Tipografia animada do summary: cada palavra entra em stagger quando o card recebe .in.
    Stagger sutil (35ms) pra nao competir com o reveal-card. */
 .reel-summary > .word{display:inline-block;opacity:0;transform:translateY(.4em);transition:opacity .5s var(--ease-cinematic),transform .5s var(--ease-cinematic);transition-delay:calc(var(--i,0) * 30ms + 250ms)}
 .reel-card.in .reel-summary > .word{opacity:1;transform:none}
-.reel-card:hover .reel-title{background:linear-gradient(135deg,#fff 30%,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.reel-card:hover .reel-handle{background:linear-gradient(135deg,#fff 30%,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 
 /* === AUTHORITY (SPEAKER) === */
 .speaker-wrap{max-width:1000px;margin:24px auto 0;display:grid;grid-template-columns:340px 1fr;gap:40px;align-items:start;justify-items:stretch}
@@ -542,12 +542,13 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 .speaker-photo img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1;transition:transform .6s cubic-bezier(.2,.8,.2,1);filter:saturate(1.05) contrast(1.04)}
 .speaker-photo:hover img{transform:scale(1.04)}
 .speaker-photo::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.08) 0%,transparent 35%),linear-gradient(to top,rgba(0,0,0,.35),transparent 35%)}
-.speaker-info{display:flex;flex-direction:column;gap:14px}
-.speaker-name{font-family:var(--font-display);font-size:clamp(48px,5.4vw,72px);letter-spacing:1.4px;color:#fff;line-height:.95;margin-bottom:-4px;text-transform:uppercase}
-.speaker-role{font-size:13px;color:var(--accent-2);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:10px}
-.speaker-role::before{content:'';width:24px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px}
-.speaker-bio{font-size:16px;color:#c5c5c5;line-height:1.7}
-.speaker-bio strong{color:#fff}
+.speaker-info{display:flex;flex-direction:column;gap:18px}
+.speaker-name{font-family:var(--font-display);font-size:clamp(48px,5.4vw,72px);letter-spacing:1.4px;color:#fff;line-height:.95;text-transform:uppercase;position:relative;padding-bottom:14px}
+.speaker-name::after{content:'';position:absolute;left:0;bottom:0;width:64px;height:4px;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 0 18px rgba(242,102,0,.5)}
+.speaker-role{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;font-size:12px;color:var(--accent-2);font-weight:800;letter-spacing:2.4px;text-transform:uppercase;padding:7px 14px 7px 12px;background:linear-gradient(135deg,rgba(242,102,0,.18),rgba(255,182,39,.08));border:1px solid rgba(242,102,0,.32);border-radius:100px;margin:0}
+.speaker-role::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 8px var(--accent-2);animation:blink 1.6s infinite}
+.speaker-bio{font-size:16px;color:#cfcfcf;line-height:1.7;margin:4px 0 6px}
+.speaker-bio strong{background:linear-gradient(135deg,#fff,#ffe1c0);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
 .speaker-cred-icon img{width:24px;height:24px;object-fit:contain;display:block}
 .speaker-cred-icon.is-brand{background:#fff;border-color:rgba(255,255,255,.18);padding:4px}
 .speaker-cred-icon.is-brand-dark{background:#0E0E0E;border-color:rgba(242,102,0,.25);padding:3px}
@@ -557,18 +558,14 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 .speaker-social{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.04);border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;color:var(--text-mid);transition:all .3s cubic-bezier(.2,.8,.2,1);text-decoration:none}
 .speaker-social:hover{background:var(--accent-soft);border-color:var(--accent-2);color:var(--accent-2);transform:translateY(-2px);box-shadow:0 8px 20px -8px rgba(242,102,0,.5)}
 .speaker-social svg{width:18px;height:18px}
-.speaker-creds{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-/* Mobile largo (480-760): mantem 2 cols pra nao virar lista alongada.
-   Mobile estreito (<480): 1 col. */
+/* Creds: separador sutil acima, grid 2x2 mais limpo (sem 3D bevel pesado) */
+.speaker-creds{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-top:18px;margin-top:4px;border-top:1px solid rgba(255,255,255,.08);position:relative}
+.speaker-creds::before{content:'';position:absolute;top:-1px;left:0;width:48px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
 @media(max-width:480px){.speaker-creds{grid-template-columns:1fr}}
-/* Cards de credencial — 3D bevel sutil, depth stack, hover lift.
-   Mesma linguagem visual do .module-icon mas mais discreta (cards, nao icones). */
-.speaker-cred{display:flex;align-items:center;gap:14px;padding:16px 20px;background:linear-gradient(180deg,#1a1a1a 0%,#0e0e0e 100%);border:1px solid rgba(255,255,255,.06);border-radius:16px;font-size:13.5px;color:var(--text-mid);position:relative;transition:transform .4s var(--ease-soft),box-shadow .4s var(--ease-soft),border-color .3s;box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 1px 0 rgba(0,0,0,.5),0 4px 0 rgba(0,0,0,.3),0 14px 30px -14px rgba(0,0,0,.7);overflow:hidden}
-.speaker-cred::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(242,102,0,.45) 50%,transparent 100%);opacity:0;transition:opacity .35s}
-.speaker-cred:hover{transform:translateY(-3px);border-color:rgba(255,182,39,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 1px 0 rgba(0,0,0,.5),0 4px 0 rgba(0,0,0,.3),0 22px 44px -14px rgba(242,102,0,.35),0 0 0 1px rgba(255,182,39,.15) inset}
-.speaker-cred:hover::before{opacity:1}
-.speaker-cred-icon{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#1f1410 0%,#0a0a0a 100%);border:1px solid rgba(242,102,0,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-2);font-size:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 4px 12px -4px rgba(242,102,0,.3),0 0 18px -6px rgba(255,182,39,.4) inset;transform:perspective(420px) rotateY(-8deg);transition:transform .4s var(--ease-soft)}
-.speaker-cred:hover .speaker-cred-icon{transform:perspective(420px) rotateY(-3deg) translateY(-2px)}
+.speaker-cred{display:flex;align-items:center;gap:13px;padding:14px 16px;background:linear-gradient(180deg,rgba(26,20,16,.7),rgba(14,11,9,.7));border:1px solid rgba(255,255,255,.06);border-radius:14px;font-size:13px;color:#c5c5c5;position:relative;transition:transform .35s var(--ease-soft),box-shadow .35s var(--ease-soft),border-color .3s;backdrop-filter:blur(4px)}
+.speaker-cred:hover{transform:translateY(-2px);border-color:rgba(242,102,0,.4);box-shadow:0 14px 32px -14px rgba(242,102,0,.35)}
+.speaker-cred-icon{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#1f1410 0%,#0a0a0a 100%);border:1px solid rgba(242,102,0,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-2);font-size:16px;transition:transform .35s var(--ease-soft),border-color .35s}
+.speaker-cred:hover .speaker-cred-icon{border-color:var(--accent-2);transform:scale(1.06)}
 .speaker-cred strong{color:#fff;font-weight:700}
 
 /* === PRICE === */
@@ -751,9 +748,11 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   .sec-p{font-size:13.5px;line-height:1.7;padding:0 4px}
   .sec-lead{font-size:11px;letter-spacing:1.4px;margin-bottom:12px}
   .pull-line{font-size:14.5px;margin-top:14px;padding:0 12px;line-height:1.5}
-  /* Mantem ordem do desktop: callout/itens primeiro, video depois */
-  .problem-wrap{grid-template-columns:1fr;display:grid;gap:24px}
-  .problem-img{position:static;aspect-ratio:4/3;max-height:none;min-height:280px;width:100%;height:auto;margin:0;border-radius:var(--r)}
+  /* Mobile: video/imagem primeiro com protagonismo visual (aspect 4/5
+     vertical, mais cinematografico) + glow laranja sutil pra destacar. */
+  .problem-wrap{grid-template-columns:1fr;display:grid;gap:22px}
+  .problem-img{position:static;aspect-ratio:4/5;max-height:none;min-height:0;width:100%;height:auto;margin:0;border-radius:22px;border:1px solid rgba(242,102,0,.22);box-shadow:0 16px 40px -16px rgba(0,0,0,.7),0 0 60px -20px rgba(242,102,0,.32)}
+  .problem-img img,.problem-img video{filter:saturate(1.12) contrast(1.08)}
   .problem-callout{padding:20px}
   .problem-callout p{font-size:14px}
   .problem-item{padding:14px 16px;font-size:13px;gap:12px}
@@ -769,8 +768,10 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   .module-desc{font-size:13.5px}
   .speaker-wrap{gap:20px}
   .speaker-photo{position:static;aspect-ratio:1/1;max-width:300px;max-height:300px;margin:0 auto}
-  .speaker-name{font-size:30px}
-  .speaker-bio{font-size:14px}
+  .speaker-name{font-size:38px;padding-bottom:12px;letter-spacing:1.2px}
+  .speaker-name::after{width:48px;height:3px}
+  .speaker-role{font-size:10.5px;letter-spacing:2px;padding:6px 12px 6px 10px}
+  .speaker-bio{font-size:14px;line-height:1.65}
   /* Credenciais: aumentar icone/logo no mobile pra ficarem mais visiveis */
   .speaker-cred-icon{width:44px;height:44px}
   .speaker-cred-icon img{width:28px;height:28px}
@@ -1041,8 +1042,8 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   </div>
 
   <div class="reels-grid" id="casesGrid">
-    <!-- Reel 1 — DVMtRsHiWF0 · TODO preencher dados reais: @handle, nome do posto, cidade/UF, views, comments, shares, avatar -->
-    <a class="reel-card reveal" href="https://www.instagram.com/reel/DVMtRsHiWF0/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DVMtRsHiWF0'})">
+    <!-- Reel 1 — @zemaickon · DVMtRsHiWF0 · 10K likes · 102 comments (fevereiro/2026) -->
+    <a class="reel-card reveal" href="https://www.instagram.com/zemaickon/reel/DVMtRsHiWF0/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DVMtRsHiWF0'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
         <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/i3j882O.jpg" aria-label="Reel de posto cliente">
@@ -1056,21 +1057,18 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
       <div class="reel-body">
         <div class="reel-meta">
           <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
-          <div class="reel-handle-block">
-            <span class="reel-handle">@posto_exemplo_1</span>
-            <span class="reel-place">Posto cliente · Cidade/UF</span>
-          </div>
+          <span class="reel-handle">@zemaickon</span>
         </div>
-        <p class="reel-summary">Reel educativo com dica prática que parou o scroll do motorista — salvamento e share viraram visita na pracinha.</p>
+        <p class="reel-summary">Humor curto que pega no dia a dia do posto. Motorista identifica, comenta, compartilha — sem cair em palhaçada.</p>
         <div class="reel-stats" aria-label="Métricas do reel">
-          <span class="reel-stat"><i data-lucide="play" aria-hidden="true"></i><span>--K</span></span>
-          <span class="reel-stat"><i data-lucide="message-circle" aria-hidden="true"></i><span>--</span></span>
-          <span class="reel-stat"><i data-lucide="share-2" aria-hidden="true"></i><span>--</span></span>
+          <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">10K</span></span>
+          <span class="reel-stat reel-stat-comment"><i data-lucide="message-circle" aria-hidden="true"></i><span data-stat="comments">102</span></span>
+          <span class="reel-stat reel-stat-share"><i data-lucide="send" aria-hidden="true"></i><span data-stat="shares">—</span></span>
         </div>
       </div>
     </a>
-    <!-- Reel 2 — DOln8ttjVzr · TODO preencher dados reais -->
-    <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/reel/DOln8ttjVzr/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DOln8ttjVzr'})">
+    <!-- Reel 2 — @leonardo.ala · DOln8ttjVzr · perfil oculta likes/comments — preencher manualmente -->
+    <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/leonardo.ala/reel/DOln8ttjVzr/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DOln8ttjVzr'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
         <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/zu1c8sz.jpg" aria-label="Reel de posto cliente">
@@ -1084,21 +1082,18 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
       <div class="reel-body">
         <div class="reel-meta">
           <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
-          <div class="reel-handle-block">
-            <span class="reel-handle">@posto_exemplo_2</span>
-            <span class="reel-place">Posto cliente · Cidade/UF</span>
-          </div>
+          <span class="reel-handle">@leonardo.ala</span>
         </div>
         <p class="reel-summary">Trend do momento adaptada pra rotina do posto. Pulou pra aba "explore" e trouxe motorista novo na semana seguinte.</p>
         <div class="reel-stats" aria-label="Métricas do reel">
-          <span class="reel-stat"><i data-lucide="play" aria-hidden="true"></i><span>--K</span></span>
-          <span class="reel-stat"><i data-lucide="message-circle" aria-hidden="true"></i><span>--</span></span>
-          <span class="reel-stat"><i data-lucide="share-2" aria-hidden="true"></i><span>--</span></span>
+          <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">—</span></span>
+          <span class="reel-stat reel-stat-comment"><i data-lucide="message-circle" aria-hidden="true"></i><span data-stat="comments">—</span></span>
+          <span class="reel-stat reel-stat-share"><i data-lucide="send" aria-hidden="true"></i><span data-stat="shares">—</span></span>
         </div>
       </div>
     </a>
-    <!-- Reel 3 — DWWgxgukyHX · TODO preencher dados reais -->
-    <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/reel/DWWgxgukyHX/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DWWgxgukyHX'})">
+    <!-- Reel 3 — @postosredebrasil · DWWgxgukyHX · perfil oculta likes/comments — preencher manualmente -->
+    <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/postosredebrasil/reel/DWWgxgukyHX/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DWWgxgukyHX'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
         <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/KLQcV6N.jpg" aria-label="Reel de posto cliente">
@@ -1112,21 +1107,18 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
       <div class="reel-body">
         <div class="reel-meta">
           <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
-          <div class="reel-handle-block">
-            <span class="reel-handle">@posto_exemplo_3</span>
-            <span class="reel-place">Posto cliente · Cidade/UF</span>
-          </div>
+          <span class="reel-handle">@postosredebrasil</span>
         </div>
         <p class="reel-summary">Conteúdo simples — problema do motorista, solução do posto. Dois minutos pra gravar, semana cheia de cliente novo.</p>
         <div class="reel-stats" aria-label="Métricas do reel">
-          <span class="reel-stat"><i data-lucide="play" aria-hidden="true"></i><span>--K</span></span>
-          <span class="reel-stat"><i data-lucide="message-circle" aria-hidden="true"></i><span>--</span></span>
-          <span class="reel-stat"><i data-lucide="share-2" aria-hidden="true"></i><span>--</span></span>
+          <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">—</span></span>
+          <span class="reel-stat reel-stat-comment"><i data-lucide="message-circle" aria-hidden="true"></i><span data-stat="comments">—</span></span>
+          <span class="reel-stat reel-stat-share"><i data-lucide="send" aria-hidden="true"></i><span data-stat="shares">—</span></span>
         </div>
       </div>
     </a>
-    <!-- Reel 4 — DVrknulkuGu · TODO preencher dados reais -->
-    <a class="reel-card reveal" href="https://www.instagram.com/reel/DVrknulkuGu/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DVrknulkuGu'})">
+    <!-- Reel 4 — @zemaickon · DVrknulkuGu · 8.355 likes · 128 comments (março/2026) -->
+    <a class="reel-card reveal" href="https://www.instagram.com/zemaickon/reel/DVrknulkuGu/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DVrknulkuGu'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
         <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/JYeSmku.jpg" aria-label="Reel de posto cliente">
@@ -1140,21 +1132,18 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
       <div class="reel-body">
         <div class="reel-meta">
           <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
-          <div class="reel-handle-block">
-            <span class="reel-handle">@posto_exemplo_4</span>
-            <span class="reel-place">Posto cliente · Cidade/UF</span>
-          </div>
+          <span class="reel-handle">@zemaickon</span>
         </div>
         <p class="reel-summary">R$ 10 por dia no Meta colocou o vídeo no celular de quem dirige no raio de 5km — anúncio pago que se paga sozinho.</p>
         <div class="reel-stats" aria-label="Métricas do reel">
-          <span class="reel-stat"><i data-lucide="play" aria-hidden="true"></i><span>--K</span></span>
-          <span class="reel-stat"><i data-lucide="message-circle" aria-hidden="true"></i><span>--</span></span>
-          <span class="reel-stat"><i data-lucide="share-2" aria-hidden="true"></i><span>--</span></span>
+          <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">8.355</span></span>
+          <span class="reel-stat reel-stat-comment"><i data-lucide="message-circle" aria-hidden="true"></i><span data-stat="comments">128</span></span>
+          <span class="reel-stat reel-stat-share"><i data-lucide="send" aria-hidden="true"></i><span data-stat="shares">—</span></span>
         </div>
       </div>
     </a>
-    <!-- Reel 5 — DN1SBJjwl2M · TODO preencher dados reais -->
-    <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/reel/DN1SBJjwl2M/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DN1SBJjwl2M'})">
+    <!-- Reel 5 — @clubpetro · DN1SBJjwl2M · perfil oculta likes/comments — preencher manualmente -->
+    <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/clubpetro/reel/DN1SBJjwl2M/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DN1SBJjwl2M'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
         <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/oOyRpPH.jpg" aria-label="Reel de posto cliente">
@@ -1168,16 +1157,13 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
       <div class="reel-body">
         <div class="reel-meta">
           <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
-          <div class="reel-handle-block">
-            <span class="reel-handle">@posto_exemplo_5</span>
-            <span class="reel-place">Posto cliente · Cidade/UF</span>
-          </div>
+          <span class="reel-handle">@clubpetro</span>
         </div>
-        <p class="reel-summary">Frentista do turno virou rosto da marca. Vídeo de 30 segundos, gravado entre dois clientes, sem produção.</p>
+        <p class="reel-summary">Frentista virando rosto da marca. Vídeo curto, gravado entre dois clientes, sem produção, sem agência.</p>
         <div class="reel-stats" aria-label="Métricas do reel">
-          <span class="reel-stat"><i data-lucide="play" aria-hidden="true"></i><span>--K</span></span>
-          <span class="reel-stat"><i data-lucide="message-circle" aria-hidden="true"></i><span>--</span></span>
-          <span class="reel-stat"><i data-lucide="share-2" aria-hidden="true"></i><span>--</span></span>
+          <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">—</span></span>
+          <span class="reel-stat reel-stat-comment"><i data-lucide="message-circle" aria-hidden="true"></i><span data-stat="comments">—</span></span>
+          <span class="reel-stat reel-stat-share"><i data-lucide="send" aria-hidden="true"></i><span data-stat="shares">—</span></span>
         </div>
       </div>
     </a>
@@ -2020,39 +2006,56 @@ window.addEventListener('load',function(){
   else document.addEventListener('motion:ready',init);
 })();
 
-// === LAZY VIDEO PLAY ===
-// 5 videos autoplay simultaneo era o maior gargalo (CPU/GPU em loop infinito).
-// Agora cada video so toca quando >= 35% visivel, pausa quando sai do viewport.
-// preload="none" no markup garante zero traffic ate o IO disparar load+play.
+// === LAZY VIDEO PLAY (desktop) + STATIC POSTER (mobile) ===
+// Mobile (<=760px): substitui <video> por <img src=poster>. Elimina 100% do
+// custo de decode de video em celular, que era o maior travamento. Click no
+// card abre direto no Insta (href ja existe no <a> pai). Posters carregam
+// lazy via loading=lazy.
+//
+// Desktop: cada video toca quando >=50% visivel. Loop continuo so dentro do
+// viewport — fora, pause(). visibilitychange pausa tudo se aba esta hidden.
+// preload="none" no markup garante zero traffic ate IO disparar load+play.
 (function(){
+  var isMobile=window.matchMedia('(max-width:760px)').matches;
   var vids=document.querySelectorAll('video[data-lazy-video]');
   if(!vids.length)return;
+  if(isMobile){
+    // Mobile: replace cada <video> por <img> estatico do poster
+    vids.forEach(function(v){
+      var poster=v.poster||v.getAttribute('poster');
+      if(!poster)return;
+      var img=document.createElement('img');
+      img.src=poster;
+      img.alt=v.getAttribute('aria-label')||'';
+      img.loading='lazy';
+      img.decoding='async';
+      img.style.cssText='width:100%;height:100%;object-fit:cover;display:block';
+      v.parentNode.replaceChild(img,v);
+    });
+    return;
+  }
   if(!('IntersectionObserver' in window)){
-    // Fallback: navegadores antigos rodam tudo — comportamento original
     vids.forEach(function(v){v.play().catch(function(){})});
     return;
   }
+  // Desktop: lazy play com IntersectionObserver. threshold 0.5 garante video
+  // so roda quando metade do card esta visivel — evita restarts ao scroll
+  // proximo da borda. rootMargin 100px da uma folga pra preload antes.
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(en){
       var v=en.target;
       if(en.isIntersecting){
-        // Lazy load src so quando entra (preload=none nao carrega antes)
-        if(!v.dataset.loaded){
-          v.load();
-          v.dataset.loaded='1';
-        }
+        if(!v.dataset.loaded){v.load();v.dataset.loaded='1'}
         v.play().catch(function(){});
       }else{
         v.pause();
       }
     });
-  },{threshold:.35});
+  },{threshold:.5,rootMargin:'100px'});
   vids.forEach(function(v){io.observe(v)});
-  // Pausa global quando aba sai de foco
   document.addEventListener('visibilitychange',function(){
     if(document.hidden){vids.forEach(function(v){v.pause()})}
     else{
-      // Ao voltar, retoma so quem esta visivel
       vids.forEach(function(v){
         var r=v.getBoundingClientRect();
         if(r.top<window.innerHeight&&r.bottom>0)v.play().catch(function(){});
