@@ -11,7 +11,7 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Pista Cheia 2026 — o evento que enche a pista do seu posto">
+<meta property="og:title" content="Pista Cheia 2026 · o evento que enche a pista do seu posto">
 <meta property="og:description" content="2 noites ao vivo · 25 e 26 de maio às 19h30. Método aplicado em +380 postos. Vaga na turma ao vivo por R$ 147.">
 <meta property="og:image" content="https://i.imgur.com/y2i8liD.jpeg">
 <meta property="og:url" content="https://lp-teste-1.web.app/">
@@ -20,7 +20,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Pista Cheia 2026 — o evento que enche a pista do seu posto">
+<meta name="twitter:title" content="Pista Cheia 2026 · o evento que enche a pista do seu posto">
 <meta name="twitter:description" content="2 noites ao vivo · 25 e 26 de maio às 19h30. Vaga na turma ao vivo por R$ 147. Método testado em +380 postos.">
 <meta name="twitter:image" content="https://i.imgur.com/y2i8liD.jpeg">
 
@@ -30,7 +30,7 @@
   "@context":"https://schema.org",
   "@type":"Event",
   "name":"Pista Cheia 2026",
-  "description":"Evento online ao vivo em 2 noites — 25 e 26 de maio às 19h30. O André Carvalhaes abre o método que enche a pracinha com Reels, Google e R$ 10/dia de tráfego.",
+  "description":"Evento online ao vivo em 2 noites: 25 e 26 de maio às 19h30. O André Carvalhaes abre o método que enche a pracinha com Reels, Google e R$ 10/dia de tráfego.",
   "startDate":"2026-05-25T19:30:00-03:00",
   "endDate":"2026-05-26T22:00:00-03:00",
   "eventStatus":"https://schema.org/EventScheduled",
@@ -517,16 +517,20 @@ img{display:block;max-width:100%}
 .reel-avatar i{font-size:16px;line-height:1}
 img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 .reel-handle{font-size:12.5px;font-weight:700;color:#fff;letter-spacing:-.1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
-.reel-summary{font-size:11.5px;color:var(--text-mid);line-height:1.5;font-weight:400;margin:0}
-/* Stats Insta-like (4): views (laranja), heart (vermelho), comments (cinza),
-   send/share (cinza). Flex-wrap pra acomodar em 1-2 linhas em cards menores. */
-.reel-stats{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.07)}
-.reel-stat{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;color:#e8e8e8;font-weight:700;letter-spacing:.1px;font-variant-numeric:tabular-nums}
-.reel-stat svg{width:13px;height:13px;stroke-width:2.2;flex-shrink:0}
+.reel-summary{font-size:10.5px;color:var(--text-mid);line-height:1.45;font-weight:400;margin:0}
+/* Stats Insta-like (4 stats com cores expressivas):
+   - views (play): laranja vivo com glow
+   - heart: vermelho Insta #ed4956 preenchido com glow
+   - comment (message-circle): branco brilhante (Insta nao tem cor de marca aqui)
+   - share (send/avião): azul Insta #3897f0 com glow */
+.reel-stats{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.07)}
+.reel-stat{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#f0f0f0;font-weight:800;letter-spacing:.1px;font-variant-numeric:tabular-nums}
+.reel-stat svg{width:15px;height:15px;stroke-width:2.4;flex-shrink:0}
 .reel-stat span{line-height:1}
-.reel-stat-view svg{color:var(--accent-glow);fill:var(--accent-glow);stroke:none}
-.reel-stat-like svg{color:#ed4956;fill:#ed4956;stroke:none}
-.reel-stat-comment svg,.reel-stat-share svg{color:#cfcfcf;fill:none}
+.reel-stat-view svg{color:#ff8c3a;fill:#ff8c3a;stroke:none;filter:drop-shadow(0 0 5px rgba(255,140,58,.5))}
+.reel-stat-like svg{color:#ed4956;fill:#ed4956;stroke:none;filter:drop-shadow(0 0 5px rgba(237,73,86,.5))}
+.reel-stat-comment svg{color:#fafafa;fill:none}
+.reel-stat-share svg{color:#3897f0;fill:none;filter:drop-shadow(0 0 5px rgba(56,151,240,.4))}
 /* Tipografia animada do summary: cada palavra entra em stagger quando o card recebe .in.
    Stagger sutil (35ms) pra nao competir com o reveal-card. */
 .reel-summary > .word{display:inline-block;opacity:0;transform:translateY(.4em);transition:opacity .5s var(--ease-cinematic),transform .5s var(--ease-cinematic);transition-delay:calc(var(--i,0) * 30ms + 250ms)}
@@ -1017,7 +1021,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
       <div class="bonus-tag">Bônus de quem garante vaga na edição ao vivo</div>
       <div class="module-num">+1</div>
       <div class="module-title">Copa 2026: o plano pronto pra dia de jogo do Brasil</div>
-      <div class="module-desc">Calendário com os 7 jogos do Brasil, promoção pronta pra dia de jogo, Reels roteirizado pra cada fase do torneio. Em junho, quando todo mundo tá ligado na Copa, seu posto vira ponto de encontro do bairro — não outdoor da concorrência.</div>
+      <div class="module-desc">Calendário com os 7 jogos do Brasil, promoção pronta pra dia de jogo, Reels roteirizado pra cada fase do torneio. Em junho, quando todo mundo tá ligado na Copa, seu posto vira ponto de encontro do bairro, não outdoor da concorrência.</div>
     </div>
   </div>
 </section>
@@ -1040,7 +1044,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
     <span class="sec-lead">Postos que encheram a pracinha</span>
     <div class="sec-tag">Casos reais · você é o próximo</div>
     <h2 class="sec-h reveal">Cinco postos viraram <em>referência</em> na cidade. Cada um aplicando uma frente diferente do método.</h2>
-    <p class="sec-p">Não tem agência por trás. Nenhum virou influencer. Cada dono aplicou uma frente — Reel educativo, trend bem usada, R$ 10 por dia no Meta, frentista virando rosto da marca — e viu cliente novo entrar na pracinha. O <strong>Pista Cheia</strong> abre o passo a passo de cada um. O próximo pode ser o seu posto.</p>
+    <p class="sec-p">Não tem agência por trás. Nenhum virou influencer. Cada dono aplicou uma frente: Reel educativo, trend bem usada, R$ 10 por dia no Meta, ou frentista virando rosto da marca. E viu cliente novo entrar na pracinha. O <strong>Pista Cheia</strong> abre o passo a passo de cada um. O próximo pode ser o seu posto.</p>
   </div>
 
   <div class="reels-grid" id="casesGrid">
@@ -1063,7 +1067,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
           <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
           <span class="reel-handle">@zemaickon</span>
         </div>
-        <p class="reel-summary">Humor curto que pega no dia a dia do posto. Motorista identifica, comenta, compartilha — sem cair em palhaçada.</p>
+        <p class="reel-summary">Humor curto que pega no dia a dia. Motorista identifica e compartilha.</p>
         <div class="reel-stats" aria-label="Métricas do reel">
           <span class="reel-stat reel-stat-view"><i data-lucide="play" aria-hidden="true"></i><span data-stat="views">386K</span></span>
           <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">10.297</span></span>
@@ -1091,7 +1095,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
           <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
           <span class="reel-handle">@leonardo.ala</span>
         </div>
-        <p class="reel-summary">Trend do momento adaptada pra rotina do posto. Pulou pra aba "explore" e trouxe motorista novo na semana seguinte.</p>
+        <p class="reel-summary">Trend do momento adaptada pra rotina do posto. Foi pra aba explore e trouxe cliente novo.</p>
         <div class="reel-stats" aria-label="Métricas do reel">
           <span class="reel-stat reel-stat-view"><i data-lucide="play" aria-hidden="true"></i><span data-stat="views">47.328</span></span>
           <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">359</span></span>
@@ -1119,7 +1123,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
           <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
           <span class="reel-handle">@postosredebrasil</span>
         </div>
-        <p class="reel-summary">Conteúdo simples — problema do motorista, solução do posto. Dois minutos pra gravar, semana cheia de cliente novo.</p>
+        <p class="reel-summary">Problema do motorista, solução do posto. Dois minutos pra gravar.</p>
         <div class="reel-stats" aria-label="Métricas do reel">
           <span class="reel-stat reel-stat-view"><i data-lucide="play" aria-hidden="true"></i><span data-stat="views">31.682</span></span>
           <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">218</span></span>
@@ -1147,7 +1151,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
           <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
           <span class="reel-handle">@zemaickon</span>
         </div>
-        <p class="reel-summary">R$ 10 por dia no Meta colocou o vídeo no celular de quem dirige no raio de 5km — anúncio pago que se paga sozinho.</p>
+        <p class="reel-summary">R$ 10 por dia no Meta. Vídeo no celular de quem dirige no raio de 5 km.</p>
         <div class="reel-stats" aria-label="Métricas do reel">
           <span class="reel-stat reel-stat-view"><i data-lucide="play" aria-hidden="true"></i><span data-stat="views">312K</span></span>
           <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">8.355</span></span>
@@ -1175,7 +1179,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
           <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
           <span class="reel-handle">@redehg</span>
         </div>
-        <p class="reel-summary">Conteúdo da rotina do posto que cliente identifica e compartilha — sem produção, sem agência. Rede com 21 mil seguidores no Insta.</p>
+        <p class="reel-summary">Rotina do posto que cliente identifica. Sem produção, sem agência.</p>
         <div class="reel-stats" aria-label="Métricas do reel">
           <span class="reel-stat reel-stat-view"><i data-lucide="play" aria-hidden="true"></i><span data-stat="views">16.379</span></span>
           <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">538</span></span>
@@ -1219,7 +1223,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
     <div class="speaker-info">
       <div class="speaker-name">ANDRÉ CARVALHAES</div>
       <p class="speaker-role">Head de Marketing · ClubPetro</p>
-      <p class="speaker-bio">Fundou a operação de marketing do <strong>ClubPetro</strong> depois de passar <strong>3 anos como sócio executivo da V4 Company</strong>, a maior agência de marketing do Brasil. Em 8 anos liderando comunicação pra dentro do setor de combustível, rodou Meta, Google e tráfego orgânico que somam <strong>+R$ 5 milhões em receita</strong> gerada. <strong>25 e 26 de maio às 19h30, no Pista Cheia ao vivo</strong>, ele abre o método em 2 noites — o mesmo que aplica todo dia, adaptado pro dia a dia de quem opera posto.</p>
+      <p class="speaker-bio">Fundou a operação de marketing do <strong>ClubPetro</strong> depois de passar <strong>3 anos como sócio executivo da V4 Company</strong>, a maior agência de marketing do Brasil. Em 8 anos liderando comunicação pra dentro do setor de combustível, rodou Meta, Google e tráfego orgânico que somam <strong>+R$ 5 milhões em receita</strong> gerada. <strong>25 e 26 de maio às 19h30, no Pista Cheia ao vivo</strong>, ele abre o método em 2 noites. O mesmo que aplica todo dia, adaptado pro dia a dia de quem opera posto.</p>
       <div class="speaker-creds">
         <div class="speaker-cred">
           <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/Bg3r3li.jpeg" alt="V4 Company" loading="lazy" decoding="async"></div>
@@ -1255,7 +1259,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
     <span class="sec-lead">A vaga na edição ao vivo</span>
     <div class="sec-tag">O que tá incluído</div>
     <h2 class="sec-h">Vaga nas 2 noites do Pista Cheia 2026, <em>só R$ 147</em></h2>
-    <p class="sec-p">Enquanto você decide, o concorrente tá gravando o Reels de amanhã. R$ 147 só vale até a sala abrir, dia <strong>25 de maio às 19h30</strong>. Depois, a turma ao vivo fecha, sobe pra R$ 497 e quem entra pega só o replay — sem bônus Copa, sem grupo no WhatsApp.</p>
+    <p class="sec-p">Enquanto você decide, o concorrente tá gravando o Reels de amanhã. R$ 147 só vale até a sala abrir, dia <strong>25 de maio às 19h30</strong>. Depois, a turma ao vivo fecha, sobe pra R$ 497 e quem entra pega só o replay. Sem bônus Copa, sem grupo no WhatsApp.</p>
   </div>
 
   <div class="roi-anchor reveal">
@@ -1337,7 +1341,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
       </div>
       <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
         <div class="faq-q"><span class="faq-num">05</span><span class="faq-q-text">Como eu acesso depois que pago?</span><span class="faq-plus"><i data-lucide="chevron-down"></i></span></div>
-        <div class="faq-a"><div class="faq-a-in">Na hora. Assim que o pagamento cai, chega no seu e-mail o link da área do evento. Nas 2 noites — <strong>25 e 26 de maio às 19h30</strong> — você acompanha o Pista Cheia ao vivo. Depois, o replay completo fica disponível por 1 ano — você revê quantas vezes quiser, no celular, tablet ou computador.</div></div>
+        <div class="faq-a"><div class="faq-a-in">Na hora. Assim que o pagamento cai, chega no seu e-mail o link da área do evento. Nas 2 noites, <strong>25 e 26 de maio às 19h30</strong>, você acompanha o Pista Cheia ao vivo. Depois, o replay completo fica disponível por 1 ano. Você revê quantas vezes quiser, no celular, tablet ou computador.</div></div>
       </div>
     </div>
   </div>
@@ -1363,7 +1367,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 <section class="final-cta">
   <div class="sec-tag" style="justify-content:center">Última chamada · Pista Cheia 2026</div>
   <h2 class="sec-h reveal">Daqui a 30 dias, um de vocês <em>tá com a pista cheia</em>. O outro tá vendo passar.</h2>
-  <p class="final-sub">Não é frase de palestra, é matemática de bairro: <strong style="color:#fff">posto que aparece no celular ganha cliente, posto que não aparece, perde</strong>. <span style="color:var(--accent-2)">R$ 147</span> hoje é o que separa o dono que entra na turma ao vivo do que vai ver de fora. <strong style="color:#fff">25 e 26 de maio às 19h30, no Pista Cheia, você vira o lado da pista cheia — por R$ 147.</strong></p>
+  <p class="final-sub">Não é frase de palestra, é matemática de bairro: <strong style="color:#fff">posto que aparece no celular ganha cliente, posto que não aparece, perde</strong>. <span style="color:var(--accent-2)">R$ 147</span> hoje é o que separa o dono que entra na turma ao vivo do que vai ver de fora. <strong style="color:#fff">25 e 26 de maio às 19h30, no Pista Cheia, você vira o lado da pista cheia. Por R$ 147.</strong></p>
   <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero o lado da pista cheia · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   <p class="final-wpp">
     <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Pista+Cheia+2026+e+quero+saber+mais+antes+de+garantir+minha+vaga" data-wa="final-cta" onclick="trackWA('final-cta')"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use href="#icon-wpp"/></svg>Antes de comprar, tira dúvida no WhatsApp</a>
