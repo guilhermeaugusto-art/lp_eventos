@@ -8,10 +8,10 @@
 
 <link rel="canonical" href="https://lp-teste-1.web.app/">
 <!-- Favicon: "O" laranja extraido da logo ClubPetro, fundo transparente -->
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-<link rel="icon" type="image/x-icon" href="img/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="512x512" href="img/favicon-512x512.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png?v=3">
+<link rel="icon" type="image/x-icon" href="img/favicon.ico?v=3">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png?v=3">
+<link rel="icon" type="image/png" sizes="512x512" href="img/favicon-512x512.png?v=3">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -269,7 +269,7 @@ img{display:block;max-width:100%}
 @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
 
 /* === HERO === */
-.hero{padding:88px 0 0;text-align:center;position:relative;min-height:auto}
+.hero{padding:88px 0 16px;text-align:center;position:relative;min-height:auto}
 .hero-dots{position:absolute;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(rgba(242,102,0,.18) 1px,transparent 1.5px);background-size:22px 22px;mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);opacity:.7}
 .hero>*{position:relative;z-index:1}
 .hero-title{font-family:var(--font-display);font-size:clamp(48px,8.4vw,104px);letter-spacing:1.2px;line-height:.92;margin-bottom:12px;text-transform:uppercase}
@@ -339,7 +339,7 @@ img{display:block;max-width:100%}
 .cta-wpp{background:linear-gradient(180deg,#3CEC7B 0%,#22B560 50%,#0F7E3F 100%);border:none;font-size:14px;padding:14px 24px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1.5px 0 rgba(0,0,0,.22),0 2px 0 #0a6630,0 4px 0 #084d24,0 6px 0 #062f17,0 14px 28px -10px rgba(37,211,102,.5),0 6px 16px -6px rgba(0,0,0,.45)}
 .cta-wpp:hover{filter:brightness(1.05);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),inset 0 -1.5px 0 rgba(0,0,0,.22),0 2px 0 #0a6630,0 4px 0 #084d24,0 6px 0 #062f17,0 8px 0 #04200f,0 22px 38px -10px rgba(37,211,102,.65),0 8px 20px -6px rgba(0,0,0,.5)}
 .cta-wpp:active{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1.5px 0 rgba(0,0,0,.22),0 2px 0 #062f17,0 8px 18px -8px rgba(37,211,102,.4)}
-.cta-strip{margin:var(--gap-block) auto;text-align:center}
+.cta-strip{margin:var(--gap-block) auto;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:90px;gap:10px}
 
 /* === COUNTDOWN — flip clock moderno ===
    Container glassy com glow vibrante, barra de progresso top, dois digitos
@@ -405,14 +405,14 @@ img{display:block;max-width:100%}
    .transition, .alert-box) tem o mesmo margin vertical. Margens colapsam,
    entao o gap entre dois blocos eh sempre `--gap-block`, independente da
    ordem. Padding interno da .sec eh zero — quem cria o ritmo eh a margin. */
-:root{--gap-block:6px}
+:root{--gap-block:28px}
 .sec{padding:0}
 /* A4: content-visibility:auto nas secoes abaixo do fold. O browser pula
    render/layout ate o conteudo entrar no viewport. Ganho de ~300-800ms
    em TBT. Nao aplicar em .hero (fold) nem em modais. */
 .sec,.modules-grid,.reels-grid,.problem-wrap,.speaker-wrap,.faq-list,.final-cta{content-visibility:auto;contain-intrinsic-size:auto 600px}
 /* Section divider — linha sutil + diamante accent central */
-.sec-divider{height:4px;max-width:880px;margin:var(--gap-block) auto;position:relative;display:flex;align-items:center;justify-content:center;background:none;overflow:hidden}
+.sec-divider{height:8px;max-width:880px;margin:var(--gap-block) auto;position:relative;display:flex;align-items:center;justify-content:center;background:none;overflow:hidden}
 .sec-divider::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(242,102,0,.4) 50%,transparent 100%);transform:translateY(-50%)}
 .sec-divider::after{content:'';width:9px;height:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));transform:rotate(45deg);border-radius:1px;box-shadow:0 0 18px rgba(242,102,0,.7),0 0 36px rgba(255,182,39,.35);position:relative;z-index:1}
 .sec>*{margin-left:auto;margin-right:auto}
@@ -429,12 +429,12 @@ img{display:block;max-width:100%}
 
 /* === PROBLEM === */
 .problem-wrap{display:grid;grid-template-columns:1fr;gap:32px;align-items:center;max-width:1200px;margin:24px auto 0}
-@media(min-width:880px){.problem-wrap{grid-template-columns:1.1fr .85fr;gap:40px}}
+@media(min-width:880px){.problem-wrap{grid-template-columns:1.5fr .65fr;gap:48px}}
 .problem-callout{background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border-left:3px solid var(--accent);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:24px;margin-bottom:24px}
 .problem-callout p{font-size:15px;color:var(--text-mid);line-height:1.7}
 .problem-callout strong{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
 .problem-list{display:flex;flex-direction:column;gap:18px}
-.problem-item{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);font-size:15px;color:#e2e2e2;line-height:1.6;transition:all .3s}
+.problem-item{display:flex;align-items:flex-start;gap:14px;padding:20px 24px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);font-size:17px;color:#e8e8e8;line-height:1.55;transition:all .3s}
 .problem-item:hover{border-color:var(--border-accent);transform:translateX(4px)}
 .problem-x{color:var(--accent);flex-shrink:0;margin-top:2px;width:28px;height:28px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center}
 .problem-x svg{width:18px;height:18px;stroke-width:2.4}
@@ -447,7 +447,7 @@ img{display:block;max-width:100%}
 /* Solution callout after problem */
 .solution-callout{background:linear-gradient(135deg,rgba(37,211,102,.1),rgba(37,211,102,.03));border:1px solid rgba(37,211,102,.35);border-radius:20px;padding:24px 28px;margin-top:28px;box-shadow:0 14px 36px -14px rgba(37,211,102,.25),inset 0 1px 0 rgba(255,255,255,.04);opacity:0;transform:translateY(16px) scale(.98);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
 .solution-callout.is-visible{opacity:1;transform:translateY(0) scale(1)}
-.solution-callout p{font-size:16px;color:#ececec;line-height:1.7;margin:0;font-style:italic}
+.solution-callout p{font-size:18px;color:#f1f1f1;line-height:1.65;margin:0;font-style:italic}
 .solution-callout strong{color:var(--green);font-weight:700}
 
 /* === COURSE MODULES === */
@@ -552,21 +552,19 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 .speaker-left{display:flex;flex-direction:column;align-items:center;gap:18px}
 /* Foto do Andre — frame 3D com gradient border, halo accent, sheen interno
    e parallax 3D continuo (ja esta no JS). Aspect-ratio quadrado pra encaixar no grid. */
-/* Stack 3D: foto principal MAIOR (1:1) + auxiliar horizontal com overlap sutil.
-   Frame solido pra nao parecer transparente, perspective marcado pra sentir 3D. */
-.speaker-photos-stack{position:relative;perspective:1400px}
-.speaker-photos-stack .speaker-photo{transform:perspective(1400px) rotateY(-6deg) rotateX(2.5deg) rotate(-1.5deg);transition:transform .6s cubic-bezier(.2,.8,.2,1);transform-origin:bottom right;will-change:transform;z-index:2;border:2px solid transparent;box-shadow:0 36px 80px -18px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.12) inset,0 0 70px -8px rgba(242,102,0,.55),0 0 140px -30px rgba(255,182,39,.4)}
-.speaker-photos-stack .speaker-photo:hover{transform:perspective(1400px) rotateY(-3deg) rotateX(1.2deg) rotate(-.6deg) translateY(-3px)}
-.speaker-photo-aux{position:relative;margin:-30px 0 0 auto;width:96%;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:#0a0a0a padding-box,linear-gradient(135deg,rgba(242,102,0,.7),rgba(255,182,39,.55) 50%,rgba(242,102,0,.25) 100%) border-box;border:2px solid transparent;box-shadow:0 32px 70px -18px rgba(0,0,0,.85),0 0 90px -10px rgba(242,102,0,.55),0 0 0 1px rgba(255,255,255,.1) inset;transform:perspective(1400px) rotateY(6deg) rotateX(-2.5deg) rotate(2.5deg);transform-origin:top left;transition:transform .6s cubic-bezier(.2,.8,.2,1);will-change:transform;z-index:1}
-.speaker-photo-aux:hover{transform:perspective(1400px) rotateY(3deg) rotateX(-1.2deg) rotate(1.2deg) translateY(3px)}
-.speaker-photo-aux::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.12) 0%,transparent 35%),linear-gradient(to top,rgba(0,0,0,.28),transparent 45%)}
-.speaker-photo-aux img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;position:relative;z-index:1;transition:transform .6s cubic-bezier(.2,.8,.2,1);filter:saturate(1.1) contrast(1.06)}
+/* Stack 3D inspirado em fotos sobrepostas: foto 1 top-left tilted, foto 2
+   bottom-right tilted oposto, parcialmente sobreposta no canto inferior direito.
+   Sem frames, sem fills escuros, so imagem + drop-shadow + tilt 3D. */
+.speaker-photos-stack{position:relative;perspective:1400px;width:100%;padding-bottom:30%}
+.speaker-photos-stack .speaker-photo{position:relative;width:78%;margin:0;transform:perspective(1400px) rotateY(-4deg) rotateX(2deg) rotate(-3.5deg);transition:transform .6s cubic-bezier(.2,.8,.2,1);transform-origin:bottom right;will-change:transform;z-index:2}
+.speaker-photos-stack .speaker-photo:hover{transform:perspective(1400px) rotateY(-2deg) rotateX(1deg) rotate(-1.5deg) translateY(-3px)}
+.speaker-photo-aux{position:absolute;bottom:0;right:-2%;width:72%;aspect-ratio:16/10;border-radius:20px;overflow:hidden;box-shadow:0 32px 64px -14px rgba(0,0,0,.75),0 0 70px -10px rgba(242,102,0,.35);transform:perspective(1400px) rotateY(4deg) rotateX(-2deg) rotate(4deg);transform-origin:top left;transition:transform .6s cubic-bezier(.2,.8,.2,1);will-change:transform;z-index:1}
+.speaker-photo-aux:hover{transform:perspective(1400px) rotateY(2deg) rotateX(-1deg) rotate(2deg) translateY(3px)}
+.speaker-photo-aux img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1);filter:saturate(1.1) contrast(1.06)}
 .speaker-photo-aux:hover img{transform:scale(1.04)}
-.speaker-photo{border-radius:24px;overflow:hidden;aspect-ratio:1/1;width:100%;position:relative;background:#0a0a0a padding-box,linear-gradient(135deg,rgba(242,102,0,.85),rgba(255,182,39,.75) 40%,rgba(242,102,0,.4) 100%) border-box;border:2px solid transparent;box-shadow:0 30px 70px -20px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.15) inset,0 0 80px -10px rgba(242,102,0,.6),0 0 140px -30px rgba(255,182,39,.45)}
-.speaker-photo::before{content:'';position:absolute;inset:-30%;background:radial-gradient(ellipse 50% 35% at 30% 25%,rgba(242,102,0,.4),transparent 60%),radial-gradient(ellipse 40% 30% at 75% 80%,rgba(255,182,39,.32),transparent 65%);filter:blur(18px);z-index:0;pointer-events:none;animation:auroraDrift 22s ease-in-out infinite;will-change:transform}
-.speaker-photo img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1;transition:transform .6s cubic-bezier(.2,.8,.2,1);filter:saturate(1.05) contrast(1.04)}
+.speaker-photo{border-radius:24px;overflow:hidden;aspect-ratio:1/1;width:100%;position:relative;box-shadow:0 30px 60px -14px rgba(0,0,0,.65),0 0 50px -8px rgba(242,102,0,.28)}
+.speaker-photo img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1;transition:transform .6s cubic-bezier(.2,.8,.2,1);filter:saturate(1.06) contrast(1.04)}
 .speaker-photo:hover img{transform:scale(1.04)}
-.speaker-photo::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.08) 0%,transparent 35%),linear-gradient(to top,rgba(0,0,0,.35),transparent 35%)}
 .speaker-info{display:flex;flex-direction:column;gap:18px}
 .speaker-name{font-family:var(--font-display);font-size:clamp(48px,5.4vw,72px);letter-spacing:1.4px;color:#fff;line-height:.95;text-transform:uppercase;position:relative;padding-bottom:14px}
 .speaker-name::after{content:'';position:absolute;left:0;bottom:0;width:64px;height:4px;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 0 18px rgba(242,102,0,.5)}
@@ -710,10 +708,10 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 }
 
 /* === TRANSITION === */
-.transition{max-width:680px;margin:var(--gap-block) auto;padding:10px 24px;text-align:center;position:relative}
+.transition{max-width:680px;margin:var(--gap-block) auto;padding:16px 24px;text-align:center;position:relative;min-height:90px;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .transition::before,.transition::after{content:'';position:absolute;left:50%;width:1px;background:linear-gradient(180deg,transparent,var(--accent),transparent);transform:translateX(-50%)}
-.transition::before{top:0;height:6px}
-.transition::after{bottom:0;height:6px}
+.transition::before{top:0;height:10px}
+.transition::after{bottom:0;height:10px}
 .transition p{font-family:var(--font-body);font-size:22px;line-height:1.55;color:#e8e8e8;font-weight:500;letter-spacing:-.1px}
 .transition p em{font-style:italic;color:var(--accent-2);font-weight:500}
 .transition p strong{color:#fff;font-weight:600}
@@ -778,7 +776,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
    proporcional, mesmo alinhamento (left-align no hero), mesmas animacoes,
    sem reordenacao. So ajusta tamanhos pra caber em 360-420px sem quebrar. */
 @media(max-width:760px){
-  :root{--gap-block:6px}
+  :root{--gap-block:24px}
   html,body{overflow-x:hidden;max-width:100vw}
   .w{padding:0 18px;max-width:100%}
   .nav{padding:10px 14px}
@@ -1131,7 +1129,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 <section class="sec">
   <div class="sec-head">
     <span class="sec-lead">Postos que encheram a pista</span>
-    <h2 class="sec-h reveal">Não é coisa de influencer.<br>É <em>dono, gerente e frentista</em> aplicando o mesmo método pra alavancar a pista.</h2>
+    <h2 class="sec-h reveal">Não é só coisa de influencer.<br><em>Donos, gerentes e frentistas</em> podem aplicar o mesmo método para alavancar sua pista.</h2>
     <p class="sec-p">Sem agência. Sem equipe. Sem virar rosto da internet. Cada um pegou uma frente e aplicou: Reel educativo, trend bem usada, R$ 10 por dia no Meta, frentista virando rosto da marca. O <strong>Pista Cheia</strong> abre o passo a passo de cada um.</p>
   </div>
 
