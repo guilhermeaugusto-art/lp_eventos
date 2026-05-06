@@ -254,7 +254,7 @@ body.off-screen .cd-label::before{animation-play-state:paused!important}
 }
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-.w{max-width:1100px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+.w{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
 
 /* === NAV === */
 .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(29,29,31,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
@@ -269,7 +269,7 @@ img{display:block;max-width:100%}
 @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
 
 /* === HERO === */
-.hero{padding:110px 0 24px;text-align:center;position:relative;min-height:auto}
+.hero{padding:88px 0 0;text-align:center;position:relative;min-height:auto}
 .hero-dots{position:absolute;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(rgba(242,102,0,.18) 1px,transparent 1.5px);background-size:22px 22px;mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 30%,#000 30%,transparent 80%);opacity:.7}
 .hero>*{position:relative;z-index:1}
 .hero-title{font-family:var(--font-display);font-size:clamp(48px,8.4vw,104px);letter-spacing:1.2px;line-height:.92;margin-bottom:12px;text-transform:uppercase}
@@ -405,14 +405,14 @@ img{display:block;max-width:100%}
    .transition, .alert-box) tem o mesmo margin vertical. Margens colapsam,
    entao o gap entre dois blocos eh sempre `--gap-block`, independente da
    ordem. Padding interno da .sec eh zero — quem cria o ritmo eh a margin. */
-:root{--gap-block:36px}
+:root{--gap-block:6px}
 .sec{padding:0}
 /* A4: content-visibility:auto nas secoes abaixo do fold. O browser pula
    render/layout ate o conteudo entrar no viewport. Ganho de ~300-800ms
    em TBT. Nao aplicar em .hero (fold) nem em modais. */
 .sec,.modules-grid,.reels-grid,.problem-wrap,.speaker-wrap,.faq-list,.final-cta{content-visibility:auto;contain-intrinsic-size:auto 600px}
 /* Section divider — linha sutil + diamante accent central */
-.sec-divider{height:32px;max-width:880px;margin:var(--gap-block) auto;position:relative;display:flex;align-items:center;justify-content:center;background:none;overflow:hidden}
+.sec-divider{height:4px;max-width:880px;margin:var(--gap-block) auto;position:relative;display:flex;align-items:center;justify-content:center;background:none;overflow:hidden}
 .sec-divider::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(242,102,0,.4) 50%,transparent 100%);transform:translateY(-50%)}
 .sec-divider::after{content:'';width:9px;height:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));transform:rotate(45deg);border-radius:1px;box-shadow:0 0 18px rgba(242,102,0,.7),0 0 36px rgba(255,182,39,.35);position:relative;z-index:1}
 .sec>*{margin-left:auto;margin-right:auto}
@@ -423,18 +423,18 @@ img{display:block;max-width:100%}
 .sec-h em{font-style:normal;background:linear-gradient(135deg,var(--accent-glow),var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:400;padding-right:.04em;filter:drop-shadow(0 0 18px rgba(242,102,0,.35))}
 .sec-p{font-size:15px;color:var(--text-mid);margin:0 auto;max-width:660px;line-height:1.75;text-align:center}
 .sec-lead{display:block;text-align:center;margin:0 auto 14px;font-family:var(--font-body);font-size:13px;font-weight:700;color:var(--accent-2);text-transform:uppercase;letter-spacing:2.4px}
-.sec-content{max-width:1000px;margin:24px auto 0}
+.sec-content{max-width:1180px;margin:24px auto 0}
 .pull-line{display:block;max-width:620px;margin:18px auto 0;font-size:16px;font-weight:500;font-style:italic;color:#f0f0f0;line-height:1.55;padding:0 24px;border-left:0;position:relative}
 .pull-line::before{content:'';display:block;width:36px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px;margin:0 auto 12px}
 
 /* === PROBLEM === */
-.problem-wrap{display:grid;grid-template-columns:1fr;gap:32px;align-items:start;max-width:1000px;margin:24px auto 0}
-@media(min-width:880px){.problem-wrap{grid-template-columns:1.2fr .8fr}}
+.problem-wrap{display:grid;grid-template-columns:1fr;gap:32px;align-items:center;max-width:1200px;margin:24px auto 0}
+@media(min-width:880px){.problem-wrap{grid-template-columns:1.1fr .85fr;gap:40px}}
 .problem-callout{background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border-left:3px solid var(--accent);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:24px;margin-bottom:24px}
 .problem-callout p{font-size:15px;color:var(--text-mid);line-height:1.7}
 .problem-callout strong{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
-.problem-list{display:flex;flex-direction:column;gap:10px}
-.problem-item{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);font-size:14px;color:var(--text-mid);line-height:1.6;transition:all .3s}
+.problem-list{display:flex;flex-direction:column;gap:18px}
+.problem-item{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;background:linear-gradient(135deg,var(--bg-card),#0e0e0e);border:1px solid var(--border);border-radius:var(--r-sm);font-size:15px;color:#e2e2e2;line-height:1.6;transition:all .3s}
 .problem-item:hover{border-color:var(--border-accent);transform:translateX(4px)}
 .problem-x{color:var(--accent);flex-shrink:0;margin-top:2px;width:28px;height:28px;border-radius:50%;background:var(--accent-soft);display:flex;align-items:center;justify-content:center}
 .problem-x svg{width:18px;height:18px;stroke-width:2.4}
@@ -447,11 +447,11 @@ img{display:block;max-width:100%}
 /* Solution callout after problem */
 .solution-callout{background:linear-gradient(135deg,rgba(37,211,102,.1),rgba(37,211,102,.03));border:1px solid rgba(37,211,102,.35);border-radius:20px;padding:24px 28px;margin-top:28px;box-shadow:0 14px 36px -14px rgba(37,211,102,.25),inset 0 1px 0 rgba(255,255,255,.04);opacity:0;transform:translateY(16px) scale(.98);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
 .solution-callout.is-visible{opacity:1;transform:translateY(0) scale(1)}
-.solution-callout p{font-size:15px;color:var(--text-mid);line-height:1.7;margin:0}
+.solution-callout p{font-size:16px;color:#ececec;line-height:1.7;margin:0;font-style:italic}
 .solution-callout strong{color:var(--green);font-weight:700}
 
 /* === COURSE MODULES === */
-.modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;max-width:1000px;margin:24px auto 0}
+.modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;max-width:1180px;margin:24px auto 0}
 .module-card{padding:36px 28px 28px;background:linear-gradient(180deg,var(--bg-card) 0%,#0a0a0a 100%);border:1px solid var(--border);border-radius:var(--r);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .3s;position:relative;overflow:hidden;box-shadow:0 12px 30px -18px rgba(0,0,0,.7)}
 .module-card:hover{border-color:var(--accent);transform:translateY(-6px);box-shadow:0 28px 70px -20px rgba(0,0,0,.75),0 0 60px -10px rgba(242,102,0,.45),0 0 0 1px rgba(242,102,0,.25) inset}
 /* Linha top accent dos modules — suavizada de 2px/opacity .7 pra 1px/opacity .25
@@ -493,10 +493,11 @@ img{display:block;max-width:100%}
 /* === REELS / SOCIAL PROOF ===
    Desktop: grid 6-col com cards span(2). 3 cards na linha 1, 2 cards
    centralizados na linha 2 (col 2-3 e 4-5). Mobile: scroll horizontal snap. */
-.reels-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:24px 24px;max-width:940px;margin:32px auto 0}
+.reels-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:24px 24px;max-width:1180px;margin:32px auto 0}
 .reels-grid .reel-card{grid-column:span 2}
-.reels-grid .reel-card:nth-child(4){grid-column:2/span 2}
-.reels-grid .reel-card:nth-child(5){grid-column:4/span 2}
+/* Centraliza os 2 ultimos quando o grid tem exatamente 5 cards (linha 2: 2 cards centrados) */
+.reels-grid .reel-card:nth-child(4):nth-last-child(2){grid-column:2/span 2}
+.reels-grid .reel-card:nth-child(5):last-child{grid-column:4/span 2}
 @media(max-width:760px){
   .reels-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;padding:4px 16px 18px;margin:24px -16px 0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .reels-grid::-webkit-scrollbar{display:none}
@@ -531,14 +532,14 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
    - heart: vermelho Insta #ed4956 preenchido com glow
    - comment (message-circle): branco brilhante (Insta nao tem cor de marca aqui)
    - share (send/avião): azul Insta #3897f0 com glow */
-.reel-stats{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.07)}
-.reel-stat{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#f0f0f0;font-weight:800;letter-spacing:.1px;font-variant-numeric:tabular-nums}
-.reel-stat svg{width:15px;height:15px;stroke-width:2.4;flex-shrink:0}
+.reel-stats{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.10)}
+.reel-stat{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:#fff;font-weight:800;letter-spacing:.2px;font-variant-numeric:tabular-nums}
+.reel-stat svg{width:18px;height:18px;stroke-width:2.5;flex-shrink:0}
 .reel-stat span{line-height:1}
-.reel-stat-view svg{color:#ff8c3a;fill:#ff8c3a;stroke:none;filter:drop-shadow(0 0 5px rgba(255,140,58,.5))}
-.reel-stat-like svg{color:#ed4956;fill:#ed4956;stroke:none;filter:drop-shadow(0 0 5px rgba(237,73,86,.5))}
-.reel-stat-comment svg{color:#fafafa;fill:none}
-.reel-stat-share svg{color:#3897f0;fill:none;filter:drop-shadow(0 0 5px rgba(56,151,240,.4))}
+.reel-stat-view svg{color:#ff8c3a;fill:#ff8c3a;stroke:none;filter:drop-shadow(0 0 7px rgba(255,140,58,.7))}
+.reel-stat-like svg{color:#ed4956;fill:#ed4956;stroke:none;filter:drop-shadow(0 0 7px rgba(237,73,86,.65))}
+.reel-stat-comment svg{color:#3CEC7B;fill:#3CEC7B;stroke:none;filter:drop-shadow(0 0 7px rgba(60,236,123,.65))}
+.reel-stat-share svg{color:#3897f0;fill:none;stroke:#3897f0;filter:drop-shadow(0 0 7px rgba(56,151,240,.6))}
 /* Tipografia animada do summary: cada palavra entra em stagger quando o card recebe .in.
    Stagger sutil (35ms) pra nao competir com o reveal-card. */
 .reel-summary > .word{display:inline-block;opacity:0;transform:translateY(.4em);transition:opacity .5s var(--ease-cinematic),transform .5s var(--ease-cinematic);transition-delay:calc(var(--i,0) * 30ms + 250ms)}
@@ -546,12 +547,22 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 .reel-card:hover .reel-handle{background:linear-gradient(135deg,#fff 30%,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 
 /* === AUTHORITY (SPEAKER) === */
-.speaker-wrap{max-width:1000px;margin:24px auto 0;display:grid;grid-template-columns:340px 1fr;gap:40px;align-items:start;justify-items:stretch}
+.speaker-wrap{max-width:1240px;margin:14px auto 0;display:grid;grid-template-columns:520px 1fr;gap:60px;align-items:start;justify-items:stretch}
 @media(max-width:760px){.speaker-wrap{grid-template-columns:1fr;gap:20px;max-width:100%}}
 .speaker-left{display:flex;flex-direction:column;align-items:center;gap:18px}
 /* Foto do Andre — frame 3D com gradient border, halo accent, sheen interno
    e parallax 3D continuo (ja esta no JS). Aspect-ratio quadrado pra encaixar no grid. */
-.speaker-photo{border-radius:24px;overflow:hidden;aspect-ratio:1/1;width:100%;position:relative;background:#0a0a0a padding-box,linear-gradient(135deg,rgba(242,102,0,.55),rgba(255,182,39,.45) 40%,rgba(242,102,0,.15) 100%) border-box;border:1.5px solid transparent;box-shadow:0 30px 70px -20px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.04) inset,0 0 80px -10px rgba(242,102,0,.5),0 0 140px -30px rgba(255,182,39,.4)}
+/* Stack 3D: foto principal MAIOR (1:1) + auxiliar horizontal com overlap sutil.
+   Frame solido pra nao parecer transparente, perspective marcado pra sentir 3D. */
+.speaker-photos-stack{position:relative;perspective:1400px}
+.speaker-photos-stack .speaker-photo{transform:perspective(1400px) rotateY(-6deg) rotateX(2.5deg) rotate(-1.5deg);transition:transform .6s cubic-bezier(.2,.8,.2,1);transform-origin:bottom right;will-change:transform;z-index:2;border:2px solid transparent;box-shadow:0 36px 80px -18px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.12) inset,0 0 70px -8px rgba(242,102,0,.55),0 0 140px -30px rgba(255,182,39,.4)}
+.speaker-photos-stack .speaker-photo:hover{transform:perspective(1400px) rotateY(-3deg) rotateX(1.2deg) rotate(-.6deg) translateY(-3px)}
+.speaker-photo-aux{position:relative;margin:-30px 0 0 auto;width:96%;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:#0a0a0a padding-box,linear-gradient(135deg,rgba(242,102,0,.7),rgba(255,182,39,.55) 50%,rgba(242,102,0,.25) 100%) border-box;border:2px solid transparent;box-shadow:0 32px 70px -18px rgba(0,0,0,.85),0 0 90px -10px rgba(242,102,0,.55),0 0 0 1px rgba(255,255,255,.1) inset;transform:perspective(1400px) rotateY(6deg) rotateX(-2.5deg) rotate(2.5deg);transform-origin:top left;transition:transform .6s cubic-bezier(.2,.8,.2,1);will-change:transform;z-index:1}
+.speaker-photo-aux:hover{transform:perspective(1400px) rotateY(3deg) rotateX(-1.2deg) rotate(1.2deg) translateY(3px)}
+.speaker-photo-aux::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.12) 0%,transparent 35%),linear-gradient(to top,rgba(0,0,0,.28),transparent 45%)}
+.speaker-photo-aux img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;position:relative;z-index:1;transition:transform .6s cubic-bezier(.2,.8,.2,1);filter:saturate(1.1) contrast(1.06)}
+.speaker-photo-aux:hover img{transform:scale(1.04)}
+.speaker-photo{border-radius:24px;overflow:hidden;aspect-ratio:1/1;width:100%;position:relative;background:#0a0a0a padding-box,linear-gradient(135deg,rgba(242,102,0,.85),rgba(255,182,39,.75) 40%,rgba(242,102,0,.4) 100%) border-box;border:2px solid transparent;box-shadow:0 30px 70px -20px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.15) inset,0 0 80px -10px rgba(242,102,0,.6),0 0 140px -30px rgba(255,182,39,.45)}
 .speaker-photo::before{content:'';position:absolute;inset:-30%;background:radial-gradient(ellipse 50% 35% at 30% 25%,rgba(242,102,0,.4),transparent 60%),radial-gradient(ellipse 40% 30% at 75% 80%,rgba(255,182,39,.32),transparent 65%);filter:blur(18px);z-index:0;pointer-events:none;animation:auroraDrift 22s ease-in-out infinite;will-change:transform}
 .speaker-photo img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1;transition:transform .6s cubic-bezier(.2,.8,.2,1);filter:saturate(1.05) contrast(1.04)}
 .speaker-photo:hover img{transform:scale(1.04)}
@@ -581,6 +592,39 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 .speaker-cred-icon{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#1f1410 0%,#0a0a0a 100%);border:1px solid rgba(242,102,0,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent-2);font-size:16px;transition:transform .35s var(--ease-soft),border-color .35s}
 .speaker-cred:hover .speaker-cred-icon{border-color:var(--accent-2);transform:scale(1.06)}
 .speaker-cred strong{color:#fff;font-weight:700}
+
+/* ===== ANDRÉ — TIMELINE (logos premium + numero + accent bar) ===== */
+.speaker-timeline{display:flex;flex-direction:column;gap:14px;margin-top:8px;position:relative}
+.timeline-item{display:flex;align-items:center;gap:20px;padding:18px 22px 18px 18px;background:linear-gradient(180deg,rgba(28,22,18,.85),rgba(12,10,8,.85));border:1px solid rgba(255,255,255,.07);border-radius:18px;position:relative;transition:transform .4s var(--ease-soft),border-color .35s,box-shadow .4s;backdrop-filter:blur(8px);overflow:hidden;z-index:1}
+.timeline-item::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(242,102,0,.06),transparent 45%);opacity:0;transition:opacity .4s;pointer-events:none}
+.timeline-item:hover{border-color:rgba(242,102,0,.45);transform:translateY(-3px);box-shadow:0 18px 42px -16px rgba(242,102,0,.4)}
+.timeline-item:hover::before{opacity:1}
+.timeline-logo{flex-shrink:0;width:60px;height:60px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1f1410 0%,#0a0a0a 100%);border:1px solid rgba(242,102,0,.32);position:relative;overflow:hidden;transition:transform .4s var(--ease-soft),border-color .35s,box-shadow .4s}
+.timeline-item:hover .timeline-logo{transform:scale(1.05);border-color:rgba(242,102,0,.55)}
+.timeline-logo img{width:38px;height:38px;object-fit:contain;display:block;filter:drop-shadow(0 3px 6px rgba(0,0,0,.45))}
+.timeline-logo.is-brand{background:#fff;padding:8px;border-color:rgba(255,255,255,.22)}
+.timeline-logo.is-club{background:radial-gradient(circle at 30% 30%,rgba(242,102,0,.22),#080808 70%);border-color:rgba(242,102,0,.6);box-shadow:inset 0 0 28px -6px rgba(242,102,0,.5),0 6px 18px -3px rgba(242,102,0,.3)}
+.timeline-logo.is-club img{width:42px;height:42px;filter:drop-shadow(0 3px 10px rgba(242,102,0,.7))}
+.timeline-logo.is-money{background:radial-gradient(circle at 30% 30%,rgba(255,182,39,.22),#080808 70%);border-color:rgba(255,182,39,.55);box-shadow:inset 0 0 28px -8px rgba(255,182,39,.5),0 6px 18px -3px rgba(255,182,39,.25)}
+.timeline-logo.is-money svg{width:30px;height:30px;color:#FFB627;filter:drop-shadow(0 3px 8px rgba(255,182,39,.65))}
+.timeline-text{display:flex;flex-direction:column;gap:6px;min-width:0}
+.timeline-headline{font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;background:linear-gradient(135deg,#fff,#ffe1c0 70%);-webkit-background-clip:text;background-clip:text;color:transparent;position:relative;padding-bottom:8px;align-self:flex-start}
+.timeline-headline::after{content:'';position:absolute;left:0;bottom:0;width:32px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px;box-shadow:0 0 10px rgba(242,102,0,.5)}
+.timeline-desc{font-size:15px;color:#e2e2e2;line-height:1.55;font-weight:400}
+.timeline-desc strong{color:#fff;font-weight:700}
+
+@media(max-width:760px){
+  .speaker-timeline{gap:12px}
+  .timeline-item{padding:14px 16px 14px 14px;gap:14px;border-radius:15px}
+  .timeline-logo{width:50px;height:50px;border-radius:13px}
+  .timeline-logo img{width:32px;height:32px}
+  .timeline-logo.is-club img{width:36px;height:36px}
+  .timeline-logo.is-money svg{width:26px;height:26px}
+  .timeline-text{gap:4px}
+  .timeline-headline{font-size:10.5px;letter-spacing:.13em;padding-bottom:6px}
+  .timeline-headline::after{width:24px;height:1.5px}
+  .timeline-desc{font-size:14px;line-height:1.5}
+}
 
 /* === PRICE === */
 .price-section{text-align:center}
@@ -619,11 +663,11 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 .price-guarantee-text strong{color:#fff;font-size:13.5px;font-weight:700;letter-spacing:.1px}
 .price-guarantee-text span{font-size:12.5px;color:var(--text-mid);line-height:1.45}
 /* Tira-duvida WhatsApp do price-card: discreto, nao compete com o CTA principal */
-.price-wpp-mini{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:14px 24px 22px;font-size:12.5px;color:var(--text-dim);text-align:center}
+.price-wpp-mini{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:16px 24px 22px;font-size:12.5px;color:var(--text-dim);text-align:center}
 .price-wpp-mini > span{opacity:.85}
-.price-wpp-link{display:inline-flex;align-items:center;gap:6px;color:#3CEC7B;font-weight:700;font-size:12.5px;text-decoration:none;border-bottom:1px dashed rgba(60,236,123,.5);padding-bottom:1px;transition:color .25s,border-color .25s}
-.price-wpp-link:hover{color:#fff;border-bottom-color:#fff}
-.price-wpp-link svg{flex-shrink:0}
+.price-wpp-link{display:inline-flex;align-items:center;gap:10px;padding:10px 18px 10px 10px;background:linear-gradient(135deg,rgba(37,211,102,.10),rgba(37,211,102,.04));border:1px solid rgba(37,211,102,.32);border-radius:100px;color:#4DDB80;font-weight:600;font-size:13px;letter-spacing:.01em;text-decoration:none;transition:all .3s cubic-bezier(.2,.8,.2,1)}
+.price-wpp-link:hover{background:linear-gradient(135deg,rgba(37,211,102,.20),rgba(37,211,102,.08));border-color:rgba(37,211,102,.55);color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(37,211,102,.45)}
+.price-wpp-link svg{flex-shrink:0;width:14px;height:14px;background:linear-gradient(135deg,#2EE070,#1EA952);border-radius:50%;padding:5px;color:#fff;box-shadow:0 2px 6px rgba(37,211,102,.45),inset 0 1px 0 rgba(255,255,255,.25)}
 
 /* === ROI ANCHOR === */
 .roi-anchor{display:flex;align-items:center;gap:14px;max-width:560px;margin:0 auto 22px;padding:16px 20px;background:linear-gradient(135deg,rgba(37,211,102,.10),rgba(37,211,102,.04));border:1px solid rgba(37,211,102,.35);border-radius:14px;text-align:left}
@@ -666,10 +710,10 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 }
 
 /* === TRANSITION === */
-.transition{max-width:680px;margin:var(--gap-block) auto;padding:20px 24px;text-align:center;position:relative}
+.transition{max-width:680px;margin:var(--gap-block) auto;padding:10px 24px;text-align:center;position:relative}
 .transition::before,.transition::after{content:'';position:absolute;left:50%;width:1px;background:linear-gradient(180deg,transparent,var(--accent),transparent);transform:translateX(-50%)}
-.transition::before{top:0;height:14px}
-.transition::after{bottom:0;height:14px}
+.transition::before{top:0;height:6px}
+.transition::after{bottom:0;height:6px}
 .transition p{font-family:var(--font-body);font-size:22px;line-height:1.55;color:#e8e8e8;font-weight:500;letter-spacing:-.1px}
 .transition p em{font-style:italic;color:var(--accent-2);font-weight:500}
 .transition p strong{color:#fff;font-weight:600}
@@ -686,14 +730,15 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 @media(max-width:760px){.alert-box{padding:18px 16px;gap:12px;border-radius:14px;max-width:calc(100% - 24px)}.alert-icon{width:36px;height:36px;border-radius:10px}.alert-icon svg{width:20px;height:20px}.alert-title{font-size:16px;letter-spacing:.4px}.alert-text{font-size:12.5px;line-height:1.55}}
 
 /* === FINAL CTA === */
-.final-cta{text-align:center;padding:64px 32px 56px;position:relative;border-radius:var(--r);overflow:hidden;margin:var(--gap-block) auto;max-width:1100px;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(242,102,0,.25),transparent 70%),linear-gradient(180deg,rgba(20,12,10,.6),rgba(8,6,5,.4));border:1px solid rgba(242,102,0,.18)}
+.final-cta{text-align:center;padding:64px 32px 56px;position:relative;border-radius:var(--r);overflow:hidden;margin:var(--gap-block) auto;max-width:1280px;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(242,102,0,.25),transparent 70%),linear-gradient(180deg,rgba(20,12,10,.6),rgba(8,6,5,.4));border:1px solid rgba(242,102,0,.18)}
 .final-cta>*{position:relative;z-index:1}
 .final-cta .sec-h{margin-bottom:22px;font-size:clamp(48px,7vw,96px)}
 .final-sub{font-size:16px;color:#cfcfcf;margin-bottom:32px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.6}
 .final-cta .cta{margin-bottom:18px}
-.final-wpp{text-align:center;margin-top:14px}
-.final-wpp a{display:inline-flex;align-items:center;gap:7px;color:#3CEC7B;font-size:13px;font-weight:600;text-decoration:none;border-bottom:1px dashed rgba(60,236,123,.5);padding-bottom:1px;transition:color .25s,border-color .25s}
-.final-wpp a:hover{color:#fff;border-bottom-color:#fff}
+.final-wpp{text-align:center;margin-top:18px}
+.final-wpp a{display:inline-flex;align-items:center;gap:10px;padding:10px 18px 10px 10px;background:linear-gradient(135deg,rgba(37,211,102,.10),rgba(37,211,102,.04));border:1px solid rgba(37,211,102,.32);border-radius:100px;color:#4DDB80;font-size:13px;font-weight:600;letter-spacing:.01em;text-decoration:none;transition:all .3s cubic-bezier(.2,.8,.2,1)}
+.final-wpp a:hover{background:linear-gradient(135deg,rgba(37,211,102,.20),rgba(37,211,102,.08));border-color:rgba(37,211,102,.55);color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(37,211,102,.45)}
+.final-wpp a svg{flex-shrink:0;width:14px;height:14px;background:linear-gradient(135deg,#2EE070,#1EA952);border-radius:50%;padding:5px;color:#fff;box-shadow:0 2px 6px rgba(37,211,102,.45),inset 0 1px 0 rgba(255,255,255,.25)}
 
 /* === SOCIAL PROOF TICKER === */
 .social-proof{display:flex;align-items:center;justify-content:center;gap:14px;max-width:520px;margin:18px auto 0;padding:12px 18px;background:linear-gradient(135deg,rgba(37,211,102,.10),rgba(37,211,102,.04));border:1px solid rgba(37,211,102,.3);border-radius:100px;font-size:13px;color:#d8d8d8;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
@@ -733,7 +778,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
    proporcional, mesmo alinhamento (left-align no hero), mesmas animacoes,
    sem reordenacao. So ajusta tamanhos pra caber em 360-420px sem quebrar. */
 @media(max-width:760px){
-  :root{--gap-block:24px}
+  :root{--gap-block:6px}
   html,body{overflow-x:hidden;max-width:100vw}
   .w{padding:0 18px;max-width:100%}
   .nav{padding:10px 14px}
@@ -813,6 +858,36 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   .footer p{font-size:10.5px;padding:0 16px;line-height:1.6}
   /* CTA-strip mobile: garantir que CTA não ultrapassa borda da viewport */
   .cta-strip{padding:0 4px}
+
+  /* ===== MOBILE OPTIMIZATION PASS — price section em UMA tela + cleanup ===== */
+  /* Vídeo da identidade não pode dominar a viewport */
+  .problem-img{aspect-ratio:4/5;max-height:380px;min-height:0}
+  /* Bloco de preço: tudo compactado pra caber sem rolagem extra */
+  .price-section .sec-p{display:none}
+  .roi-anchor{display:none}
+  .price-left{padding:20px 18px}
+  .price-from{font-size:13px}
+  .price-from::before{font-size:24px;margin-bottom:2px}
+  .price-main{font-size:64px;margin:6px 0 4px}
+  .price-inst{font-size:11.5px}
+  .price-checks{margin-bottom:18px}
+  .price-check{font-size:12px;line-height:1.4;margin-bottom:7px;gap:10px}
+  .price-guarantee{padding:14px 18px;gap:12px}
+  .price-guarantee-text strong{font-size:12px}
+  .price-guarantee-text span{font-size:11px;line-height:1.35}
+  /* WhatsApp do price-card escondido em mobile (FAB fixo já cobre essa intenção) */
+  .price-wpp-mini{display:none}
+  /* Touch target mínimo do botão WhatsApp final (44px alto) */
+  .final-wpp a{padding:12px 18px 12px 12px}
+  /* Timeline André em mobile: tamanho do logo e espaçamento */
+  .speaker-photo{max-width:280px;max-height:280px;margin:0 auto;border-radius:20px}
+  /* Reels em mobile: força flex-row uniforme (não aplica B-S-B do desktop) */
+  .reels-grid{align-items:initial}
+  /* Foto auxiliar 3D do Andre: ajusta proporcoes em mobile */
+  .speaker-photo-aux{margin:-32px 0 0 8%;width:84%;border-radius:14px}
+  /* Foto principal mobile: reduz transform 3D pra evitar deformidade em telas pequenas */
+  .speaker-photos-stack .speaker-photo{transform:none}
+  .speaker-photo-aux{transform:rotate(2deg)}
 }
 
 /* B5 — Honra prefers-reduced-motion em todas as animacoes principais.
@@ -1056,8 +1131,8 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 <section class="sec">
   <div class="sec-head">
     <span class="sec-lead">Postos que encheram a pista</span>
-    <h2 class="sec-h reveal">Não são influencer.<br>São donos de posto que aplicaram o <em>método</em>.</h2>
-    <p class="sec-p">Sem agência. Sem equipe. Sem virar rosto na internet. Cada um pegou uma frente e aplicou: Reel educativo, trend bem usada, R$ 10 por dia no Meta, frentista virando rosto da marca. O <strong>Pista Cheia</strong> abre o passo a passo de cada um.</p>
+    <h2 class="sec-h reveal">Não é coisa de influencer.<br>É <em>dono, gerente e frentista</em> aplicando o mesmo método pra alavancar a pista.</h2>
+    <p class="sec-p">Sem agência. Sem equipe. Sem virar rosto da internet. Cada um pegou uma frente e aplicou: Reel educativo, trend bem usada, R$ 10 por dia no Meta, frentista virando rosto da marca. O <strong>Pista Cheia</strong> abre o passo a passo de cada um.</p>
   </div>
 
   <div class="reels-grid" id="casesGrid">
@@ -1201,6 +1276,33 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
         </div>
       </div>
     </a>
+    <!-- Reel 6 — @clubpetro (feed institucional · 2M views)
+         METRICAS: 2M views (real do reel), 498 likes · 73 comments · 86 shares (estimadas, pedido do Guilherme). -->
+    <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/clubpetro/reels/?hl=pt-br" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'clubpetro-feed'})">
+      <div class="reel-thumb">
+        <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
+        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/TvinBgX.jpg" aria-label="Reel do ClubPetro">
+          <source src="https://i.imgur.com/TvinBgX.mp4" type="video/mp4">
+        </video>
+        <div class="reel-ig-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Ver no Instagram
+        </div>
+      </div>
+      <div class="reel-body">
+        <div class="reel-meta">
+          <div class="reel-avatar" aria-hidden="true"><i class="ph-fill ph-gas-pump"></i></div>
+          <span class="reel-handle">@clubpetro</span>
+        </div>
+        <p class="reel-summary">O método aplicado na propria casa. ClubPetro virando referência de 2 milhões de motoristas no feed.</p>
+        <div class="reel-stats" aria-label="Métricas do reel">
+          <span class="reel-stat reel-stat-view"><i data-lucide="play" aria-hidden="true"></i><span data-stat="views">2M</span></span>
+          <span class="reel-stat reel-stat-like"><i data-lucide="heart" aria-hidden="true"></i><span data-stat="likes">498</span></span>
+          <span class="reel-stat reel-stat-comment"><i data-lucide="message-circle" aria-hidden="true"></i><span data-stat="comments">73</span></span>
+          <span class="reel-stat reel-stat-share"><i data-lucide="send" aria-hidden="true"></i><span data-stat="shares">86</span></span>
+        </div>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -1220,8 +1322,13 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 
   <div class="speaker-wrap">
     <div class="speaker-left">
-      <div class="speaker-photo">
-        <img src="https://i.imgur.com/A3oGvjo.jpeg" alt="André Carvalhaes" loading="lazy" decoding="async" width="600" height="600">
+      <div class="speaker-photos-stack">
+        <div class="speaker-photo">
+          <img src="https://i.imgur.com/A3oGvjo.jpeg" alt="André Carvalhaes" loading="lazy" decoding="async" width="600" height="600">
+        </div>
+        <div class="speaker-photo-aux" aria-hidden="true">
+          <img src="https://i.imgur.com/vXaMfj1.jpg" alt="" loading="lazy" decoding="async">
+        </div>
       </div>
       <div class="speaker-socials">
         <a class="speaker-social" href="https://www.instagram.com/af.carvalhaes/" target="_blank" rel="noopener noreferrer" aria-label="Instagram do André" title="@af.carvalhaes">
@@ -1235,23 +1342,39 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
     <div class="speaker-info">
       <div class="speaker-name">ANDRÉ CARVALHAES</div>
       <p class="speaker-role">Head de Marketing · ClubPetro</p>
-      <p class="speaker-bio"><strong>3 anos como sócio executivo da V4 Company.</strong> A maior agência de marketing do Brasil.<br><br>Saiu pra construir o marketing do <strong>ClubPetro</strong> de dentro do setor de combustível. Hoje, há 8 anos.<br><br>Rodou Meta, Google e tráfego orgânico que somaram <strong>+R$ 5 milhões em receita gerada</strong> pra postos.<br><br>Nas <strong>2 noites do Pista Cheia</strong>, abre o método que aplica todo dia. Adaptado pro dia a dia de quem opera posto.</p>
-      <div class="speaker-creds">
-        <div class="speaker-cred">
-          <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/Bg3r3li.jpeg" alt="V4 Company" loading="lazy" decoding="async"></div>
-          <div><strong>Sócio executivo</strong> · V4 Company</div>
+      <div class="speaker-timeline">
+        <div class="timeline-item">
+<div class="timeline-logo is-brand"><img src="https://i.imgur.com/Bg3r3li.jpeg" alt="V4 Company" loading="lazy" decoding="async"></div>
+          <div class="timeline-text">
+            <div class="timeline-headline">Sócio executivo · V4 Company</div>
+            <div class="timeline-desc"><strong>3 anos</strong> dentro da maior agência de marketing do Brasil.</div>
+          </div>
         </div>
-        <div class="speaker-cred">
-          <div class="speaker-cred-icon is-brand"><img src="https://i.imgur.com/0gwRjTA.jpeg" alt="Meta" loading="lazy" decoding="async"></div>
-          <div><strong>+4 anos</strong> rodando Meta + Google Ads</div>
+        <div class="timeline-item">
+<div class="timeline-logo is-club"><img src="img/favicon-512x512.png" alt="ClubPetro" loading="lazy" decoding="async"></div>
+          <div class="timeline-text">
+            <div class="timeline-headline">Head de Marketing · ClubPetro</div>
+            <div class="timeline-desc"><strong>8 anos</strong> construindo o marketing por dentro do setor de combustível.</div>
+          </div>
         </div>
-        <div class="speaker-cred">
-          <div class="speaker-cred-icon is-brand-dark"><img src="https://i.imgur.com/WkKfAI4.jpeg" alt="ClubPetro" loading="lazy" decoding="async"></div>
-          <div><strong>Head de Marketing</strong> · ClubPetro (8 anos)</div>
+        <div class="timeline-item">
+<div class="timeline-logo is-brand"><img src="https://i.imgur.com/0gwRjTA.jpeg" alt="Meta + Google Ads" loading="lazy" decoding="async"></div>
+          <div class="timeline-text">
+            <div class="timeline-headline">Meta + Google Ads</div>
+            <div class="timeline-desc"><strong>+4 anos</strong> rodando tráfego pago e orgânico pra postos.</div>
+          </div>
         </div>
-        <div class="speaker-cred">
-          <div class="speaker-cred-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.85 15.6v1.15a.85.85 0 1 1-1.7 0V17.6c-1.85-.2-3.3-1.4-3.45-3.05a.95.95 0 0 1 1.9-.18c.07.7.85 1.3 2.05 1.3 1.2 0 2-.55 2-1.25 0-.7-.55-1.05-2.5-1.55-1.85-.45-3.55-1.1-3.55-3.05 0-1.55 1.3-2.6 3.05-2.85V5.85a.85.85 0 1 1 1.7 0V7c1.6.27 2.85 1.27 3.05 2.6a.95.95 0 0 1-1.88.27c-.1-.6-.85-1.15-1.95-1.15-1.1 0-1.85.5-1.85 1.15 0 .65.5.95 2.4 1.4 2.05.5 3.65 1.2 3.65 3.2 0 1.65-1.35 2.9-3.07 3.13z"/></svg></div>
-          <div><strong>+R$ 5M em receita</strong> gerada via campanhas</div>
+        <div class="timeline-item">
+<div class="timeline-logo is-money">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 17l6-6 4 4 8-8"/>
+              <path d="M14 7h7v7"/>
+            </svg>
+          </div>
+          <div class="timeline-text">
+            <div class="timeline-headline">+R$ 5 milhões em receita</div>
+            <div class="timeline-desc">Gerados pra postos via campanhas Meta + Google que ele rodou pessoalmente.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1488,14 +1611,15 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
       update();
     },1500);
   }
-  // Solution callout: entrada atrasada 2.5s depois de entrar na viewport
+  // Solution callout: entrada com leve atraso depois de entrar na viewport
+  // (espaco pra olhar os bullets antes do desfecho aparecer).
   var solEls=document.querySelectorAll('.solution-callout');
   if(solEls.length && 'IntersectionObserver' in window){
     var solIo=new IntersectionObserver(function(entries){
       entries.forEach(function(en){
         if(en.isIntersecting){
           var target=en.target;
-          setTimeout(function(){target.classList.add('is-visible')},2500);
+          setTimeout(function(){target.classList.add('is-visible')},600);
           solIo.unobserve(target);
         }
       });
@@ -1736,7 +1860,7 @@ document.addEventListener('click',function(e){
       if(en.isIntersecting){
         var children=en.target.children;
         Array.prototype.forEach.call(children,function(c,i){
-          c.style.transitionDelay=(i*80)+'ms';
+          c.style.transitionDelay=(i*160)+'ms';
         });
         en.target.classList.add('stagger-in');
         io.unobserve(en.target);
@@ -1744,14 +1868,71 @@ document.addEventListener('click',function(e){
     });
   },{threshold:.15});
   // .reels-grid eh controlado pelo motion (entrada cascata via spring) — exclui da lista
-  document.querySelectorAll('.modules-grid,.problem-list,.speaker-creds').forEach(function(g){
+  // .modules-grid: observado por card individual pra criar pausa natural entre noites
+  // .speaker-timeline: tem reveal proprio (cascada slide-in), tambem fora da lista
+  document.querySelectorAll('.problem-list').forEach(function(g){
     Array.prototype.forEach.call(g.children,function(c){
       c.style.opacity='0';
-      c.style.transform='translateY(24px)';
-      c.style.transition='opacity .5s cubic-bezier(.2,.8,.2,1),transform .5s cubic-bezier(.2,.8,.2,1)';
+      c.style.transform='translateY(32px)';
+      c.style.transition='opacity .65s cubic-bezier(.2,.8,.2,1),transform .65s cubic-bezier(.2,.8,.2,1)';
     });
     io.observe(g);
   });
+
+  // === SPEAKER TIMELINE — cada item desliza da esquerda em cascata ===
+  (function(){
+    var tlContainer=document.querySelector('.speaker-timeline');
+    if(!tlContainer)return;
+    var items=tlContainer.querySelectorAll('.timeline-item');
+    items.forEach(function(item){
+      item.style.opacity='0';
+      item.style.transform='translateX(-22px) scale(.97)';
+      item.style.transition='opacity .55s cubic-bezier(.2,.8,.2,1),transform .55s cubic-bezier(.2,.8,.2,1)';
+    });
+    if('IntersectionObserver' in window && items.length){
+      var tlIo=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){
+            // One-by-one cascade: 280ms entre items, 4 items = ~1.4s total
+            items.forEach(function(item,i){
+              setTimeout(function(){
+                item.style.opacity='1';
+                item.style.transform='translateX(0) scale(1)';
+              },i*280);
+            });
+            tlIo.unobserve(en.target);
+          }
+        });
+      },{threshold:.18});
+      tlIo.observe(tlContainer);
+    }else{
+      items.forEach(function(it){it.style.opacity='1';it.style.transform='none'});
+    }
+  })();
+
+  // === MODULES GRID — entrada por card individual ao rolagem ===
+  // Cada modulo (e night-header) aparece quando entra de fato na viewport,
+  // dando tempo do leitor pausar entre NOITE 1 e NOITE 2.
+  var moduleChildren=document.querySelectorAll('.modules-grid > *');
+  moduleChildren.forEach(function(c){
+    c.style.opacity='0';
+    c.style.transform='translateY(20px)';
+    c.style.transition='opacity .45s cubic-bezier(.2,.8,.2,1),transform .45s cubic-bezier(.2,.8,.2,1)';
+  });
+  if('IntersectionObserver' in window && moduleChildren.length){
+    var modIo=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.style.opacity='1';
+          en.target.style.transform='translateY(0)';
+          modIo.unobserve(en.target);
+        }
+      });
+    },{threshold:.18,rootMargin:'0px 0px -40px 0px'});
+    moduleChildren.forEach(function(c){modIo.observe(c)});
+  }else{
+    moduleChildren.forEach(function(c){c.style.opacity='1';c.style.transform='none'});
+  }
 })();
 document.addEventListener('DOMContentLoaded',function(){
   var s=document.createElement('style');
