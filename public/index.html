@@ -888,6 +888,25 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   .speaker-photo-aux{transform:rotate(2deg)}
 }
 
+/* === RITMO VERTICAL UNIFORME — SINGLE SOURCE OF TRUTH ===
+   Padding-based: o "respiro" vem de DENTRO da secao via padding,
+   nao de margens externas que colapsam ou somam inconsistente.
+   - Sections (.hero, .sec, .final-cta): padding vertical = --section-gap
+     -> 48px de empty space ANTES e DEPOIS do conteudo de cada secao
+     -> entre 2 secoes: 48 + 48 = 96px de empty space CONSISTENTE
+   - Inter-section blocks (.cta-strip, .transition, .alert-box, .sec-divider):
+     padding zerado, margem zerada. Sao CONTENT, nao gap.
+   - Mobile: --section-gap-mobile = 32px (escala pra telas menores). */
+:root{--section-gap:48px;--section-gap-mobile:32px}
+.hero,.sec,.cta-strip,.transition,.alert-box,.final-cta,.sec-divider,.price-section{margin-top:0;margin-bottom:0}
+.sec,.final-cta{padding-top:var(--section-gap);padding-bottom:var(--section-gap)}
+.hero{padding-bottom:var(--section-gap)}
+.cta-strip,.transition,.alert-box,.sec-divider{padding-top:0;padding-bottom:0}
+@media(max-width:768px){
+  .sec,.final-cta{padding-top:var(--section-gap-mobile);padding-bottom:var(--section-gap-mobile)}
+  .hero{padding-bottom:var(--section-gap-mobile)}
+}
+
 /* B5 — Honra prefers-reduced-motion em todas as animacoes principais.
    Lista cobre blinks, pulses, ripples, parallax, count-up, float, shimmer
    e transicoes de hover/reveal. Mantem funcionalidade, zera o movimento. */
