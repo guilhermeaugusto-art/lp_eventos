@@ -893,23 +893,54 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   .speaker-photo-aux{margin-top:-40px;border-radius:14px}
 }
 
-/* === RITMO VERTICAL UNIFORME — SINGLE SOURCE OF TRUTH ===
-   Padding-based: o "respiro" vem de DENTRO da secao via padding,
-   nao de margens externas que colapsam ou somam inconsistente.
-   - Sections (.hero, .sec, .final-cta): padding vertical = --section-gap
-     -> 48px de empty space ANTES e DEPOIS do conteudo de cada secao
-     -> entre 2 secoes: 48 + 48 = 96px de empty space CONSISTENTE
-   - Inter-section blocks (.cta-strip, .transition, .alert-box, .sec-divider):
-     padding zerado, margem zerada. Sao CONTENT, nao gap.
-   - Mobile: --section-gap-mobile = 32px (escala pra telas menores). */
-:root{--section-gap:48px;--section-gap-mobile:32px}
-.hero,.sec,.cta-strip,.transition,.alert-box,.final-cta,.sec-divider,.price-section{margin-top:0;margin-bottom:0}
-.sec,.final-cta{padding-top:var(--section-gap);padding-bottom:var(--section-gap)}
-.hero{padding-bottom:var(--section-gap)}
-.cta-strip,.transition,.alert-box,.sec-divider{padding-top:0;padding-bottom:0}
-@media(max-width:768px){
-  .sec,.final-cta{padding-top:var(--section-gap-mobile);padding-bottom:var(--section-gap-mobile)}
-  .hero{padding-bottom:var(--section-gap-mobile)}
+/* === RITMO VERTICAL — --rhythm distribuido em padding-block de TODOS os blocos ===
+   PROBLEMA: padding interno inconsistente por tipo de bloco bagunca o respiro.
+   SOLUCAO: cada bloco filho direto de .w "carrega" METADE do --rhythm em cima
+   e METADE embaixo. Independente do vizinho, vizinho.pb + meu.pt = --rhythm.
+   - Default 50%/50% pra .sec, .hero, .transition, .final-cta, .price-section
+   - cta-strip e alert-box ficam "magros" com 30%/30% (gap com vizinho ~64px
+     em vez de 80px, preservando hierarquia visual sem quebrar previsibilidade)
+   - sec-divider neutralizado (height:0, padding:0, margin:0) pra nao distorcer */
+:root{--rhythm:80px;--rhythm-mobile:56px}
+@media(max-width:768px){:root{--rhythm:var(--rhythm-mobile)}}
+
+.w > .hero,
+.w > .sec,
+.w > .cta-strip,
+.w > .transition,
+.w > .alert-box,
+.w > .final-cta,
+.w > .price-section,
+.w > .footer{
+  padding-top:calc(var(--rhythm) / 2) !important;
+  padding-bottom:calc(var(--rhythm) / 2) !important;
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+}
+
+/* Cta-strip "magro": 30%/30% (gap com vizinho = 40+24 = 64px). Alert NAO e
+   magro pra nao gerar 24+24=48 quando adjacente ao cta-strip. */
+.w > .cta-strip{
+  padding-top:calc(var(--rhythm) * 0.3) !important;
+  padding-bottom:calc(var(--rhythm) * 0.3) !important;
+}
+
+/* Sec-divider neutralizado: tampao decorativo que distorce o calculo */
+.w > .sec-divider{
+  padding:0 !important;
+  margin:0 !important;
+  height:0 !important;
+  overflow:hidden;
+}
+
+/* Primeiro filho: respiro do header fixo. Ultimo: encosta no fim */
+.w > *:first-child{padding-top:84px !important}
+.w > *:last-child{padding-bottom:0 !important}
+
+/* Reveal: fallback pra reduce-motion + JS setTimeout 1.5s pra forcar .in
+   nos elementos que o observer nao pegou */
+@media(prefers-reduced-motion: reduce){
+  .reveal{opacity:1 !important;transform:none !important}
 }
 
 /* B5 — Honra prefers-reduced-motion em todas as animacoes principais.
@@ -1037,8 +1068,6 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   <p><strong>Combustível bom. Preço bom. Frentista bom.</strong> Já não basta.<br><br>O motorista decide onde abastece antes de dar partida: <em>no Instagram, no Google</em>.<br><br>Se seu posto não tá lá, o da esquina está.<br><br>Pra estar lá não precisa virar influencer. <strong>Precisa de método.</strong></p>
 </div>
 
-<div class="sec-divider"></div>
-
 <!-- ===== BLOCO 1 — DOR + COMO O CURSO RESOLVE ===== -->
 <section class="sec">
   <div class="sec-head">
@@ -1054,7 +1083,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
         <div class="problem-item"><span class="problem-x" style="background:rgba(16,185,129,.12);color:#10b981"><i data-lucide="circle-check"></i></span><div>Você já viu o posto da esquina lotar pelo Insta e não soube reagir.</div></div>
         <div class="problem-item"><span class="problem-x" style="background:rgba(16,185,129,.12);color:#10b981"><i data-lucide="circle-check"></i></span><div>Você tentou postar e travou no terceiro post.</div></div>
         <div class="problem-item"><span class="problem-x" style="background:rgba(16,185,129,.12);color:#10b981"><i data-lucide="circle-check"></i></span><div>Você sabe que perde cliente todo dia, mas não consegue mensurar quanto.</div></div>
-        <div class="problem-item"><span class="problem-x" style="background:rgba(16,185,129,.12);color:#10b981"><i data-lucide="circle-check"></i></span><div>Você nem sabe por onde começar e tem medo de virar "influencer".</div></div>
+        <div class="problem-item"><span class="problem-x" style="background:rgba(16,185,129,.12);color:#10b981"><i data-lucide="circle-check"></i></span><div>Você nem sabe por onde começar e não quer virar "influencer".</div></div>
       </div>
       <div class="solution-callout">
         <p><em>Se você se reconheceu em pelo menos um ponto, esse evento foi feito pra você.</em></p>
@@ -1072,8 +1101,6 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero meu posto cheio · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   <p class="cta-note">Método aplicado em +380 postos · 7 dias de garantia total</p>
 </div>
-
-<div class="sec-divider"></div>
 
 <!-- ===== BLOCO 2 — CONTEÚDO DO CURSO (6 temas) ===== -->
 <section class="sec" id="modulos">
@@ -1114,7 +1141,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
       <div class="module-num">04</div>
       <div class="module-icon"><i class="ph-fill ph-funnel" aria-hidden="true"></i></div>
       <div class="module-title">Do Reels pra bomba: como seguidor vira cliente</div>
-      <div class="module-desc">Promoção que motorista usa, CTA sem soar forçado, e como medir se o Reels trouxe venda de verdade. Viralizar é meio. Encher a pista é o fim.</div>
+      <div class="module-desc">Promoção que motorista usa, chamada para ação sem soar forçado e como medir se o Reels trouxe venda de verdade.</div>
     </div>
     <div class="module-card reveal reveal-d1">
       <div class="module-num">05</div>
@@ -1146,8 +1173,6 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 <div class="transition reveal">
   <p>Talvez você esteja pensando: <em>"beleza, mas isso funciona mesmo pra posto?"</em>. Pergunta justa. Não vou pedir pra você confiar na minha palavra. Vou pedir pra você abrir o Instagram agora e olhar o <strong>@clubpetro</strong>.<br>Se não for verdade, você fecha essa página.</p>
 </div>
-
-<div class="sec-divider"></div>
 
 <!-- ===== BLOCO 3 — PROVA SOCIAL (Casos reais de postos clientes) ===== -->
 <section class="sec">
@@ -1333,8 +1358,6 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   <p class="cta-note">Mesmo método aplicado pelos cinco postos acima</p>
 </div>
 
-<div class="sec-divider"></div>
-
 <!-- ===== BLOCO 4 — COM QUEM VOCÊ VAI APRENDER ===== -->
 <section class="sec">
   <div class="sec-head">
@@ -1408,8 +1431,6 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   <p class="cta-note">Mesmo método da V4, adaptado pro seu posto</p>
 </div>
 
-<div class="sec-divider"></div>
-
 <!-- ===== BLOCO 5 — PREÇO ===== -->
 <section class="sec price-section" id="comprar">
   <div class="sec-head">
@@ -1467,8 +1488,6 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   <p>Sei que você ainda tem pergunta. Dono de posto sempre faz as mesmas 5. Então separei aqui embaixo, <strong>resposta direta</strong>, sem enrolação.</p>
 </div>
 
-<div class="sec-divider"></div>
-
 <!-- ===== BLOCO 6 — FAQ (5 perguntas) ===== -->
 <section class="sec">
   <div class="sec-head">
@@ -1480,23 +1499,23 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
     <div class="faq-list">
       <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
         <div class="faq-q"><span class="faq-num">01</span><span class="faq-q-text">Meu posto é pequeno, de bairro. Funciona pra mim?</span><span class="faq-plus"><i data-lucide="chevron-down"></i></span></div>
-        <div class="faq-a"><div class="faq-a-in"><strong>Funciona mais ainda.</strong><br><br>Posto de bairro tem uma vantagem que rede grande não tem na rede social: cara. Um Reels do seu frentista chega em cada motorista de um raio de 10 km com um clique.<br><br>Rede grande não bate bairro na disputa de local.<br><br>Você não precisa de tamanho. Precisa de método.</div></div>
+        <div class="faq-a"><div class="faq-a-in">Funciona mais ainda. Posto de bairro tem uma vantagem que rede grande não tem na rede social: rosto. Um Reels do seu frentista chega em cada motorista de um raio de 10 km com um clique. Rede grande não bate bairro na disputa de local. Você não precisa de tamanho — precisa de método.</div></div>
       </div>
       <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
         <div class="faq-q"><span class="faq-num">02</span><span class="faq-q-text">Não tenho tempo pra ficar postando Reels.</span><span class="faq-plus"><i data-lucide="chevron-down"></i></span></div>
-        <div class="faq-a"><div class="faq-a-in">Por isso a frente 3 do evento é sobre gravar 30 dias de conteúdo numa tarde só.<br><br>Depois disso, são 15 minutos por semana pra manter a coisa rodando.<br><br>Menos tempo do que você gasta conferindo nota do caixa no fim do turno.</div></div>
+        <div class="faq-a"><div class="faq-a-in">A frente 3 do evento é exatamente sobre isso: gravar 30 dias de conteúdo numa tarde só. Depois, são 15 minutos por semana pra manter a coisa rodando. Menos tempo do que você gasta conferindo nota do caixa no fim do turno.</div></div>
       </div>
       <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
         <div class="faq-q"><span class="faq-num">03</span><span class="faq-q-text">Eu nem sei usar Instagram direito. Vou conseguir?</span><span class="faq-plus"><i data-lucide="chevron-down"></i></span></div>
-        <div class="faq-a"><div class="faq-a-in">O Pista Cheia foi feito pra quem nunca postou um Reels na vida.<br><br>O André conduz tudo passo a passo, do zero: como abrir conta, o que gravar, como editar no celular, como agendar.<br><br>Se você sabe mandar mensagem no WhatsApp, você consegue encher a pista pelo Instagram.</div></div>
+        <div class="faq-a"><div class="faq-a-in">O Pista Cheia foi feito pra quem nunca postou um Reels na vida. O André conduz tudo passo a passo, do zero: como abrir conta, o que gravar, como editar no celular, como agendar. Se você sabe mandar mensagem no WhatsApp, você consegue encher a pista pelo Instagram.</div></div>
       </div>
       <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
         <div class="faq-q"><span class="faq-num">04</span><span class="faq-q-text">Já tentei postar e não veio cliente.</span><span class="faq-plus"><i data-lucide="chevron-down"></i></span></div>
-        <div class="faq-a"><div class="faq-a-in"><strong>Provavelmente faltou método.</strong><br><br>Postar foto do posto de vez em quando não funciona. Funciona postar com plano, trend certa, hora certa e assunto que o motorista quer ver.<br><br>É o mesmo método que o André rodava na V4 pra dezena de cliente, adaptado pro seu dia.<br><br>Se em 7 dias não fizer sentido, devolvemos os R$ 147 e pronto.</div></div>
+        <div class="faq-a"><div class="faq-a-in">Provavelmente faltou método. Postar foto do posto de vez em quando não funciona — funciona postar com plano, trend certa, hora certa e assunto que o motorista quer ver. É o mesmo método que o André rodava na V4 pra dezena de cliente, adaptado pro seu dia. Se em 7 dias não fizer sentido, devolvemos os R$ 147 e pronto.</div></div>
       </div>
       <div class="faq-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
         <div class="faq-q"><span class="faq-num">05</span><span class="faq-q-text">Como eu acesso depois que pago?</span><span class="faq-plus"><i data-lucide="chevron-down"></i></span></div>
-        <div class="faq-a"><div class="faq-a-in"><strong>Na hora.</strong><br><br>Assim que o pagamento cai, chega no seu e-mail o link da área do evento.<br><br>Nas 2 noites, <strong>11 e 12 de junho às 19h30</strong>, você acompanha o Pista Cheia ao vivo.<br><br>Depois, o replay completo fica disponível por 1 ano. Você revê quantas vezes quiser, no celular, tablet ou computador.</div></div>
+        <div class="faq-a"><div class="faq-a-in">Na hora. Assim que o pagamento cai, chega no seu e-mail o link da área do evento. Nas 2 noites, 11 e 12 de junho às 19h30, você acompanha o Pista Cheia ao vivo. Depois, o replay completo fica disponível por 1 ano — você revê quantas vezes quiser, no celular, tablet ou computador.</div></div>
       </div>
     </div>
   </div>
@@ -1506,8 +1525,6 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Resolveu. Quero meu posto cheio · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   <p class="cta-note">Garantia de 7 dias · devolvemos sem conversa</p>
 </div>
-
-<div class="sec-divider"></div>
 
 <!-- ===== ALERT URGÊNCIA ===== -->
 <div class="alert-box reveal">
@@ -1522,7 +1539,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 <section class="final-cta">
   <div class="sec-tag" style="justify-content:center">Última chamada</div>
   <h2 class="sec-h reveal">Daqui a 30 dias, um de vocês <em>tá com a pista cheia</em>.<br>O outro tá vendo passar no feed.</h2>
-  <p class="final-sub"><strong style="color:#fff">O motorista decide onde abastece no telefone.</strong> Antes de dar partida.<br><br>Quem tá no Instagram e no Google é escolhido. Quem não tá, vê passar.<br><br><span style="color:var(--accent-2)">R$ 147</span> separa o dono que entra nas <strong style="color:#fff">2 noites ao vivo</strong> do que assiste de fora.<br><br><strong style="color:#fff">11 e 12 de junho, 19h30. Pista Cheia.</strong></p>
+  <p class="final-sub"><strong style="color:#fff">O motorista decide onde abastece antes de dar partida.</strong><br><br>Quem tá no Instagram e no Google é escolhido. Quem não tá, vê passar.<br><br><span style="color:var(--accent-2)">R$ 147</span> separa o dono que entra nas <strong style="color:#fff">2 noites ao vivo</strong> do que assiste de fora.<br><br><strong style="color:#fff">11 e 12 de junho, 19h30. Pista Cheia.</strong></p>
   <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero o lado da pista cheia · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   <p class="final-wpp">
     <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Pista+Cheia+2026+e+quero+saber+mais+antes+de+garantir+minha+vaga" data-wa="final-cta" onclick="trackWA('final-cta')"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use href="#icon-wpp"/></svg>Antes de comprar, tira dúvida no WhatsApp</a>
@@ -1959,6 +1976,12 @@ document.addEventListener('click',function(e){
       stage.style.setProperty('--ry','0deg');
     });
   })();
+
+  // === REVEAL FALLBACK — forca .in apos 1.5s nos elementos que o observer
+  //     nao pegou, garantindo que nada fique permanentemente em opacity:0 ===
+  setTimeout(function(){
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in')});
+  },1500);
 
   // === MODULES GRID — entrada por card individual ao rolagem ===
   // Cada modulo (e night-header) aparece quando entra de fato na viewport,
