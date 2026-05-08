@@ -2,7 +2,8 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0A">
 <title>Pista Cheia 2026 · evento de marketing em rede social pra dono de posto | ClubPetro</title>
 <meta name="description" content="2 noites com André Carvalhaes (ex-V4 Company) abrindo o método de Instagram, Google e R$ 10 por dia que enche a pista. 11 e 12 de junho, 19h30. R$ 147.">
 
@@ -72,16 +73,15 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="https://i.imgur.com/5iFkpwM.png" fetchpriority="high">
 <!-- TODO (A3): adicionar <link rel=preload as=font> apontando para URLs woff2 exatas do Google Fonts quando elas forem fixadas (podem mudar a cada update do CSS2 API) -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
 
-<!-- Phosphor icons (regular + fill + duotone) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<!-- Phosphor icons (fill only — regular/duotone not used) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css">
 
 <!-- Lucide icons (UMD bundle) -->
-<script src="https://unpkg.com/lucide@latest" defer></script>
+<script src="https://unpkg.com/lucide@0.460.0" defer></script>
 
 <!-- ========== TRACKING PIXELS (desativados ate IDs reais) ==========
      Reative TODO o bloco abaixo trocando os placeholders pelos IDs reais
@@ -143,7 +143,7 @@ window.cpTrack=function(event,data){
   /* Stack de fontes — Bebas (display headlines) + Big Shoulders (numerais gigantes) + Plus Jakarta (body moderno) */
   --font-display:'Bebas Neue',Impact,sans-serif;
   --font-numeric:'Big Shoulders Display','Bebas Neue',Impact,sans-serif;
-  --font-body:'Plus Jakarta Sans','DM Sans',sans-serif;
+  --font-body:'Plus Jakarta Sans',sans-serif;
   --r:22px;--r-sm:14px;
   --shadow-soft:0 25px 80px -20px rgba(0,0,0,.5),0 8px 30px -10px rgba(242,102,0,.15);
   --shadow-glow:0 20px 60px -20px rgba(242,102,0,.4);
@@ -158,7 +158,7 @@ window.cpTrack=function(event,data){
    como 83%". Mobile mantem 100%. zoom aplicado no body pra nao quebrar scroll. */
 html{scroll-behavior:smooth;font-size:100%}
 body{zoom:0.75}
-@media(max-width:760px){body{zoom:1}}
+@media(max-width:768px){body{zoom:1}}
 input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{font-family:var(--font-body);background:var(--brand-dark);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
@@ -212,8 +212,6 @@ body.off-screen .cd-label::before{animation-play-state:paused!important}
 /* Highlight marker */
 .mark{position:relative;display:inline-block;color:#fff;padding:0 10px;z-index:1}
 .mark::before{content:'';position:absolute;inset:6% -2% 8% -2%;background:linear-gradient(105deg,var(--accent) 0%,var(--accent-hover) 50%,#b83420 100%);transform:skew(-6deg);z-index:-1;border-radius:3px;box-shadow:0 8px 24px -4px rgba(242,102,0,.55),inset 0 1px 0 rgba(255,255,255,.15)}
-.mark-amber::before{background:linear-gradient(105deg,var(--accent-2) 0%,#f59f0b 50%,#d97706 100%);box-shadow:0 8px 24px -4px rgba(255,182,39,.55),inset 0 1px 0 rgba(255,255,255,.2)}
-
 /* === REVEAL SYSTEM ===
    Tier 1 (.reveal): texto, listas, metricas — fade + lift sutil
    Tier 2 (.reveal-card): cards — entrada com perspectiva 3D suave
@@ -221,7 +219,7 @@ body.off-screen .cd-label::before{animation-play-state:paused!important}
    Header line (.reveal-h): linha-ancora desenhando sob o titulo */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity var(--motion-base) var(--ease-soft),transform var(--motion-base) var(--ease-soft)}
 .reveal.in{opacity:1;transform:none}
-.reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}
+.reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}
 
 /* Tier 2 — Cards com entrada 3D sutil (pivot na base, leve "se levantar") */
 .reveal.reveal-card{transform:translateY(36px) scale(.94) rotateX(8deg);transform-origin:50% 100%;transition-duration:var(--motion-slow)}
@@ -233,7 +231,7 @@ body.off-screen .cd-label::before{animation-play-state:paused!important}
 .reveal.reveal-h.in::after{width:128px}
 
 /* Tier 3 — Andre: entrada cinematografica 3D + glow (parallax tilt via JS) */
-.reveal.reveal-3d{transform:perspective(1200px) rotateY(-18deg) rotateX(10deg) translateZ(-80px) translateY(40px);transition:opacity var(--motion-hero) var(--ease-cinematic),transform var(--motion-hero) var(--ease-cinematic);will-change:transform,opacity}
+.reveal.reveal-3d{transform:perspective(1200px) rotateY(-18deg) rotateX(10deg) translateZ(-80px) translateY(40px);transition:opacity var(--motion-hero) var(--ease-cinematic),transform var(--motion-hero) var(--ease-cinematic)}
 .reveal.reveal-3d.in{transform:perspective(1200px) rotateY(0) rotateX(0) translateZ(0) translateY(0)}
 /* Pos-entrada: JS assume controle do transform pra parallax fluido (60fps) */
 .reveal.reveal-3d.tilt-on{transition:opacity .3s linear}
@@ -257,7 +255,7 @@ img{display:block;max-width:100%}
 .w{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
 
 /* === NAV === */
-.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(29,29,31,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(29,29,31,.96);border-bottom:1px solid var(--border)}
 .nav-logo{display:flex;align-items:center}
 .nav-logo img{height:46px;width:auto;display:block}
 .nav-live{display:flex;flex-direction:column;align-items:flex-end;gap:3px;padding:8px 16px;border:1.5px solid var(--accent);border-radius:14px;font-size:11.5px;font-weight:800;color:#fff;letter-spacing:1.2px;text-transform:uppercase;background:linear-gradient(135deg,rgba(242,102,0,.22),rgba(255,182,39,.10));line-height:1.2;text-align:right;box-shadow:0 0 24px -6px rgba(242,102,0,.55),inset 0 1px 0 rgba(255,255,255,.08)}
@@ -283,6 +281,7 @@ img{display:block;max-width:100%}
 /* Aurora mesh — drift lento atras da imagem do hero (transform-only, GPU) */
 .hero-card::before{content:'';position:absolute;inset:-20%;background:radial-gradient(ellipse 40% 35% at 20% 30%,rgba(242,102,0,.45),transparent 60%),radial-gradient(ellipse 35% 40% at 80% 70%,rgba(255,182,39,.35),transparent 60%),radial-gradient(ellipse 30% 30% at 60% 20%,rgba(242,102,0,.25),transparent 65%);filter:blur(24px);opacity:.55;z-index:0;animation:auroraDrift 18s ease-in-out infinite;will-change:transform;pointer-events:none}
 @keyframes auroraDrift{0%,100%{transform:translate3d(0,0,0) scale(1)}33%{transform:translate3d(3%,-2%,0) scale(1.06)}66%{transform:translate3d(-2%,3%,0) scale(.95)}}
+.hero-card.paused::before{animation-play-state:paused}
 .hero-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.85}
 /* Gradiente forte no lado esquerdo (legibilidade do texto) e suave no
    resto pra imagem aparecer no canto direito. */
@@ -324,7 +323,6 @@ img{display:block;max-width:100%}
 .cta-strip,.hero,.final-cta,.price-section{text-align:center}
 .cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);transition:left .6s;pointer-events:none}
 .cta:hover{transform:translateY(-3px);filter:brightness(1.04);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.5),inset 0 -1.5px 0 rgba(0,0,0,.25),inset 0 0 28px rgba(255,182,39,.25),0 2px 0 #8a2c14,0 4px 0 #6d2210,0 6px 0 #4a1808,0 8px 0 #3a1206,0 22px 44px -10px rgba(242,102,0,.7),0 8px 20px -6px rgba(0,0,0,.5)}
-.cta-wpp .cta-arrow{background:rgba(255,255,255,.22)}
 .price-cta{display:block;width:100%}
 .cta:hover::before{left:100%}
 /* CTA shine sweep one-time quando entra no viewport (reusa o ::before existente) */
@@ -336,9 +334,6 @@ img{display:block;max-width:100%}
 /* Bonus card: burst de glow ao entrar no viewport (animacao de opacity em ::after, GPU-friendly) */
 .cta-note{text-align:center;font-size:12px;color:var(--text-dim);margin-top:14px;display:flex;align-items:center;justify-content:center;gap:6px}
 .cta-note::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
-.cta-wpp{background:linear-gradient(180deg,#3CEC7B 0%,#22B560 50%,#0F7E3F 100%);border:none;font-size:14px;padding:14px 24px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1.5px 0 rgba(0,0,0,.22),0 2px 0 #0a6630,0 4px 0 #084d24,0 6px 0 #062f17,0 14px 28px -10px rgba(37,211,102,.5),0 6px 16px -6px rgba(0,0,0,.45)}
-.cta-wpp:hover{filter:brightness(1.05);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.45),inset 0 -1.5px 0 rgba(0,0,0,.22),0 2px 0 #0a6630,0 4px 0 #084d24,0 6px 0 #062f17,0 8px 0 #04200f,0 22px 38px -10px rgba(37,211,102,.65),0 8px 20px -6px rgba(0,0,0,.5)}
-.cta-wpp:active{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),inset 0 -1.5px 0 rgba(0,0,0,.22),0 2px 0 #062f17,0 8px 18px -8px rgba(37,211,102,.4)}
 .cta-strip{margin:var(--gap-block) auto;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:90px;gap:10px}
 
 /* === COUNTDOWN — flip clock moderno ===
@@ -410,11 +405,7 @@ img{display:block;max-width:100%}
 /* A4: content-visibility:auto nas secoes abaixo do fold. O browser pula
    render/layout ate o conteudo entrar no viewport. Ganho de ~300-800ms
    em TBT. Nao aplicar em .hero (fold) nem em modais. */
-.sec,.modules-grid,.reels-grid,.problem-wrap,.speaker-wrap,.faq-list,.final-cta{content-visibility:auto;contain-intrinsic-size:auto 600px}
-/* Section divider — linha sutil + diamante accent central */
-.sec-divider{height:8px;max-width:880px;margin:var(--gap-block) auto;position:relative;display:flex;align-items:center;justify-content:center;background:none;overflow:hidden}
-.sec-divider::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(242,102,0,.4) 50%,transparent 100%);transform:translateY(-50%)}
-.sec-divider::after{content:'';width:9px;height:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));transform:rotate(45deg);border-radius:1px;box-shadow:0 0 18px rgba(242,102,0,.7),0 0 36px rgba(255,182,39,.35);position:relative;z-index:1}
+.sec,.modules-grid,.problem-wrap,.speaker-wrap,.faq-list,.final-cta{content-visibility:auto;contain-intrinsic-size:auto 600px}
 .sec>*{margin-left:auto;margin-right:auto}
 .sec-head{max-width:760px;margin:0 auto 20px;text-align:center;display:flex;flex-direction:column;align-items:center}
 .sec-tag{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:800;color:var(--accent-2);letter-spacing:3px;text-transform:uppercase;margin:0 auto 22px;padding:8px 18px 8px 14px;background:rgba(29,29,31,.6);border:1px solid rgba(255,255,255,.14);border-radius:300px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);width:fit-content}
@@ -423,9 +414,6 @@ img{display:block;max-width:100%}
 .sec-h em{font-style:normal;background:linear-gradient(135deg,var(--accent-glow),var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:400;padding-right:.04em;filter:drop-shadow(0 0 18px rgba(242,102,0,.35))}
 .sec-p{font-size:15px;color:var(--text-mid);margin:0 auto;max-width:660px;line-height:1.75;text-align:center}
 .sec-lead{display:block;text-align:center;margin:0 auto 14px;font-family:var(--font-body);font-size:13px;font-weight:700;color:var(--accent-2);text-transform:uppercase;letter-spacing:2.4px}
-.sec-content{max-width:1180px;margin:24px auto 0}
-.pull-line{display:block;max-width:620px;margin:18px auto 0;font-size:16px;font-weight:500;font-style:italic;color:#f0f0f0;line-height:1.55;padding:0 24px;border-left:0;position:relative}
-.pull-line::before{content:'';display:block;width:36px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px;margin:0 auto 12px}
 
 /* === PROBLEM === */
 .problem-wrap{display:grid;grid-template-columns:1fr;gap:32px;align-items:center;max-width:1200px;margin:24px auto 0}
@@ -575,8 +563,6 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 .speaker-name::after{content:'';position:absolute;left:0;bottom:0;width:64px;height:4px;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 0 18px rgba(242,102,0,.5)}
 .speaker-role{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;font-size:12px;color:var(--accent-2);font-weight:800;letter-spacing:2.4px;text-transform:uppercase;padding:7px 14px 7px 12px;background:linear-gradient(135deg,rgba(242,102,0,.18),rgba(255,182,39,.08));border:1px solid rgba(242,102,0,.32);border-radius:100px;margin:0}
 .speaker-role::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 8px var(--accent-2);animation:blink 1.6s infinite}
-.speaker-bio{font-size:16px;color:#cfcfcf;line-height:1.7;margin:4px 0 6px}
-.speaker-bio strong{background:linear-gradient(135deg,#fff,#ffe1c0);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
 .speaker-cred-icon img{width:24px;height:24px;object-fit:contain;display:block}
 .speaker-cred-icon.is-brand{background:#fff;border-color:rgba(255,255,255,.18);padding:4px}
 .speaker-cred-icon.is-brand-dark{background:#0E0E0E;border-color:rgba(242,102,0,.25);padding:3px}
@@ -649,7 +635,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 @media(max-width:560px){.price-main{font-size:72px}}
 .price-inst{font-size:14px;color:var(--text-mid);margin-bottom:24px}
 .price-checks{margin-bottom:26px}
-.price-check{display:flex;align-items:center;gap:12px;font-size:13.5px;color:#d8d8d8;margin-bottom:11px;opacity:0;transform:translateX(-12px);transition:opacity .5s var(--ease-cinematic),transform .5s var(--ease-cinematic)}
+.price-check{display:flex;align-items:center;gap:12px;font-size:13.5px;color:#d8d8d8;margin-bottom:11px;opacity:0;transform:translateX(-12px);transition:opacity .5s var(--ease-cinematic),transform .5s var(--ease-cinematic);overflow-wrap:anywhere}
 .price-card.in .price-check{opacity:1;transform:none}
 .price-card.in .price-check:nth-child(1){transition-delay:.05s}
 .price-card.in .price-check:nth-child(2){transition-delay:.13s}
@@ -767,7 +753,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 @media(max-width:760px){.mini-price{display:none}}
 
 /* === FAB WHATSAPP === */
-.fab-wpp{position:fixed;bottom:84px;right:18px;width:54px;height:54px;border-radius:50%;background:linear-gradient(180deg,#2EE070 0%,#1EA952 100%);border:1px solid rgba(255,255,255,.18);display:none;align-items:center;justify-content:center;color:#fff;text-decoration:none;box-shadow:0 14px 36px -8px rgba(37,211,102,.6),0 4px 14px -4px rgba(0,0,0,.5);z-index:98;animation:fabPulse 2.4s ease-in-out infinite}
+.fab-wpp{position:fixed;bottom:calc(84px + env(safe-area-inset-bottom));right:18px;width:54px;height:54px;border-radius:50%;background:linear-gradient(180deg,#2EE070 0%,#1EA952 100%);border:1px solid rgba(255,255,255,.18);display:none;align-items:center;justify-content:center;color:#fff;text-decoration:none;box-shadow:0 14px 36px -8px rgba(37,211,102,.6),0 4px 14px -4px rgba(0,0,0,.5);z-index:98;animation:fabPulse 2.4s ease-in-out infinite;-webkit-tap-highlight-color:transparent}
 .fab-wpp svg{width:26px;height:26px}
 @keyframes fabPulse{0%,100%{box-shadow:0 14px 36px -8px rgba(37,211,102,.6),0 0 0 0 rgba(37,211,102,.5)}50%{box-shadow:0 14px 36px -8px rgba(37,211,102,.7),0 0 0 14px rgba(37,211,102,0)}}
 @media(max-width:760px){.fab-wpp{display:flex}}
@@ -787,7 +773,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   .nav{padding:10px 14px}
   .nav-logo img{height:36px}
   .nav-live{padding:5px 10px;font-size:8.5px;letter-spacing:.5px;border-radius:10px}
-  .nav-live-sub{font-size:7.5px}
+  .nav-live-sub{font-size:10px}
   .hero{padding:84px 0 20px}
   .hero-title{font-size:clamp(40px,11vw,60px);letter-spacing:.8px;margin-bottom:12px;line-height:.92}
   .hero-title .mark{padding:0 10px;font-size:.86em;margin-left:4px}
@@ -795,7 +781,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   .hero-card{margin:0 auto 20px;border-radius:18px}
   .hero-card-inner{padding:22px 20px 20px;gap:16px}
   .hero-card-left{text-align:left}
-  .hero-badge{font-size:9px;padding:4px 11px;margin-bottom:10px}
+  .hero-badge{font-size:10px;padding:4px 11px;margin-bottom:10px}
   .hero-h{font-size:clamp(20px,5.4vw,26px);line-height:1.15;margin-bottom:10px;text-align:left;letter-spacing:-.2px}
   .hero-p{font-size:13px;line-height:1.6;text-align:left;margin:0}
   .hero-metrics{gap:8px}
@@ -809,11 +795,10 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   .sec-h{font-size:clamp(32px,8vw,52px);margin-bottom:14px;letter-spacing:.4px;line-height:.96}
   .sec-p{font-size:13.5px;line-height:1.7;padding:0 4px}
   .sec-lead{font-size:11px;letter-spacing:1.4px;margin-bottom:12px}
-  .pull-line{font-size:14.5px;margin-top:14px;padding:0 12px;line-height:1.5}
   /* Mobile: video/imagem primeiro com protagonismo visual (aspect 4/5
      vertical, mais cinematografico) + glow laranja sutil pra destacar. */
   .problem-wrap{grid-template-columns:1fr;display:grid;gap:22px}
-  .problem-img{position:static;aspect-ratio:4/5;max-height:none;min-height:0;width:100%;height:auto;margin:0;border-radius:22px;border:1px solid rgba(242,102,0,.22);box-shadow:0 16px 40px -16px rgba(0,0,0,.7),0 0 60px -20px rgba(242,102,0,.32)}
+  .problem-img{position:static;aspect-ratio:4/5;max-height:380px;min-height:0;width:100%;height:auto;margin:0;border-radius:22px;border:1px solid rgba(242,102,0,.22);box-shadow:0 16px 40px -16px rgba(0,0,0,.7),0 0 60px -20px rgba(242,102,0,.32)}
   .problem-img img,.problem-img video{filter:saturate(1.12) contrast(1.08)}
   .problem-callout{padding:20px}
   .problem-callout p{font-size:14px}
@@ -833,7 +818,6 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   .speaker-name{font-size:38px;padding-bottom:12px;letter-spacing:1.2px}
   .speaker-name::after{width:48px;height:3px}
   .speaker-role{font-size:10.5px;letter-spacing:2px;padding:6px 12px 6px 10px}
-  .speaker-bio{font-size:14px;line-height:1.65}
   /* Credenciais: aumentar icone/logo no mobile pra ficarem mais visiveis */
   .speaker-cred-icon{width:44px;height:44px}
   .speaker-cred-icon img{width:28px;height:28px}
@@ -841,7 +825,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   .speaker-cred-icon svg{width:24px;height:24px}
   /* Backdrop-filter eh caro no GPU. Em mobile reduz pra 4px (mantem o efeito sem
      custo de paint pesado) ou substitui por background mais opaco. */
-  .nav,.sec-tag,.social-proof,.faq-item,.reel-ig-hint{backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+  .sec-tag,.social-proof,.faq-item,.reel-ig-hint{backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
   .price-banner{font-size:10.5px;letter-spacing:1px;padding:12px}
   .price-card{border-radius:22px}
   .price-left{padding:24px 20px}
@@ -857,14 +841,12 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   .final-cta{padding:32px 16px 38px}
   .final-sub{font-size:13.5px;margin-bottom:24px;padding:0 4px}
   .final-wpp a{font-size:12.5px}
-  .footer{padding:28px 0}
-  .footer p{font-size:10.5px;padding:0 16px;line-height:1.6}
+  .footer{padding:28px 0 90px}
+  .footer p{font-size:12px;padding:0 16px;line-height:1.6}
   /* CTA-strip mobile: garantir que CTA não ultrapassa borda da viewport */
   .cta-strip{padding:0 4px}
 
   /* ===== MOBILE OPTIMIZATION PASS — price section em UMA tela + cleanup ===== */
-  /* Vídeo da identidade não pode dominar a viewport */
-  .problem-img{aspect-ratio:4/5;max-height:380px;min-height:0}
   /* Bloco de preço: tudo compactado pra caber sem rolagem extra */
   .price-section .sec-p{display:none}
   .roi-anchor{display:none}
@@ -874,10 +856,10 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   .price-main{font-size:64px;margin:6px 0 4px}
   .price-inst{font-size:11.5px}
   .price-checks{margin-bottom:18px}
-  .price-check{font-size:12px;line-height:1.4;margin-bottom:7px;gap:10px}
+  .price-check{font-size:13px;line-height:1.4;margin-bottom:7px;gap:10px}
   .price-guarantee{padding:14px 18px;gap:12px}
   .price-guarantee-text strong{font-size:12px}
-  .price-guarantee-text span{font-size:11px;line-height:1.35}
+  .price-guarantee-text span{font-size:12px;line-height:1.35}
   /* WhatsApp do price-card escondido em mobile (FAB fixo já cobre essa intenção) */
   .price-wpp-mini{display:none}
   /* Touch target mínimo do botão WhatsApp final (44px alto) */
@@ -925,14 +907,6 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   padding-bottom:calc(var(--rhythm) * 0.3) !important;
 }
 
-/* Sec-divider neutralizado: tampao decorativo que distorce o calculo */
-.w > .sec-divider{
-  padding:0 !important;
-  margin:0 !important;
-  height:0 !important;
-  overflow:hidden;
-}
-
 /* Primeiro filho: respiro do header fixo. Ultimo: encosta no fim */
 .w > *:first-child{padding-top:84px !important}
 .w > *:last-child{padding-bottom:0 !important}
@@ -947,7 +921,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
    Lista cobre blinks, pulses, ripples, parallax, count-up, float, shimmer
    e transicoes de hover/reveal. Mantem funcionalidade, zera o movimento. */
 @media(prefers-reduced-motion:reduce){
-  .social-proof-dot,.fab-wpp,.alert-icon,.cd-label::before,.mark-amber::after,
+  .social-proof-dot,.fab-wpp,.alert-icon,.cd-label::before,
   .hero-card-img,.module-card,.reel-card,.cta,.cta-ripple,
   .nav-live-main::before,.hero-badge::before,
   .price-banner,.blob,.bg-line{
@@ -964,6 +938,8 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
     <symbol id="icon-wpp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="icon-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></symbol>
   </defs>
 </svg>
 
@@ -1019,7 +995,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
     </div>
   </div>
 
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">QUERO MINHA VAGA<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">QUERO MINHA VAGA<span class="cta-arrow"><svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
   <p class="reveal reveal-d1" style="text-align:center;font-size:13px;color:var(--text-mid);margin:12px 0 0;font-style:italic;letter-spacing:.02em">Para dono e gerente de posto que decide aparecer.</p>
 
   <div class="countdown">
@@ -1090,7 +1066,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
       </div>
     </div>
     <div class="problem-img">
-      <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/4pRp7j1.jpg" aria-label="Posto com pista vazia">
+      <video muted loop playsinline disableRemotePlayback disablePictureInPicture preload="none" data-lazy-video poster="https://i.imgur.com/4pRp7j1.jpg" aria-label="Posto com pista vazia">
         <source src="https://i.imgur.com/4pRp7j1.mp4" type="video/mp4">
       </video>
     </div>
@@ -1098,7 +1074,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 </section>
 
 <div class="cta-strip">
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero meu posto cheio · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero meu posto cheio · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
   <p class="cta-note">Método aplicado em +380 postos · 7 dias de garantia total</p>
 </div>
 
@@ -1165,7 +1141,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 </section>
 
 <div class="cta-strip">
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero garantir minha vaga · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero garantir minha vaga · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
   <p class="cta-note">Pista Cheia 2026 + bônus Copa · acesso liberado no e-mail em 2 minutos</p>
 </div>
 
@@ -1189,11 +1165,11 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
     <a class="reel-card reveal" href="https://www.instagram.com/zemaickon/reel/DVMtRsHiWF0/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DVMtRsHiWF0'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
-        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/i3j882O.jpg" aria-label="Reel de posto cliente">
+        <video muted loop playsinline disableRemotePlayback disablePictureInPicture preload="none" data-lazy-video poster="https://i.imgur.com/i3j882O.jpg" aria-label="Reel de posto cliente">
           <source src="https://i.imgur.com/i3j882O.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <svg viewBox="0 0 24 24"><use href="#icon-ig"/></svg>
           Ver no Instagram
         </div>
       </div>
@@ -1217,11 +1193,11 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
     <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/leonardo.ala/reel/DOln8ttjVzr/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DOln8ttjVzr'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
-        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/zu1c8sz.jpg" aria-label="Reel de posto cliente">
+        <video muted loop playsinline disableRemotePlayback disablePictureInPicture preload="none" data-lazy-video poster="https://i.imgur.com/zu1c8sz.jpg" aria-label="Reel de posto cliente">
           <source src="https://i.imgur.com/zu1c8sz.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <svg viewBox="0 0 24 24"><use href="#icon-ig"/></svg>
           Ver no Instagram
         </div>
       </div>
@@ -1245,11 +1221,11 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
     <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/postosredebrasil/reel/DWWgxgukyHX/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DWWgxgukyHX'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
-        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/KLQcV6N.jpg" aria-label="Reel de posto cliente">
+        <video muted loop playsinline disableRemotePlayback disablePictureInPicture preload="none" data-lazy-video poster="https://i.imgur.com/KLQcV6N.jpg" aria-label="Reel de posto cliente">
           <source src="https://i.imgur.com/KLQcV6N.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <svg viewBox="0 0 24 24"><use href="#icon-ig"/></svg>
           Ver no Instagram
         </div>
       </div>
@@ -1273,11 +1249,11 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
     <a class="reel-card reveal" href="https://www.instagram.com/zemaickon/reel/DVrknulkuGu/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'DVrknulkuGu'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
-        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/JYeSmku.jpg" aria-label="Reel de posto cliente">
+        <video muted loop playsinline disableRemotePlayback disablePictureInPicture preload="none" data-lazy-video poster="https://i.imgur.com/JYeSmku.jpg" aria-label="Reel de posto cliente">
           <source src="https://i.imgur.com/JYeSmku.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <svg viewBox="0 0 24 24"><use href="#icon-ig"/></svg>
           Ver no Instagram
         </div>
       </div>
@@ -1301,11 +1277,11 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
     <a class="reel-card reveal reveal-d1" href="https://www.instagram.com/redehg/" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'redehg-pending'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
-        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/oOyRpPH.jpg" aria-label="Reel de posto cliente">
+        <video muted loop playsinline disableRemotePlayback disablePictureInPicture preload="none" data-lazy-video poster="https://i.imgur.com/oOyRpPH.jpg" aria-label="Reel de posto cliente">
           <source src="https://i.imgur.com/oOyRpPH.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <svg viewBox="0 0 24 24"><use href="#icon-ig"/></svg>
           Ver no Instagram
         </div>
       </div>
@@ -1328,11 +1304,11 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
     <a class="reel-card reveal reveal-d2" href="https://www.instagram.com/clubpetro/reels/?hl=pt-br" target="_blank" rel="noopener noreferrer" onclick="cpTrack('reel_click',{reel:'clubpetro-feed'})">
       <div class="reel-thumb">
         <span class="reel-play" aria-hidden="true"><i data-lucide="play"></i></span>
-        <video muted loop playsinline preload="none" data-lazy-video poster="https://i.imgur.com/TvinBgX.jpg" aria-label="Reel do ClubPetro">
+        <video muted loop playsinline disableRemotePlayback disablePictureInPicture preload="none" data-lazy-video poster="https://i.imgur.com/TvinBgX.jpg" aria-label="Reel do ClubPetro">
           <source src="https://i.imgur.com/TvinBgX.mp4" type="video/mp4">
         </video>
         <div class="reel-ig-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <svg viewBox="0 0 24 24"><use href="#icon-ig"/></svg>
           Ver no Instagram
         </div>
       </div>
@@ -1354,7 +1330,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 </section>
 
 <div class="cta-strip">
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero meu posto cheio · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero meu posto cheio · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
   <p class="cta-note">Mesmo método aplicado pelos cinco postos acima</p>
 </div>
 
@@ -1427,7 +1403,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 </section>
 
 <div class="cta-strip">
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero garantir minha vaga · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero garantir minha vaga · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
   <p class="cta-note">Mesmo método da V4, adaptado pro seu posto</p>
 </div>
 
@@ -1463,7 +1439,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
           <div class="price-check">Calendário editorial de 30 dias: o que postar cada dia</div>
           <div class="price-check">Grupo no WhatsApp só de dono e gerente de posto</div>
         </div>
-        <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta price-cta">Quero garantir minha vaga · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta price-cta">Quero garantir minha vaga · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
       </div>
       <div class="price-right" style="background-image:url('https://i.imgur.com/Y6PnmpK.jpg')"></div>
     </div>
@@ -1522,7 +1498,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
 </section>
 
 <div class="cta-strip">
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Resolveu. Quero meu posto cheio · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Resolveu. Quero meu posto cheio · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
   <p class="cta-note">Garantia de 7 dias · devolvemos sem conversa</p>
 </div>
 
@@ -1540,7 +1516,7 @@ img.reel-avatar{padding:0;border-radius:50%;object-fit:cover}
   <div class="sec-tag" style="justify-content:center">Última chamada</div>
   <h2 class="sec-h reveal">Daqui a 30 dias, um de vocês <em>tá com a pista cheia</em>.<br>O outro tá vendo passar no feed.</h2>
   <p class="final-sub"><strong style="color:#fff">O motorista decide onde abastece antes de dar partida.</strong><br><br>Quem tá no Instagram e no Google é escolhido. Quem não tá, vê passar.<br><br><span style="color:var(--accent-2)">R$ 147</span> separa o dono que entra nas <strong style="color:#fff">2 noites ao vivo</strong> do que assiste de fora.<br><br><strong style="color:#fff">11 e 12 de junho, 19h30. Pista Cheia.</strong></p>
-  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero o lado da pista cheia · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <a href="https://pay.hotmart.com/T105532698T?off=4dwr5aeo" target="_blank" rel="noopener" onclick="goToHotmart(event)" class="cta">Quero o lado da pista cheia · R$ 147<span class="cta-arrow"><svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
   <p class="final-wpp">
     <a href="https://wa.me/5534999999999?text=Oi%21+Vim+da+p%C3%A1gina+do+Pista+Cheia+2026+e+quero+saber+mais+antes+de+garantir+minha+vaga" data-wa="final-cta" onclick="trackWA('final-cta')"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use href="#icon-wpp"/></svg>Antes de comprar, tira dúvida no WhatsApp</a>
   </p>
@@ -1710,6 +1686,7 @@ function toggleFaq(el){
     }
   }
   function tick(){
+    if(document.hidden)return;
     var diff=Math.max(0,deadline-Date.now());
     var d=pad(Math.floor(diff/86400000));
     var h=pad(Math.floor((diff%86400000)/3600000));
@@ -1751,7 +1728,6 @@ function goToHotmart(e){
 document.addEventListener('visibilitychange',function(){
   document.body.classList.toggle('off-screen',document.hidden);
 });
-// Fecha exit modal com Esc
 // === MINI STICKY PRICE BANNER ===
 (function(){
   if(window.matchMedia('(max-width:760px)').matches)return;
@@ -1958,11 +1934,13 @@ document.addEventListener('click',function(e){
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     var stage=document.querySelector('.speaker-photos-stack');
     if(!stage)return;
-    var raf=null;
+    var raf=null,rect=null;
+    function invalidateRect(){rect=null}
+    stage.addEventListener('mouseenter',function(){rect=stage.getBoundingClientRect()},{passive:true});
     stage.addEventListener('mousemove',function(e){
       if(raf)cancelAnimationFrame(raf);
       raf=requestAnimationFrame(function(){
-        var rect=stage.getBoundingClientRect();
+        if(!rect)rect=stage.getBoundingClientRect();
         var x=(e.clientX-rect.left)/rect.width;
         var y=(e.clientY-rect.top)/rect.height;
         var ry=(x-0.5)*12;
@@ -1974,7 +1952,10 @@ document.addEventListener('click',function(e){
     stage.addEventListener('mouseleave',function(){
       stage.style.setProperty('--rx','0deg');
       stage.style.setProperty('--ry','0deg');
+      rect=null;
     });
+    window.addEventListener('resize',invalidateRect,{passive:true});
+    window.addEventListener('scroll',invalidateRect,{passive:true});
   })();
 
   // === REVEAL FALLBACK — forca .in apos 1.5s nos elementos que o observer
@@ -2013,32 +1994,6 @@ document.addEventListener('DOMContentLoaded',function(){
   document.head.appendChild(s);
 });
 
-// === Videos autoplay loop (play/pause por viewport) ===
-// rootMargin 200px: comeca a tocar 200px ANTES de entrar no viewport,
-// dando tempo do decoder warm-up — evita tela preta no scroll rapido.
-// Fora do viewport: pause = libera CPU/GPU.
-(function(){
-  if(!('IntersectionObserver' in window))return;
-  var vids=document.querySelectorAll('.reel-thumb video, .problem-img video');
-  if(!vids.length)return;
-  function safePlay(v){try{var p=v.play();if(p&&p.catch)p.catch(function(){})}catch(e){}}
-  function safePause(v){try{v.pause()}catch(e){}}
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(en.isIntersecting)safePlay(en.target);
-      else safePause(en.target);
-    });
-  },{threshold:0,rootMargin:'200px 0px 200px 0px'});
-  vids.forEach(function(v){io.observe(v)});
-  document.addEventListener('visibilitychange',function(){
-    if(document.hidden)vids.forEach(safePause);
-    else vids.forEach(function(v){
-      var r=v.getBoundingClientRect();
-      if(r.top<window.innerHeight+200&&r.bottom>-200)safePlay(v);
-    });
-  });
-})();
-
 // === LENIS SMOOTH SCROLL ===
 // Em desktop, lerp cinematico no wheel. Em mobile (touch), smoothTouch:false:
 // o momentum nativo do iOS/Android e 60fps perfeito; smoothTouch:true entra
@@ -2070,6 +2025,7 @@ window.addEventListener('load',function(){
 // physics e timing fino em pontos onde transition CSS fica engessada. CSS
 // keyframes ficam como fallback se a lib nao carregar (motion-on toggla a take-over).
 (function(){
+  const isMobile=window.matchMedia('(max-width:760px)').matches;
   function init(){
     if(!window.motion||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     var m=window.motion;
@@ -2289,6 +2245,19 @@ window.addEventListener('load',function(){
   }
   if(window.motion)init();
   else document.addEventListener('motion:ready',init);
+})();
+
+// === HERO CARD AURORA — pause animation when hero leaves viewport ===
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var hero=document.querySelector('.hero-card');
+  if(!hero)return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      hero.classList.toggle('paused',!en.isIntersecting);
+    });
+  },{threshold:0});
+  io.observe(hero);
 })();
 
 // === LAZY VIDEO PLAY (desktop) + STATIC POSTER (mobile) ===
